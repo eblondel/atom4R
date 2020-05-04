@@ -1,6 +1,6 @@
 Package: atom4R
 Version: 0.0.9000
-Date: 2020-04-24
+Date: 2020-05-04
 Title: Tools to read/write/publish metadata as Atom XML format
 Authors@R: c(
   person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")))
@@ -10,7 +10,7 @@ Imports: R6, jsonlite, XML
 Suggests: testthat
 Description: Provides tools to read/write/publish metadata as Atom XML format.
 License: MIT + file LICENSE
-URL: https://github.com/eblondel/geoflow
-BugReports: https://github.com/eblondel/geoflow
+URL: https://github.com/eblondel/atom4R
+BugReports: https://github.com/eblondel/atom4R
 LazyLoad: yes
 RoxygenNote: 6.1.1

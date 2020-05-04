@@ -4,16 +4,16 @@
 \name{atom4R}
 \alias{atom4R}
 \alias{atom4R-package}
-\title{R package to read/write metadata in Atom XML format.}
+\title{Tools to read/write metadata in Atom XML format.}
 \description{
-R engine to orchestrate and run geospatial (meta)data workflows
+Tools to read/write metadata in Atom XML format.
 }
 \details{
 \tabular{ll}{
    Package: \tab atom4R\cr
    Type: \tab Package\cr
    Version: \tab 0.0.9000\cr
-   Date: \tab 2020-04-24\cr
+   Date: \tab 2020-05-04\cr
    License: \tab MIT\cr
    LazyLoad: \tab yes\cr
  }

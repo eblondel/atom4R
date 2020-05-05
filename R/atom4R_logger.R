@@ -22,16 +22,50 @@
 #' @note Logger class used internally by atom4R
 #'
 atom4RLogger <- R6Class("atom4RLogger",
-  private = list(
-    logger = function(type, text){
-      cat(sprintf("[atom4R][%s] %s \n", type, text))
-    }
-  ),
+  portable = TRUE,
   public = list(
     #logger
-    INFO = function(text){private$logger("INFO", text)},
-    WARN = function(text){private$logger("WARN", text)},
-    ERROR = function(text){private$logger("ERROR", text)},
-    initialize = function(){}
-    )
+    verbose.info = FALSE,
+    verbose.debug = FALSE,
+    loggerType = NULL,
+    logger = function(type, text){
+      if(self$verbose.info){
+        cat(sprintf("[atom4R][%s] %s - %s \n", type, self$getClassName(), text))
+      }
+    },
+    INFO = function(text){self$logger("INFO", text)},
+    WARN = function(text){self$logger("WARN", text)},
+    ERROR = function(text){self$logger("ERROR", text)},
+
+    initialize = function(logger = NULL){
+
+      #logger
+      if(!missing(logger)){
+        if(!is.null(logger)){
+          self$loggerType <- toupper(logger)
+          if(!(self$loggerType %in% c("INFO","DEBUG"))){
+            stop(sprintf("Unknown logger type '%s", logger))
+          }
+          if(self$loggerType == "INFO"){
+            self$verbose.info = TRUE
+          }else if(self$loggerType == "DEBUG"){
+            self$verbose.info = TRUE
+            self$verbose.debug = TRUE
+          }
+        }
+      }
+    },
+
+    #getClassName
+    getClassName = function(){
+      return(class(self)[1])
+    },
+
+    #getClass
+    getClass = function(){
+      class <- eval(parse(text=self$getClassName()))
+      return(class)
+    }
+
+  )
 )

@@ -31,6 +31,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
     encoding = options("encoding"),
     document = FALSE,
     system_fields = c(
+      "verbose.info", "verbose.debug", "loggerType",
       "wrap", "element", "namespace", "defaults",
       "attrs", "printAttrs", "parentAttrs"
     ),
@@ -171,7 +172,8 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
     #initialize
     initialize = function(xml = NULL, element = NULL, namespace = NULL,
                           attrs = list(), defaults = list(),
-                          wrap = TRUE){
+                          wrap = TRUE, logger = "INFO"){
+      super$initialize(logger = logger)
       if(!is.null(element)){ private$xmlElement <- element }
       if(!is.null(namespace)){ private$xmlNamespacePrefix <- toupper(namespace)}
       self$element = private$xmlElement

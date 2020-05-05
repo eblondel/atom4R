@@ -29,6 +29,8 @@
 #'
 AtomEntry <- R6Class("AtomEntry",
   inherit = AtomAbstractObject,
+  lock_class = FALSE,
+  lock_objects = FALSE,
   private = list(
     xmlElement = "entry",
     xmlNamespacePrefix = "ATOM",

@@ -40,6 +40,8 @@
 #'
 AtomFeed <- R6Class("AtomFeed",
   inherit = AtomAbstractObject,
+  lock_class = FALSE,
+  lock_objects = FALSE,
   private = list(
     xmlElement = "feed",
     xmlNamespacePrefix = "ATOM",

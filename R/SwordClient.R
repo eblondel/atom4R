@@ -105,6 +105,16 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
     #getDataverse
     getDataverse = function(dataverse){
       self$getCollectionMembers(dataverse)
+    },
+
+    #getDataverseEntry
+    getDataverseEntry = function(dataverse, identifier){
+      path <- file.path(private$url, "edit/study", identifier)
+      self$INFO(sprintf("GET - Sword Dataverse Atom Entry document at '%s'", path))
+      r <- httr::GET(path, httr::authenticate(private$token, ""))
+      xml <- XML::xmlParse(httr::content(r, "text"))
+      out <- AtomEntry$new(xml = xml)
+      return(out)
     }
 
   )

@@ -64,7 +64,7 @@ AtomFeed <- R6Class("AtomFeed",
     logo = NULL,
     category = list(),
     link = list(),
-    entries = list(),
+    entry = list(),
 
     #initialize
     initialize = function(xml = NULL){
@@ -87,8 +87,8 @@ AtomFeed <- R6Class("AtomFeed",
 
     #addLink
     addLink = function(link, rel = "alternate", type = "text/html"){
-      if(!rel %in% c("self", "alternate")){
-        stop("Link relation 'rel' should be among values ['self', 'alternate']")
+      if(!rel %in% c("self", "alternate", "related", "enclosure", "via")){
+        stop("Link relation 'rel' should be among values ['self', 'alternate', 'related', 'enclosure', 'via']")
       }
       thelink <- AtomLink$new(href = link, rel = rel, type = type)
       self$link[[length(self$link)+1]] <- thelink
@@ -96,15 +96,15 @@ AtomFeed <- R6Class("AtomFeed",
 
     #delLink
     delLink = function(link, rel = "alternate", type = "text/html"){
-      if(!rel %in% c("self", "alternate")){
-        stop("Link relation 'rel' should be among values ['self', 'alternate']")
+      if(!rel %in% c("self", "alternate", "related", "enclosure", "via")){
+        stop("Link relation 'rel' should be among values ['self', 'alternate', 'related', 'enclosure', 'via']")
       }
       linkLength <- length(self$link)
       if(length(self$link)>0){
         self$link <- self$link[sapply(self$link, function(x){
           x$attrs[["rel"]]!=rel &
-          x$attrs[["type"]]!=type &
-          x$attrs[["href"]]!=link
+            x$attrs[["type"]]!=type &
+            x$attrs[["href"]]!=link
         })]
       }
       return(length(self$link) == linkLength-1)

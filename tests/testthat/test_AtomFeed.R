@@ -49,6 +49,41 @@ test_that("encoding",{
   atom$addCategory("spatial")
   atom$addCategory("fisheries")
 
+  #add entry
+  entry <- AtomEntry$new()
+  entry$setId("my-atom-entry")
+  entry$setTitle("My Atom feed entry")
+  entry$setSummary("My Atom feed entry very comprehensive abstract")
+  author1 <- AtomAuthor$new(
+    name = "John Doe",
+    uri = "http://www.atomxml.com/johndoe",
+    email = "johndoe@atom4R.com"
+  )
+  entry$addAuthor(author1)
+  author2 <- AtomAuthor$new(
+    name = "John Doe's sister",
+    uri = "http://www.atomxml.com/johndoesister",
+    email = "johndoesister@atom4R.com"
+  )
+  entry$addAuthor(author2)
+  contrib1 <- AtomContributor$new(
+    name = "Contrib1",
+    uri = "http://www.atomxml.com/contrib1",
+    email = "contrib1@atom4R.com"
+  )
+  entry$addContributor(contrib1)
+  contrib2 <- AtomContributor$new(
+    name = "Contrib2",
+    uri = "http://www.atomxml.com/contrib2",
+    email = "contrib2@atom4R.com"
+  )
+  entry$addContributor(contrib2)
+  entry$addCategory("dataset")
+  entry$addCategory("spatial")
+  entry$addCategory("fisheries")
+
+  atom$addEntry(entry)
+
   xml <- atom$encode()
   expect_is(atom, "AtomFeed")
 

@@ -184,6 +184,11 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       }
     },
 
+    #setIsDocument
+    setIsDocument = function(isDocument){
+      private$document <- isDocument
+    },
+
     #isDocument
     isDocument = function(){
       return(private$document)
@@ -462,6 +467,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
         namespaceId <- names(ns)
         if(!is.null(fieldObj)){
           if(is(fieldObj, "AtomAbstractObject")){
+            if(fieldObj$isDocument()) fieldObj$setIsDocument(FALSE)
             fieldObjXml <- fieldObj$encode(addNS = FALSE, validate = FALSE)
             if(fieldObj$wrap){
               wrapperAttrs <- fieldObj$parentAttrs
@@ -481,6 +487,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
 
               if(is(item, "AtomAbstractObject")){
                 nodeValue <- item
+                if(item$isDocument()) item$setIsDocument(FALSE)
                 nodeValueXml <- nodeValue$encode(addNS = FALSE, validate = FALSE)
                 if(nodeValue$wrap){
                   wrapperAttrs <- nodeValue$parentAttrs

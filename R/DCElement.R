@@ -662,7 +662,7 @@ DCRights <- R6Class("DCRights",
    inherit = DCElement,
    private = list(
      xmlElement = "rights",
-     xmlNamespacePrefix = "DC",
+     xmlNamespacePrefix = "DCTERMS", #should be DC, see why Dataverse doesn't get it
      document = FALSE
    ),
    public = list(

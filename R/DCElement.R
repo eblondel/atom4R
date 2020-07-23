@@ -25,28 +25,33 @@
 DCElement <- R6Class("DCElement",
    inherit = AtomAbstractObject,
    private = list(
-     dcTerms = c("abstract","accessRights","accrualMethod","accrualPeriodicity",
-                 "accrualPolicy","alternative","audience","available",
-                 "bibliographicCitation","conformsTo","contributor","coverage",
-                 "created","creator","date","dateAccepted","dateCopyrighted",
-                 "dateSubmitted","description","educationLevel","extent","format",
-                 "hasFormat","hasPart","hasVersion","identifier","instructionalMethod",
-                 "isFormatOf","isPartOf","isReferencedBy","isReplacedBy","isRequiredBy",
-                 "issued","isVersionOf","language","license","mediator","medium",
-                 "modified","provenance","publisher","references","relation","replaces",
-                 "requires","rights","rightsHolder","source","spatial","subject",
-                 "tableOfContents","temporal","title","type","valid"),
+     dcTerms = function() {
+       dcTermsVocabId <- "http://purl.org/dc/terms/"
+       terms <- getDCMIVocabulary(id = dcTermsVocabId)$get()
+       sapply(terms$s, function(x){unlist(strsplit(x, dcTermsVocabId))[2]})
+     },
      xmlElement = "_abstract_",
      xmlNamespacePrefix = "DC",
      document = FALSE
    ),
    public = list(
      value = NULL,
-     initialize = function(xml = NULL, term = NULL, value = NULL){
+     initialize = function(xml = NULL, term = NULL, value = NULL, vocabulary = NULL){
        super$initialize(xml = xml, element = term, wrap = FALSE)
        if(is.null(xml)){
-         if(!term %in% private$dcTerms){
+         if(!term %in% private$dcTerms()){
            stop(sprintf("'%s' is not a valid Dublin Core term", term))
+         }
+         if(!is.null(vocabulary)){
+           vocab <- getDCMIVocabulary(id = vocabulary)
+           if(is.null(vocab)){
+             stop(sprintf("No controlled vocabulary for id '%s'", vocabulary))
+           }
+           if(!value %in% vocab$get()$label){
+             errMsg <- sprintf("Value '%s' not authorized by DCMI controlled vocabulary for term '%s'.\n", value, term)
+             errMsg <- paste0(errMsg, sprintf("Controlled vocabulary can be browsed in R with the following code:\ngetDCMIVocabulary(id = \"%s\")$get()", vocabulary))
+             stop(errMsg)
+           }
          }
          self$value = value
        }
@@ -70,7 +75,8 @@ DCElement$getDCClasses = function(extended = FALSE, pretty = FALSE){
       if(!is.null(clazz$classname)){
         includePredicate <- clazz$classname != "atom4RLogger" &&
           !startsWith(clazz$classname, "Atom") &&
-          !startsWith(clazz$classname, "Sword")
+          !startsWith(clazz$classname, "Sword") &&
+          !startsWith(clazz$classname, "DCMI")
       }
     }
     return(r6Predicate & envPredicate & includePredicate)
@@ -784,7 +790,8 @@ DCType <- R6Class("DCType",
    ),
    public = list(
      initialize = function(xml = NULL, value = NULL){
-       super$initialize(xml = xml, term = private$xmlElement, value = value)
+       super$initialize(xml = xml, term = private$xmlElement, value = value,
+                        vocabulary = "http://purl.org/dc/dcmitype/")
      }
    )
 )

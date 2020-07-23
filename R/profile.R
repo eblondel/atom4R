@@ -8,4 +8,7 @@
   #set Atom schemas
   setAtomSchemas()
 
+  #set DCMI Vocabularies
+  setDCMIVocabularies()
+
 } # nocov end

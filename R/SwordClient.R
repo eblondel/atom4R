@@ -91,6 +91,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
     getCollectionMembers = function(collectionId){
       path <- file.path(private$url, "collection/dataverse", collectionId)
       self$INFO(sprintf("GET - Sword Dataverse Atom Feed document at '%s'", path))
+
       r <- httr::GET(path, httr::authenticate(private$token, ""))
       xml <- XML::xmlParse(httr::content(r, "text"))
       out <- AtomFeed$new(xml = xml)
@@ -107,14 +108,67 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       self$getCollectionMembers(dataverse)
     },
 
-    #getDataverseEntry
-    getDataverseEntry = function(dataverse, identifier){
+    #editDataverseEntry
+    editDataverseEntry = function(identifier){
       path <- file.path(private$url, "edit/study", identifier)
       self$INFO(sprintf("GET - Sword Dataverse Atom Entry document at '%s'", path))
-      r <- httr::GET(path, httr::authenticate(private$token, ""))
+      if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
+        r <- httr::with_verbose(httr::GET(path, httr::authenticate(private$token, "")))
+      }else{
+        r <- httr::GET(path, httr::authenticate(private$token, ""))
+      }
       xml <- XML::xmlParse(httr::content(r, "text"))
       out <- AtomEntry$new(xml = xml)
       return(out)
+    },
+
+    #getDataverseEntry
+    getDataverseEntry = function(identifier){
+      path <- file.path(private$url, "statement/study", identifier)
+      self$INFO(sprintf("GET - Sword Dataverse Atom Entry document at '%s'", path))
+      if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
+        r <- httr::with_verbose(httr::GET(path, httr::authenticate(private$token, "")))
+      }else{
+        r <- httr::GET(path, httr::authenticate(private$token, ""))
+      }
+      xml <- XML::xmlParse(httr::content(r, "text"))
+      out <- AtomEntry$new(xml = xml)
+      return(out)
+    },
+
+    #createDataverseEntry
+    createDataverseEntry = function(dataverse, entry){
+
+      if(!is(entry, "AtomEntry")) stop("The 'entry' should be an object of class 'AtomEntry'")
+      ebody <- as(entry$encode(), "character")
+
+      path <- file.path(private$url, "collection/dataverse", dataverse)
+      self$INFO(sprintf("POST - Sword Dataverse Atom Entry document at '%s'", path))
+      r <- NULL
+      if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
+        r <- httr::with_verbose(httr::POST(path, httr::authenticate(private$token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody))
+      }else{
+        r <- httr::POST(path, httr::authenticate(private$token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody)
+      }
+      xml <- XML::xmlParse(httr::content(r, "text"))
+      out <- AtomEntry$new(xml = xml)
+      return(out)
+
+    },
+
+    updateDataverseEntry = function(dataverse, entry){
+      stop("Unimplemented method")
+    },
+
+    deleteDataverseEntry = function(identifier){
+      path <- file.path(private$url, "edit/study", identifier)
+      self$INFO(sprintf("DELETE - Sword Dataverse Atom Entry document at '%s'", path))
+      if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
+        r <- httr::with_verbose(httr::DELETE(path, httr::authenticate(private$token, "")))
+      }else{
+        r <- httr::DELETE(path, httr::authenticate(private$token, ""))
+      }
+      xml <- XML::xmlParse(httr::content(r, "text"))
     }
 
   )

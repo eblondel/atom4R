@@ -5,11 +5,10 @@
 \alias{SwordClient}
 \alias{SwordServiceDocument}
 \title{SwordClient class}
-\format{\code{\link{R6Class}} object.}
-\usage{
-SwordClient
+\format{
+\code{\link{R6Class}} object.
 
-SwordServiceDocument
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an Sword client

@@ -4,9 +4,8 @@
 \name{AtomContributor}
 \alias{AtomContributor}
 \title{Atom Contributorr class}
-\format{\code{\link{R6Class}} object.}
-\usage{
-AtomContributor
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an Atom Contributor

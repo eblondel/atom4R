@@ -4,9 +4,8 @@
 \name{AtomCategory}
 \alias{AtomCategory}
 \title{Atom Category class}
-\format{\code{\Category{R6Class}} object.}
-\usage{
-AtomCategory
+\format{
+\code{\Category{R6Class}} object.
 }
 \value{
 Object of \code{\Category{R6Class}} for modelling an Atom Category

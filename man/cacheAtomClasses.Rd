@@ -10,10 +10,7 @@ cacheAtomClasses()
 \code{\link{cacheAtomClasses}} allows to cache the list of
 \pkg{atom4R} classes or extended. This is especially required to fasten
 the decoding of metadata elements from an XML file. It is called internally
-by \pkg{atom4R} the first function \code{\link{getAtomClasses}} is called
-and each time the function \code{\link{readAtom}} function is called to
-integrate eventually new classes added by user to extend \pkg{atom4R} model
-(case of Atom profiles).
+by \pkg{atom4R} the first function \code{\link{getAtomClasses}}.
 }
 \examples{
   cacheAtomClasses()

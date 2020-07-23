@@ -172,7 +172,7 @@ AtomEntry <- R6Class("AtomEntry",
     },
 
     setContent = function(content){
-
+      stop("'setContent' not yet implemented")
     }
 
   )

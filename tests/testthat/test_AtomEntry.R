@@ -3,7 +3,7 @@
 #
 # Description: Unit tests for AtomFeed.R
 #=======================
-require(geometa, quietly = TRUE)
+require(atom4R, quietly = TRUE)
 require(testthat)
 require(XML)
 
@@ -45,6 +45,45 @@ test_that("encoding",{
   atom$addCategory("dataset")
   atom$addCategory("spatial")
   atom$addCategory("fisheries")
+
+  #dublin core terms
+  atom$addDCElement("identifier", "my-dcmi-identifier")
+  atom$addDCElement("title", "My DCMI title")
+  atom$addDCElement("abstract", "My DCMI abstract")
+
+
+  xml <- atom$encode()
+  expect_is(atom, "AtomEntry")
+
+  #decoding
+  atom2 <- AtomEntry$new(xml = xml)
+  xml2 <- atom2$encode()
+
+  expect_true(AtomAbstractObject$compare(atom, atom2))
+
+})
+
+test_that("encoding - DC Elements",{
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+
+  #encoding
+  atom <- AtomEntry$new()
+  atom$setId("my-dcmi-identifier")
+
+  #dublin core terms
+  atom$setDCAccrualMethod("accmeth:itemCreation")
+  atom$setDCAccrualPeriodicity("freq:irregular")
+  atom$setDCAccrualPolicy("accpol:partial")
+  atom$setDCAlternative("My DCMI alternate title")
+  atom$setDCAccessRights("Free access rights")
+  atom$setDCBibliographicCitation("Blondel, 2020. My DCMI identifier. In: the scientific journal")
+  atom$setDCIdentifier("my-dcmi-identifier")
+  atom$setDCTitle("My DCMI title")
+  atom$setDCAbstract("My DCMI abstract")
+  atom$setDCDescription("My DCMI Description")
+  atom$setDCSpatial("Some spatial description about the record")
+
 
   xml <- atom$encode()
   expect_is(atom, "AtomEntry")

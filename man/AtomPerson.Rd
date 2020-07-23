@@ -4,9 +4,8 @@
 \name{AtomPerson}
 \alias{AtomPerson}
 \title{Atom Person class}
-\format{\code{\link{R6Class}} object.}
-\usage{
-AtomPerson
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an Atom Person

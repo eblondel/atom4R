@@ -4,9 +4,8 @@
 \name{AtomLink}
 \alias{AtomLink}
 \title{Atom Link class}
-\format{\code{\link{R6Class}} object.}
-\usage{
-AtomLink
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an Atom Link

@@ -9,6 +9,15 @@
 	<!--
 	<xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="http://www.w3.org/2001/xml.xsd"/>
 	-->
+
+	<!-- 20200601 Add Dublin core import -->
+	<xs:import namespace="http://purl.org/dc/terms/"
+	            schemaLocation="../dc/dcterms.xsd"/>
+	<xs:import namespace="http://purl.org/dc/elements/1.1/"
+              schemaLocation="../dc/dc.xsd"/>
+  <xs:import namespace="http://purl.org/dc/dcmitype/"
+              schemaLocation="../dc/dcmitype.xsd"/>
+
 	<xs:annotation>
 		<xs:documentation>
 			An Atom document may have two root elements, feed and entry, as defined in section 2.

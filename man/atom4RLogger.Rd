@@ -4,9 +4,8 @@
 \name{atom4RLogger}
 \alias{atom4RLogger}
 \title{atom4RLogger}
-\format{\code{\link{R6Class}} object.}
-\usage{
-atom4RLogger
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling a simple logger

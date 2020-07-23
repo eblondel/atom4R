@@ -3,7 +3,7 @@
 #
 # Description: Unit tests for AtomFeed.R
 #=======================
-require(geometa, quietly = TRUE)
+require(atom4R, quietly = TRUE)
 require(testthat)
 require(XML)
 

@@ -4,9 +4,8 @@
 \name{AtomAuthor}
 \alias{AtomAuthor}
 \title{Atom Author class}
-\format{\code{\link{R6Class}} object.}
-\usage{
-AtomAuthor
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an Atom Author

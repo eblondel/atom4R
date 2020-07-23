@@ -4,9 +4,8 @@
 \name{AtomPubClient}
 \alias{AtomPubClient}
 \title{AtomPubClient class}
-\format{\code{\link{R6Class}} object.}
-\usage{
-AtomPubClient
+\format{
+\code{\link{R6Class}} object.
 }
 \value{
 Object of \code{\link{R6Class}} for modelling an AtomPub client

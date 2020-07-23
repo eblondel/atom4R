@@ -34,6 +34,8 @@ AtomNamespace <- R6Class("AtomNamespace",
   )
 )
 AtomNamespace$ATOM = AtomNamespace$new("atom", "http://www.w3.org/2005/Atom")
+AtomNamespace$DC = AtomNamespace$new("dc", "http://purl.org/dc/elements/1.1/")
+AtomNamespace$DCTERMS = AtomNamespace$new("dcterms", "http://purl.org/dc/terms/")
 AtomNamespace$XLINK = AtomNamespace$new("xlink", "http://www.w3.org/1999/xlink")
 AtomNamespace$XSI = AtomNamespace$new("xsi", "http://www.w3.org/2001/XMLSchema-instance")
 
@@ -42,6 +44,8 @@ AtomNamespace$XSI = AtomNamespace$new("xsi", "http://www.w3.org/2001/XMLSchema-i
 setAtomNamespaces <- function(){
   .atom4R$namespaces <- list(
     AtomNamespace$ATOM,
+    AtomNamespace$DC,
+    AtomNamespace$DCTERMS,
     AtomNamespace$XLINK,
     AtomNamespace$XSI
   )

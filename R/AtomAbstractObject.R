@@ -298,7 +298,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
 
     #decode
     decode = function(xml){
-
+      print(xml)
       #remove comments if any (in case of document)
       if(is(xml, "XMLInternalDocument")){
         children <- xmlChildren(xml, encoding = private$encoding, addFinalizer = FALSE)
@@ -486,7 +486,6 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
             for(item in fieldObj){
               nodeValue <- NULL
               if(length(item)==0) item <- NA
-
               if(is(item, "AtomAbstractObject")){
                 nodeValue <- item
                 if(item$isDocument()) item$setIsDocument(FALSE)
@@ -526,13 +525,17 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
             if(length(fieldObj)==0) fieldObj <- NA
             if(is.logical(fieldObj)) fieldObj <- tolower(as.character(as.logical(fieldObj)))
             fieldObj <- private$fromComplexTypes(fieldObj)
-            wrapperNode <- xmlOutputDOM(
-              tag = field,
-              nameSpace = namespaceId,
-              attrs = fieldObjAttrs
-            )
-            wrapperNode$addNode(xmlTextNode(fieldObj))
-            rootXML$addNode(wrapperNode$value())
+            if(field != "value"){
+              wrapperNode <- xmlOutputDOM(
+                tag = field,
+                nameSpace = namespaceId,
+                attrs = fieldObjAttrs
+              )
+              wrapperNode$addNode(xmlTextNode(fieldObj))
+              rootXML$addNode(wrapperNode$value())
+            }else{
+              rootXML$addNode(xmlTextNode(fieldObj))
+            }
           }
         }
       }
@@ -750,6 +753,11 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       }))
       nsdefs <- nsdefs[!duplicated(names(nsdefs))]
       return(nsdefs)
+    },
+
+    #getXmlElement
+    getXmlElement = function(){
+      return(private$xmlElement)
     }
 
   )
@@ -874,10 +882,7 @@ AtomAbstractObject$getClassByNode = function(node){
 #' @description \code{\link{cacheAtomClasses}} allows to cache the list of
 #' \pkg{atom4R} classes or extended. This is especially required to fasten
 #' the decoding of metadata elements from an XML file. It is called internally
-#' by \pkg{atom4R} the first function \code{\link{getAtomClasses}} is called
-#' and each time the function \code{\link{readAtom}} function is called to
-#' integrate eventually new classes added by user to extend \pkg{atom4R} model
-#' (case of Atom profiles).
+#' by \pkg{atom4R} the first function \code{\link{getAtomClasses}}.
 #'
 #' @usage cacheAtomClasses()
 #'

@@ -28,8 +28,13 @@ SwordClient
 \section{Methods}{
 
 \describe{
- \item{\code{new(url, user, password, token)}}{
-   This method is to instantiate an Sword Client
+ \item{\code{new(url, version, token, logger)}}{
+   This method is to instantiate an Sword Client. By default the version is set to "2".
+   The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
+   for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
+ }
+ \item{\code{getServiceDocument()}}{
+   Gets a representation in R of the SWORD service document (capabilities)
  }
 }
 
@@ -46,5 +51,8 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
+\keyword{API}
 \keyword{Atom}
+\keyword{Client}
 \keyword{Person}
+\keyword{SWORD}

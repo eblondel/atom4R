@@ -476,7 +476,7 @@ DCInstructionalMethod <- R6Class("DCInstructionalMethod",
   )
 )
 
-#'@exporte
+#'@export
 DCIssued <- R6Class("DCIssued",
   inherit = DCDate,
   private = list(

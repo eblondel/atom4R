@@ -7,14 +7,19 @@
 #' @name SwordClient
 #' @title SwordClient class
 #' @description This class models an Sword service client
-#' @keywords Atom Person
+#' @keywords SWORD API Client
 #' @return Object of \code{\link{R6Class}} for modelling an Sword client
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(url, user, password, token)}}{
-#'    This method is to instantiate an Sword Client
+#'  \item{\code{new(url, version, token, logger)}}{
+#'    This method is to instantiate an Sword Client. By default the version is set to "2".
+#'    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
+#'    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
+#'  }
+#'  \item{\code{getServiceDocument()}}{
+#'    Gets a representation in R of the SWORD service document (capabilities)
 #'  }
 #' }
 #'
@@ -58,7 +63,65 @@ SwordClient <- R6Class("SwordClient",
 )
 
 #'SwordDataverseClient
-#'@export
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @export
+#'
+#' @name SwordDataverseClient
+#' @title SWORD Dataverse client class
+#' @description This class models an Sword service Dataverse-specific  API client
+#' @keywords SWORD API Client Dataverse
+#' @return Object of \code{\link{R6Class}} for modelling an Sword Dataverse-specific APIclient
+#' @format \code{\link{R6Class}} object.
+#'
+#' @section Methods inherited from \code{SwordClient}:
+#' \describe{
+#'  \item{\code{getServiceDocument()}}{
+#'    Gets a representation in R of the SWORD service document (capabilities)
+#'  }
+#' }
+#'
+#' @section Methods:
+#' \describe{
+#'  \item{\code{new(url, token, logger)}}{
+#'    This method is to instantiate an Sword API Dataverse-specific Client.
+#'    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
+#'    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
+#'  }
+#'  \item{\code{getCollectionMembers(collectionId)}}{
+#'    List the collection members, ie list of entries for a dataverse.
+#'  }
+#'  \item{\code{getDataverse(pretty)}}{
+#'    List the dataverses, equivalent to \code{listCollections()}. The \code{pretty} argument
+#'    can be set to \code{TRUE} to retrieve a \code{data.frame}, otherwise a \code{list} is
+#'    returned.
+#'  }
+#'  \item{\code{getDataverse(dataverse)}}{
+#'    Get a dataverse by ID
+#'  }
+#'  \item{\code{editDataverseEntry(identifier)}}{
+#'    Edits a dataverse entry by identifier
+#'  }
+#'  \item{\code{getDataverseEntry(identifier)}}{
+#'    Gets a dataverse entry by identifier
+#'  }
+#'  \item{\code{createDataverseEntry(dataverse, entry)}}{
+#'    Creates a dataverse entry in the target \code{dataverse}. The entry should be an object
+#'    of class \code{AtomEntry} or \code{DCEntry} (Dublin core entry).
+#'  }
+#'  \item{\code{updateDataverseEntry(dataverse, entry, doi)}}{
+#'    Update a dataverse entry in the target \code{dataverse}. The entry should be an object
+#'    of class \code{AtomEntry} or \code{DCEntry} (Dublin core entry). To update the entry it
+#'    is necessary to specify the \code{doi} of the entry
+#'  }
+#'  \item{\code{deleteDataverseEntry(identifier)}}{
+#'    Deletes a dataverse entry by identifier
+#'  }
+#' }
+#'
+#' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
+#'
 SwordDataverseClient <- R6Class("SwordDataverseClient",
   inherit = SwordClient,
   public = list(
@@ -158,6 +221,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
 
     },
 
+    #updateDataverseEntry
     updateDataverseEntry = function(dataverse, entry, doi){
       out <- NULL
       if(!is(entry, "AtomEntry")) stop("The 'entry' should be an object of class 'AtomEntry'")
@@ -180,6 +244,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       return(out)
     },
 
+    #deleteDataverseEntry
     deleteDataverseEntry = function(identifier){
       path <- file.path(private$url, "edit/study", identifier)
       self$INFO(sprintf("DELETE - Sword Dataverse Atom Entry document at '%s'", path))

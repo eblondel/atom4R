@@ -14,7 +14,7 @@ getDCMIVocabulary(id)
 registered in \pkg{atom4R}
 }
 \examples{
-  getDCMIVocabulary(id = "DCMIType")
+  getDCMIVocabulary(id = "http://purl.org/dc/dcmitype/")
 
 }
 \author{

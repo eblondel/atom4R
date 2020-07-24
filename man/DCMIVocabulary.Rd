@@ -3,7 +3,7 @@
 \docType{class}
 \name{DCMIVocabulary}
 \alias{DCMIVocabulary}
-\title{DublinCore element class}
+\title{DCMI Vocabulary class}
 \format{
 \code{\link{R6Class}} object.
 }
@@ -11,7 +11,7 @@
 Object of \code{\link{R6Class}} for modelling an Dublin Core element
 }
 \description{
-This class models an DublinCore element
+This class models an DCMI Vocabulary
 }
 \details{
 DCMIVocabulary

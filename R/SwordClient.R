@@ -138,26 +138,46 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
 
     #createDataverseEntry
     createDataverseEntry = function(dataverse, entry){
-
+      out <- NULL
       if(!is(entry, "AtomEntry")) stop("The 'entry' should be an object of class 'AtomEntry'")
       ebody <- as(entry$encode(), "character")
 
       path <- file.path(private$url, "collection/dataverse", dataverse)
-      self$INFO(sprintf("POST - Sword Dataverse Atom Entry document at '%s'", path))
+      self$INFO(sprintf("POST - Sword Dataverse Atom Entry document creation at '%s'", path))
       r <- NULL
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
         r <- httr::with_verbose(httr::POST(path, httr::authenticate(private$token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody))
       }else{
         r <- httr::POST(path, httr::authenticate(private$token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody)
       }
-      xml <- XML::xmlParse(httr::content(r, "text"))
-      out <- AtomEntry$new(xml = xml)
+      if(httr::status_code(r) == 201){
+        xml <- XML::xmlParse(httr::content(r, "text"))
+        out <- AtomEntry$new(xml = xml)
+      }
       return(out)
 
     },
 
-    updateDataverseEntry = function(dataverse, entry){
-      stop("Unimplemented method")
+    updateDataverseEntry = function(dataverse, entry, doi){
+      out <- NULL
+      if(!is(entry, "AtomEntry")) stop("The 'entry' should be an object of class 'AtomEntry'")
+      tmpfile = tempfile(fileext = ".xml")
+      entry$save(tmpfile)
+      ebody <- httr::upload_file(tmpfile)
+      path <- file.path(private$url, paste0("edit/study/doi:", doi))
+      self$INFO(sprintf("POST - Sword Dataverse Atom Entry document at update '%s'", path))
+      r <- NULL
+      if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
+        r <- httr::with_verbose(httr::PUT(path, httr::authenticate(private$token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody))
+      }else{
+        r <- httr::PUT(path, httr::authenticate(private$token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody)
+      }
+      if(httr::status_code(r) == 200){
+        xml <- XML::xmlParse(httr::content(r, "text"))
+        out <- AtomEntry$new(xml = xml)
+      }
+      unlink(tmpfile)
+      return(out)
     },
 
     deleteDataverseEntry = function(identifier){

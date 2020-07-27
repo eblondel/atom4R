@@ -8,8 +8,8 @@
 #' @title Atom Category class
 #' @description This class models an atom Category
 #' @keywords atom Category
-#' @return Object of \code{\Category{R6Class}} for modelling an Atom Category
-#' @format \code{\Category{R6Class}} object.
+#' @return Object of \code{R6Class} for modelling an Atom Category
+#' @format \code{R6Class} object.
 #'
 #' @section Methods:
 #' \describe{

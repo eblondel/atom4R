@@ -5,10 +5,10 @@
 \alias{AtomCategory}
 \title{Atom Category class}
 \format{
-\code{\Category{R6Class}} object.
+\code{R6Class} object.
 }
 \value{
-Object of \code{\Category{R6Class}} for modelling an Atom Category
+Object of \code{R6Class} for modelling an Atom Category
 }
 \description{
 This class models an atom Category

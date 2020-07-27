@@ -103,20 +103,31 @@ SwordClient <- R6Class("SwordClient",
 #'  \item{\code{editDataverseEntry(identifier)}}{
 #'    Edits a dataverse entry by identifier
 #'  }
-#'  \item{\code{getDataverseEntry(identifier)}}{
-#'    Gets a dataverse entry by identifier
+#'  \item{\code{getDataverseRecord(identifier)}}{
+#'    Gets a dataverse record by identifier
 #'  }
-#'  \item{\code{createDataverseEntry(dataverse, entry)}}{
-#'    Creates a dataverse entry in the target \code{dataverse}. The entry should be an object
+#'  \item{\code{createDataverseRecord(dataverse, entry)}}{
+#'    Creates a dataverse record in the target \code{dataverse}. The entry should be an object
 #'    of class \code{AtomEntry} or \code{DCEntry} (Dublin core entry).
 #'  }
-#'  \item{\code{updateDataverseEntry(dataverse, entry, doi)}}{
+#'  \item{\code{updateDataverseRecord(dataverse, entry, doi)}}{
 #'    Update a dataverse entry in the target \code{dataverse}. The entry should be an object
 #'    of class \code{AtomEntry} or \code{DCEntry} (Dublin core entry). To update the entry it
 #'    is necessary to specify the \code{doi} of the entry
 #'  }
-#'  \item{\code{deleteDataverseEntry(identifier)}}{
+#'  \item{\code{deleteDataverseRecord(identifier)}}{
 #'    Deletes a dataverse entry by identifier
+#'  }
+#'  \item{\code{addFilesToDataverseRecord(identifier, files)}}{
+#'    Adds one or more files to a Dataverse record. The \code{files} should be a vector of class
+#'    "character" listing the files to be added/uploaded. Return \code{TRUE} if files are
+#'    successfully added to the record.
+#'  }
+#'  \item{\code{deleteFilesFromDataverseRecord(identifier, files)}}{
+#'    Deletes one or more files from a Dataverse record. The \code{files} should be a vector of class
+#'    "character" listing the files to be added/uploaded. By default this argument is \code{NULL} and all
+#'    files will be deleted. Returns a \code{data.frame} specifying for each file \code{TRUE} if it has
+#'    been deleted, \code{FALSE} otherwise.
 #'  }
 #' }
 #'
@@ -141,6 +152,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
         path <- file.path(private$url, "service-document")
         self$INFO(sprintf("GET - Sword Dataverse service document at '%s'", path))
         r <- httr::GET(path, httr::authenticate(private$token, ""))
+        httr::stop_for_status(r)
         xml <- XML::xmlParse(httr::content(r, "text"))
         out <- SwordServiceDocument$new(xml = xml)
         self$service <- out
@@ -156,6 +168,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       self$INFO(sprintf("GET - Sword Dataverse Atom Feed document at '%s'", path))
 
       r <- httr::GET(path, httr::authenticate(private$token, ""))
+      httr::stop_for_status(r)
       xml <- XML::xmlParse(httr::content(r, "text"))
       out <- AtomFeed$new(xml = xml)
       return(out)
@@ -180,13 +193,14 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       }else{
         r <- httr::GET(path, httr::authenticate(private$token, ""))
       }
+      httr::stop_for_status(r)
       xml <- XML::xmlParse(httr::content(r, "text"))
       out <- AtomEntry$new(xml = xml)
       return(out)
     },
 
-    #getDataverseEntry
-    getDataverseEntry = function(identifier){
+    #getDataverseRecord
+    getDataverseRecord = function(identifier){
       path <- file.path(private$url, "statement/study", identifier)
       self$INFO(sprintf("GET - Sword Dataverse Atom Entry document at '%s'", path))
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
@@ -194,13 +208,14 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       }else{
         r <- httr::GET(path, httr::authenticate(private$token, ""))
       }
+      httr::stop_for_status(r)
       xml <- XML::xmlParse(httr::content(r, "text"))
-      out <- AtomEntry$new(xml = xml)
+      out <- AtomFeed$new(xml = xml)
       return(out)
     },
 
-    #createDataverseEntry
-    createDataverseEntry = function(dataverse, entry){
+    #createDataverseRecord
+    createDataverseRecord = function(dataverse, entry){
       out <- NULL
       if(!is(entry, "AtomEntry")) stop("The 'entry' should be an object of class 'AtomEntry'")
       ebody <- as(entry$encode(), "character")
@@ -213,6 +228,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       }else{
         r <- httr::POST(path, httr::authenticate(private$token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody)
       }
+      httr::stop_for_status(r)
       if(httr::status_code(r) == 201){
         xml <- XML::xmlParse(httr::content(r, "text"))
         out <- AtomEntry$new(xml = xml)
@@ -221,14 +237,14 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
 
     },
 
-    #updateDataverseEntry
-    updateDataverseEntry = function(dataverse, entry, doi){
+    #updateDataverseRecord
+    updateDataverseRecord = function(dataverse, entry, identifier){
       out <- NULL
       if(!is(entry, "AtomEntry")) stop("The 'entry' should be an object of class 'AtomEntry'")
       tmpfile = tempfile(fileext = ".xml")
       entry$save(tmpfile)
       ebody <- httr::upload_file(tmpfile)
-      path <- file.path(private$url, paste0("edit/study/doi:", doi))
+      path <- file.path(private$url, "edit/study", identifier)
       self$INFO(sprintf("POST - Sword Dataverse Atom Entry document at update '%s'", path))
       r <- NULL
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
@@ -236,6 +252,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       }else{
         r <- httr::PUT(path, httr::authenticate(private$token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody)
       }
+      httr::stop_for_status(r)
       if(httr::status_code(r) == 200){
         xml <- XML::xmlParse(httr::content(r, "text"))
         out <- AtomEntry$new(xml = xml)
@@ -244,8 +261,8 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       return(out)
     },
 
-    #deleteDataverseEntry
-    deleteDataverseEntry = function(identifier){
+    #deleteDataverseRecord
+    deleteDataverseRecord = function(identifier){
       path <- file.path(private$url, "edit/study", identifier)
       self$INFO(sprintf("DELETE - Sword Dataverse Atom Entry document at '%s'", path))
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
@@ -253,17 +270,84 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       }else{
         r <- httr::DELETE(path, httr::authenticate(private$token, ""))
       }
-      xml <- XML::xmlParse(httr::content(r, "text"))
+      httr::stop_for_status(r)
+      return(TRUE)
     },
 
-    #publishDataverseEntry
-    publishDataverseEntry = function(){
+    #publishDataverseRecord
+    publishDataverseRecord = function(){
       stop("To implement")
     },
 
-    #addFile
-    addFileToDataverseEntry = function(){
-      stop("To implement")
+    #addFilesToDataverseRecord
+    addFilesToDataverseRecord = function(identifier, files){
+
+      tmpfile <- tempfile(fileext = ".zip")
+      on.exit(unlink(tmpfile))
+      zip::zipr(zipfile = tmpfile, files = files)
+
+      out <- NULL
+      path <- file.path(private$url, "edit-media/study", identifier)
+      self$INFO(sprintf("POST - Sword Dataverse Add files to record '%s'", path))
+
+      h <- httr::add_headers(
+        "Content-Disposition" = sprintf("filename=%s", tmpfile),
+        "Content-Type" = "application/zip",
+        "Packaging" = "http://purl.org/net/sword/package/SimpleZip"
+      )
+
+      if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
+        r <- httr::with_verbose(httr::POST(path, httr::authenticate(private$token, ""), h,
+                                           body = httr::upload_file(tmpfile)))
+      }else{
+        r <- httr::POST(path, httr::authenticate(private$token, ""), h,
+                        body = httr::upload_file(tmpfile))
+      }
+      httr::stop_for_status(r)
+      if(httr::status_code(r) == 201){
+        self$INFO(sprintf("Successfully added files to record with identifier '%s'", identifier))
+        xml <- XML::xmlParse(httr::content(r, "text"))
+        out <- AtomEntry$new(xml = xml)
+      }
+    },
+
+    #deleteFileFromDataverseRecord
+    deleteFilesFromDataverseRecord = function(identifier, files = NULL){
+
+      rec <- self$getDataverseRecord(identifier)
+      if(length(rec$entry)==0) {
+        self$WARN(sprintf("No existing files associated to record '%s'", identifier))
+        return(FALSE)
+      }
+      remote_files <- sapply(rec$entry, function(x){x$id})
+
+      if(is.null(files)){
+        #if no files specified we delete all files
+        files <- sapply(remote_files, function(x){parts = unlist(strsplit(x,"/")); return(parts[length(parts)])})
+        names(files) <- NULL
+      }
+
+      out <- data.frame(
+        file = files,
+        deleted = sapply(files, function(x){
+          del <- FALSE
+          print(remote_files)
+          if(any(endsWith(remote_files, x))){
+            path <- remote_files[endsWith(remote_files, x)][1]
+            self$INFO(sprintf("DELETE - Sword Dataverse Remove files from record '%s'", path))
+            if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
+              r <- httr::with_verbose(httr::DELETE(path, httr::authenticate(private$token, "")))
+            }else{
+              r <- httr::DELETE(path, httr::authenticate(private$token, ""))
+            }
+            httr::stop_for_status(r)
+            del <- TRUE
+          }
+          return(del)
+        }),
+        stringsAsFactors = FALSE
+      )
+      return(out)
     }
 
   )

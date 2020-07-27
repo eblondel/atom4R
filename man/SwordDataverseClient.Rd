@@ -47,20 +47,31 @@ SwordDataverseClient
  \item{\code{editDataverseEntry(identifier)}}{
    Edits a dataverse entry by identifier
  }
- \item{\code{getDataverseEntry(identifier)}}{
-   Gets a dataverse entry by identifier
+ \item{\code{getDataverseRecord(identifier)}}{
+   Gets a dataverse record by identifier
  }
- \item{\code{createDataverseEntry(dataverse, entry)}}{
-   Creates a dataverse entry in the target \code{dataverse}. The entry should be an object
+ \item{\code{createDataverseRecord(dataverse, entry)}}{
+   Creates a dataverse record in the target \code{dataverse}. The entry should be an object
    of class \code{AtomEntry} or \code{DCEntry} (Dublin core entry).
  }
- \item{\code{updateDataverseEntry(dataverse, entry, doi)}}{
+ \item{\code{updateDataverseRecord(dataverse, entry, doi)}}{
    Update a dataverse entry in the target \code{dataverse}. The entry should be an object
    of class \code{AtomEntry} or \code{DCEntry} (Dublin core entry). To update the entry it
    is necessary to specify the \code{doi} of the entry
  }
- \item{\code{deleteDataverseEntry(identifier)}}{
+ \item{\code{deleteDataverseRecord(identifier)}}{
    Deletes a dataverse entry by identifier
+ }
+ \item{\code{addFilesToDataverseRecord(identifier, files)}}{
+   Adds one or more files to a Dataverse record. The \code{files} should be a vector of class
+   "character" listing the files to be added/uploaded. Return \code{TRUE} if files are
+   successfully added to the record.
+ }
+ \item{\code{deleteFilesFromDataverseRecord(identifier, files)}}{
+   Deletes one or more files from a Dataverse record. The \code{files} should be a vector of class
+   "character" listing the files to be added/uploaded. By default this argument is \code{NULL} and all
+   files will be deleted. Returns a \code{data.frame} specifying for each file \code{TRUE} if it has
+   been deleted, \code{FALSE} otherwise.
  }
 }
 }

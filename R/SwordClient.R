@@ -116,7 +116,10 @@ SwordClient <- R6Class("SwordClient",
 #'    is necessary to specify the \code{doi} of the entry
 #'  }
 #'  \item{\code{deleteDataverseRecord(identifier)}}{
-#'    Deletes a dataverse entry by identifier
+#'    Deletes a dataverse record by identifier
+#'  }
+#'  \item{\code{publishDataverseRecord(identifier)}}{
+#'    Publishes a dataverse record by identifier
 #'  }
 #'  \item{\code{addFilesToDataverseRecord(identifier, files)}}{
 #'    Adds one or more files to a Dataverse record. The \code{files} should be a vector of class
@@ -275,8 +278,24 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
     },
 
     #publishDataverseRecord
-    publishDataverseRecord = function(){
-      stop("To implement")
+    publishDataverseRecord = function(identifier){
+      out <- NULL
+      path <- file.path(private$url, "edit/study", identifier)
+      self$INFO(sprintf("POST - Sword Dataverse Atom Entry record publication at '%s'", path))
+      r <- NULL
+      if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
+        r <- httr::with_verbose(httr::POST(path, httr::authenticate(private$token, ""),
+                                           httr::add_headers("In-Progress" = "false")))
+      }else{
+        r <- httr::POST(path, httr::authenticate(private$token, ""),
+                        httr::add_headers("In-Progress" = "false"))
+      }
+      httr::stop_for_status(r)
+      if(httr::status_code(r) == 200){
+        xml <- XML::xmlParse(httr::content(r, "text"))
+        out <- AtomEntry$new(xml = xml)
+      }
+      return(out)
     },
 
     #addFilesToDataverseRecord

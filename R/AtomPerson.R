@@ -11,9 +11,9 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Atom Person
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field name
-#' @field uri
-#' @field email
+#' @field name Person name
+#' @field uri Person uri
+#' @field email Person email
 #'
 #' @section Methods:
 #' \describe{
@@ -85,9 +85,9 @@ AtomPerson <- R6Class("AtomPerson",
 #' @return Object of \code{\link{R6Class}} for modelling an Atom Author
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field name
-#' @field uri
-#' @field email
+#' @field name Person name
+#' @field uri Person uri
+#' @field email Person email
 #'
 #' @examples
 #' \dontrun{
@@ -139,9 +139,9 @@ AtomAuthor <- R6Class("AtomAuthor",
 #' @return Object of \code{\link{R6Class}} for modelling an Atom Contributor
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field name
-#' @field uri
-#' @field email
+#' @field name Person name
+#' @field uri Person uri
+#' @field email Person email
 #'
 #' @examples
 #' \dontrun{

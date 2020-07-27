@@ -254,6 +254,16 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
         r <- httr::DELETE(path, httr::authenticate(private$token, ""))
       }
       xml <- XML::xmlParse(httr::content(r, "text"))
+    },
+
+    #publishDataverseEntry
+    publishDataverseEntry = function(){
+      stop("To implement")
+    },
+
+    #addFile
+    addFileToDataverseEntry = function(){
+      stop("To implement")
     }
 
   )

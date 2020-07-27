@@ -6,14 +6,16 @@
 \alias{atom4R-package}
 \title{Tools to read/write metadata in Atom XML format.}
 \description{
-Tools to read/write metadata in Atom XML format.
+Provides tools to read/write/publish metadata based on the Atom XML syndication format.
+This includes support of Dublin Core XML implementation, and a client to APIs implementing the AtomPub
+SWORD API specification.
 }
 \details{
 \tabular{ll}{
    Package: \tab atom4R\cr
    Type: \tab Package\cr
    Version: \tab 0.0.9000\cr
-   Date: \tab 2020-07-23\cr
+   Date: \tab 2020-07-27\cr
    License: \tab MIT\cr
    LazyLoad: \tab yes\cr
  }

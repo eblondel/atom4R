@@ -19,7 +19,29 @@ AtomFeed
 \section{Fields}{
 
 \describe{
-\item{\code{entries}}{}
+\item{\code{id}}{Identifier}
+
+\item{\code{updated}}{Update date}
+
+\item{\code{title}}{Title}
+
+\item{\code{subtitle}}{Subtitle}
+
+\item{\code{rights}}{Rights (license, use, ...)}
+
+\item{\code{author}}{Author person}
+
+\item{\code{contributor}}{Contributor person}
+
+\item{\code{generator}}{Generator}
+
+\item{\code{icon}}{Icon}
+
+\item{\code{logo}}{Logo}
+
+\item{\code{category}}{Category}
+
+\item{\code{entries}}{List of entries}
 }}
 
 \section{Methods}{

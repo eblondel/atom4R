@@ -19,7 +19,11 @@ AtomContributor
 \section{Fields}{
 
 \describe{
-\item{\code{email}}{}
+\item{\code{name}}{Person name}
+
+\item{\code{uri}}{Person uri}
+
+\item{\code{email}}{Person email}
 }}
 
 \section{Methods inherited from \code{AtomPerson}}{

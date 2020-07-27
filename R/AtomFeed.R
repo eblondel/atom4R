@@ -11,18 +11,18 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Atom feed
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field id
-#' @field updated
-#' @field title
-#' @field subtitle
-#' @field rights
-#' @field author
-#' @field contributor
-#' @field generator
-#' @field icon
-#' @field logo
-#' @field category
-#' @field entries
+#' @field id Identifier
+#' @field updated Update date
+#' @field title Title
+#' @field subtitle Subtitle
+#' @field rights Rights (license, use, ...)
+#' @field author Author person
+#' @field contributor Contributor person
+#' @field generator Generator
+#' @field icon Icon
+#' @field logo Logo
+#' @field category Category
+#' @field entries List of entries
 #'
 #' @examples
 #' \dontrun{

@@ -28,7 +28,8 @@ matrix:
     before_install
     - git clone https://github.com/IQSS/dataverse-docker
     - cd dataverse-docker
-    - bash $TRAVIS_BUILD_DIR/tests/dataverse/initial.bash
+    - cp $TRAVIS_BUILD_DIR/tests/dataverse/initial.bash ./dataverse-docker/initial.bash
+    - bash ./dataverse-docker/initial.bash
     - docker-compose build
     - docker-compose up
     - cd $TRAVIS_BUILD_DIR

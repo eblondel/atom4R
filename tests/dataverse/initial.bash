@@ -1,8 +1,7 @@
 #!/bin/bash
 
 git clone https://github.com/IQSS/dataverse
-wdir=`pwd`
-echo "Downloading all software required to run Dataverse from path ".$wdir
+cd dataverse
 cd dataversedock
 ./step1.sh $wdir
 ./step2.sh $wdir

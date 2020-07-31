@@ -26,9 +26,11 @@ matrix:
     services: docker
     apt_packages: libxml2-dev libsodium-dev
     before_install:
+    - cd $TRAVIS_BUILD_DIR/tests/dataverse
     - bash $TRAVIS_BUILD_DIR/tests/dataverse/initial.bash
     - docker-compose build
     - docker-compose up
+    - cd $TRAVIS_BUILD_DIR
 
 after_script:
  - ./travis-tool.sh dump_logs

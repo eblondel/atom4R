@@ -298,24 +298,21 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
 
     #decode
     decode = function(xml){
-      print(xml)
       #remove comments if any (in case of document)
       if(is(xml, "XMLInternalDocument")){
         children <- xmlChildren(xml, encoding = private$encoding, addFinalizer = FALSE)
         xml <- children[names(children) != "comment"][[1]]
       }
       xml_children <- xmlChildren(xml, encoding = private$encoding, addFinalizer = FALSE)
+      xml_children <- xml_children[names(xml_children) != "comment"]
       for(child in xml_children){
         fieldName <- xmlName(child)
-
         childElement <- child
         nsPrefix <- ""
         fNames <- unlist(strsplit(fieldName, ":"))
         if(length(fNames)>1){
           fieldName <- fNames[2]
         }
-
-        if(!(fieldName %in% names(self))) next
 
         wrap_fields <- FALSE
         fieldClass <- NULL
@@ -357,13 +354,9 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
           fieldValue <- fieldClass$new(xml = child)
           fieldValue$parentAttrs <- parentAttrs
           fieldValue$attrs <- as.list(xmlAttrs(child, TRUE, FALSE))
-
-          if(is(self[[fieldName]], "list")){
-            self[[fieldName]] <- c(self[[fieldName]], fieldValue)
-          }else{
-            self[[fieldName]] <- fieldValue
-          }
+          self[[fieldName]] <- c(self[[fieldName]], fieldValue)
         }else{
+          if(fieldName == "text") fieldName <- "value"
           if(is.null(nsPrefix)) nsPrefix <- ""
           value <- xmlValue(child)
           isList <- is.list(self$getClass()$public_fields[[fieldName]])
@@ -385,7 +378,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
             attr(value, fieldAttr) <- attrs[[fieldAttr]]
           }
           if(is.list(self[[fieldName]])){
-            self[[fieldName]][[length(self[[fieldName]]+1)]] <- value
+            self[[fieldName]][[length(self[[fieldName]])+1]] <- value
           }else{
             self[[fieldName]] <- value
           }
@@ -839,6 +832,7 @@ AtomAbstractObject$getClassByNode = function(node){
   if(length(nodeElementNames)>1){
     nodeElementName <- nodeElementNames[2]
   }
+  nodeElementNs <- xmlNamespaces(node)
 
   list_of_classes <- getAtomClasses()
   if(is.null(list_of_classes))
@@ -846,7 +840,8 @@ AtomAbstractObject$getClassByNode = function(node){
 
   for(classname in list_of_classes){
     clazz <- try(eval(parse(text=classname)))
-    if(nodeElementName %in% clazz$private_fields$xmlElement){
+    if(nodeElementName %in% clazz$private_fields$xmlElement &&
+       toupper(names(nodeElementNs)) == clazz$private_fields$xmlNamespacePrefix){
       atom4R_inherits <- FALSE
       superclazz <- clazz
       while(!atom4R_inherits){

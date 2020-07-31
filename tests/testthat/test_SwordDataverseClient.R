@@ -13,7 +13,7 @@ API <- NULL
 
 test_that("list",{
   API <- SwordDataverseClient$new(
-    hostname = "<hostname>",
+    hostname = "localhost:8085",
     token = "<token>",
     logger = "DEBUG"
   )

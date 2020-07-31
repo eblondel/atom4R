@@ -1,0 +1,42 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+language: R
+sudo: required
+cache: packages
+
+os:
+  - linux
+
+r_check_args: --as-cran
+
+matrix:
+  include:
+  - name: "Dataverse | R release"
+    os: linux
+    r: release
+    r_packages:
+    - R6
+    - jsonlite
+    - XML
+    - zip
+    - testthat
+    - covr
+    env:
+      matrix:
+      - NOT_CRAN=true
+    services: docker
+    apt_packages: libxml2-dev libsodium-dev
+    before_install:
+    - $TRAVIS_BUILD_DIR/tests/dataverse/initial.bash
+    - docker-compose build
+    - docker-compose up
+
+after_script:
+ - ./travis-tool.sh dump_logs
+
+after_success:
+ - Rscript -e 'library(covr); codecov()'
+
+notifications:
+  email:
+    on_success: change
+    on_failure: change

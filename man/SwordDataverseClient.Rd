@@ -60,7 +60,10 @@ SwordDataverseClient
    is necessary to specify the \code{doi} of the entry
  }
  \item{\code{deleteDataverseRecord(identifier)}}{
-   Deletes a dataverse entry by identifier
+   Deletes a dataverse record by identifier
+ }
+ \item{\code{publishDataverseRecord(identifier)}}{
+   Publishes a dataverse record by identifier
  }
  \item{\code{addFilesToDataverseRecord(identifier, files)}}{
    Adds one or more files to a Dataverse record. The \code{files} should be a vector of class

@@ -27,7 +27,8 @@ matrix:
     apt_packages: libxml2-dev libsodium-dev
     before_install:
     - git clone https://github.com/IQSS/dataverse-docker
-    - bash ./dataverse-docker/initial.bash
+    - cd dataverse-docker
+    - bash ./initial.bash
     - docker-compose build
     - docker-compose up
     - cd $TRAVIS_BUILD_DIR

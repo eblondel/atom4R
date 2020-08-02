@@ -25,7 +25,7 @@ matrix:
       - NOT_CRAN=true
     services: docker
     apt_packages: libxml2-dev libsodium-dev
-    before_install
+    before_install:
     - git clone https://github.com/IQSS/dataverse-docker
     - cd dataverse-docker
     - cp $TRAVIS_BUILD_DIR/tests/dataverse/initial.bash ./dataverse-docker/initial.bash

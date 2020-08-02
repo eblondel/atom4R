@@ -1,5 +1,5 @@
 Package: atom4R
-Version: 0.0.9000
+Version: 0.1
 Date: 2020-08-02
 Title: Tools to read/write/publish metadata as Atom XML format
 Authors@R: c(

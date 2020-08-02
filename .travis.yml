@@ -30,7 +30,7 @@ matrix:
     - cd dataverse-docker
     - bash ./initial.bash
     - docker-compose build
-    - docker-compose up
+    - docker-compose up -d
     - cd $TRAVIS_BUILD_DIR
 
 after_script:

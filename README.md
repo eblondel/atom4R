@@ -7,11 +7,7 @@
 
 **Tools to read/write/publish metadata as Atom XML format**
 
-``atom4R`` provides tools to read/write/publish metadata as Atom XML generic syndication format and Atom-based Dublin Core XML format. For publication, an R interface to the AtomPub Sword API is usable.
-
-**R Interface to Zenodo REST API**
-
-The R package ``atom4R`` rovides tools to read/write/publish metadata based on the Atom XML syndication format. This includes support of Dublin Core XML implementation, and a client to APIs implementing the AtomPub SWORD API specification.
+``atom4R`` provides tools to read/write/publish metadata based on the Atom XML syndication format. This includes support of Dublin Core XML implementation, and a client to APIs implementing the AtomPub SWORD API specification.
 
 Please check the [online documentation](https://github.com/eblondel/atom4R/wiki) for more details!
 

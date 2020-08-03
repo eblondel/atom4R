@@ -26,6 +26,7 @@ matrix:
     services: docker
     apt_packages: libxml2-dev libsodium-dev
     before_install:
+    - cd ..
     - git clone https://github.com/IQSS/dataverse-docker
     - cd dataverse-docker
     - bash ./initial.bash

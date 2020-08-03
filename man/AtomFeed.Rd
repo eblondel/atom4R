@@ -90,7 +90,7 @@ AtomFeed
  \item{\code{setGenerator(generator, type)}}{
    Sets generator
  }
- \ìtem{\code{setIcon(icon)}}{
+ \item{\code{setIcon(icon)}}{
    Sets icon
  }
  \item{\code{addCategory(term, scheme, label)}}{

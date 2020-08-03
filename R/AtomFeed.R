@@ -69,7 +69,7 @@
 #'  \item{\code{setGenerator(generator, type)}}{
 #'    Sets generator
 #'  }
-#'  \ìtem{\code{setIcon(icon)}}{
+#'  \item{\code{setIcon(icon)}}{
 #'    Sets icon
 #'  }
 #'  \item{\code{addCategory(term, scheme, label)}}{
@@ -95,25 +95,25 @@
 #'   author1 <- AtomAuthor$new(
 #'     name = "John Doe",
 #'     uri = "http://www.atomxml.com/johndoe",
-#'     email = "johndoe@atom4R.com"
+#'     email = "johndoe@@atom4R.com"
 #'   )
 #'   atom$addAuthor(author1)
 #'   author2 <- AtomAuthor$new(
 #'     name = "John Doe's sister",
 #'     uri = "http://www.atomxml.com/johndoesister",
-#'     email = "johndoesister@atom4R.com"
+#'     email = "johndoesister@@atom4R.com"
 #'   )
 #'   atom$addAuthor(author2)
 #'   contrib1 <- AtomContributor$new(
 #'     name = "Contrib1",
 #'     uri = "http://www.atomxml.com/contrib1",
-#'     email = "contrib1@atom4R.com"
+#'     email = "contrib1@@atom4R.com"
 #'   )
 #'   atom$addContributor(contrib1)
 #'   contrib2 <- AtomContributor$new(
 #'     name = "Contrib2",
 #'     uri = "http://www.atomxml.com/contrib2",
-#'     email = "contrib2@atom4R.com"
+#'     email = "contrib2@@atom4R.com"
 #'   )
 #'   atom$addContributor(contrib2)
 #'   atom$setIcon("https://via.placeholder.com/300x150.png/03f/fff?text=atom4R")

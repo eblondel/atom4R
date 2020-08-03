@@ -28,7 +28,7 @@ Abstract class used internally for AtomPub (Atom Publishing Protocol) clients
  \item{\code{getServiceDocument()}}{
    Gets service document description. Unimplemented in abstract classes.
  }
- \item\code{listCollections(pretty)}{
+ \item{\code{listCollections(pretty)}}{
    Lists the available collections. Use \code{pretty} to return a "data.frame" insteaf
    of a list.
  }

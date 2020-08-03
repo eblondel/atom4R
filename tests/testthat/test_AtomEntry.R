@@ -46,12 +46,6 @@ test_that("encoding",{
   atom$addCategory("spatial")
   atom$addCategory("fisheries")
 
-  #dublin core terms
-  atom$addDCElement("identifier", "my-dcmi-identifier")
-  atom$addDCElement("title", "My DCMI title")
-  atom$addDCElement("abstract", "My DCMI abstract")
-
-
   xml <- atom$encode()
   expect_is(atom, "AtomEntry")
 

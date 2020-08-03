@@ -22,8 +22,18 @@ Abstract class used internally for AtomPub (Atom Publishing Protocol) clients
 \section{Methods}{
 
 \describe{
- \item{\code{new(url, user, password, token)}}{
+ \item{\code{new(url, token)}}{
    This method is to instantiate an AtomPub Client
+ }
+ \item{\code{getServiceDocument()}}{
+   Gets service document description. Unimplemented in abstract classes.
+ }
+ \item\code{listCollections(pretty)}{
+   Lists the available collections. Use \code{pretty} to return a "data.frame" insteaf
+   of a list.
+ }
+ \item{\code{getCollectionMembers(collectionId)}}{
+   List members of a collection. Unimplemented in abstract classes.
  }
 }
 }

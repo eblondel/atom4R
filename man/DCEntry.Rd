@@ -20,14 +20,316 @@ DCEntry
 
 \describe{
  \item{\code{new(xml)}}{
-   This method is used to create an Dublin Core
+   This method is used to create an Dublin Core entry
+ }
+ \item{\code{addDCElement(term, value)}}{
+   Adds an element
+ }
+ \item{\code{delDCElement(term, value)}}{
+   Deletes an element
+ }
+ \item{\code{addDCAbstract(abstract)}}{
+   Adds an abstract
+ }
+ \item{\code{delDCAbstract(abstract)}}{
+   Deletes an abstract
+ }
+ \item{\code{addDCAccessRights(accessRights)}}{
+   Adds accessRights
+ }
+ \item{\code{delDCAccessRights(accessRights)}}{
+   Deletes accessRights
+ }
+ \item{\code{addDCAccrualMethod(accrualMethod)}}{
+   Adds accrualMethod
+ }
+ \item{\code{delDCAccrualMethod(accrualMethod)}}{
+   Deletes accrualMethod
+ }
+ \item{\code{addDCAccrualPeriodicity(accrualPeriodicity)}}{
+   Adds accrualPeriodicity
+ }
+ \item{\code{delDCAccrualPeriodicity(accrualPeriodicity)}}{
+   Deletes accrualPeriodicity
+ }
+ \item{\code{addDCAccrualPolicy(accrualPolicy)}}{
+   Adds accrualPolicy
+ }
+ \item{\code{delDCAccrualPolicy(accrualPolicy)}}{
+   Deletes accrualPolicy
+ }
+ \item{\code{addDCAlternative(alternative)}}{
+   Adds alternative title
+ }
+ \item{\code{delDCAlternative(alternative)}}{
+   Deletes alternative title
+ }
+ \item{\code{addDCAudience(audience)}}{
+   Adds an audience
+ }
+ \item{\code{delDCAudience(audience)}}{
+   Deletes an audience
+ }
+ \item{\code{addDCAvailable(available)}}{
+   Adds availability date/time
+ }
+ \item{\code{delDCAvailable(available)}}{
+   Deletes availability date/time
+ }
+ \item{\code{addDCBibliographicCitation(bibliographicCitation)}}{
+   Adds a bibliographic citation
+ }
+ \item{\code{delDCBibliographicCitation(bibliographicCitation)}}{
+   Deletes a bibliographic citation
+ }
+ \item{\code{addDCConformsTo(conformsTo)}}{
+   Adds a 'conformsTo' element
+ }
+ \item{\code{delDCConformsTo(conformsTo)}}{
+   Deletes a 'conformsTo' element
+ }
+ \item{\code{addDCContributor(contributor)}}{
+   Adds a contributor
+ }
+ \item{\code{delDCContributor(contributor)}}{
+   Deletes a contributor
+ }
+ \item{\code{addDCCoverage(coverage)}}{
+   Adds a coverage
+ }
+ \item{\code{delDCCoverage(coverage)}}{
+   Deletes a coverage
+ }
+ \item{\code{addDCCreated(created)}}{
+   Adds a created date/time
+ }
+ \item{\code{delDCCreated(created)}}{
+   Deletes a created date/time
+ }
+ \item{\code{addDCCreator(creator)}}{
+   Adds a creator
+ }
+ \item{\code{delDCCreator(creator)}}{
+   Deletes a creator
+ }
+ \item{\code{addDCDate(date)}}{
+   Adds a date
+ }
+ \item{\code{delDCDate(date)}}{
+   Deletes a date
+ }
+ \item{\code{addDCDateAccepted(dateAccepted)}}{
+   Adds a date (Accepted)
+ }
+ \item{\code{delDCDateAccepted(dateAccepted)}}{
+   Deletes a date (Accepted)
+ }
+ \item{\code{addDCDateCopyrighted(dateCopyrighted)}}{
+   Adds a date (Copyrighted)
+ }
+ \item{\code{delDCDateCopyrighted(dateCopyrighted)}}{
+   Deletes a date (Copyrighted)
+ }
+ \item{\code{addDCDateSubmitted(dateSubmitted)}}{
+   Adds a date (Submitted)
+ }
+ \item{\code{delDCDateSubmitted(dateSubmitted)}}{
+   Deletes a date (Submitted)
+ }
+ \item{\code{addDCDescription(description)}}{
+   Adds a description
+ }
+ \item{\code{delDCDescription(description)}}{
+   Deletes a description
+ }
+ \item{\code{addDCEducationalLevel(educationalLevel)}}{
+   Adds educational level
+ }
+ \item{\code{delDCEducationalLevel(educationalLevel)}}{
+   Deletes educational level
+ }
+ \item{\code{addDCExtent(extent)}}{
+   Adds extent
+ }
+ \item{\code{delDCExtent(extent)}}{
+   Deletes extent
+ }
+ \item{\code{addDCFormat(format)}}{
+   Adds format
+ }
+ \item{\code{delDCFormat(format)}}{
+   Deletes format
+ }
+ \item{\code{addDCIdentifier(identifier)}}{
+   Adds identifier
+ }
+ \item{\code{delDCIdentifier(identifier)}}{
+   Deletes identifier
+ }
+ \item{\code{addDCInstructionalMethod(instructionalMethod)}}{
+   Adds instructional method
+ }
+ \item{\code{delDCInstructionalMethod}}{
+   Deletes instructional method
+ }
+ \item{\code{addDCIssued(issued)}}{
+   Adds issuance date
+ }
+ \item{\code{delDCIssued(issued)}}{
+   Deletes issuance date
+ }
+ \item{\code{addDCLanguage(language)}}{
+   Adds language
+ }
+ \item{\code{delDCLanguage(language)}}{
+   Deletes language
+ }
+ \item{\code{addDCLicense(license)}}{
+   Adds license
+ }
+ \item{\code{delDCLicense(license)}}{
+   Deletes license
+ }
+ \item{\code{addDCMediator(mediator)}}{
+   Adds mediator
+ }
+ \item{\code{delDCMediator(mediator)}}{
+   Deletes mediator
+ }
+ \item{\code{addDCMedium(medium)}}{
+   Adds medium
+ }
+ \item{\code{delDCMedium(medium)}}{
+   Deletes medium
+ }
+ \item{\code{addDCModified(modified)}}{
+   Adds date of modification
+ }
+ \item{\code{delDCModified(modified)}}{
+   Deletes date of modification
+ }
+ \item{\code{addDCProvenance(provenance)}}{
+   Adds provenance
+ }
+ \item{\code{delDCProvenance(provenance)}}{
+   Deletes provenance
+ }
+ \item{\code{addPublisher(publisher)}}{
+   Adds publisher
+ }
+ \item{\code{delPublisher(publisher)}}{
+   Deletes publisher
+ }
+ \item{\code{addDCReferences(references)}}{
+   Adds references
+ }
+ \item{\code{delDCReferences(references)}}{
+   Deletes references
+ }
+ \item{\code{addDCRelation(relation)}}{
+   Adds relation
+ }
+ \item{\code{delDCRelation(relation)}}{
+   Deletes relation
+ }
+ \item{\code{addDCReplaces(replaces)}}{
+   Adds 'replaces' element
+ }
+ \item{\code{delDCReplaces(replaces)}}{
+   Deletes 'replaces' element
+ }
+ \item{\code{addDCRequires(requires)}}{
+   Adds 'requires' element
+ }
+ \item{\code{delDCRequires(requires)}}{
+   Deletes 'requires' element
+ }
+ \item{\code{addDCRights(rights)}}{
+   Adds rights
+ }
+ \item{\code{delDCRights(rights)}}{
+   Deletes rights
+ }
+ \item{\code{addDCRightsHolder(rightsHolder)}}{
+   Adds rights Holder
+ }
+ \item{\code{delDCRightsHolder(rightsHolder)}}{
+   Deletes rights Holder
+ }
+ \item{\code{addDCSource(source)}}{
+   Adds source
+ }
+ \item{\code{delDCSource(source)}}{
+   Deletes source
+ }
+ \item{\code{addDCSubject(subject)}}{
+   Adds subject
+ }
+ \item{\code{delDCSubject(subject)}}{
+   Deletes subject
+ }
+ \item{\code{addDCTableOfContents(tableOfContents)}}{
+   Adds table of contents
+ }
+ \item{\code{delDCTableOfContents(tableOfContents)}}{
+   Deletes table of contents
+ }
+ \item{\code{addDCTemporal(temporal)}}{
+   Adds temporal
+ }
+ \item{\code{delDCTemporal(temporal)}}{
+   Deletes temporal
+ }
+ \item{\code{addDCTitle(title)}}{
+   Adds title
+ }
+ \item{\code{delDCTitle(title)}}{
+   Deletes title
+ }
+ \item{\code{addDCType(type)}}{
+   Adds type
+ }
+ \item{\code{delDCType(type)}}{
+   Deletes type
  }
 }
 }
 
 \examples{
-\dontrun{
-}
+  #encoding
+  dcentry <- DCEntry$new()
+  dcentry$setId("my-dc-entry")
+
+  #fill dc entry
+  dcentry$addDCDate(Sys.time())
+  dcentry$addDCTitle("atom4R - Tools to read/write and publish metadata as Atom XML format")
+  dcentry$addDCType("Software")
+  creator <- DCCreator$new(value = "Blondel, Emmanuel")
+  creator$attrs[["affiliation"]] <- "Independent"
+  dcentry$addDCCreator(creator)
+  dcentry$addDCSubject("R")
+  dcentry$addDCSubject("FAIR")
+  dcentry$addDCSubject("Interoperability")
+  dcentry$addDCSubject("Open Science")
+  dcentry$addDCDescription("Atom4R offers tools to read/write and publish metadata as Atom XML")
+  dcentry$addDCPublisher("GitHub")
+  funder <- DCContributor$new(value = "CNRS")
+  funder$attrs[["type"]] <- "Funder"
+  dcentry$addDCContributor(funder)
+  dcentry$addDCRelation("Github repository: https://github.com/eblondel/atom4R")
+  dcentry$addDCSource("Atom Syndication format - https://www.ietf.org/rfc/rfc4287")
+  dcentry$addDCSource("AtomPub, The Atom publishing protocol - https://tools.ietf.org/html/rfc5023")
+  dcentry$addDCSource("Sword API - http://swordapp.org/")
+  dcentry$addDCSource("Dublin Core Metadata Initiative - https://www.dublincore.org/")
+  dcentry$addDCSource("Guidelines for implementing Dublin Core in XML")
+  dcentry$addDCLicense("NONE")
+  dcentry$addDCRights("MIT License")
+
+  xml <- dcentry$encode()
+
+  #decoding
+  dcentry2 <- DCEntry$new(xml = xml)
+  xml2 <- dcentry2$encode()
 
 }
 \author{

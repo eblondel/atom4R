@@ -25,6 +25,9 @@ SwordClient
 
 SwordClient
 }
+\note{
+Abstract class
+}
 \section{Methods}{
 
 \describe{

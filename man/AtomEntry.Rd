@@ -19,7 +19,27 @@ AtomEntry
 \section{Fields}{
 
 \describe{
-\item{\code{id}}{}
+\item{\code{id}}{identifier}
+
+\item{\code{updated}}{Update date/time}
+
+\item{\code{published}}{Publication date/time}
+
+\item{\code{title}}{Title}
+
+\item{\code{summary}}{Summary}
+
+\item{\code{rights}}{Rights}
+
+\item{\code{source}}{Source}
+
+\item{\code{author}}{Author(s)}
+
+\item{\code{contributor}}{Contributor(s)}
+
+\item{\code{category}}{Category}
+
+\item{\code{content}}{Content}
 }}
 
 \section{Methods}{
@@ -28,12 +48,90 @@ AtomEntry
  \item{\code{new(xml)}}{
    This method is used to create an Atom
  }
+ \item{\code{setId(id)}}{
+   Set identifier
+ }
+ \item{\code{setUpdated(updated)}}{
+   Set update date (object of class 'character' or 'POSIX')
+ }
+ \item{\code{setPublished(published)}}{
+   Set publication date (object of class 'character' or 'POSIX')
+ }
+ \item{\code{setTitle(title)}}{
+   Set title
+ }
+ \item{\code{setSummary(summary)}}{
+   Set summary
+ }
+ \item{\code{setRights(rights)}}{
+   Set rights
+ }
+ \item{\code{setSource(source)}}{
+   Set source
+ }
+ \item{\code{addAuthor(author)}}{
+   Adds an author, object of class \code{AtomAuthor}
+ }
+ \item{\code{delAuthor(author)}}{
+   Deletes an author, object of class \code{AtomAuthor}
+ }
+ \item{\code{addContributor(contributor)}}{
+   Adds a contributor, object of class \code{AtomContributor}
+ }
+ \item{\code{delContributor(contributor)}}{
+   Deletes a contributor, object of class \code{AtomContributor}
+ }
+ \item{\code{addCategory(term, scheme, label)}}{
+   Adds a category
+ }
+ \item{\code{delCategory(term, scheme, label)}}{
+   Deletes a category
+ }
+ \item{\code{addLink(link, rel, type)}}{
+   Adds a link. Default \code{rel} value is set to "alternate". Default
+   \code{type} value is set to "text/html"
+ }
+ \item{\code{delLink(link, rel, type)}}{
+   Deletes a link
+ }
 }
 }
 
 \examples{
-\dontrun{
-}
+  #encoding
+  atom <- AtomEntry$new()
+  atom$setId("my-atom-entry")
+  atom$setTitle("My Atom feed entry")
+  atom$setSummary("My Atom feed entry very comprehensive abstract")
+  author1 <- AtomAuthor$new(
+    name = "John Doe",
+    uri = "http://www.atomxml.com/johndoe",
+    email = "johndoe@atom4R.com"
+  )
+  atom$addAuthor(author1)
+  author2 <- AtomAuthor$new(
+    name = "John Doe's sister",
+    uri = "http://www.atomxml.com/johndoesister",
+    email = "johndoesister@atom4R.com"
+  )
+  atom$addAuthor(author2)
+  contrib1 <- AtomContributor$new(
+    name = "Contrib1",
+    uri = "http://www.atomxml.com/contrib1",
+    email = "contrib1@atom4R.com"
+  )
+  atom$addContributor(contrib1)
+  contrib2 <- AtomContributor$new(
+    name = "Contrib2",
+    uri = "http://www.atomxml.com/contrib2",
+    email = "contrib2@atom4R.com"
+  )
+  atom$addContributor(contrib2)
+  atom$addCategory("dataset")
+  atom$addCategory("spatial")
+  atom$addCategory("fisheries")
+
+  xml <- atom$encode()
 
 }
 \author{

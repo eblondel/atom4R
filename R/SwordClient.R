@@ -23,6 +23,8 @@
 #'  }
 #' }
 #'
+#' @note Abstract class
+#'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 SwordClient <- R6Class("SwordClient",
@@ -132,6 +134,19 @@ SwordClient <- R6Class("SwordClient",
 #'    files will be deleted. Returns a \code{data.frame} specifying for each file \code{TRUE} if it has
 #'    been deleted, \code{FALSE} otherwise.
 #'  }
+#' }
+#'
+#' @examples
+#' \dontrun{
+#'    #connect to SWORD Dataverse API
+#'    SWORD <- SwordDataverseClient$new(
+#'      hostname = "localhost:8085",
+#'      token = "<token>",
+#'      logger = "DEBUG"
+#'    )
+#'
+#'    #for detailed operations check the wiki at:
+#'    #https://github.com/eblondel/atom4R/wiki#atom4R-publish-sword-dataverse
 #' }
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>

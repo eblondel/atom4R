@@ -7,7 +7,6 @@
 #' @import methods
 #' @import jsonlite
 #' @import XML
-#' @import plyr
 #' @importFrom zip zipr
 #'
 #' @title  Tools to read/write metadata in Atom XML format.

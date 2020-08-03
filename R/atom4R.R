@@ -8,6 +8,7 @@
 #' @import jsonlite
 #' @import XML
 #' @importFrom zip zipr
+#' @import rdflib
 #'
 #' @title  Tools to read/write metadata in Atom XML format.
 #' @description Provides tools to read/write/publish metadata based on the Atom XML syndication format.

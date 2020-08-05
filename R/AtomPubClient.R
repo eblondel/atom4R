@@ -35,8 +35,8 @@
 AtomPubClient <- R6Class("AtomPubClient",
   inherit = atom4RLogger,
   private = list(
-    url = NULL,
-    token = NULL
+    keyring_service = NULL,
+    url = NULL
   ),
   public = list(
 
@@ -46,7 +46,8 @@ AtomPubClient <- R6Class("AtomPubClient",
     initialize = function(url, token = NULL, logger = NULL){
       super$initialize(logger = logger)
       private$url = url
-      private$token = token
+      private$keyring_service <- paste0("atom4R@", url)
+      keyring::key_set_with_value(private$keyring_service, username = "atom4R", password = token)
     },
 
     #getServiceDocument

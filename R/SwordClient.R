@@ -247,7 +247,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       r <- NULL
       token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
-        r <- httr::with_verbose(httr::POST(path, httr::authenticate(ptoken, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody))
+        r <- httr::with_verbose(httr::POST(path, httr::authenticate(token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody))
       }else{
         r <- httr::POST(path, httr::authenticate(token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody)
       }

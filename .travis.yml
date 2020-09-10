@@ -32,6 +32,7 @@ matrix:
     - git clone https://github.com/IQSS/dataverse-docker
     - cd dataverse-docker
     - bash ./initial.bash
+    - docker network create traefik
     - docker-compose build
     - docker-compose up -d
     - cd $TRAVIS_BUILD_DIR

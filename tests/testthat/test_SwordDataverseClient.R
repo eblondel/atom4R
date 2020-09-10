@@ -22,6 +22,7 @@ test_that("list",{
 
 test_that("list Dataverses (Sword collections)",{
   cols <- API$listCollections() #or getDataverses()
+  cols
   expect_is(cols, "list")
   expect_true(length(cols)>0)
 })

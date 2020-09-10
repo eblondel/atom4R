@@ -37,6 +37,11 @@ matrix:
     - docker network create traefik
     - docker-compose build
     - docker-compose up -d
+    - docker exec -it postgres /bin/bash
+    - psql -U dvnuser dvndb
+    - select tokenstring from apitoken where id=1;
+    - \q
+    - exit
     - cd $TRAVIS_BUILD_DIR
 
 after_script:

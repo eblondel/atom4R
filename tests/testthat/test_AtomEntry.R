@@ -14,9 +14,9 @@ test_that("encoding",{
 
   #encoding
   atom <- AtomEntry$new()
-  atom$setId("my-atom-entry")
-  atom$setTitle("My Atom feed entry")
-  atom$setSummary("My Atom feed entry very comprehensive abstract")
+  atom$addId("my-atom-entry")
+  atom$addTitle("My Atom feed entry")
+  atom$addSummary("My Atom feed entry very comprehensive abstract")
   author1 <- AtomAuthor$new(
     name = "John Doe",
     uri = "http://www.atomxml.com/johndoe",
@@ -61,20 +61,20 @@ test_that("encoding - DC Elements",{
 
   #encoding
   atom <- AtomEntry$new()
-  atom$setId("my-dcmi-identifier")
+  atom$addId("my-dcmi-identifier")
 
   #dublin core terms
-  atom$setDCAccrualMethod("accmeth:itemCreation")
-  atom$setDCAccrualPeriodicity("freq:irregular")
-  atom$setDCAccrualPolicy("accpol:partial")
-  atom$setDCAlternative("My DCMI alternate title")
-  atom$setDCAccessRights("Free access rights")
-  atom$setDCBibliographicCitation("Blondel, 2020. My DCMI identifier. In: the scientific journal")
-  atom$setDCIdentifier("my-dcmi-identifier")
-  atom$setDCTitle("My DCMI title")
-  atom$setDCAbstract("My DCMI abstract")
-  atom$setDCDescription("My DCMI Description")
-  atom$setDCSpatial("Some spatial description about the record")
+  atom$addDCAccrualMethod("accmeth:itemCreation")
+  atom$addDCAccrualPeriodicity("freq:irregular")
+  atom$addDCAccrualPolicy("accpol:partial")
+  atom$addDCAlternative("My DCMI alternate title")
+  atom$addDCAccessRights("Free access rights")
+  atom$addDCBibliographicCitation("Blondel, 2020. My DCMI identifier. In: the scientific journal")
+  atom$addDCIdentifier("my-dcmi-identifier")
+  atom$addDCTitle("My DCMI title")
+  atom$addDCAbstract("My DCMI abstract")
+  atom$addDCDescription("My DCMI Description")
+  atom$addDCSpatial("Some spatial description about the record")
 
 
   xml <- atom$encode()

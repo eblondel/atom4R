@@ -7,6 +7,7 @@
 #' @import methods
 #' @import jsonlite
 #' @import XML
+#' @import httr
 #' @importFrom zip zipr
 #' @import rdflib
 #' @import keyring

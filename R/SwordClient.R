@@ -56,7 +56,7 @@ SwordClient <- R6Class("SwordClient",
        if(is.null(self$service) | force){
          path <- file.path(private$url, "service-document")
          self$INFO(sprintf("GET - Sword service document at '%s'", path))
-         token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+         token <- self$getToken()
          r <- httr::GET(path, httr::authenticate(token, ""))
          xml <- XML::xmlParse(httr::content(r, "text"))
          out <- SwordServiceDocument$new(xml = xml)

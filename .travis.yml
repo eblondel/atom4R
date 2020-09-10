@@ -28,6 +28,7 @@ matrix:
       - libv8-dev
       - libxml2-dev
       - libsodium-dev
+      - librdf0-dev
     before_install:
     - cd ..
     - git clone https://github.com/IQSS/dataverse-docker

@@ -9,14 +9,13 @@ require(XML)
 
 context("SwordDataverseClient")
 
-API <- NULL
+API <- SwordDataverseClient$new(
+  hostname = "localhost:8085",
+  token = "dbf293b4-d13e-45d4-99c6-f0cf18159f0d",
+  logger = "DEBUG"
+)
 
 test_that("list",{
-  API <- SwordDataverseClient$new(
-    hostname = "localhost:8085",
-    token = "dbf293b4-d13e-45d4-99c6-f0cf18159f0d",
-    logger = "DEBUG"
-  )
   expect_is(API, "SwordDataverseClient")
 })
 

@@ -11,7 +11,7 @@ context("SwordDataverseClient")
 
 API <- try(SwordDataverseClient$new(
   hostname = "http://localhost:8085",
-  token = Sys.getenv("API_TOKEN"),
+  token = "dbf293b4-d13e-45d4-99c6-f0cf18159f0d",
   logger = "DEBUG"
 ))
 

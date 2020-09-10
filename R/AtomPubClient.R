@@ -46,8 +46,15 @@ AtomPubClient <- R6Class("AtomPubClient",
     initialize = function(url, token = NULL, logger = NULL){
       super$initialize(logger = logger)
       private$url = url
-      private$keyring_service <- paste0("atom4R@", url)
-      keyring::key_set_with_value(private$keyring_service, username = "atom4R", password = token)
+      if((!is.character(token) && is.null(token)) | (is.character(token) && !nzchar(token))){
+        errMsg <- "A token is required"
+        self$ERROR(errMsg)
+        stop(errMsg)
+      }
+      if(!is.null(token)) if(nzchar(token)){
+        private$keyring_service <- paste0("atom4R@", url)
+        keyring::key_set_with_value(private$keyring_service, username = "atom4R", password = token)
+      }
     },
 
     #getServiceDocument

@@ -11,7 +11,6 @@ context("DCElement")
 
 test_that("encoding/decoding DCEntry",{
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
 
   #encoding
   dcentry <- DCEntry$new()

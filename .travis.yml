@@ -22,7 +22,7 @@ matrix:
     - covr
     env:
       matrix:
-      - NOT_CRAN=true
+      - API_TOKEN=dbf293b4-d13e-45d4-99c6-f0cf18159f0d
     services: docker
     apt_packages:
       - libv8-dev

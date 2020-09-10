@@ -39,6 +39,15 @@ SwordClient <- R6Class("SwordClient",
        super$initialize(url = url, token = token, logger = logger)
        if(version != "2") stop("Only SWORD API v2 is currently supported")
        private$version = version
+
+       serviceDoc <- try(self$getServiceDocument())
+       if(is(serviceDoc, "SwordServiceDocument")){
+         self$INFO(sprintf("Successfully connected to SWORD API at '%s'", url))
+       }else{
+         errMsg <- "Error while retrieving SWORD service document"
+         self$ERROR(errMsg)
+         stop(errMsg)
+       }
      },
 
      #getServiceDocument
@@ -156,8 +165,9 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
   inherit = SwordClient,
   public = list(
     initialize = function(hostname, token = NULL, logger = NULL){
+      sword_api_url <- file.path(hostname, "dvn/api/data-deposit/v1.1/swordv2")
       super$initialize(
-        url = file.path(hostname, "dvn/api/data-deposit/v1.1/swordv2"),
+        url = sword_api_url,
         version = "2",
         token = token,
         logger = logger

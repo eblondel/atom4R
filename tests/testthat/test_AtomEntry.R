@@ -14,9 +14,9 @@ test_that("encoding",{
 
   #encoding
   atom <- AtomEntry$new()
-  atom$addId("my-atom-entry")
-  atom$addTitle("My Atom feed entry")
-  atom$addSummary("My Atom feed entry very comprehensive abstract")
+  atom$setId("my-atom-entry")
+  atom$setTitle("My Atom feed entry")
+  atom$setSummary("My Atom feed entry very comprehensive abstract")
   author1 <- AtomAuthor$new(
     name = "John Doe",
     uri = "http://www.atomxml.com/johndoe",
@@ -60,8 +60,8 @@ test_that("encoding - DC Elements",{
   testthat::skip_on_cran()
 
   #encoding
-  atom <- AtomEntry$new()
-  atom$addId("my-dcmi-identifier")
+  atom <- DCEntry$new()
+  atom$setId("my-dcmi-identifier")
 
   #dublin core terms
   atom$addDCAccrualMethod("accmeth:itemCreation")
@@ -74,14 +74,12 @@ test_that("encoding - DC Elements",{
   atom$addDCTitle("My DCMI title")
   atom$addDCAbstract("My DCMI abstract")
   atom$addDCDescription("My DCMI Description")
-  atom$addDCSpatial("Some spatial description about the record")
-
 
   xml <- atom$encode()
   expect_is(atom, "AtomEntry")
 
   #decoding
-  atom2 <- AtomEntry$new(xml = xml)
+  atom2 <- DCEntry$new(xml = xml)
   xml2 <- atom2$encode()
 
   expect_true(AtomAbstractObject$compare(atom, atom2))

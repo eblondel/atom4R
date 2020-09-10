@@ -58,6 +58,8 @@ AtomPubClient <- R6Class("AtomPubClient",
         private$keyring_service <- paste0("atom4R@", url)
         keyring::key_set_with_value(private$keyring_service, username = "atom4R", password = token)
       }
+
+      self$WARN(sprintf("Token is '%s'", self$getToken()))
     },
 
     #getToken

@@ -180,8 +180,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       if(is.null(self$service) | force){
         path <- file.path(private$url, "service-document")
         self$INFO(sprintf("GET - Sword Dataverse service document at '%s'", path))
-        token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
-        r <- httr::GET(path, httr::authenticate(token, ""))
+        r <- httr::GET(path, httr::authenticate(self$getToken(), ""))
         httr::stop_for_status(r)
         xml <- XML::xmlParse(httr::content(r, "text"))
         out <- SwordServiceDocument$new(xml = xml)
@@ -196,8 +195,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
     getCollectionMembers = function(collectionId){
       path <- file.path(private$url, "collection/dataverse", collectionId)
       self$INFO(sprintf("GET - Sword Dataverse Atom Feed document at '%s'", path))
-      token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
-      r <- httr::GET(path, httr::authenticate(token, ""))
+      r <- httr::GET(path, httr::authenticate(self$getToken(), ""))
       httr::stop_for_status(r)
       xml <- XML::xmlParse(httr::content(r, "text"))
       out <- AtomFeed$new(xml = xml)
@@ -218,7 +216,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
     editDataverseEntry = function(identifier){
       path <- file.path(private$url, "edit/study", identifier)
       self$INFO(sprintf("GET - Sword Dataverse Atom Entry document at '%s'", path))
-      token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+      token <- self$getToken()
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
         r <- httr::with_verbose(httr::GET(path, httr::authenticate(token, "")))
       }else{
@@ -234,7 +232,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
     getDataverseRecord = function(identifier){
       path <- file.path(private$url, "statement/study", identifier)
       self$INFO(sprintf("GET - Sword Dataverse Atom Entry document at '%s'", path))
-      token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+      token <- self$getToken()
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
         r <- httr::with_verbose(httr::GET(path, httr::authenticate(token, "")))
       }else{
@@ -255,7 +253,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       path <- file.path(private$url, "collection/dataverse", dataverse)
       self$INFO(sprintf("POST - Sword Dataverse Atom Entry document creation at '%s'", path))
       r <- NULL
-      token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+      token <- self$getToken()
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
         r <- httr::with_verbose(httr::POST(path, httr::authenticate(token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody))
       }else{
@@ -280,7 +278,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       path <- file.path(private$url, "edit/study", identifier)
       self$INFO(sprintf("POST - Sword Dataverse Atom Entry document at update '%s'", path))
       r <- NULL
-      token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+      token <- self$getToken()
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
         r <- httr::with_verbose(httr::PUT(path, httr::authenticate(token, ""),  httr::add_headers("Content-Type" = "application/atom+xml"), body = ebody))
       }else{
@@ -299,7 +297,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
     deleteDataverseRecord = function(identifier){
       path <- file.path(private$url, "edit/study", identifier)
       self$INFO(sprintf("DELETE - Sword Dataverse Atom Entry document at '%s'", path))
-      token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+      token <- self$getToken()
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
         r <- httr::with_verbose(httr::DELETE(path, httr::authenticate(token, "")))
       }else{
@@ -315,7 +313,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       path <- file.path(private$url, "edit/study", identifier)
       self$INFO(sprintf("POST - Sword Dataverse Atom Entry record publication at '%s'", path))
       r <- NULL
-      token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+      token <- self$getToken()
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
         r <- httr::with_verbose(httr::POST(path, httr::authenticate(token, ""),
                                            httr::add_headers("In-Progress" = "false")))
@@ -347,7 +345,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
         "Content-Type" = "application/zip",
         "Packaging" = "http://purl.org/net/sword/package/SimpleZip"
       )
-      token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+      token <- self$getToken()
       if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
         r <- httr::with_verbose(httr::POST(path, httr::authenticate(token, ""), h,
                                            body = httr::upload_file(tmpfile)))
@@ -387,7 +385,7 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
           if(any(endsWith(remote_files, x))){
             path <- remote_files[endsWith(remote_files, x)][1]
             self$INFO(sprintf("DELETE - Sword Dataverse Remove files from record '%s'", path))
-            token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+            token <- self$getToken()
             if(!is.null(self$loggerType)) if(self$loggerType=="DEBUG"){
               r <- httr::with_verbose(httr::DELETE(path, httr::authenticate(token, "")))
             }else{

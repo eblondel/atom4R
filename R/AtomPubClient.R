@@ -16,6 +16,9 @@
 #'  \item{\code{new(url, token)}}{
 #'    This method is to instantiate an AtomPub Client
 #'  }
+#'  \item{\code{getToken()}}{
+#'    Retrieves user token.
+#'  }
 #'  \item{\code{getServiceDocument()}}{
 #'    Gets service document description. Unimplemented in abstract classes.
 #'  }
@@ -55,6 +58,15 @@ AtomPubClient <- R6Class("AtomPubClient",
         private$keyring_service <- paste0("atom4R@", url)
         keyring::key_set_with_value(private$keyring_service, username = "atom4R", password = token)
       }
+    },
+
+    #getToken
+    getToken = function(){
+      token <- NULL
+      if(!is.null(private$keyring_service)){
+        token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+      }
+      return(token)
     },
 
     #getServiceDocument

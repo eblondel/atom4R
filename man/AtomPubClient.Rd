@@ -25,6 +25,9 @@ Abstract class used internally for AtomPub (Atom Publishing Protocol) clients
  \item{\code{new(url, token)}}{
    This method is to instantiate an AtomPub Client
  }
+ \item{\code{getToken()}}{
+   Retrieves user token.
+ }
  \item{\code{getServiceDocument()}}{
    Gets service document description. Unimplemented in abstract classes.
  }

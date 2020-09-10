@@ -25,6 +25,7 @@ matrix:
       - NOT_CRAN=true
     services: docker
     apt_packages:
+      - libv8-dev
       - libxml2-dev
       - libsodium-dev
     before_install:

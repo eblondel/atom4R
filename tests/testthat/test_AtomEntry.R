@@ -41,9 +41,9 @@ test_that("encoding",{
     email = "contrib2@atom4R.com"
   )
   atom$addContributor(contrib2)
-  atom$addCategory("dataset")
-  atom$addCategory("spatial")
-  atom$addCategory("fisheries")
+  atom$addCategory("DRAFT", "dataset")
+  atom$addCategory("World", "spatial")
+  atom$addCategory("Tuna", "fishery")
 
   xml <- atom$encode()
   expect_is(atom, "AtomEntry")

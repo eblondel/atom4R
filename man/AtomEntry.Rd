@@ -81,10 +81,10 @@ AtomEntry
  \item{\code{delContributor(contributor)}}{
    Deletes a contributor, object of class \code{AtomContributor}
  }
- \item{\code{addCategory(term, scheme, label)}}{
+ \item{\code{addCategory(value, term, scheme, label)}}{
    Adds a category
  }
- \item{\code{delCategory(term, scheme, label)}}{
+ \item{\code{delCategory(value, term, scheme, label)}}{
    Deletes a category
  }
  \item{\code{addLink(link, rel, type)}}{

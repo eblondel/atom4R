@@ -841,7 +841,7 @@ AtomAbstractObject$getClassByNode = function(node){
   for(classname in list_of_classes){
     clazz <- try(eval(parse(text=classname)))
     if(nodeElementName %in% clazz$private_fields$xmlElement &&
-       toupper(names(nodeElementNs)) == clazz$private_fields$xmlNamespacePrefix){
+       nodeElementNs[[1]]$uri == getAtomNamespace(clazz$private_fields$xmlNamespacePrefix)$uri){
       atom4R_inherits <- FALSE
       superclazz <- clazz
       while(!atom4R_inherits){

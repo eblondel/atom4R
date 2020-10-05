@@ -46,10 +46,12 @@ AtomCategory <- R6Class("AtomCategory",
   ),
   public = list(
     attrs = list(),
-    initialize = function(xml = NULL,
+    value = NULL,
+    initialize = function(xml = NULL, value = NULL,
                           term = NULL, scheme = NULL, label = NULL) {
       super$initialize(xml = xml, wrap = FALSE)
       if(is.null(xml)){
+        self$value = value
         if(!is.null(term)) self$setTerm(term)
         if(!is.null(scheme)) self$setScheme(scheme)
         if(!is.null(label)) self$setLabel(label)

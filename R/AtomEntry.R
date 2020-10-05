@@ -61,10 +61,10 @@
 #'  \item{\code{delContributor(contributor)}}{
 #'    Deletes a contributor, object of class \code{AtomContributor}
 #'  }
-#'  \item{\code{addCategory(term, scheme, label)}}{
+#'  \item{\code{addCategory(value, term, scheme, label)}}{
 #'    Adds a category
 #'  }
-#'  \item{\code{delCategory(term, scheme, label)}}{
+#'  \item{\code{delCategory(value, term, scheme, label)}}{
 #'    Deletes a category
 #'  }
 #'  \item{\code{addLink(link, rel, type)}}{
@@ -215,15 +215,15 @@ AtomEntry <- R6Class("AtomEntry",
     },
 
     #addCategory
-    addCategory = function(term, scheme = NULL, label = NULL){
-      category <- AtomCategory$new(term = term, scheme = scheme, label = label)
+    addCategory = function(value, term, scheme = NULL, label = NULL){
+      category <- AtomCategory$new(value = value, term = term, scheme = scheme, label = label)
       self$category[[length(self$category)+1]] <- category
       return(TRUE)
     },
 
     #delCategory
-    delCategory = function(term, scheme = NULL, label = NULL){
-      category <- AtomCategory$new(term = term, scheme = scheme, label = label)
+    delCategory = function(value, term, scheme = NULL, label = NULL){
+      category <- AtomCategory$new(value = value, term = term, scheme = scheme, label = label)
       catLength <- length(self$category)
       if(length(self$category)>0){
         self$category <- self$category[sapply(self$category, function(x){

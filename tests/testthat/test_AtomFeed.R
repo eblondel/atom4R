@@ -44,9 +44,9 @@ test_that("encoding",{
   atom$setIcon("https://via.placeholder.com/300x150.png/03f/fff?text=atom4R")
   atom$setSelfLink("http://example.com/atom.feed")
   atom$setAlternateLink("http://example.com/my-atom-feed")
-  atom$addCategory("dataset")
-  atom$addCategory("spatial")
-  atom$addCategory("fisheries")
+  atom$addCategory("DRAFT", "dataset")
+  atom$addCategory("World", "spatial")
+  atom$addCategory("Tuna", "fishery")
 
   #add entry
   entry <- AtomEntry$new()
@@ -77,9 +77,9 @@ test_that("encoding",{
     email = "contrib2@atom4R.com"
   )
   entry$addContributor(contrib2)
-  entry$addCategory("dataset")
-  entry$addCategory("spatial")
-  entry$addCategory("fisheries")
+  entry$addCategory("DRAFT", "dataset")
+  entry$addCategory("World", "spatial")
+  entry$addCategory("Tuna", "fishery")
 
   atom$addEntry(entry)
 

@@ -6,15 +6,40 @@
 require(atom4R, quietly = TRUE)
 require(testthat)
 require(XML)
+require(httr)
 
 context("SwordDataverseClient")
 
-Sys.sleep(time = 60)
-API <- try(SwordDataverseClient$new(
-  hostname = "http://localhost:8085",
-  token = "dbf293b4-d13e-45d4-99c6-f0cf18159f0d",
-  logger = "DEBUG"
-))
+#sleep during Dataverse configuration
+message("Dataverse server: sleeping during server configuration...")
+Sys.sleep(time = 30)
+ping <- try(status_code(GET('http://localhost:8085/')), silent = TRUE)
+while(is(ping, "try-error") || ping == 500){
+  message("Dataverse server doesn't seem ready, sleeping 30s more...")
+  Sys.sleep(time = 30)
+  ping <- try(status_code(GET('http://localhost:8085/')), silent = TRUE)
+}
+message("Dataverse server ready for testing...")
+
+#config dataverse SWORD API
+initAPI <- function(){
+  return(
+    try(SwordDataverseClient$new(
+      hostname = "http://localhost:8085",
+      token = "dbf293b4-d13e-45d4-99c6-f0cf18159f0d",
+      logger = "DEBUG"
+    ), silent = TRUE)
+  )
+}
+message("Dataverse SWORD API: sleeping during API configuration...")
+Sys.sleep(30)
+API <- initAPI()
+while(is(API, "try-error")){
+  message("Dataverse SWORD API doesn't seem ready: sleeping 30s more...")
+  Sys.sleep(30)
+  API <- initAPI()
+}
+message("Dataverse SWORD API ready for testing...")
 
 if(is(API, "SwordDataverseClient")){
 
@@ -40,7 +65,7 @@ if(is(API, "SwordDataverseClient")){
     dcentry$addDCTitle("atom4R - Tools to read/write and publish metadata as Atom XML format")
     dcentry$addDCType("Software")
     creator <- DCCreator$new(value = "Blondel, Emmanuel")
-    creator$attrs[["affiliation"]] <- "Independent"
+    #creator$attrs[["affiliation"]] <- "Independent"
     dcentry$addDCCreator(creator)
     dcentry$addDCSubject("R")
     dcentry$addDCSubject("FAIR")
@@ -51,9 +76,10 @@ if(is(API, "SwordDataverseClient")){
     dcentry$addDCPublisher("GitHub")
 
     funder <- DCContributor$new(value = "CNRS")
-    funder$attrs[["type"]] <- "Funder"
+    #funder$attrs[["type"]] <- "Funder"
     dcentry$addDCContributor(funder)
     dcentry$addDCRelation("Github repository: https://github.com/eblondel/atom4R")
+    dcentry$addDCRelation("CRAN repository: Not yet available")
     dcentry$addDCSource("Atom Syndication format - https://www.ietf.org/rfc/rfc4287")
     dcentry$addDCSource("AtomPub, The Atom publishing protocol - https://tools.ietf.org/html/rfc5023")
     dcentry$addDCSource("Sword API - http://swordapp.org/")
@@ -62,7 +88,7 @@ if(is(API, "SwordDataverseClient")){
     dcentry$addDCLicense("NONE")
     dcentry$addDCRights("MIT License")
 
-    out <- API$createDataverseRecord("Root", dcentry)
+    out <- API$createDataverseRecord("dynids", dcentry)
 
     expect_is(out, "AtomEntry")
   })

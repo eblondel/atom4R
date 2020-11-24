@@ -33,7 +33,7 @@ matrix:
     - bash ./initial.bash
     #- docker network create traefik
     - docker-compose build
-    - docker-compose -f docker-compose-local.yml up
+    - docker-compose -f docker-compose-local.yml -d up
     #- docker-compose up -d
     - cd $TRAVIS_BUILD_DIR
 

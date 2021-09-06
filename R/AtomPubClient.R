@@ -38,6 +38,7 @@
 AtomPubClient <- R6Class("AtomPubClient",
   inherit = atom4RLogger,
   private = list(
+    keyring_backend = keyring::backend_env$new(),
     keyring_service = NULL,
     url = NULL
   ),
@@ -56,7 +57,7 @@ AtomPubClient <- R6Class("AtomPubClient",
       }
       if(!is.null(token)) if(nzchar(token)){
         private$keyring_service <- paste0("atom4R@", url)
-        keyring::key_set_with_value(private$keyring_service, username = "atom4R", password = token)
+        private$keyring_backend$set_with_value(private$keyring_service, username = "atom4R", password = token)
       }
 
       self$WARN(sprintf("Token is '%s'", self$getToken()))
@@ -66,7 +67,7 @@ AtomPubClient <- R6Class("AtomPubClient",
     getToken = function(){
       token <- NULL
       if(!is.null(private$keyring_service)){
-        token <- keyring::key_get(service = private$keyring_service, username = "atom4R")
+        token <- private$keyring_backend$get(service = private$keyring_service, username = "atom4R")
       }
       return(token)
     },

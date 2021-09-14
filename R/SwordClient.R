@@ -13,8 +13,12 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(url, version, token, logger)}}{
+#'  \item{\code{new(url, version, token, logger, keyring_backend)}}{
 #'    This method is to instantiate an Sword Client. By default the version is set to "2".
+#'
+#'    The \code{keyring_backend} can be set to use a different backend for storing
+#'    the SWORD API user token with \pkg{keyring} (Default value is 'env').
+#'
 #'    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
 #'    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
 #'  }
@@ -35,8 +39,9 @@ SwordClient <- R6Class("SwordClient",
    public = list(
 
      #initialize
-     initialize = function(url, version = "2", token = NULL, logger = NULL){
-       super$initialize(url = url, token = token, logger = logger)
+     initialize = function(url, version = "2", token = NULL, logger = NULL,
+                           keyring_backend = 'env'){
+       super$initialize(url = url, token = token, logger = logger, keyring_backend = keyring_backend)
        if(version != "2") stop("Only SWORD API v2 is currently supported")
        private$version = version
 
@@ -96,8 +101,12 @@ SwordClient <- R6Class("SwordClient",
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(url, token, logger)}}{
+#'  \item{\code{new(url, token, logger, keyring_backend)}}{
 #'    This method is to instantiate an Sword API Dataverse-specific Client.
+#'
+#'    The \code{keyring_backend} can be set to use a different backend for storing
+#'    the SWORD DataVerse API user token with \pkg{keyring} (Default value is 'env').
+#'
 #'    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
 #'    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
 #'  }
@@ -164,13 +173,15 @@ SwordClient <- R6Class("SwordClient",
 SwordDataverseClient <- R6Class("SwordDataverseClient",
   inherit = SwordClient,
   public = list(
-    initialize = function(hostname, token = NULL, logger = NULL){
+    initialize = function(hostname, token = NULL, logger = NULL,
+                          keyring_backend = 'env'){
       sword_api_url <- file.path(hostname, "dvn/api/data-deposit/v1.1/swordv2")
       super$initialize(
         url = sword_api_url,
         version = "2",
         token = token,
-        logger = logger
+        logger = logger,
+        keyring_backend = keyring_backend
       )
     },
 

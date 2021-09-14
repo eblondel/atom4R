@@ -1,22 +1,24 @@
-#' SwordClient
+#' SwordServiceDocument
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
 #'
-#' @name SwordClient
-#' @title SwordClient class
-#' @description This class models an Sword service client
+#' @name SwordServiceDocument
+#' @title SwordServiceDocument class
+#' @description This class models an Sword service document
 #' @keywords Atom Person
-#' @return Object of \code{\link{R6Class}} for modelling an Sword client
+#' @return Object of \code{\link{R6Class}} for modelling an Sword service document
 #' @format \code{\link{R6Class}} object.
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(url, user, password, token)}}{
-#'    This method is to instantiate an Sword Client
+#'  \item{\code{new(xml, logger)}}{
+#'    This method is to instantiate an SwordServiceDocument
 #'  }
 #' }
+#'
+#' @note class used internally by \pkg{atom4R}
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

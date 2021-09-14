@@ -28,8 +28,12 @@ SwordDataverseClient
 \section{Methods}{
 
 \describe{
- \item{\code{new(url, token, logger)}}{
+ \item{\code{new(url, token, logger, keyring_backend)}}{
    This method is to instantiate an Sword API Dataverse-specific Client.
+
+   The \code{keyring_backend} can be set to use a different backend for storing
+   the SWORD DataVerse API user token with \pkg{keyring} (Default value is 'env').
+
    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
  }

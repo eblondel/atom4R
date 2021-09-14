@@ -22,8 +22,14 @@ Abstract class used internally for AtomPub (Atom Publishing Protocol) clients
 \section{Methods}{
 
 \describe{
- \item{\code{new(url, token)}}{
-   This method is to instantiate an AtomPub Client
+ \item{\code{new(url, token, keyring_backend)}}{
+   This method is to instantiate an AtomPub Client.
+
+   The \code{keyring_backend} can be set to use a different backend for storing
+   the Atom pub user token with \pkg{keyring} (Default value is 'env').
+
+   The logger can be either NULL, "INFO" (with minimum logs), or "DEBUG"
+   (for complete curl http calls logs)
  }
  \item{\code{getToken()}}{
    Retrieves user token.

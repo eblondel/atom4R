@@ -13,8 +13,14 @@
 #'
 #' @section Methods:
 #' \describe{
-#'  \item{\code{new(url, token)}}{
-#'    This method is to instantiate an AtomPub Client
+#'  \item{\code{new(url, token, keyring_backend)}}{
+#'    This method is to instantiate an AtomPub Client.
+#'
+#'    The \code{keyring_backend} can be set to use a different backend for storing
+#'    the Atom pub user token with \pkg{keyring} (Default value is 'env').
+#'
+#'    The logger can be either NULL, "INFO" (with minimum logs), or "DEBUG"
+#'    (for complete curl http calls logs)
 #'  }
 #'  \item{\code{getToken()}}{
 #'    Retrieves user token.
@@ -38,7 +44,7 @@
 AtomPubClient <- R6Class("AtomPubClient",
   inherit = atom4RLogger,
   private = list(
-    keyring_backend = keyring::backend_env$new(),
+    keyring_backend = NULL,
     keyring_service = NULL,
     url = NULL
   ),
@@ -47,7 +53,8 @@ AtomPubClient <- R6Class("AtomPubClient",
     service = NULL,
 
     #initialize
-    initialize = function(url, token = NULL, logger = NULL){
+    initialize = function(url, token = NULL, logger = NULL,
+                          keyring_backend = 'env'){
       super$initialize(logger = logger)
       private$url = url
       if((!is.character(token) && is.null(token)) | (is.character(token) && !nzchar(token))){
@@ -56,6 +63,12 @@ AtomPubClient <- R6Class("AtomPubClient",
         stop(errMsg)
       }
       if(!is.null(token)) if(nzchar(token)){
+        if(!keyring_backend %in% names(keyring:::known_backends)){
+          errMsg <- sprintf("Backend '%s' is not a known keyring backend!", keyring_backend)
+          self$ERROR(errMsg)
+          stop(errMsg)
+        }
+        private$keyring_backend <- keyring:::known_backends[[keyring_backend]]$new()
         private$keyring_service <- paste0("atom4R@", url)
         private$keyring_backend$set_with_value(private$keyring_service, username = "atom4R", password = token)
       }

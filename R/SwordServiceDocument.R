@@ -30,6 +30,7 @@ SwordServiceDocument <- R6Class("SwordServiceDocument",
      #initialize
      initialize = function(xml, logger = NULL){
        super$initialize(logger = logger)
+       print(xml)
        title <- getNodeSet(xml, "//app:workspace/atom:title", c(app = "http://www.w3.org/2007/app", atom = "http://www.w3.org/2005/Atom"))
        if(length(title)>0) self$title <- xmlValue(title[[1]])
        cols <- getNodeSet(xml, "//ns:workspace/ns:collection", c(ns = "http://www.w3.org/2007/app"))

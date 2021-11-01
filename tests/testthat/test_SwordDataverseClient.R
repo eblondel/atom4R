@@ -76,9 +76,19 @@ if(is(API, "SwordDataverseClient")){
     dcentry$addDCPublisher("GitHub")
 
     funder <- DCContributor$new(value = "CNRS")
-    #funder$attrs[["type"]] <- "Funder"
+    funder$attrs[["Type"]] <- "Funder"
     dcentry$addDCContributor(funder)
+
+    contact <- DCContributor$new(value = "wilfried.heintz@inrae.fr")
+    contact$attrs[["Type"]] <- "Contact"
+    dcentry$addDCContributor(contact)
+
+    editor <- DCContributor$new(value = "geoflow@geoflow.io")
+    editor$attrs[["Type"]] <- "Editor"
+    dcentry$addDCContributor(editor)
+
     dcentry$addDCRelation("Github repository: https://github.com/eblondel/atom4R")
+    relation = DCRelation$new()
     dcentry$addDCRelation("CRAN repository: Not yet available")
     dcentry$addDCSource("Atom Syndication format - https://www.ietf.org/rfc/rfc4287")
     dcentry$addDCSource("AtomPub, The Atom publishing protocol - https://tools.ietf.org/html/rfc5023")

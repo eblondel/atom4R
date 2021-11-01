@@ -275,6 +275,20 @@ DCContributor <- R6Class("DCContributor",
      }
    )
 )
+#'@export
+DCTContributor <- R6Class("DCTContributor",
+   inherit = DCContributor,
+   private = list(
+     xmlElement = "contributor",
+     xmlNamespacePrefix = "DCTERMS",
+     document = FALSE
+   ),
+   public = list(
+     initialize = function(xml = NULL, value = NULL){
+       super$initialize(xml = xml, value = value)
+     }
+   )
+)
 
 #'@export
 DCCoverage <- R6Class("DCCoverage",
@@ -318,6 +332,20 @@ DCCreator <- R6Class("DCCreator",
    public = list(
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
+     }
+   )
+)
+#'@export
+DCTCreator <- R6Class("DCTCreator",
+   inherit = DCCreator,
+   private = list(
+     xmlElement = "creator",
+     xmlNamespacePrefix = "DCTERMS",
+     document = FALSE
+   ),
+   public = list(
+     initialize = function(xml = NULL, value = NULL){
+       super$initialize(xml = xml, value = value)
      }
    )
 )

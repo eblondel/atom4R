@@ -1,4 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^\.travis\.yml$
 dataverse-docker
+.github
+debug.R
+^.*\.xml$

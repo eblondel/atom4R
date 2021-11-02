@@ -106,9 +106,9 @@
 #'     email = "contrib2@@atom4R.com"
 #'   )
 #'   atom$addContributor(contrib2)
-#'   atom$addCategory("dataset")
-#'   atom$addCategory("spatial")
-#'   atom$addCategory("fisheries")
+#'   atom$addCategory("draft", "dataset")
+#'   atom$addCategory("world", "spatial")
+#'   atom$addCategory("fisheries", "domain")
 #'
 #'   xml <- atom$encode()
 #'

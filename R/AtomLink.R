@@ -11,12 +11,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Atom Link
 #' @format \code{\link{R6Class}} object.
 #'
-#'
-#' @examples
-#' \dontrun{
-
-#' }
-#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(xml)}}{

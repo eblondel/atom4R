@@ -15,12 +15,14 @@
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 registerAtomSchema <- function(xsdFile){
-  schemas <- tryCatch(
+  schemas <- tryCatch({
+    isSourceUrl <- regexpr("(http|https)[^([:blank:]|\\\"|<|&|#\n\r)]+", xsdFile) > 0
+    if(isSourceUrl) xsdFile <- httr::content(httr::GET(xsdFile),"text")
     XML::xmlParse(
       xsdFile, isSchema = TRUE, xinclude = TRUE,
       error = function (msg, code, domain, line, col, level, filename, class = "XMLError"){}
     )
-  )
+  })
   .atom4R$schemas <- schemas
 }
 

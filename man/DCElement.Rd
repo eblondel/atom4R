@@ -22,6 +22,9 @@ DCElement
 \item{\code{value}}{}
 }}
 
+\note{
+Class used internally by \pkg{atom4R}
+}
 \section{Methods}{
 
 \describe{

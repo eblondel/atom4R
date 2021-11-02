@@ -23,14 +23,13 @@ jobs:
       #Dataverse set-up
       - name: Set up DataVerse
         run: |
-          cd ..
           git clone https://github.com/IQSS/dataverse-docker
           cd dataverse-docker
           bash ./initial.bash
           docker network create traefik
           docker-compose build
           docker-compose up -d
-          cd ${GITHUB_WORKSPACE}
+          docker ps
       #R Tests
       #--------------------------
       #R Set-up

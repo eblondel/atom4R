@@ -30,7 +30,7 @@ jobs:
           docker network create traefik
           docker-compose build
           docker-compose up -d
-          cd $GITHUB_WORKSPACE
+          cd ${GITHUB_WORKSPACE}
       #R Tests
       #--------------------------
       #R Set-up

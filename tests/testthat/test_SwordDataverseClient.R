@@ -13,11 +13,11 @@ context("SwordDataverseClient")
 #sleep during Dataverse configuration
 message("Dataverse server: sleeping during server configuration...")
 Sys.sleep(time = 30)
-ping <- try(status_code(GET('http://localhost:8085/')), silent = TRUE)
+ping <- try(status_code(GET('http://dataverse-dev.localhost:8085/')), silent = TRUE)
 while(is(ping, "try-error") || ping == 500){
   message("Dataverse server doesn't seem ready, sleeping 30s more...")
   Sys.sleep(time = 30)
-  ping <- try(status_code(GET('http://localhost:8085/')), silent = TRUE)
+  ping <- try(status_code(GET('http://dataverse-dev.localhost:8085/')), silent = TRUE)
 }
 message("Dataverse server ready for testing...")
 
@@ -25,7 +25,7 @@ message("Dataverse server ready for testing...")
 initAPI <- function(){
   return(
     try(SwordDataverseClient$new(
-      hostname = "http://localhost:8085",
+      hostname = "http://dataverse-dev.localhost:8085",
       token = "dbf293b4-d13e-45d4-99c6-f0cf18159f0d",
       logger = "DEBUG"
     ), silent = TRUE)

@@ -23,6 +23,7 @@ jobs:
       #Dataverse set-up
       - name: Set up DataVerse
         run: |
+          cd ..
           git clone https://github.com/IQSS/dataverse-docker
           cd dataverse-docker
           bash ./initial.bash
@@ -30,6 +31,7 @@ jobs:
           docker-compose build
           docker-compose up -d
           docker ps
+          cd ${GITHUB_WORKSPACE}
       #R Tests
       #--------------------------
       #R Set-up

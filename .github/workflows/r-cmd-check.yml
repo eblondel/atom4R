@@ -29,7 +29,7 @@ jobs:
           bash ./initial.bash
           docker network create traefik
           docker-compose build
-          docker-compose up -d
+          docker-compose -f docker-compose-local.yml up
           docker ps
           cd ${GITHUB_WORKSPACE}
       #R Tests

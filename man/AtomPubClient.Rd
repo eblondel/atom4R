@@ -22,7 +22,7 @@ Abstract class used internally for AtomPub (Atom Publishing Protocol) clients
 \section{Methods}{
 
 \describe{
- \item{\code{new(url, token, keyring_backend)}}{
+ \item{\code{new(url, user, pwd, token, keyring_backend)}}{
    This method is to instantiate an AtomPub Client.
 
    The \code{keyring_backend} can be set to use a different backend for storing
@@ -30,6 +30,12 @@ Abstract class used internally for AtomPub (Atom Publishing Protocol) clients
 
    The logger can be either NULL, "INFO" (with minimum logs), or "DEBUG"
    (for complete curl http calls logs)
+ }
+ \item{\code{getUser()}}{
+   Retrieves user (if any specified).
+ }
+ \item{\code{getPwd()}}{
+   Retrieves user password (if any user specified).
  }
  \item{\code{getToken()}}{
    Retrieves user token.

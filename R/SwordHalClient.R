@@ -68,8 +68,14 @@ SwordHalClient <- R6Class("SwordHalClient",
      },
 
      #getCollectionMembers
-     getCollectionMembers = function(){
-       stop("'getCollectionMembers' not implemented in Sword abstract client")
+     getCollectionMembers = function(collectionId){
+       path <- file.path(private$url, collectionId)
+       self$INFO(sprintf("GET - Sword HAL Atom Feed document at '%s'", path))
+       r <- httr::GET(path, httr::authenticate(self$getUser(), self$getPwd()))
+       httr::stop_for_status(r)
+       xml <- XML::xmlParse(httr::content(r, "text"))
+       out <- AtomFeed$new(xml = xml)
+       return(out)
      }
    )
 )

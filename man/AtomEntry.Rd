@@ -98,6 +98,7 @@ AtomEntry
 }
 
 \examples{
+ \dontrun{
   #encoding
   atom <- AtomEntry$new()
   atom$setId("my-atom-entry")
@@ -132,6 +133,7 @@ AtomEntry
   atom$addCategory("fisheries", "domain")
 
   xml <- atom$encode()
+ }
 
 }
 \author{

@@ -77,6 +77,7 @@
 #' }
 #'
 #' @examples
+#'  \dontrun{
 #'   #encoding
 #'   atom <- AtomEntry$new()
 #'   atom$setId("my-atom-entry")
@@ -111,6 +112,7 @@
 #'   atom$addCategory("fisheries", "domain")
 #'
 #'   xml <- atom$encode()
+#'  }
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

@@ -1,15 +1,15 @@
 Package: atom4R
 Version: 0.1
 Date: 2021-12-07
-Title: Tools to Handle and Publish Metadata as Atom XML Format
+Title: Tools to Handle and Publish Metadata as 'Atom' XML Format
 Authors@R: c(
   person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")))
 Maintainer: Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 Depends: R (>= 3.3), methods
 Imports: R6, jsonlite, XML, httr, zip, rdflib, keyring
 Suggests: testthat
-Description: Provides tools to read/write/publish metadata based on the Atom XML syndication format. This includes
- support of Dublin Core XML implementation, and a client to APIs implementing the AtomPub SWORD API specification.
+Description: Provides tools to read/write/publish metadata based on the 'Atom' XML syndication format. This includes
+ support of 'Dublin Core' XML implementation, and a client to API(s) implementing the 'AtomPub' 'SWORD' API specification.
 License: MIT + file LICENSE
 URL: https://github.com/eblondel/atom4R
 BugReports: https://github.com/eblondel/atom4R

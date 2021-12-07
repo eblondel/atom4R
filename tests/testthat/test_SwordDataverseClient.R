@@ -10,6 +10,8 @@ require(httr)
 
 context("SwordDataverseClient")
 
+if(FALSE){
+
 #sleep during Dataverse configuration
 message("Dataverse server: sleeping during server configuration...")
 Sys.sleep(time = 30)
@@ -104,5 +106,7 @@ if(is(API, "SwordDataverseClient")){
 
     expect_is(out, "AtomEntry")
   })
+
+}
 
 }

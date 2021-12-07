@@ -44,18 +44,20 @@ message("Dataverse SWORD API ready for testing...")
 if(is(API, "SwordDataverseClient")){
 
   test_that("list Dataverses (Sword collections)",{
+    testthat::skip_on_cran()
     cols <- API$listCollections() #or getDataverses()
     expect_is(cols, "list")
     expect_true(length(cols)>0)
   })
 
   test_that("list Dataverse members",{
+    testthat::skip_on_cran()
     members <- API$getCollectionMembers("Root")
     expect_is(members, "AtomFeed")
   })
 
   test_that("create DC entry",{
-
+    testthat::skip_on_cran()
     #encoding
     dcentry <- DCEntry$new()
     dcentry$setId("my-dc-entry")

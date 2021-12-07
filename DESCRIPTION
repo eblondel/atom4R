@@ -1,7 +1,7 @@
 Package: atom4R
 Version: 0.1
-Date: 2021-09-14
-Title: Tools to read/write/publish metadata as Atom XML format
+Date: 2021-12-07
+Title: Tools to Handle and Publish Metadata as Atom XML Format
 Authors@R: c(
   person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")))
 Maintainer: Emmanuel Blondel <emmanuel.blondel1@gmail.com>

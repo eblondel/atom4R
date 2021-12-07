@@ -4,7 +4,7 @@
 \name{atom4R}
 \alias{atom4R}
 \alias{atom4R-package}
-\title{Tools to read/write metadata in Atom XML format.}
+\title{Tools to Handle and Publish Metadata as Atom XML Format}
 \description{
 Provides tools to read/write/publish metadata based on the Atom XML syndication format.
 This includes support of Dublin Core XML implementation, and a client to APIs implementing the AtomPub

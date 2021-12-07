@@ -91,7 +91,7 @@ AtomPerson <- R6Class("AtomPerson",
 #'
 #' @examples
 #' \dontrun{
-#'   author <- AtomAuthor$new(name "John Doe", email = "john.doe@@atom4R.com")
+#'   author <- AtomAuthor$new(name = "John Doe", email = "john.doe@@atom4R.com")
 #' }
 #'
 #' @section Methods inherited from \code{AtomPerson}:
@@ -145,7 +145,7 @@ AtomAuthor <- R6Class("AtomAuthor",
 #'
 #' @examples
 #' \dontrun{
-#'   contrib <- AtomContributor$new(name "John Doe", email = "john.doe@@atom4R.com")
+#'   contrib <- AtomContributor$new(name = "John Doe", email = "john.doe@@atom4R.com")
 #' }
 #'
 #' @section Methods inherited from \code{AtomPerson}:

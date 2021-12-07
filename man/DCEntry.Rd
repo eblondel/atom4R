@@ -296,6 +296,7 @@ DCEntry
 }
 
 \examples{
+ \donttest{
   #encoding
   dcentry <- DCEntry$new()
   dcentry$setId("my-dc-entry")
@@ -330,6 +331,7 @@ DCEntry
   #decoding
   dcentry2 <- DCEntry$new(xml = xml)
   xml2 <- dcentry2$encode()
+ }
 
 }
 \author{

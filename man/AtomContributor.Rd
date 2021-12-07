@@ -46,7 +46,7 @@ AtomContributor
 
 \examples{
 \dontrun{
-  contrib <- AtomContributor$new(name "John Doe", email = "john.doe@atom4R.com")
+  contrib <- AtomContributor$new(name = "John Doe", email = "john.doe@atom4R.com")
 }
 
 }

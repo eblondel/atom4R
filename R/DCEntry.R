@@ -289,6 +289,7 @@
 #' }
 #'
 #' @examples
+#'  \donttest{
 #'   #encoding
 #'   dcentry <- DCEntry$new()
 #'   dcentry$setId("my-dc-entry")
@@ -324,6 +325,7 @@
 #'   #decoding
 #'   dcentry2 <- DCEntry$new(xml = xml)
 #'   xml2 <- dcentry2$encode()
+#'  }
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

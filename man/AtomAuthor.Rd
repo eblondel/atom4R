@@ -46,7 +46,7 @@ AtomAuthor
 
 \examples{
 \dontrun{
-  author <- AtomAuthor$new(name "John Doe", email = "john.doe@atom4R.com")
+  author <- AtomAuthor$new(name = "John Doe", email = "john.doe@atom4R.com")
 }
 
 }

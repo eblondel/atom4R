@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/eblondel/atom4R.svg?branch=master)](https://travis-ci.org/eblondel/atom4R)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/atom4R)](https://cran.r-project.org/package=atom4R)
 [![Github_Status_Badge](https://img.shields.io/badge/Github-0.1-blue.svg)](https://github.com/eblondel/atom4R)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3970170.svg)](https://doi.org/10.5281/zenodo.3970170)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3970169.svg)](https://doi.org/10.5281/zenodo.3970169)
 
 **Tools to read/write/publish metadata as Atom XML format**
 
@@ -21,5 +21,5 @@ For atom4R sponsoring/funding new developments, enhancements, support requests, 
 
 ## Citation
 
-We thank in advance people that use ``atom4R`` for citing it in their work / publication(s). For this, please use the citation provided at this link [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3970170.svg)](https://doi.org/10.5281/zenodo.3970170)
+We thank in advance people that use ``atom4R`` for citing it in their work / publication(s). For this, please use the citation provided at this link [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3970169.svg)](https://doi.org/10.5281/zenodo.3970169)
 

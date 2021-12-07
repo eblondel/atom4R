@@ -16,6 +16,9 @@ This class models an Sword service client for HAL (Archives Houvertes)
 \details{
 SwordHalClient
 }
+\note{
+Experimental
+}
 \section{Methods}{
 
 \describe{
@@ -31,6 +34,9 @@ SwordHalClient
  }
  \item{\code{getServiceDocument()}}{
    Gets a representation in R of the SWORD service document (capabilities)
+ }
+ \item{\code{getCollectionMembers(collectionId)}}{
+   Get collection members.
  }
 }
 }

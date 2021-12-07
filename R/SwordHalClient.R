@@ -26,7 +26,12 @@
 #'  \item{\code{getServiceDocument()}}{
 #'    Gets a representation in R of the SWORD service document (capabilities)
 #'  }
+#'  \item{\code{getCollectionMembers(collectionId)}}{
+#'    Get collection members.
+#'  }
 #' }
+#'
+#' @note Experimental
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'

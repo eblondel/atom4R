@@ -10,16 +10,6 @@ Provides tools to read/write/publish metadata based on the Atom XML syndication 
 This includes support of Dublin Core XML implementation, and a client to APIs implementing the AtomPub
 SWORD API specification.
 }
-\details{
-\tabular{ll}{
-   Package: \tab atom4R\cr
-   Type: \tab Package\cr
-   Version: \tab 0.1\cr
-   Date: \tab 2021-09-14\cr
-   License: \tab MIT\cr
-   LazyLoad: \tab yes\cr
- }
-}
 \author{
 Emmanuel Blondel \email{emmanuel.blondel1@gmail.com}
 }

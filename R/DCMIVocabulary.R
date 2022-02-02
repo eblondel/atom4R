@@ -73,12 +73,12 @@ setDCMIVocabularies <- function(){
   vocabs <- list(
     DCMIVocabulary$new(
       id = "http://purl.org/dc/terms/",
-      doc = "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms.rdf",
+      doc = system.file("extdata/vocabularies/dc/dublin_core_terms.rdf", package = "atom4R"),
       format = "rdfxml"
     ),
     DCMIVocabulary$new(
       id = "http://purl.org/dc/dcmitype/",
-      doc = "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_type.rdf",
+      doc = system.file("extdata/vocabularies/dc/dublin_core_type.rdf", package = "atom4R"),
       format = "rdfxml"
     )
   )

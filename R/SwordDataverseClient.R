@@ -102,6 +102,8 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       }
       super$initialize(
         url = sword_api_url,
+        user = "atom4R",
+        pwd = "",
         version = "2",
         token = token,
         logger = logger,

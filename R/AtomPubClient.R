@@ -104,7 +104,7 @@ AtomPubClient <- R6Class("AtomPubClient",
     getToken = function(){
       token <- NULL
       if(!is.null(private$keyring_service)){
-        token <- try(private$keyring_backend$get(service = private$keyring_service, username = "atom4R"), silent = TRUE)
+        token <- try(private$keyring_backend$get(service = private$keyring_service, username = self$getUser()), silent = TRUE)
         if(is(token, "try-error")) token <- NULL
       }
       return(token)

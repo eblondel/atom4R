@@ -7,25 +7,27 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Atom Namespace
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(id, uri)}}{
-#'    This method is used to instantiate an Atom
-#'  }
-#' }
-#'
 #' @note ISO class used internally by atom4R for specifying XML namespaces
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 AtomNamespace <- R6Class("AtomNamespace",
   public = list(
+    #'@field id id
     id = NA,
+    #'@field uri uri
     uri = NA,
+
+    #'@description Initializes an \link{AtomNamespace}
+    #'@param id id
+    #'@param uri uri
     initialize = function(id, uri){
       self$id = id
       self$uri = uri
     },
+
+    #'@description Get definition
+    #'@return a named list defining the namespace
     getDefinition = function(){
       ns <- list(self$uri)
       names(ns) <- self$id

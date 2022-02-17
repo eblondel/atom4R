@@ -12,23 +12,165 @@ Object of \code{\link{R6Class}} for modelling a simple logger
 }
 \description{
 atom4RLogger
+
+atom4RLogger
 }
 \note{
 Logger class used internally by atom4R
 }
-\section{Abstract Methods}{
-
-\describe{
- \item{\code{INFO(text)}}{
-   Logger to report information. Used internally
- }
- \item{\code{WARN(text)}}{
-   Logger to report warnings. Used internally
- }
- \item{\code{ERROR(text)}}{
-   Logger to report errors. Used internally
- }
-}
-}
-
 \keyword{logger}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{verbose.info}}{If package info log messages have to be printed out}
+
+\item{\code{verbose.debug}}{If curl debug log messages have to be printed out}
+
+\item{\code{loggerType}}{the type of logger}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-logger}{\code{atom4RLogger$logger()}}
+\item \href{#method-INFO}{\code{atom4RLogger$INFO()}}
+\item \href{#method-WARN}{\code{atom4RLogger$WARN()}}
+\item \href{#method-ERROR}{\code{atom4RLogger$ERROR()}}
+\item \href{#method-new}{\code{atom4RLogger$new()}}
+\item \href{#method-getClassName}{\code{atom4RLogger$getClassName()}}
+\item \href{#method-getClass}{\code{atom4RLogger$getClass()}}
+\item \href{#method-clone}{\code{atom4RLogger$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-logger"></a>}}
+\if{latex}{\out{\hypertarget{method-logger}{}}}
+\subsection{Method \code{logger()}}{
+Provides log messages
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{atom4RLogger$logger(type, text)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{type}}{type of log ("INFO", "WARN", "ERROR")}
+
+\item{\code{text}}{the log message text}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-INFO"></a>}}
+\if{latex}{\out{\hypertarget{method-INFO}{}}}
+\subsection{Method \code{INFO()}}{
+Provides INFO log messages
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{atom4RLogger$INFO(text)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{text}}{the log message text}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-WARN"></a>}}
+\if{latex}{\out{\hypertarget{method-WARN}{}}}
+\subsection{Method \code{WARN()}}{
+Provides WARN log messages
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{atom4RLogger$WARN(text)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{text}}{the log message text}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-ERROR"></a>}}
+\if{latex}{\out{\hypertarget{method-ERROR}{}}}
+\subsection{Method \code{ERROR()}}{
+Provides ERROR log messages
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{atom4RLogger$ERROR(text)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{text}}{the log message text}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+Initalizes the logger
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{atom4RLogger$new(logger = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{logger}}{logger type "INFO", "DEBUG" or \code{NULL}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getClassName"></a>}}
+\if{latex}{\out{\hypertarget{method-getClassName}{}}}
+\subsection{Method \code{getClassName()}}{
+Get class name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{atom4RLogger$getClassName()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{data.frame}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getClass"></a>}}
+\if{latex}{\out{\hypertarget{method-getClass}{}}}
+\subsection{Method \code{getClass()}}{
+Get class
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{atom4RLogger$getClass()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \link{R6Class}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{atom4RLogger$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

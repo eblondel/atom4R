@@ -15,4 +15,3 @@ URL: https://github.com/eblondel/atom4R
 BugReports: https://github.com/eblondel/atom4R
 LazyLoad: yes
 RoxygenNote: 7.1.0
-Roxygen: list(r6 = FALSE)

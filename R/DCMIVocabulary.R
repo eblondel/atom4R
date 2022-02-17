@@ -11,36 +11,31 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Dublin Core element
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(doc, format)}}{
-#'    This method is used to read a DCMI vocabulary RDF doc. The format corresponds to
-#'    the RDF format as used by \pkg{rdflib} \code{rdf_parse} function.
-#'  }
-#'  \item{\code{get()}}{
-#'    Runs a Sparql query over the RDF vocabulary to return the vocabulary content.
-#'    Returns an object of class \code{data.frame}
-#'  }
-#' }
-#'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 DCMIVocabulary <- R6Class("DCMIVocabulary",
   public = list(
+    #'@field id id
     id = NULL,
+    #'@field doc doc
     doc = NULL,
+    #'@field representation representation
     representation = NULL,
 
-    #initialize
+    #'@description This method is used to read a DCMI vocabulary RDF doc. The format corresponds to
+    #'    the RDF format as used by \pkg{rdflib} \code{rdf_parse} function.
+    #'@param id id
+    #'@param doc doc
+    #'@param format format
     initialize = function(id, doc, format){
       self$id <- id
       self$doc <- doc
       self$representation <- rdflib::rdf_parse(doc, format = format)
     },
 
-    #get
+    #'@description Runs a Sparql query over the RDF vocabulary to return the vocabulary content.
+    #'    Returns an object of class \code{data.frame}
+    #'@return an object of class \code{data.frame}
     get = function(){
       sparql <-
         'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>

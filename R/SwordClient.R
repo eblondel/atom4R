@@ -11,22 +11,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Sword client
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(url, version, user, pwd, token, logger, keyring_backend)}}{
-#'    This method is to instantiate an Sword Client. By default the version is set to "2".
-#'
-#'    The \code{keyring_backend} can be set to use a different backend for storing
-#'    the SWORD API user token with \pkg{keyring} (Default value is 'env').
-#'
-#'    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
-#'    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
-#'  }
-#'  \item{\code{getServiceDocument()}}{
-#'    Gets a representation in R of the SWORD service document (capabilities)
-#'  }
-#' }
-#'
 #' @note Abstract class
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
@@ -38,7 +22,20 @@ SwordClient <- R6Class("SwordClient",
    ),
    public = list(
 
-     #initialize
+     #'@description This method is to instantiate an Sword Client. By default the version is set to "2".
+      #'
+      #'    The \code{keyring_backend} can be set to use a different backend for storing
+      #'    the SWORD API user token with \pkg{keyring} (Default value is 'env').
+      #'
+      #'    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
+      #'    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
+      #'@param url url
+      #'@param version version. Default is "2"
+      #'@param user user
+      #'@param pwd pwd
+      #'@param token token
+      #'@param logger logger
+      #'@param keyring_backend keyring backend. Default is 'env'
      initialize = function(url, version = "2", user = NULL, pwd = NULL, token = NULL, logger = NULL,
                            keyring_backend = 'env'){
        super$initialize(url = url, user = user, pwd = pwd, token = token, logger = logger, keyring_backend = keyring_backend)
@@ -55,7 +52,9 @@ SwordClient <- R6Class("SwordClient",
        }
      },
 
-     #getServiceDocument
+     #'@description Get service document
+     #'@param force force Force getting/refreshing of service document
+     #'@return object of class \link{SwordServiceDocument}
      getServiceDocument = function(force = FALSE){
        out <- NULL
        if(is.null(self$service) | force){
@@ -72,7 +71,7 @@ SwordClient <- R6Class("SwordClient",
        return(out)
      },
 
-     #getCollectionMembers
+     #'@description Get collection members. Unimplemented abstract method at \link{SwordClient} level
      getCollectionMembers = function(){
        stop("'getCollectionMembers' not implemented in Sword abstract client")
      }

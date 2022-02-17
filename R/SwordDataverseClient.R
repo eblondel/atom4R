@@ -11,13 +11,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Sword Dataverse-specific APIclient
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Methods inherited from \code{SwordClient}:
-#' \describe{
-#'  \item{\code{getServiceDocument()}}{
-#'    Gets a representation in R of the SWORD service document (capabilities)
-#'  }
-#' }
-#'
 #' @section Methods:
 #' \describe{
 #'  \item{\code{new(url, token, logger, keyring_backend)}}{
@@ -92,6 +85,18 @@
 SwordDataverseClient <- R6Class("SwordDataverseClient",
   inherit = SwordClient,
   public = list(
+
+    #'@description This method is to instantiate an Sword API Dataverse-specific Client.
+    #'
+    #'    The \code{keyring_backend} can be set to use a different backend for storing
+    #'    the SWORD DataVerse API user token with \pkg{keyring} (Default value is 'env').
+    #'
+    #'    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
+    #'    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
+    #'@param hostname host name
+    #'@param token token
+    #'@param logger logger
+    #'@param keyring_backend keyring backend. Default is 'env'
     initialize = function(hostname, token = NULL, logger = NULL,
                           keyring_backend = 'env'){
       sword_api_url <- file.path(hostname, "dvn/api/data-deposit/v1.1/swordv2")
@@ -111,7 +116,9 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       )
     },
 
-    #getServiceDocument
+    #'@description Get service document
+    #'@param force force Force getting/refreshing of service document
+    #'@return object of class \link{SwordServiceDocument}
     getServiceDocument = function(force = FALSE){
       out <- NULL
       if(is.null(self$service) | force){
@@ -128,7 +135,9 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       return(out)
     },
 
-    #getCollectionMembers
+    #'@description Get collection members
+    #'@param collectionId collection ID
+    #'@return a list of \link{AtomFeed}
     getCollectionMembers = function(collectionId){
       path <- file.path(private$url, "collection/dataverse", collectionId)
       self$INFO(sprintf("GET - Sword Dataverse Atom Feed document at '%s'", path))
@@ -139,17 +148,23 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       return(out)
     },
 
-    #getDataverses
+    #'@description Get dataverses. Equivalent to \code{listCollections()} from \link{AtomPubClient}
+    #'@param pretty prettify output as \code{data.frame}. Default is \code{FALSE}
+    #'@return an object of class \code{data.frame}
     getDataverses = function(pretty = FALSE){
       self$listCollections(pretty = pretty)
     },
 
-    #getDataverse
+    #'@description Get dataverse members by dataverse name. Equivlaent to \code{getCollectionMembers()}
+    #'@param dataverse dataverse name
+    #'@return a list of \link{AtomFeed}
     getDataverse = function(dataverse){
       self$getCollectionMembers(dataverse)
     },
 
-    #editDataverseEntry
+    #'@description Edits a dataverse entry
+    #'@param identifier identifier
+    #'@return an object of class \link{AtomEntry}
     editDataverseEntry = function(identifier){
       path <- file.path(private$url, "edit/study", identifier)
       self$INFO(sprintf("GET - Sword Dataverse Atom Entry document at '%s'", path))
@@ -165,7 +180,9 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       return(out)
     },
 
-    #getDataverseRecord
+    #'@description Get dataverse record
+    #'@param identifier identifier
+    #'@return an object of class \link{AtomFeed}
     getDataverseRecord = function(identifier){
       path <- file.path(private$url, "statement/study", identifier)
       self$INFO(sprintf("GET - Sword Dataverse Atom Entry document at '%s'", path))
@@ -181,7 +198,10 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       return(out)
     },
 
-    #createDataverseRecord
+    #'@description Creates a dataverse record
+    #'@param dataverse dataverse name
+    #'@param entry entry
+    #'@param the created \link{AtomEntry}
     createDataverseRecord = function(dataverse, entry){
       out <- NULL
       if(!is(entry, "AtomEntry")) stop("The 'entry' should be an object of class 'AtomEntry'")
@@ -205,7 +225,11 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
 
     },
 
-    #updateDataverseRecord
+    #'@description Updates a dataverse record
+    #'@param dataverse dataverse name
+    #'@param entry entry
+    #'@param identifier identifier of the entry to update
+    #'@param the created \link{AtomEntry}
     updateDataverseRecord = function(dataverse, entry, identifier){
       out <- NULL
       if(!is(entry, "AtomEntry")) stop("The 'entry' should be an object of class 'AtomEntry'")
@@ -230,7 +254,9 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       return(out)
     },
 
-    #deleteDataverseRecord
+    #'@description Deletes a dataverse record
+    #'@param identifier identifier
+    #'@return \code{TRUE} if deleted, or returns an error otherwise
     deleteDataverseRecord = function(identifier){
       path <- file.path(private$url, "edit/study", identifier)
       self$INFO(sprintf("DELETE - Sword Dataverse Atom Entry document at '%s'", path))
@@ -244,7 +270,9 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       return(TRUE)
     },
 
-    #publishDataverseRecord
+    #'@description Publishes a dataverse record
+    #'@param identifier identifier
+    #'@return the published \link{AtomEntry}
     publishDataverseRecord = function(identifier){
       out <- NULL
       path <- file.path(private$url, "edit/study", identifier)
@@ -266,7 +294,9 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       return(out)
     },
 
-    #addFilesToDataverseRecord
+    #'@description Add files to a dataverse record
+    #'@param identifier identifier
+    #'@param files files
     addFilesToDataverseRecord = function(identifier, files){
 
       tmpfile <- tempfile(fileext = ".zip")
@@ -298,7 +328,10 @@ SwordDataverseClient <- R6Class("SwordDataverseClient",
       }
     },
 
-    #deleteFileFromDataverseRecord
+    #'@description Deletes files from a Dataverse record
+    #'@param identifier identifier
+    #'@param files files
+    #'@return an object of class \code{data.frame} giving each file and it's deletion status
     deleteFilesFromDataverseRecord = function(identifier, files = NULL){
 
       rec <- self$getDataverseRecord(identifier)

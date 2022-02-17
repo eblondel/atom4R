@@ -16,29 +16,82 @@ This class models an DCMI Vocabulary
 \details{
 DCMIVocabulary
 }
-\section{Fields}{
-
-\describe{
-\item{\code{value}}{}
-}}
-
-\section{Methods}{
-
-\describe{
- \item{\code{new(doc, format)}}{
-   This method is used to read a DCMI vocabulary RDF doc. The format corresponds to
-   the RDF format as used by \pkg{rdflib} \code{rdf_parse} function.
- }
- \item{\code{get()}}{
-   Runs a Sparql query over the RDF vocabulary to return the vocabulary content.
-   Returns an object of class \code{data.frame}
- }
-}
-}
-
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{Core}
 \keyword{Dublin}
 \keyword{element}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{id}}{id}
+
+\item{\code{doc}}{doc}
+
+\item{\code{representation}}{representation}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{DCMIVocabulary$new()}}
+\item \href{#method-get}{\code{DCMIVocabulary$get()}}
+\item \href{#method-clone}{\code{DCMIVocabulary$clone()}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+This method is used to read a DCMI vocabulary RDF doc. The format corresponds to
+   the RDF format as used by \pkg{rdflib} \code{rdf_parse} function.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCMIVocabulary$new(id, doc, format)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{id}}{id}
+
+\item{\code{doc}}{doc}
+
+\item{\code{format}}{format}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-get"></a>}}
+\if{latex}{\out{\hypertarget{method-get}{}}}
+\subsection{Method \code{get()}}{
+Runs a Sparql query over the RDF vocabulary to return the vocabulary content.
+   Returns an object of class \code{data.frame}
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCMIVocabulary$get()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+an object of class \code{data.frame}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCMIVocabulary$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

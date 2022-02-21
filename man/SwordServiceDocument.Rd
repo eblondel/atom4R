@@ -69,7 +69,7 @@ Initializes a \link{SwordServiceDocument} from XML
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-Class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
 
 \item{\code{logger}}{logger}
 }

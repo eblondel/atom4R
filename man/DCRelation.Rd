@@ -70,7 +70,7 @@ This method is used to create an Dublin core 'relation' element.
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-Class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
 
 \item{\code{term}}{term}
 

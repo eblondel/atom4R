@@ -24,7 +24,7 @@ SwordServiceDocument <- R6Class("SwordServiceDocument",
      collections = list(),
 
      #'@description Initializes a \link{SwordServiceDocument} from XML
-     #'@param xml object of class \link{XMLInternalNode-Class} from \pkg{XML}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
      #'@param logger logger
      initialize = function(xml, logger = NULL){
        super$initialize(logger = logger)

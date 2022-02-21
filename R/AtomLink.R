@@ -24,7 +24,7 @@ AtomLink <- R6Class("AtomLink",
      attrs = list(),
 
      #'@description Initializes an \link{AtomLink}
-     #'@param xml object of class \link{XMLInternalNode-Class} from \pkg{XML}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
      #'@param rel rel
      #'@param type type
      #'@param href href

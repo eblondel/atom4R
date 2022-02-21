@@ -193,7 +193,7 @@ AtomFeed <- R6Class("AtomFeed",
     entry = list(),
 
     #'@description Initializes a \link{AtomFeed}
-    #'@param xml object of class \link{XMLInternalNode-Class} from \pkg{XML}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     initialize = function(xml = NULL){
       super$initialize(xml = xml)
     },

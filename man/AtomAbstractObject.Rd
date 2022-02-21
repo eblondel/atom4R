@@ -100,7 +100,7 @@ Initializes an object of class \link{AtomAbstractObject}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-Class}}
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
 
 \item{\code{element}}{element}
 
@@ -292,7 +292,7 @@ Decodes the object from an \pkg{XML} representation
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-Class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
 }
 \if{html}{\out{</div>}}
 }
@@ -337,7 +337,7 @@ Validates the object / XML vs. XML schemas
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-Class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
 
 \item{\code{strict}}{strict validation or not}
 }

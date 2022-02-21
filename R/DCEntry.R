@@ -64,7 +64,7 @@ DCEntry <- R6Class("DCEntry",
    public = list(
 
      #'@description Initializes an object of class \link{DCEntry}
-     #'@param xml object of class \link{XMLInternalNode-Class} from \pkg{XML}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },

@@ -31,7 +31,7 @@ AtomPerson <- R6Class("AtomPerson",
     email = NA,
 
     #'@description Initializes an \link{AtomPerson}
-    #'@param xml object of class \link{XMLInternalNode-Class} from \pkg{XML}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     #'@param name name
     #'@param uri uri
     #'@param email email
@@ -92,7 +92,7 @@ AtomAuthor <- R6Class("AtomAuthor",
   public = list(
 
     #'@description Initializes an \link{AtomAuthor}
-    #'@param xml object of class \link{XMLInternalNode-Class} from \pkg{XML}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     #'@param name name
     #'@param uri uri
     #'@param email email
@@ -132,7 +132,7 @@ AtomContributor <- R6Class("AtomContributor",
   public = list(
 
     #'@description Initializes an \link{AtomContributor}
-    #'@param xml object of class \link{XMLInternalNode-Class} from \pkg{XML}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     #'@param name name
     #'@param uri uri
     #'@param email email

@@ -85,7 +85,7 @@ AtomEntry <- R6Class("AtomEntry",
     content = NULL,
 
     #'@description Initializes an \link{AtomEntry}
-    #'@param xml object of class \link{XMLInternalNode-Class} from \pkg{XML}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     initialize = function(xml = NULL){
       super$initialize(xml = xml, wrap = FALSE)
     },

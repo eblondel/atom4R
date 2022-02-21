@@ -153,7 +153,7 @@ Initializes an \link{AtomEntry}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-Class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
 }
 \if{html}{\out{</div>}}
 }

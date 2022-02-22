@@ -11,26 +11,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Sword client
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(url, version, user, pwd, keyring_backend)}}{
-#'    This method is to instantiate an Sword HAL (Archive Ouvertes - \url{https://hal.archives-ouvertes.fr/}) Client.
-#'    By default the version is set to "2".
-#'
-#'    The \code{keyring_backend} can be set to use a different backend for storing
-#'    the SWORD API user token with \pkg{keyring} (Default value is 'env').
-#'
-#'    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
-#'    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
-#'  }
-#'  \item{\code{getServiceDocument()}}{
-#'    Gets a representation in R of the SWORD service document (capabilities)
-#'  }
-#'  \item{\code{getCollectionMembers(collectionId)}}{
-#'    Get collection members.
-#'  }
-#' }
-#'
 #' @note Experimental
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
@@ -42,7 +22,19 @@ SwordHalClient <- R6Class("SwordHalClient",
    ),
    public = list(
 
-     #initialize
+     #'@description This method is to instantiate an Sword HAL (Archive Ouvertes - \url{https://hal.archives-ouvertes.fr/}) Client.
+      #'    By default the version is set to "2".
+      #'
+      #'    The \code{keyring_backend} can be set to use a different backend for storing
+      #'    the SWORD API user token with \pkg{keyring} (Default value is 'env').
+      #'
+      #'    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
+      #'    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
+      #'@param url url
+      #'@param user user
+      #'@param pwd pwd
+      #'@param logger logger
+      #'@param keyring_backend keyring backend. Default value is 'env'
      initialize = function(url, user = NULL, pwd = NULL, logger = NULL,
                            keyring_backend = 'env'){
        super$initialize(
@@ -56,7 +48,9 @@ SwordHalClient <- R6Class("SwordHalClient",
        )
      },
 
-     #getServiceDocument
+     #'@description Get service document
+     #'@param force force Force getting/refreshing of service document
+     #'@return object of class \link{SwordServiceDocument}
      getServiceDocument = function(force = FALSE){
        out <- NULL
        if(is.null(self$service) | force){
@@ -72,7 +66,9 @@ SwordHalClient <- R6Class("SwordHalClient",
        return(out)
      },
 
-     #getCollectionMembers
+     #'@description Get collection members
+     #'@param collectionId collection ID
+     #'@return a list of \link{AtomFeed}
      getCollectionMembers = function(collectionId){
        path <- file.path(private$url, collectionId)
        self$INFO(sprintf("GET - Sword HAL Atom Feed document at '%s'", path))

@@ -3,7 +3,7 @@
 
 [![Build Status](https://github.com/eblondel/atom4R/actions/workflows/r-cmd-check.yml/badge.svg?branch=master)](https://github.com/eblondel/atom4R/actions/workflows/r-cmd-check.yml)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/atom4R)](https://cran.r-project.org/package=atom4R)
-[![Github_Status_Badge](https://img.shields.io/badge/Github-0.1-blue.svg)](https://github.com/eblondel/atom4R)
+[![Github_Status_Badge](https://img.shields.io/badge/Github-0.1--1-blue.svg)](https://github.com/eblondel/atom4R)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3970169.svg)](https://doi.org/10.5281/zenodo.3970169)
 
 **Tools to read/write/publish metadata as Atom XML format**

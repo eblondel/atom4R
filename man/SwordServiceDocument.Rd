@@ -19,17 +19,104 @@ SwordServiceDocument
 \note{
 class used internally by \pkg{atom4R}
 }
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml, logger)}}{
-   This method is to instantiate an SwordServiceDocument
- }
-}
-}
-
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{Atom}
 \keyword{Person}
+\section{Super class}{
+\code{\link[atom4R:atom4RLogger]{atom4R::atom4RLogger}} -> \code{SwordServiceDocument}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{title}}{title}
+
+\item{\code{collections}}{collections}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{SwordServiceDocument$new()}}
+\item \href{#method-getTitle}{\code{SwordServiceDocument$getTitle()}}
+\item \href{#method-getCollections}{\code{SwordServiceDocument$getCollections()}}
+\item \href{#method-clone}{\code{SwordServiceDocument$clone()}}
+}
+}
+\if{html}{
+\out{<details ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClass">}\href{../../atom4R/html/atom4RLogger.html#method-getClass}{\code{atom4R::atom4RLogger$getClass()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClassName">}\href{../../atom4R/html/atom4RLogger.html#method-getClassName}{\code{atom4R::atom4RLogger$getClassName()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes a \link{SwordServiceDocument} from XML
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordServiceDocument$new(xml, logger = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+
+\item{\code{logger}}{logger}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getTitle"></a>}}
+\if{latex}{\out{\hypertarget{method-getTitle}{}}}
+\subsection{Method \code{getTitle()}}{
+Get title
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordServiceDocument$getTitle()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{character}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getCollections"></a>}}
+\if{latex}{\out{\hypertarget{method-getCollections}{}}}
+\subsection{Method \code{getCollections()}}{
+Get collections
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordServiceDocument$getCollections()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{character}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordServiceDocument$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

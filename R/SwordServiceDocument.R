@@ -11,13 +11,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Sword service document
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, logger)}}{
-#'    This method is to instantiate an SwordServiceDocument
-#'  }
-#' }
-#'
 #' @note class used internally by \pkg{atom4R}
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
@@ -25,9 +18,14 @@
 SwordServiceDocument <- R6Class("SwordServiceDocument",
    inherit = atom4RLogger,
    public = list(
+     #'@field title title
      title = NULL,
+     #'@field collections collections
      collections = list(),
-     #initialize
+
+     #'@description Initializes a \link{SwordServiceDocument} from XML
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param logger logger
      initialize = function(xml, logger = NULL){
        super$initialize(logger = logger)
        print(xml)
@@ -45,12 +43,14 @@ SwordServiceDocument <- R6Class("SwordServiceDocument",
 
      },
 
-     #getTitle
+     #'@description Get title
+     #'@return object of class \code{character}
      getTitle = function(){
        return(self$title)
      },
 
-     #getCollections
+     #'@description Get collections
+     #'@return object of class \code{character}
      getCollections = function(){
        return(self$collections)
      }

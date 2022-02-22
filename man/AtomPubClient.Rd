@@ -58,3 +58,185 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{Atom}
 \keyword{Person}
+\section{Super class}{
+\code{\link[atom4R:atom4RLogger]{atom4R::atom4RLogger}} -> \code{AtomPubClient}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{service}}{service}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{AtomPubClient$new()}}
+\item \href{#method-getUser}{\code{AtomPubClient$getUser()}}
+\item \href{#method-getPwd}{\code{AtomPubClient$getPwd()}}
+\item \href{#method-getToken}{\code{AtomPubClient$getToken()}}
+\item \href{#method-getServiceDocument}{\code{AtomPubClient$getServiceDocument()}}
+\item \href{#method-listCollections}{\code{AtomPubClient$listCollections()}}
+\item \href{#method-getCollectionMembers}{\code{AtomPubClient$getCollectionMembers()}}
+\item \href{#method-clone}{\code{AtomPubClient$clone()}}
+}
+}
+\if{html}{
+\out{<details ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClass">}\href{../../atom4R/html/atom4RLogger.html#method-getClass}{\code{atom4R::atom4RLogger$getClass()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClassName">}\href{../../atom4R/html/atom4RLogger.html#method-getClassName}{\code{atom4R::atom4RLogger$getClassName()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+This method is to instantiate an Sword Client. By default the version is set to "2".
+
+   The \code{keyring_backend} can be set to use a different backend for storing
+   the SWORD API user token with \pkg{keyring} (Default value is 'env').
+
+   The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
+   for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomPubClient$new(
+  url,
+  user = NULL,
+  pwd = NULL,
+  token = NULL,
+  logger = NULL,
+  keyring_backend = "env"
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{url}}{url}
+
+\item{\code{user}}{user}
+
+\item{\code{pwd}}{pwd}
+
+\item{\code{token}}{token}
+
+\item{\code{logger}}{logger}
+
+\item{\code{keyring_backend}}{keyring backend. Default is 'env'}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getUser"></a>}}
+\if{latex}{\out{\hypertarget{method-getUser}{}}}
+\subsection{Method \code{getUser()}}{
+Get user
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomPubClient$getUser()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{character}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getPwd"></a>}}
+\if{latex}{\out{\hypertarget{method-getPwd}{}}}
+\subsection{Method \code{getPwd()}}{
+Get password
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomPubClient$getPwd()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{character}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getToken"></a>}}
+\if{latex}{\out{\hypertarget{method-getToken}{}}}
+\subsection{Method \code{getToken()}}{
+Get token
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomPubClient$getToken()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{character}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getServiceDocument"></a>}}
+\if{latex}{\out{\hypertarget{method-getServiceDocument}{}}}
+\subsection{Method \code{getServiceDocument()}}{
+Get service document
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomPubClient$getServiceDocument()}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{force}}{force Force getting/refreshing of service document}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+object of class \link{SwordServiceDocument}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-listCollections"></a>}}
+\if{latex}{\out{\hypertarget{method-listCollections}{}}}
+\subsection{Method \code{listCollections()}}{
+List collections
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomPubClient$listCollections(pretty = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{pretty}}{pretty}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+a list of collections, or \code{data.frame}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getCollectionMembers"></a>}}
+\if{latex}{\out{\hypertarget{method-getCollectionMembers}{}}}
+\subsection{Method \code{getCollectionMembers()}}{
+Get collection members. Unimplemented abstract method at \link{AtomPubClient} level
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomPubClient$getCollectionMembers()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomPubClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

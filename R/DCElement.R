@@ -11,15 +11,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Dublin Core element
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field value
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, term, value)}}{
-#'    This method is used to create an Dublin core element
-#'  }
-#' }
-#'
 #' @note Class used internally by \pkg{atom4R}
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
@@ -37,7 +28,14 @@ DCElement <- R6Class("DCElement",
      document = FALSE
    ),
    public = list(
+     #'@field value value
      value = NULL,
+
+     #'@description Initializes an abstract \link{DCElement}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param term term
+     #'@param value value
+     #'@param vocabulary vocabulary
      initialize = function(xml = NULL, term = NULL, value = NULL, vocabulary = NULL){
        super$initialize(xml = xml, element = term, wrap = FALSE)
        if(is.null(xml)){
@@ -120,13 +118,6 @@ DCElement$getDCClassByElement = function(element){
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'abstract' element
-#'  }
-#' }
-#'
 #' @references
 #' Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/abstract
 #'
@@ -138,6 +129,10 @@ DCAbstract <- R6Class("DCAbstract",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCAbstract}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -152,13 +147,6 @@ DCAbstract <- R6Class("DCAbstract",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'accessRights' element
-#'  }
-#' }
-#'
 #' @references
 #' Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/accessRights
 #'
@@ -170,6 +158,10 @@ DCAccessRights <- R6Class("DCAccessRights",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCAccessRights}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -184,13 +176,6 @@ DCAccessRights <- R6Class("DCAccessRights",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'accrualMethod' element
-#'  }
-#' }
-#'
 #' @references
 #' Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/accrualMethod
 #'
@@ -202,6 +187,10 @@ DCAccrualMethod <- R6Class("DCAccrualMethod",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCAccrualMethod}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -216,13 +205,6 @@ DCAccrualMethod <- R6Class("DCAccrualMethod",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'accrualPeriodicity' element
-#'  }
-#' }
-#'
 #' @references
 #' Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/accrualPeriodicity
 #'
@@ -234,6 +216,10 @@ DCAccrualPeriodicity <- R6Class("DCAccrualPeriodicity",
      document = FALSE
    ),
    public = list(
+
+     #'@description Initializes an object of class \link{DCAccrualPeriodicity}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
      }
@@ -248,13 +234,6 @@ DCAccrualPeriodicity <- R6Class("DCAccrualPeriodicity",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'accrualPolicy' element
-#'  }
-#' }
-#'
 #' @references
 #' Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/accrualPolicy
 #'
@@ -266,6 +245,10 @@ DCAccrualPolicy <- R6Class("DCAccrualPolicy",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCAccrualPolicy}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -280,13 +263,6 @@ DCAccrualPolicy <- R6Class("DCAccrualPolicy",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'alternative' element
-#'  }
-#' }
-#'
 #' @references
 #' Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/alternative
 #'
@@ -298,6 +274,10 @@ DCAlternative <- R6Class("DCAlternative",
      document = FALSE
    ),
    public = list(
+
+     #'@description Initializes an object of class \link{DCAlternative}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
      }
@@ -312,13 +292,6 @@ DCAlternative <- R6Class("DCAlternative",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'audience' element
-#'  }
-#' }
-#'
 #' @references
 #' Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/audience
 #'
@@ -330,6 +303,11 @@ DCAudience <- R6Class("DCAudience",
      document = FALSE
    ),
    public = list(
+
+     #'@description Initializes an object of class \link{DCAudience}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param term term
+     #'@param value value
      initialize = function(xml = NULL, term = NULL, value = NULL){
        if(is.null(term)) term <- private$xmlElement
        super$initialize(xml = xml, term = term, value = value)
@@ -345,13 +323,6 @@ DCAudience <- R6Class("DCAudience",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'available' element
-#'  }
-#' }
-#'
 #' @references
 #' Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/available
 #'
@@ -363,6 +334,10 @@ DCAvailable <- R6Class("DCAvailable",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCAvailable}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -377,13 +352,6 @@ DCAvailable <- R6Class("DCAvailable",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'bibliographicCitation' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/bibliographicCitation
 #'
@@ -395,6 +363,10 @@ DCBibliographicCitation <- R6Class("DCBibliographicCitation",
    document = FALSE
  ),
  public = list(
+
+   #'@description Initializes an object of class \link{DCBibliographicCitation}
+   #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+   #'@param value value
    initialize = function(xml = NULL, value = NULL){
      super$initialize(xml = xml, term = private$xmlElement, value = value)
    }
@@ -409,13 +381,6 @@ DCBibliographicCitation <- R6Class("DCBibliographicCitation",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'conformsTo' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/conformsTo
 #'
@@ -427,6 +392,10 @@ DCConformsTo <- R6Class("DCConformsTo",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCConformsTo}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -441,14 +410,6 @@ DCConformsTo <- R6Class("DCConformsTo",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value, dc)}}{
-#'    This method is used to create an Dublin core 'contributor' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/contributor
 #'
@@ -460,6 +421,12 @@ DCContributor <- R6Class("DCContributor",
      document = FALSE
    ),
    public = list(
+
+     #'@description This method is used to create an Dublin core 'contributor' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
        if(dc) private$xmlNamespacePrefix = "DC"
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -475,14 +442,6 @@ DCContributor <- R6Class("DCContributor",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, term, value, dc)}}{
-#'    This method is used to create an Dublin core Terms 'coverage' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/coverage
 #'
@@ -494,6 +453,13 @@ DCCoverage <- R6Class("DCCoverage",
      document = FALSE
    ),
    public = list(
+
+     #'@description This method is used to create an Dublin core 'coverage' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param term term
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, term = NULL, value = NULL, dc = FALSE){
        if(is.null(term)) term <- private$xmlElement
        if(dc) private$xmlNamespacePrefix = "DC"
@@ -510,13 +476,6 @@ DCCoverage <- R6Class("DCCoverage",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'date' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/created
 #'
@@ -528,6 +487,10 @@ DCCreated <- R6Class("DCCreated",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCCreated}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -542,14 +505,6 @@ DCCreated <- R6Class("DCCreated",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value, dc)}}{
-#'    This method is used to create an Dublin core 'creator' element
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/creator
 #'
@@ -561,6 +516,12 @@ DCCreator <- R6Class("DCCreator",
      document = FALSE
    ),
    public = list(
+
+     #'@description This method is used to create an Dublin core 'creator' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
        if(dc) private$xmlNamespacePrefix = "DC"
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -576,14 +537,6 @@ DCCreator <- R6Class("DCCreator",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, term, value, dc)}}{
-#'    This method is used to create an Dublin core Terms 'date' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/date
 #'
@@ -595,6 +548,13 @@ DCDate <- R6Class("DCDate",
      document = FALSE
    ),
    public = list(
+
+     #'@description This method is used to create an Dublin core 'date' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param term term
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, term = NULL, value = NULL, dc = FALSE){
        if(is.null(term)) term <- private$xmlElement
        if(dc) private$xmlNamespacePrefix = "DC"
@@ -611,14 +571,6 @@ DCDate <- R6Class("DCDate",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'dateAccepted' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/dateAccepted
 #'
@@ -630,6 +582,10 @@ DCDateAccepted <- R6Class("DCDateAccepted",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCDateAccepted}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -644,13 +600,6 @@ DCDateAccepted <- R6Class("DCDateAccepted",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'dateCopyrighted' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/dateCopyrighted
 #'
@@ -662,6 +611,10 @@ DCDateCopyrighted <- R6Class("DCDateCopyrighted",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCDateCopyrighted}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -676,13 +629,6 @@ DCDateCopyrighted <- R6Class("DCDateCopyrighted",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'dateSubmitted' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/dateSubmitted
 #'
@@ -694,6 +640,10 @@ DCDateSubmitted <- R6Class("DCDateSubmitted",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCDateSubmitted}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -708,14 +658,6 @@ DCDateSubmitted <- R6Class("DCDateSubmitted",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, term, value, dc)}}{
-#'    This method is used to create an Dublin core Terms 'description' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/description
 #'
@@ -727,6 +669,13 @@ DCDescription <- R6Class("DCDescription",
     document = FALSE
   ),
   public = list(
+
+    #'@description This method is used to create an Dublin core 'description' element.
+    #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param term term
+    #'@param value value
+    #'@param dc use DC namespace?
     initialize = function(xml = NULL, term = NULL, value = NULL, dc = FALSE){
       if(is.null(term)) term <- private$xmlElement
       if(dc) private$xmlNamespacePrefix = "DC"
@@ -743,13 +692,6 @@ DCDescription <- R6Class("DCDescription",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'educationalLevel' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/educationalLevel
 #'
@@ -761,6 +703,10 @@ DCEducationalLevel <- R6Class("DCEducationalLevel",
    document = FALSE
  ),
  public = list(
+
+   #'@description Initializes an object of class \link{DCEducationalLevel}
+   #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+   #'@param value value
    initialize = function(xml = NULL, value = NULL){
      super$initialize(xml = xml, term = private$xmlElement, value = value)
    }
@@ -775,13 +721,6 @@ DCEducationalLevel <- R6Class("DCEducationalLevel",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'extent' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/extent
 #'
@@ -793,6 +732,10 @@ DCExtent <- R6Class("DCExtent",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCExtent}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -807,13 +750,6 @@ DCExtent <- R6Class("DCExtent",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'format' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/format
 #'
@@ -825,6 +761,11 @@ DCFormat <- R6Class("DCFormat",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCFormat}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param term term
+    #'@param value value
     initialize = function(xml = NULL, term = NULL, value = NULL){
       if(is.null(term)) term <- private$xmlElement
       super$initialize(xml = xml, term = term, value = value)
@@ -839,14 +780,7 @@ DCFormat <- R6Class("DCFormat",
 #' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'identifier' element
 #' @format \code{\link{R6Class}} object.
 #' @export
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, term, value, dc)}}{
-#'    This method is used to create an Dublin core 'identifier' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
+
 #'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/identifier
@@ -859,6 +793,13 @@ DCIdentifier <- R6Class("DCIdentifier",
     document = FALSE
   ),
   public = list(
+
+    #'@description This method is used to create an Dublin core 'identifier' element.
+    #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param term term
+    #'@param value value
+    #'@param dc use DC namespace?
     initialize = function(xml = NULL, term = NULL, value = NULL, dc = FALSE){
       if(is.null(term)) term <- private$xmlElement
       if(dc) private$xmlNamespacePrefix = "DC"
@@ -875,13 +816,6 @@ DCIdentifier <- R6Class("DCIdentifier",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core 'instructionalMethod' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/instructionalMethod
 #'
@@ -893,6 +827,10 @@ DCInstructionalMethod <- R6Class("DCInstructionalMethod",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCInstructionalMethod}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -907,13 +845,6 @@ DCInstructionalMethod <- R6Class("DCInstructionalMethod",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'issued' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/issued
 #'
@@ -925,6 +856,10 @@ DCIssued <- R6Class("DCIssued",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCIssued}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -939,14 +874,6 @@ DCIssued <- R6Class("DCIssued",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value, dc)}}{
-#'    This method is used to create an Dublin core 'language' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/language
 #'
@@ -958,6 +885,12 @@ DCLanguage <- R6Class("DCLanguage",
      document = FALSE
    ),
    public = list(
+
+     #'@description This method is used to create an Dublin core 'language' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
        if(dc) private$xmlNamespacePrefix = "DC"
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -973,13 +906,6 @@ DCLanguage <- R6Class("DCLanguage",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'license' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/license
 #'
@@ -991,6 +917,10 @@ DCLicense <- R6Class("DCLicense",
      document = FALSE
    ),
    public = list(
+
+     #'@description Initializes an object of class \link{DCLicense}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
      }
@@ -1005,13 +935,6 @@ DCLicense <- R6Class("DCLicense",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'mediator' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/mediator
 #'
@@ -1023,6 +946,10 @@ DCMediator <- R6Class("DCMediator",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCMediator}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -1037,13 +964,6 @@ DCMediator <- R6Class("DCMediator",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'medium' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/medium
 #'
@@ -1055,6 +975,10 @@ DCMedium <- R6Class("DCMedium",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCMedium}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -1069,13 +993,6 @@ DCMedium <- R6Class("DCMedium",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'modified' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/modified
 #'
@@ -1087,6 +1004,10 @@ DCModified <- R6Class("DCModified",
      document = FALSE
    ),
    public = list(
+
+     #'@description Initializes an object of class \link{DCModified}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
      }
@@ -1101,13 +1022,6 @@ DCModified <- R6Class("DCModified",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'provenance' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/provenance
 #'
@@ -1119,6 +1033,10 @@ DCProvenance <- R6Class("DCProvenance",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCProvenance}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -1133,14 +1051,6 @@ DCProvenance <- R6Class("DCProvenance",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value, dc)}}{
-#'    This method is used to create an Dublin core Terms 'publisher' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/publisher
 #'
@@ -1152,6 +1062,12 @@ DCPublisher <- R6Class("DCPublisher",
      document = FALSE
    ),
    public = list(
+
+     #'@description This method is used to create an Dublin core 'publisher' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
        if(dc) private$xmlNamespacePrefix = "DC"
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1167,13 +1083,6 @@ DCPublisher <- R6Class("DCPublisher",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'references' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/references
 #'
@@ -1185,6 +1094,10 @@ DCReferences <- R6Class("DCReferences",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCReferences}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -1199,14 +1112,6 @@ DCReferences <- R6Class("DCReferences",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, term, value, dc)}}{
-#'    This method is used to create an Dublin core Terms 'relation' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/relation
 #'
@@ -1218,6 +1123,13 @@ DCRelation <- R6Class("DCRelation",
     document = FALSE
   ),
   public = list(
+
+    #'@description This method is used to create an Dublin core 'relation' element.
+    #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param term term
+    #'@param value value
+    #'@param dc use DC namespace?
     initialize = function(xml = NULL, term = NULL, value = NULL, dc = FALSE){
       if(is.null(term)) term <- private$xmlElement
       if(dc) private$xmlNamespacePrefix = "DC"
@@ -1234,13 +1146,6 @@ DCRelation <- R6Class("DCRelation",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'replaces' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/replaces
 #'
@@ -1252,6 +1157,10 @@ DCReplaces <- R6Class("DCReplaces",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCReplaces}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -1266,13 +1175,6 @@ DCReplaces <- R6Class("DCReplaces",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'requires' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/requires
 #'
@@ -1284,6 +1186,10 @@ DCRequires <- R6Class("DCRequires",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCRequires}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -1298,14 +1204,6 @@ DCRequires <- R6Class("DCRequires",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value, dc)}}{
-#'    This method is used to create an Dublin core Terms 'rights' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/rights
 #'
@@ -1317,6 +1215,13 @@ DCRights <- R6Class("DCRights",
      document = FALSE
    ),
    public = list(
+
+     #'@description This method is used to create an Dublin core 'rights' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param term term
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, term = NULL, value = NULL, dc = FALSE){
        if(is.null(term)) term <- private$xmlElement
        if(dc) private$xmlNamespacePrefix = "DC"
@@ -1333,13 +1238,6 @@ DCRights <- R6Class("DCRights",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'rightsHolder' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/rightsHolder
 #'
@@ -1351,6 +1249,10 @@ DCRightsHolder <- R6Class("DCRightsHolder",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCRightsHolder}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }
@@ -1365,14 +1267,6 @@ DCRightsHolder <- R6Class("DCRightsHolder",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value, dc)}}{
-#'    This method is used to create an Dublin core Terms 'subject' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/subject
 #'
@@ -1384,6 +1278,12 @@ DCSubject <- R6Class("DCSubject",
      document = FALSE
    ),
    public = list(
+
+     #'@description This method is used to create an Dublin core 'subject' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
        if(dc) private$xmlNamespacePrefix = "DC"
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1399,24 +1299,21 @@ DCSubject <- R6Class("DCSubject",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'spatial' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/spatial
 #'
 DCSpatial <- R6Class("DCSpatial",
-   inherit = DCCOverage,
+   inherit = DCCoverage,
    private = list(
      xmlElement = "spatial",
      xmlNamespacePrefix = "DCTERMS",
      document = FALSE
    ),
    public = list(
+
+     #'@description Initializes an object of class \link{DCSpatial}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
      }
@@ -1431,14 +1328,6 @@ DCSpatial <- R6Class("DCSpatial",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value, dc)}}{
-#'    This method is used to create an Dublin core Terms 'source' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/source
 #'
@@ -1450,6 +1339,12 @@ DCSource <- R6Class("DCSource",
      document = FALSE
    ),
    public = list(
+
+     #'@description This method is used to create an Dublin core 'source' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
        if(dc) private$xmlNamespacePrefix = "DC"
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1465,13 +1360,6 @@ DCSource <- R6Class("DCSource",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'tableOfContents' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/tableOfContents
 #'
@@ -1483,6 +1371,10 @@ DCTableOfContents <- R6Class("DCTableOfContents",
      document = FALSE
    ),
    public = list(
+
+     #'@description Initializes an object of class \link{DCTableOfContents}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
      }
@@ -1497,13 +1389,6 @@ DCTableOfContents <- R6Class("DCTableOfContents",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'temporal' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/temporal
 #'
@@ -1515,6 +1400,10 @@ DCTemporal <- R6Class("DCTemporal",
      document = FALSE
    ),
    public = list(
+
+     #'@description Initializes an object of class \link{DCTemporal}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
      }
@@ -1530,14 +1419,6 @@ DCTemporal <- R6Class("DCTemporal",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, term, value, dc)}}{
-#'    This method is used to create an Dublin core Terms 'title' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/title
 #'
@@ -1549,6 +1430,13 @@ DCTitle <- R6Class("DCTitle",
      document = FALSE
    ),
    public = list(
+
+     #'@description This method is used to create an Dublin core 'title' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param term term
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, term = NULL, value = NULL, dc = FALSE){
        if(is.null(term)) term <- private$xmlElement
        if(dc) private$xmlNamespacePrefix = "DC"
@@ -1565,14 +1453,6 @@ DCTitle <- R6Class("DCTitle",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value, dc)}}{
-#'    This method is used to create an Dublin core Terms 'type' element.
-#'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/type
 #'
@@ -1584,6 +1464,13 @@ DCType <- R6Class("DCType",
      document = FALSE
    ),
    public = list(
+
+
+     #'@description This method is used to create an Dublin core 'type' element.
+     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param value value
+     #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
        if(dc) private$xmlNamespacePrefix = "DC"
        super$initialize(xml = xml, term = private$xmlElement, value = value,
@@ -1600,13 +1487,6 @@ DCType <- R6Class("DCType",
 #' @format \code{\link{R6Class}} object.
 #' @export
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, value)}}{
-#'    This method is used to create an Dublin core Terms 'valid' element
-#'  }
-#' }
-#'
 #' @references
 #'   Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dublin-core/dcmi-terms/terms/valid
 #'
@@ -1618,6 +1498,10 @@ DCValid <- R6Class("DCValid",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an object of class \link{DCValid}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
     }

@@ -16,15 +16,6 @@ This class models an Sword service Dataverse-specific  API client
 \details{
 SwordDataverseClient
 }
-\section{Methods inherited from \code{SwordClient}}{
-
-\describe{
- \item{\code{getServiceDocument()}}{
-   Gets a representation in R of the SWORD service document (capabilities)
- }
-}
-}
-
 \section{Methods}{
 
 \describe{
@@ -104,3 +95,338 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \keyword{Client}
 \keyword{Dataverse}
 \keyword{SWORD}
+\section{Super classes}{
+\code{\link[atom4R:atom4RLogger]{atom4R::atom4RLogger}} -> \code{\link[atom4R:AtomPubClient]{atom4R::AtomPubClient}} -> \code{\link[atom4R:SwordClient]{atom4R::SwordClient}} -> \code{SwordDataverseClient}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{SwordDataverseClient$new()}}
+\item \href{#method-getServiceDocument}{\code{SwordDataverseClient$getServiceDocument()}}
+\item \href{#method-getCollectionMembers}{\code{SwordDataverseClient$getCollectionMembers()}}
+\item \href{#method-getDataverses}{\code{SwordDataverseClient$getDataverses()}}
+\item \href{#method-getDataverse}{\code{SwordDataverseClient$getDataverse()}}
+\item \href{#method-editDataverseEntry}{\code{SwordDataverseClient$editDataverseEntry()}}
+\item \href{#method-getDataverseRecord}{\code{SwordDataverseClient$getDataverseRecord()}}
+\item \href{#method-createDataverseRecord}{\code{SwordDataverseClient$createDataverseRecord()}}
+\item \href{#method-updateDataverseRecord}{\code{SwordDataverseClient$updateDataverseRecord()}}
+\item \href{#method-deleteDataverseRecord}{\code{SwordDataverseClient$deleteDataverseRecord()}}
+\item \href{#method-publishDataverseRecord}{\code{SwordDataverseClient$publishDataverseRecord()}}
+\item \href{#method-addFilesToDataverseRecord}{\code{SwordDataverseClient$addFilesToDataverseRecord()}}
+\item \href{#method-deleteFilesFromDataverseRecord}{\code{SwordDataverseClient$deleteFilesFromDataverseRecord()}}
+\item \href{#method-clone}{\code{SwordDataverseClient$clone()}}
+}
+}
+\if{html}{
+\out{<details ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClass">}\href{../../atom4R/html/atom4RLogger.html#method-getClass}{\code{atom4R::atom4RLogger$getClass()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClassName">}\href{../../atom4R/html/atom4RLogger.html#method-getClassName}{\code{atom4R::atom4RLogger$getClassName()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getPwd">}\href{../../atom4R/html/AtomPubClient.html#method-getPwd}{\code{atom4R::AtomPubClient$getPwd()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getToken">}\href{../../atom4R/html/AtomPubClient.html#method-getToken}{\code{atom4R::AtomPubClient$getToken()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getUser">}\href{../../atom4R/html/AtomPubClient.html#method-getUser}{\code{atom4R::AtomPubClient$getUser()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="listCollections">}\href{../../atom4R/html/AtomPubClient.html#method-listCollections}{\code{atom4R::AtomPubClient$listCollections()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+This method is to instantiate an Sword API Dataverse-specific Client.
+
+   The \code{keyring_backend} can be set to use a different backend for storing
+   the SWORD DataVerse API user token with \pkg{keyring} (Default value is 'env').
+
+   The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
+   for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$new(
+  hostname,
+  token = NULL,
+  logger = NULL,
+  keyring_backend = "env"
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{hostname}}{host name}
+
+\item{\code{token}}{token}
+
+\item{\code{logger}}{logger}
+
+\item{\code{keyring_backend}}{keyring backend. Default is 'env'}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getServiceDocument"></a>}}
+\if{latex}{\out{\hypertarget{method-getServiceDocument}{}}}
+\subsection{Method \code{getServiceDocument()}}{
+Get service document
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$getServiceDocument(force = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{force}}{force Force getting/refreshing of service document}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+object of class \link{SwordServiceDocument}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getCollectionMembers"></a>}}
+\if{latex}{\out{\hypertarget{method-getCollectionMembers}{}}}
+\subsection{Method \code{getCollectionMembers()}}{
+Get collection members
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$getCollectionMembers(collectionId)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{collectionId}}{collection ID}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+a list of \link{AtomFeed}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getDataverses"></a>}}
+\if{latex}{\out{\hypertarget{method-getDataverses}{}}}
+\subsection{Method \code{getDataverses()}}{
+Get dataverses. Equivalent to \code{listCollections()} from \link{AtomPubClient}
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$getDataverses(pretty = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{pretty}}{prettify output as \code{data.frame}. Default is \code{FALSE}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+an object of class \code{data.frame}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getDataverse"></a>}}
+\if{latex}{\out{\hypertarget{method-getDataverse}{}}}
+\subsection{Method \code{getDataverse()}}{
+Get dataverse members by dataverse name. Equivlaent to \code{getCollectionMembers()}
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$getDataverse(dataverse)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dataverse}}{dataverse name}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+a list of \link{AtomFeed}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-editDataverseEntry"></a>}}
+\if{latex}{\out{\hypertarget{method-editDataverseEntry}{}}}
+\subsection{Method \code{editDataverseEntry()}}{
+Edits a dataverse entry
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$editDataverseEntry(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{identifier}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+an object of class \link{AtomEntry}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getDataverseRecord"></a>}}
+\if{latex}{\out{\hypertarget{method-getDataverseRecord}{}}}
+\subsection{Method \code{getDataverseRecord()}}{
+Get dataverse record
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$getDataverseRecord(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{identifier}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+an object of class \link{AtomFeed}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-createDataverseRecord"></a>}}
+\if{latex}{\out{\hypertarget{method-createDataverseRecord}{}}}
+\subsection{Method \code{createDataverseRecord()}}{
+Creates a dataverse record
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$createDataverseRecord(dataverse, entry)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dataverse}}{dataverse name}
+
+\item{\code{entry}}{entry}
+
+\item{\code{the}}{created \link{AtomEntry}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-updateDataverseRecord"></a>}}
+\if{latex}{\out{\hypertarget{method-updateDataverseRecord}{}}}
+\subsection{Method \code{updateDataverseRecord()}}{
+Updates a dataverse record
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$updateDataverseRecord(dataverse, entry, identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{dataverse}}{dataverse name}
+
+\item{\code{entry}}{entry}
+
+\item{\code{identifier}}{identifier of the entry to update}
+
+\item{\code{the}}{created \link{AtomEntry}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-deleteDataverseRecord"></a>}}
+\if{latex}{\out{\hypertarget{method-deleteDataverseRecord}{}}}
+\subsection{Method \code{deleteDataverseRecord()}}{
+Deletes a dataverse record
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$deleteDataverseRecord(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{identifier}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, or returns an error otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-publishDataverseRecord"></a>}}
+\if{latex}{\out{\hypertarget{method-publishDataverseRecord}{}}}
+\subsection{Method \code{publishDataverseRecord()}}{
+Publishes a dataverse record
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$publishDataverseRecord(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{identifier}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+the published \link{AtomEntry}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-addFilesToDataverseRecord"></a>}}
+\if{latex}{\out{\hypertarget{method-addFilesToDataverseRecord}{}}}
+\subsection{Method \code{addFilesToDataverseRecord()}}{
+Add files to a dataverse record
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$addFilesToDataverseRecord(identifier, files)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{identifier}
+
+\item{\code{files}}{files}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-deleteFilesFromDataverseRecord"></a>}}
+\if{latex}{\out{\hypertarget{method-deleteFilesFromDataverseRecord}{}}}
+\subsection{Method \code{deleteFilesFromDataverseRecord()}}{
+Deletes files from a Dataverse record
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$deleteFilesFromDataverseRecord(identifier, files = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{identifier}
+
+\item{\code{files}}{files}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+an object of class \code{data.frame} giving each file and it's deletion status
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordDataverseClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

@@ -19,11 +19,45 @@ SwordHalClient
 \note{
 Experimental
 }
+\author{
+Emmanuel Blondel <emmanuel.blondel1@gmail.com>
+}
+\keyword{API}
+\keyword{Client}
+\keyword{SWORD}
+\section{Super classes}{
+\code{\link[atom4R:atom4RLogger]{atom4R::atom4RLogger}} -> \code{\link[atom4R:AtomPubClient]{atom4R::AtomPubClient}} -> \code{\link[atom4R:SwordClient]{atom4R::SwordClient}} -> \code{SwordHalClient}
+}
 \section{Methods}{
-
-\describe{
- \item{\code{new(url, version, user, pwd, keyring_backend)}}{
-   This method is to instantiate an Sword HAL (Archive Ouvertes - \url{https://hal.archives-ouvertes.fr/}) Client.
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{SwordHalClient$new()}}
+\item \href{#method-getServiceDocument}{\code{SwordHalClient$getServiceDocument()}}
+\item \href{#method-getCollectionMembers}{\code{SwordHalClient$getCollectionMembers()}}
+\item \href{#method-clone}{\code{SwordHalClient$clone()}}
+}
+}
+\if{html}{
+\out{<details ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClass">}\href{../../atom4R/html/atom4RLogger.html#method-getClass}{\code{atom4R::atom4RLogger$getClass()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClassName">}\href{../../atom4R/html/atom4RLogger.html#method-getClassName}{\code{atom4R::atom4RLogger$getClassName()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getPwd">}\href{../../atom4R/html/AtomPubClient.html#method-getPwd}{\code{atom4R::AtomPubClient$getPwd()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getToken">}\href{../../atom4R/html/AtomPubClient.html#method-getToken}{\code{atom4R::AtomPubClient$getToken()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getUser">}\href{../../atom4R/html/AtomPubClient.html#method-getUser}{\code{atom4R::AtomPubClient$getUser()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="listCollections">}\href{../../atom4R/html/AtomPubClient.html#method-listCollections}{\code{atom4R::AtomPubClient$listCollections()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+This method is to instantiate an Sword HAL (Archive Ouvertes - \url{https://hal.archives-ouvertes.fr/}) Client.
    By default the version is set to "2".
 
    The \code{keyring_backend} can be set to use a different backend for storing
@@ -31,19 +65,87 @@ Experimental
 
    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
- }
- \item{\code{getServiceDocument()}}{
-   Gets a representation in R of the SWORD service document (capabilities)
- }
- \item{\code{getCollectionMembers(collectionId)}}{
-   Get collection members.
- }
-}
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordHalClient$new(
+  url,
+  user = NULL,
+  pwd = NULL,
+  logger = NULL,
+  keyring_backend = "env"
+)}\if{html}{\out{</div>}}
 }
 
-\author{
-Emmanuel Blondel <emmanuel.blondel1@gmail.com>
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{url}}{url}
+
+\item{\code{user}}{user}
+
+\item{\code{pwd}}{pwd}
+
+\item{\code{logger}}{logger}
+
+\item{\code{keyring_backend}}{keyring backend. Default value is 'env'}
 }
-\keyword{API}
-\keyword{Client}
-\keyword{SWORD}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getServiceDocument"></a>}}
+\if{latex}{\out{\hypertarget{method-getServiceDocument}{}}}
+\subsection{Method \code{getServiceDocument()}}{
+Get service document
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordHalClient$getServiceDocument(force = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{force}}{force Force getting/refreshing of service document}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+object of class \link{SwordServiceDocument}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getCollectionMembers"></a>}}
+\if{latex}{\out{\hypertarget{method-getCollectionMembers}{}}}
+\subsection{Method \code{getCollectionMembers()}}{
+Get collection members
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordHalClient$getCollectionMembers(collectionId)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{collectionId}}{collection ID}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+a list of \link{AtomFeed}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{SwordHalClient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

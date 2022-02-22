@@ -56,10 +56,22 @@ AtomPubClient <- R6Class("AtomPubClient",
     user = NULL
   ),
   public = list(
-
+    #'@field service service
     service = NULL,
 
-    #initialize
+    #'@description This method is to instantiate an Sword Client. By default the version is set to "2".
+    #'
+    #'    The \code{keyring_backend} can be set to use a different backend for storing
+    #'    the SWORD API user token with \pkg{keyring} (Default value is 'env').
+    #'
+    #'    The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
+    #'    for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
+    #'@param url url
+    #'@param user user
+    #'@param pwd pwd
+    #'@param token token
+    #'@param logger logger
+    #'@param keyring_backend keyring backend. Default is 'env'
     initialize = function(url, user = NULL, pwd = NULL, token = NULL, logger = NULL,
                           keyring_backend = 'env'){
       super$initialize(logger = logger)
@@ -84,12 +96,14 @@ AtomPubClient <- R6Class("AtomPubClient",
       }
     },
 
-    #getUser
+    #'@description Get user
+    #'@return object of class \code{character}
     getUser = function(){
       return(private$user)
     },
 
-    #getPwd
+    #'@description Get password
+    #'@return object of class \code{character}
     getPwd = function(){
       pwd <- NULL
       if(!is.null(private$keyring_service)){
@@ -100,22 +114,27 @@ AtomPubClient <- R6Class("AtomPubClient",
       return(pwd)
     },
 
-    #getToken
+    #'@description Get token
+    #'@return object of class \code{character}
     getToken = function(){
       token <- NULL
       if(!is.null(private$keyring_service)){
-        token <- try(private$keyring_backend$get(service = private$keyring_service, username = "atom4R"), silent = TRUE)
+        token <- try(private$keyring_backend$get(service = private$keyring_service, username = self$getUser()), silent = TRUE)
         if(is(token, "try-error")) token <- NULL
       }
       return(token)
     },
 
-    #getServiceDocument
+    #'@description Get service document
+    #'@param force force Force getting/refreshing of service document
+    #'@return object of class \link{SwordServiceDocument}
     getServiceDocument = function(){
       stop("'getServiceDocument' not implemented in AtomPub abstract client")
     },
 
-    #listCollections
+    #'@description List collections
+    #'@param pretty pretty
+    #'@return a list of collections, or \code{data.frame}
     listCollections = function(pretty = FALSE){
       if(is.null(self$service)) self$getServiceDocument()
       collections <- self$service$collections
@@ -123,8 +142,8 @@ AtomPubClient <- R6Class("AtomPubClient",
       return(collections)
     },
 
-    #getCollectionMembers
-    getCollectionMembers = function(collectionId){
+    #'@description Get collection members. Unimplemented abstract method at \link{AtomPubClient} level
+    getCollectionMembers = function(){
       stop("'getCollectionMembers' not implemented in AtomPub abstract client")
     }
   )

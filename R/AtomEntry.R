@@ -11,71 +11,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Atom Entry
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field id identifier
-#' @field updated Update date/time
-#' @field published Publication date/time
-#' @field title Title
-#' @field summary Summary
-#' @field rights Rights
-#' @field source Source
-#' @field author Author(s)
-#' @field contributor Contributor(s)
-#' @field category Category
-#' @field content Content
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to create an Atom
-#'  }
-#'  \item{\code{setId(id)}}{
-#'    Set identifier
-#'  }
-#'  \item{\code{setUpdated(updated)}}{
-#'    Set update date (object of class 'character' or 'POSIX')
-#'  }
-#'  \item{\code{setPublished(published)}}{
-#'    Set publication date (object of class 'character' or 'POSIX')
-#'  }
-#'  \item{\code{setTitle(title)}}{
-#'    Set title
-#'  }
-#'  \item{\code{setSummary(summary)}}{
-#'    Set summary
-#'  }
-#'  \item{\code{setRights(rights)}}{
-#'    Set rights
-#'  }
-#'  \item{\code{setSource(source)}}{
-#'    Set source
-#'  }
-#'  \item{\code{addAuthor(author)}}{
-#'    Adds an author, object of class \code{AtomAuthor}
-#'  }
-#'  \item{\code{delAuthor(author)}}{
-#'    Deletes an author, object of class \code{AtomAuthor}
-#'  }
-#'  \item{\code{addContributor(contributor)}}{
-#'    Adds a contributor, object of class \code{AtomContributor}
-#'  }
-#'  \item{\code{delContributor(contributor)}}{
-#'    Deletes a contributor, object of class \code{AtomContributor}
-#'  }
-#'  \item{\code{addCategory(value, term, scheme, label)}}{
-#'    Adds a category
-#'  }
-#'  \item{\code{delCategory(value, term, scheme, label)}}{
-#'    Deletes a category
-#'  }
-#'  \item{\code{addLink(link, rel, type)}}{
-#'    Adds a link. Default \code{rel} value is set to "alternate". Default
-#'    \code{type} value is set to "text/html"
-#'  }
-#'  \item{\code{delLink(link, rel, type)}}{
-#'    Deletes a link
-#'  }
-#' }
-#'
 #' @examples
 #'  \dontrun{
 #'   #encoding
@@ -126,65 +61,91 @@ AtomEntry <- R6Class("AtomEntry",
     document = TRUE
   ),
   public = list(
+    #' @field id identifier
     id = NULL,
+    #' @field updated Update date/time
     updated = Sys.time(),
+    #' @field published Publication date/time
     published = NULL,
+    #' @field title Title
     title = NULL,
+    #' @field summary Summary
     summary = NULL,
+    #' @field rights Rights
     rights = NULL,
+    #' @field source Source
     source = NULL,
+    #' @field author Author(s)
     author = list(),
+    #' @field contributor Contributor(s)
     contributor = list(),
+    #' @field category Category
     category = list(),
+    #' @field content Content
     content = NULL,
 
+    #'@description Initializes an \link{AtomEntry}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     initialize = function(xml = NULL){
       super$initialize(xml = xml, wrap = FALSE)
     },
 
-    #setId
+    #'@description Set ID
+    #'@param id id
     setId = function(id){
       if(!is(id, "character")) stop("Atom feed id should be a 'character' object")
       self$id <- id
     },
 
-    #setUpdated
+    #'@description Set updated date
+    #'@param updated object of class \code{Date} or \code{POSIXt}
     setUpdated = function(updated){
       if(!is(updated, "Date") & !is(updated, "POSIXt")){
-        stop("Atom feed 'updated' should be a 'Date' or 'POSIXt' object")
+        stop("Atom entry 'updated' should be a 'Date' or 'POSIXt' object")
       }
       self$updated <- updated
     },
 
-    #setPublished
+    #'@description Set published date
+    #'@param published object of class \code{Date} or \code{POSIXt}
     setPublished = function(published){
       if(!is(published, "Date") & !is(published, "POSIXt")){
-        stop("Atom feed 'published' should be a 'Date' or 'POSIXt' object")
+        stop("Atom entry 'published' should be a 'Date' or 'POSIXt' object")
       }
       self$published <- published
     },
 
-    #setTitle
+    #'@description Set title
+    #'@param title title
+    #'@param type type. Default is "text"
     setTitle = function(title, type = "text"){
       self$title = self$createElement(title, type)
     },
 
-    #setSummary
+    #'@description Set summary
+    #'@param summary summary
+    #'@param type type. Default is "text"
     setSummary = function(summary, type = "text"){
       self$summary = self$createElement(summary, type)
     },
 
-    #setRights
+    #'@description Set rights
+    #'@param rights rights
+    #'@param type type. Default is "text"
     setRights = function(rights, type = "text"){
       self$rights <- self$createElement(rights, type)
     },
 
-    #setSource
+    #'@description Set source
+    #'@param source source
+    #'@param type type. Default is "text"
     setSource = function(source, type = "text"){
       self$source <- self$createElement(source, type)
     },
 
-    #addAuthor
+    #'@description Adds author
+    #'@param author object of class \link{AtomAuthor}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addAuthor = function(author){
       if(!is(author, "AtomAuthor")){
         stop("Author should be an object of class 'AtomAuthor")
@@ -192,7 +153,9 @@ AtomEntry <- R6Class("AtomEntry",
       return(self$addListElement("author", author))
     },
 
-    #delAuthor
+    #'@description Deletes author
+    #'@param author object of class \link{AtomAuthor}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delAuthor = function(author){
       if(!is(author, "AtomAuthor")){
         stop("Author should be an object of class 'AtomAuthor")
@@ -200,7 +163,9 @@ AtomEntry <- R6Class("AtomEntry",
       return(self$delListElement("author", author))
     },
 
-    #addContributor
+    #'@description Adds contributor
+    #'@param contributor object of class \link{AtomContributor}
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addContributor = function(contributor){
       if(!is(contributor, "AtomContributor")){
         stop("Contributor should be an object of class 'AtomContributor")
@@ -208,7 +173,9 @@ AtomEntry <- R6Class("AtomEntry",
       return(self$addListElement("contributor", contributor))
     },
 
-    #delContributor
+    #'@description Deletes contributor
+    #'@param contributor object of class \link{AtomContributor}
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delContributor = function(contributor){
       if(!is(contributor, "AtomContributor")){
         stop("Contributor should be an object of class 'AtomContributor")
@@ -216,14 +183,24 @@ AtomEntry <- R6Class("AtomEntry",
       return(self$delListElement("contributor", contributor))
     },
 
-    #addCategory
+    #'@description Adds category
+    #'@param value value
+    #'@param term term
+    #'@param scheme scheme
+    #'@param label label
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addCategory = function(value, term, scheme = NULL, label = NULL){
       category <- AtomCategory$new(value = value, term = term, scheme = scheme, label = label)
       self$category[[length(self$category)+1]] <- category
       return(TRUE)
     },
 
-    #delCategory
+    #'@description Deletes category
+    #'@param value value
+    #'@param term term
+    #'@param scheme scheme
+    #'@param label label
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delCategory = function(value, term, scheme = NULL, label = NULL){
       category <- AtomCategory$new(value = value, term = term, scheme = scheme, label = label)
       catLength <- length(self$category)
@@ -235,7 +212,11 @@ AtomEntry <- R6Class("AtomEntry",
       return(self$category == catLength-1)
     },
 
-    #addLink
+    #'@description Adds link
+    #'@param link link
+    #'@param rel relation. Default is "alternate"
+    #'@param type type. Default is "text/html"
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addLink = function(link, rel = "alternate", type = "text/html"){
       if(!rel %in% c("self", "alternate", "related", "enclosure", "via")){
         stop("Link relation 'rel' should be among values ['self', 'alternate', 'related', 'enclosure', 'via']")
@@ -244,7 +225,11 @@ AtomEntry <- R6Class("AtomEntry",
       self$link[[length(self$link)+1]] <- thelink
     },
 
-    #delLink
+    #'@description Deletes link
+    #'@param link link
+    #'@param rel relation. Default is "alternate"
+    #'@param type type. Default is "text/html"
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delLink = function(link, rel = "alternate", type = "text/html"){
       if(!rel %in% c("self", "alternate", "related", "enclosure", "via")){
         stop("Link relation 'rel' should be among values ['self', 'alternate', 'related', 'enclosure', 'via']")
@@ -260,6 +245,9 @@ AtomEntry <- R6Class("AtomEntry",
       return(length(self$link) == linkLength-1)
     },
 
+
+    #'@description Set content
+    #'@param content content
     setContent = function(content){
       stop("'setContent' not yet implemented")
     }

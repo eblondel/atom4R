@@ -13,13 +13,6 @@
 #'
 #' @note abstract class used internally by \pkg{atom4R}
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to create an Atom abstract object
-#'  }
-#' }
-#'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 AtomAbstractObject <- R6Class("AtomAbstractObject",
@@ -160,16 +153,29 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
     }
   ),
   public = list(
-
+    #'@field wrap wrapping XML element
     wrap = TRUE,
+    #'@field element element
     element = NA,
+    #'@field namespace namespace
     namespace = NA,
+    #'@field defaults defaults
     defaults = list(),
+    #'@field attrs attrs
     attrs = list(),
+    #'@field printAttrs attrs to print
     printAttrs = list(),
+    #'@field parentAttrs parent attrs
     parentAttrs = NULL,
 
-    #initialize
+    #'@description Initializes an object of class \link{AtomAbstractObject}
+    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param element element
+    #'@param namespace namespace
+    #'@param attrs attrs
+    #'@param defaults defaults
+    #'@param wrap wrap
+    #'@param logger logger type
     initialize = function(xml = NULL, element = NULL, namespace = NULL,
                           attrs = list(), defaults = list(),
                           wrap = TRUE, logger = "INFO"){
@@ -186,27 +192,34 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       }
     },
 
-    #setIsDocument
+    #'@description Set if object is a document or not
+    #'@param isDocument object of class \code{logical}
     setIsDocument = function(isDocument){
       private$document <- isDocument
     },
 
-    #isDocument
+    #'@description Informs if the object is a document
+    #'@return object of class \code{logical}
     isDocument = function(){
       return(private$document)
     },
 
-    #getRootElement
+    #'@description Get root XML element
+    #'@return object of class \code{character}
     getRootElement = function(){
       return(private$xmlElement)
     },
 
-    #getNamespace
+    #'@description Get XML namespace
+    #'@return object of class \code{character}
     getNamespace = function(){
       return(private$namespace)
     },
 
-    #createElement
+    #'@description Creates an element
+    #'@param element element
+    #'@param type type. Default is "text"
+    #'@return the typed element
     createElement = function(element, type = "text"){
       if(!type %in% private$allowedTypes){
         stop(sprintf("Type should be among allowed types [%s]",
@@ -217,7 +230,10 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       return(obj)
     },
 
-    #addListElement
+    #'@description Add a metadata element to an element list
+    #'@param field field
+    #'@param metadataElement metadata element to add
+    #'@return \code{TRUE} if added, \code{FALSE} otherwise
     addListElement = function(field, metadataElement){
       startNb <- length(self[[field]])
       if(!self$contains(field, metadataElement)){
@@ -227,7 +243,10 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       return(endNb == startNb+1)
     },
 
-    #delListElement
+    #'@description Deletes a metadata element from an element list
+    #'@param field field
+    #'@param metadataElement metadata element to add
+    #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
     delListElement = function(field, metadataElement){
       startNb <- length(self[[field]])
       if(self$contains(field, metadataElement)){
@@ -237,7 +256,10 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       return(endNb == startNb-1)
     },
 
-    #contains
+    #'@description Indicates if an element list contains or not an element
+    #'@param field field
+    #'@param metadataElement metadata element to add
+    #'@return \code{TRUE} if contained, \code{FALSE} otherwise
     contains = function(field, metadataElement){
       out = FALSE
       if(length(self[[field]]) == 0){
@@ -250,7 +272,9 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       return(out)
     },
 
-    #print
+    #'@description Prints the element
+    #'@param ... any parameter to pass to print method
+    #'@param depth printing depth
     print = function(..., depth = 1){
       #list of fields to encode as XML
       fields <- rev(names(self))
@@ -296,7 +320,8 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       invisible(self)
     },
 
-    #decode
+    #'@description Decodes the object from an \pkg{XML} representation
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     decode = function(xml){
       #remove comments if any (in case of document)
       if(is(xml, "XMLInternalDocument")){
@@ -392,7 +417,11 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       self$attrs <- as.list(xmlattrs)
     },
 
-    #encode
+    #'@description Encodes the object as XML
+    #'@param addNS whether namespace has to be added. Default is \code{TRUE}
+    #'@param validate whether validation has to be done vs. XML schemas. Default is \code{TRUE}
+    #'@param strict whether strict validation has to be operated (raise an error if invalid). Default is \code{FALSE}
+    #'@param encoding encoding. Default is "UTF-8"
     encode = function(addNS = TRUE, validate = TRUE, strict = FALSE, encoding = "UTF-8"){
 
       #list of fields to encode as XML
@@ -571,7 +600,10 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       return(out)
     },
 
-    #validate
+    #'@description Validates the object / XML vs. XML schemas
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param strict strict validation or not
+    #'@return \code{TRUE} if valid, \code{FALSE} otherwise
     validate = function(xml = NULL, strict = FALSE){
 
       #xml
@@ -614,7 +646,9 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       return(isValid)
     },
 
-    #save
+    #'@description Saves the object as XML file
+    #'@param file file name
+    #'@param ... any parameter to pass to \code{encode()} method
     save = function(file, ...){
       #encode as xml
       xml <- self$encode(...)
@@ -627,7 +661,9 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       writeBin(r, file)
     },
 
-    #isFieldInheritedFrom
+    #'@description Indicates the class from which field is inherited
+    #'@param field field
+    #'@return an object of class \link{R6Class}, or \code{NULL}
     isFieldInheritedFrom = function(field){
       parentClass <- NULL
       inherited <- !(field %in% names(self$getClass()$public_fields))
@@ -645,18 +681,22 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       return(parentClass)
     },
 
-    #getClassName
+    #'@description Get class name
+    #'@return object of class \code{character}
     getClassName = function(){
       return(class(self)[1])
     },
 
-    #getClass
+    #'@description Get class
+    #'@return object of class \link{R6Class}
     getClass = function(){
       class <- eval(parse(text=self$getClassName()))
       return(class)
     },
 
-    #getNamespaceDefinition
+    #'@description Get namespace definition
+    #'@param recursive recursive
+    #'@return a named \code{list} of the XML namespaces
     getNamespaceDefinition = function(recursive = FALSE){
       nsdefs <- NULL
 
@@ -748,7 +788,8 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
       return(nsdefs)
     },
 
-    #getXmlElement
+    #'@description Get XML element name
+    #'@return object of class \code{character}
     getXmlElement = function(){
       return(private$xmlElement)
     }

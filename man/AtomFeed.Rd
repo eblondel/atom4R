@@ -16,34 +16,6 @@ This class models an atom feed
 \details{
 AtomFeed
 }
-\section{Fields}{
-
-\describe{
-\item{\code{id}}{Identifier}
-
-\item{\code{updated}}{Update date}
-
-\item{\code{title}}{Title}
-
-\item{\code{subtitle}}{Subtitle}
-
-\item{\code{rights}}{Rights (license, use, ...)}
-
-\item{\code{author}}{Author person}
-
-\item{\code{contributor}}{Contributor person}
-
-\item{\code{generator}}{Generator}
-
-\item{\code{icon}}{Icon}
-
-\item{\code{logo}}{Logo}
-
-\item{\code{category}}{Category}
-
-\item{\code{entries}}{List of entries}
-}}
-
 \section{Methods}{
 
 \describe{
@@ -185,3 +157,535 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{atom}
 \keyword{feed}
+\section{Super classes}{
+\code{\link[atom4R:atom4RLogger]{atom4R::atom4RLogger}} -> \code{\link[atom4R:AtomAbstractObject]{atom4R::AtomAbstractObject}} -> \code{AtomFeed}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{id}}{Identifier}
+
+\item{\code{updated}}{Update date}
+
+\item{\code{published}}{Publication date}
+
+\item{\code{title}}{Title}
+
+\item{\code{subtitle}}{Subtitle}
+
+\item{\code{rights}}{Rights (license, use, ...)}
+
+\item{\code{author}}{Author person}
+
+\item{\code{contributor}}{Contributor person}
+
+\item{\code{generator}}{Generator}
+
+\item{\code{icon}}{Icon}
+
+\item{\code{logo}}{Logo}
+
+\item{\code{category}}{Category}
+
+\item{\code{link}}{links}
+
+\item{\code{entry}}{List of entries}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{AtomFeed$new()}}
+\item \href{#method-setId}{\code{AtomFeed$setId()}}
+\item \href{#method-setUpdated}{\code{AtomFeed$setUpdated()}}
+\item \href{#method-setPublished}{\code{AtomFeed$setPublished()}}
+\item \href{#method-addLink}{\code{AtomFeed$addLink()}}
+\item \href{#method-delLink}{\code{AtomFeed$delLink()}}
+\item \href{#method-setSelfLink}{\code{AtomFeed$setSelfLink()}}
+\item \href{#method-setAlternateLink}{\code{AtomFeed$setAlternateLink()}}
+\item \href{#method-setTitle}{\code{AtomFeed$setTitle()}}
+\item \href{#method-setSubtitle}{\code{AtomFeed$setSubtitle()}}
+\item \href{#method-setRights}{\code{AtomFeed$setRights()}}
+\item \href{#method-addAuthor}{\code{AtomFeed$addAuthor()}}
+\item \href{#method-delAuthor}{\code{AtomFeed$delAuthor()}}
+\item \href{#method-addContributor}{\code{AtomFeed$addContributor()}}
+\item \href{#method-delContributor}{\code{AtomFeed$delContributor()}}
+\item \href{#method-setGenerator}{\code{AtomFeed$setGenerator()}}
+\item \href{#method-setIcon}{\code{AtomFeed$setIcon()}}
+\item \href{#method-addCategory}{\code{AtomFeed$addCategory()}}
+\item \href{#method-delCategory}{\code{AtomFeed$delCategory()}}
+\item \href{#method-addEntry}{\code{AtomFeed$addEntry()}}
+\item \href{#method-delEntry}{\code{AtomFeed$delEntry()}}
+\item \href{#method-clone}{\code{AtomFeed$clone()}}
+}
+}
+\if{html}{
+\out{<details ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="addListElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-addListElement}{\code{atom4R::AtomAbstractObject$addListElement()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="contains">}\href{../../atom4R/html/AtomAbstractObject.html#method-contains}{\code{atom4R::AtomAbstractObject$contains()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="createElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-createElement}{\code{atom4R::AtomAbstractObject$createElement()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="decode">}\href{../../atom4R/html/AtomAbstractObject.html#method-decode}{\code{atom4R::AtomAbstractObject$decode()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="delListElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-delListElement}{\code{atom4R::AtomAbstractObject$delListElement()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="encode">}\href{../../atom4R/html/AtomAbstractObject.html#method-encode}{\code{atom4R::AtomAbstractObject$encode()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClass">}\href{../../atom4R/html/AtomAbstractObject.html#method-getClass}{\code{atom4R::AtomAbstractObject$getClass()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClassName">}\href{../../atom4R/html/AtomAbstractObject.html#method-getClassName}{\code{atom4R::AtomAbstractObject$getClassName()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespace">}\href{../../atom4R/html/AtomAbstractObject.html#method-getNamespace}{\code{atom4R::AtomAbstractObject$getNamespace()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespaceDefinition">}\href{../../atom4R/html/AtomAbstractObject.html#method-getNamespaceDefinition}{\code{atom4R::AtomAbstractObject$getNamespaceDefinition()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getRootElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-getRootElement}{\code{atom4R::AtomAbstractObject$getRootElement()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getXmlElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-getXmlElement}{\code{atom4R::AtomAbstractObject$getXmlElement()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isDocument">}\href{../../atom4R/html/AtomAbstractObject.html#method-isDocument}{\code{atom4R::AtomAbstractObject$isDocument()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isFieldInheritedFrom">}\href{../../atom4R/html/AtomAbstractObject.html#method-isFieldInheritedFrom}{\code{atom4R::AtomAbstractObject$isFieldInheritedFrom()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="print">}\href{../../atom4R/html/AtomAbstractObject.html#method-print}{\code{atom4R::AtomAbstractObject$print()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="save">}\href{../../atom4R/html/AtomAbstractObject.html#method-save}{\code{atom4R::AtomAbstractObject$save()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="setIsDocument">}\href{../../atom4R/html/AtomAbstractObject.html#method-setIsDocument}{\code{atom4R::AtomAbstractObject$setIsDocument()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="validate">}\href{../../atom4R/html/AtomAbstractObject.html#method-validate}{\code{atom4R::AtomAbstractObject$validate()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes a \link{AtomFeed}
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$new(xml = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setId"></a>}}
+\if{latex}{\out{\hypertarget{method-setId}{}}}
+\subsection{Method \code{setId()}}{
+Set ID
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$setId(id)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{id}}{id}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setUpdated"></a>}}
+\if{latex}{\out{\hypertarget{method-setUpdated}{}}}
+\subsection{Method \code{setUpdated()}}{
+Set updated date
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$setUpdated(updated)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{updated}}{object of class \code{Date} or \code{POSIXt}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setPublished"></a>}}
+\if{latex}{\out{\hypertarget{method-setPublished}{}}}
+\subsection{Method \code{setPublished()}}{
+Set published date
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$setPublished(published)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{published}}{object of class \code{Date} or \code{POSIXt}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-addLink"></a>}}
+\if{latex}{\out{\hypertarget{method-addLink}{}}}
+\subsection{Method \code{addLink()}}{
+Adds link
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$addLink(link, rel = "alternate", type = "text/html")}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{link}}{link}
+
+\item{\code{rel}}{relation. Default is "alternate"}
+
+\item{\code{type}}{type. Default is "text/html"}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-delLink"></a>}}
+\if{latex}{\out{\hypertarget{method-delLink}{}}}
+\subsection{Method \code{delLink()}}{
+Deletes link
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$delLink(link, rel = "alternate", type = "text/html")}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{link}}{link}
+
+\item{\code{rel}}{relation. Default is "alternate"}
+
+\item{\code{type}}{type. Default is "text/html"}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setSelfLink"></a>}}
+\if{latex}{\out{\hypertarget{method-setSelfLink}{}}}
+\subsection{Method \code{setSelfLink()}}{
+Set self link
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$setSelfLink(link)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{link}}{link}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if set, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setAlternateLink"></a>}}
+\if{latex}{\out{\hypertarget{method-setAlternateLink}{}}}
+\subsection{Method \code{setAlternateLink()}}{
+Set alternate link
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$setAlternateLink(link, type = "text/html")}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{link}}{link}
+
+\item{\code{type}}{type. Default is "text/html"}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if set, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setTitle"></a>}}
+\if{latex}{\out{\hypertarget{method-setTitle}{}}}
+\subsection{Method \code{setTitle()}}{
+Set title
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$setTitle(title, type = "text")}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{title}}{title}
+
+\item{\code{type}}{type. Default is "text"}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setSubtitle"></a>}}
+\if{latex}{\out{\hypertarget{method-setSubtitle}{}}}
+\subsection{Method \code{setSubtitle()}}{
+Set subtitle
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$setSubtitle(subtitle, type = "text")}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{subtitle}}{subtitle}
+
+\item{\code{type}}{type. Default is "text"}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setRights"></a>}}
+\if{latex}{\out{\hypertarget{method-setRights}{}}}
+\subsection{Method \code{setRights()}}{
+Set rights
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$setRights(rights, type = "text")}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{rights}}{rights}
+
+\item{\code{type}}{type. Default is "text"}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-addAuthor"></a>}}
+\if{latex}{\out{\hypertarget{method-addAuthor}{}}}
+\subsection{Method \code{addAuthor()}}{
+Adds author
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$addAuthor(author)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{author}}{object of class \link{AtomAuthor}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-delAuthor"></a>}}
+\if{latex}{\out{\hypertarget{method-delAuthor}{}}}
+\subsection{Method \code{delAuthor()}}{
+Deletes author
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$delAuthor(author)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{author}}{object of class \link{AtomAuthor}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-addContributor"></a>}}
+\if{latex}{\out{\hypertarget{method-addContributor}{}}}
+\subsection{Method \code{addContributor()}}{
+Adds contributor
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$addContributor(contributor)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{contributor}}{object of class \link{AtomContributor}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-delContributor"></a>}}
+\if{latex}{\out{\hypertarget{method-delContributor}{}}}
+\subsection{Method \code{delContributor()}}{
+Deletes contributor
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$delContributor(contributor)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{contributor}}{object of class \link{AtomContributor}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setGenerator"></a>}}
+\if{latex}{\out{\hypertarget{method-setGenerator}{}}}
+\subsection{Method \code{setGenerator()}}{
+Set generator
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$setGenerator(generator, type = "text")}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{generator}}{generator}
+
+\item{\code{type}}{type. Default is "text"}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setIcon"></a>}}
+\if{latex}{\out{\hypertarget{method-setIcon}{}}}
+\subsection{Method \code{setIcon()}}{
+Set icon
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$setIcon(icon)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{icon}}{icon}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-addCategory"></a>}}
+\if{latex}{\out{\hypertarget{method-addCategory}{}}}
+\subsection{Method \code{addCategory()}}{
+Adds category
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$addCategory(value, term, scheme = NULL, label = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{value}}{value}
+
+\item{\code{term}}{term}
+
+\item{\code{scheme}}{scheme}
+
+\item{\code{label}}{label}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-delCategory"></a>}}
+\if{latex}{\out{\hypertarget{method-delCategory}{}}}
+\subsection{Method \code{delCategory()}}{
+Deletes category
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$delCategory(value, term, scheme = NULL, label = NULL)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{value}}{value}
+
+\item{\code{term}}{term}
+
+\item{\code{scheme}}{scheme}
+
+\item{\code{label}}{label}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-addEntry"></a>}}
+\if{latex}{\out{\hypertarget{method-addEntry}{}}}
+\subsection{Method \code{addEntry()}}{
+Adds an entry
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$addEntry(entry)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{entry}}{object of class \link{AtomEntry}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-delEntry"></a>}}
+\if{latex}{\out{\hypertarget{method-delEntry}{}}}
+\subsection{Method \code{delEntry()}}{
+Deletes an entry
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$delEntry(entry)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{entry}}{object of class \link{AtomEntry}}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomFeed$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

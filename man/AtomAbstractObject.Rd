@@ -19,16 +19,447 @@ AtomAbstractObject
 \note{
 abstract class used internally by \pkg{atom4R}
 }
-\section{Methods}{
-
-\describe{
- \item{\code{new(xml)}}{
-   This method is used to create an Atom abstract object
- }
-}
-}
-
 \author{
 Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 }
 \keyword{atom}
+\section{Super class}{
+\code{\link[atom4R:atom4RLogger]{atom4R::atom4RLogger}} -> \code{AtomAbstractObject}
+}
+\section{Public fields}{
+\if{html}{\out{<div class="r6-fields">}}
+\describe{
+\item{\code{wrap}}{wrapping XML element}
+
+\item{\code{element}}{element}
+
+\item{\code{namespace}}{namespace}
+
+\item{\code{defaults}}{defaults}
+
+\item{\code{attrs}}{attrs}
+
+\item{\code{printAttrs}}{attrs to print}
+
+\item{\code{parentAttrs}}{parent attrs}
+}
+\if{html}{\out{</div>}}
+}
+\section{Methods}{
+\subsection{Public methods}{
+\itemize{
+\item \href{#method-new}{\code{AtomAbstractObject$new()}}
+\item \href{#method-setIsDocument}{\code{AtomAbstractObject$setIsDocument()}}
+\item \href{#method-isDocument}{\code{AtomAbstractObject$isDocument()}}
+\item \href{#method-getRootElement}{\code{AtomAbstractObject$getRootElement()}}
+\item \href{#method-getNamespace}{\code{AtomAbstractObject$getNamespace()}}
+\item \href{#method-createElement}{\code{AtomAbstractObject$createElement()}}
+\item \href{#method-addListElement}{\code{AtomAbstractObject$addListElement()}}
+\item \href{#method-delListElement}{\code{AtomAbstractObject$delListElement()}}
+\item \href{#method-contains}{\code{AtomAbstractObject$contains()}}
+\item \href{#method-print}{\code{AtomAbstractObject$print()}}
+\item \href{#method-decode}{\code{AtomAbstractObject$decode()}}
+\item \href{#method-encode}{\code{AtomAbstractObject$encode()}}
+\item \href{#method-validate}{\code{AtomAbstractObject$validate()}}
+\item \href{#method-save}{\code{AtomAbstractObject$save()}}
+\item \href{#method-isFieldInheritedFrom}{\code{AtomAbstractObject$isFieldInheritedFrom()}}
+\item \href{#method-getClassName}{\code{AtomAbstractObject$getClassName()}}
+\item \href{#method-getClass}{\code{AtomAbstractObject$getClass()}}
+\item \href{#method-getNamespaceDefinition}{\code{AtomAbstractObject$getNamespaceDefinition()}}
+\item \href{#method-getXmlElement}{\code{AtomAbstractObject$getXmlElement()}}
+\item \href{#method-clone}{\code{AtomAbstractObject$clone()}}
+}
+}
+\if{html}{
+\out{<details open ><summary>Inherited methods</summary>}
+\itemize{
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
+\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
+}
+\out{</details>}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-new"></a>}}
+\if{latex}{\out{\hypertarget{method-new}{}}}
+\subsection{Method \code{new()}}{
+Initializes an object of class \link{AtomAbstractObject}
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$new(
+  xml = NULL,
+  element = NULL,
+  namespace = NULL,
+  attrs = list(),
+  defaults = list(),
+  wrap = TRUE,
+  logger = "INFO"
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+
+\item{\code{element}}{element}
+
+\item{\code{namespace}}{namespace}
+
+\item{\code{attrs}}{attrs}
+
+\item{\code{defaults}}{defaults}
+
+\item{\code{wrap}}{wrap}
+
+\item{\code{logger}}{logger type}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-setIsDocument"></a>}}
+\if{latex}{\out{\hypertarget{method-setIsDocument}{}}}
+\subsection{Method \code{setIsDocument()}}{
+Set if object is a document or not
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$setIsDocument(isDocument)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{isDocument}}{object of class \code{logical}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-isDocument"></a>}}
+\if{latex}{\out{\hypertarget{method-isDocument}{}}}
+\subsection{Method \code{isDocument()}}{
+Informs if the object is a document
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$isDocument()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{logical}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getRootElement"></a>}}
+\if{latex}{\out{\hypertarget{method-getRootElement}{}}}
+\subsection{Method \code{getRootElement()}}{
+Get root XML element
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$getRootElement()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{character}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getNamespace"></a>}}
+\if{latex}{\out{\hypertarget{method-getNamespace}{}}}
+\subsection{Method \code{getNamespace()}}{
+Get XML namespace
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$getNamespace()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{character}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-createElement"></a>}}
+\if{latex}{\out{\hypertarget{method-createElement}{}}}
+\subsection{Method \code{createElement()}}{
+Creates an element
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$createElement(element, type = "text")}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{element}}{element}
+
+\item{\code{type}}{type. Default is "text"}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+the typed element
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-addListElement"></a>}}
+\if{latex}{\out{\hypertarget{method-addListElement}{}}}
+\subsection{Method \code{addListElement()}}{
+Add a metadata element to an element list
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$addListElement(field, metadataElement)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{field}}{field}
+
+\item{\code{metadataElement}}{metadata element to add}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if added, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-delListElement"></a>}}
+\if{latex}{\out{\hypertarget{method-delListElement}{}}}
+\subsection{Method \code{delListElement()}}{
+Deletes a metadata element from an element list
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$delListElement(field, metadataElement)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{field}}{field}
+
+\item{\code{metadataElement}}{metadata element to add}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if deleted, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-contains"></a>}}
+\if{latex}{\out{\hypertarget{method-contains}{}}}
+\subsection{Method \code{contains()}}{
+Indicates if an element list contains or not an element
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$contains(field, metadataElement)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{field}}{field}
+
+\item{\code{metadataElement}}{metadata element to add}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if contained, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-print"></a>}}
+\if{latex}{\out{\hypertarget{method-print}{}}}
+\subsection{Method \code{print()}}{
+Prints the element
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$print(..., depth = 1)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{...}}{any parameter to pass to print method}
+
+\item{\code{depth}}{printing depth}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-decode"></a>}}
+\if{latex}{\out{\hypertarget{method-decode}{}}}
+\subsection{Method \code{decode()}}{
+Decodes the object from an \pkg{XML} representation
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$decode(xml)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-encode"></a>}}
+\if{latex}{\out{\hypertarget{method-encode}{}}}
+\subsection{Method \code{encode()}}{
+Encodes the object as XML
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$encode(
+  addNS = TRUE,
+  validate = TRUE,
+  strict = FALSE,
+  encoding = "UTF-8"
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{addNS}}{whether namespace has to be added. Default is \code{TRUE}}
+
+\item{\code{validate}}{whether validation has to be done vs. XML schemas. Default is \code{TRUE}}
+
+\item{\code{strict}}{whether strict validation has to be operated (raise an error if invalid). Default is \code{FALSE}}
+
+\item{\code{encoding}}{encoding. Default is "UTF-8"}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-validate"></a>}}
+\if{latex}{\out{\hypertarget{method-validate}{}}}
+\subsection{Method \code{validate()}}{
+Validates the object / XML vs. XML schemas
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$validate(xml = NULL, strict = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+
+\item{\code{strict}}{strict validation or not}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+\code{TRUE} if valid, \code{FALSE} otherwise
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-save"></a>}}
+\if{latex}{\out{\hypertarget{method-save}{}}}
+\subsection{Method \code{save()}}{
+Saves the object as XML file
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$save(file, ...)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{file}}{file name}
+
+\item{\code{...}}{any parameter to pass to \code{encode()} method}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-isFieldInheritedFrom"></a>}}
+\if{latex}{\out{\hypertarget{method-isFieldInheritedFrom}{}}}
+\subsection{Method \code{isFieldInheritedFrom()}}{
+Indicates the class from which field is inherited
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$isFieldInheritedFrom(field)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{field}}{field}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+an object of class \link{R6Class}, or \code{NULL}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getClassName"></a>}}
+\if{latex}{\out{\hypertarget{method-getClassName}{}}}
+\subsection{Method \code{getClassName()}}{
+Get class name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$getClassName()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{character}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getClass"></a>}}
+\if{latex}{\out{\hypertarget{method-getClass}{}}}
+\subsection{Method \code{getClass()}}{
+Get class
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$getClass()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \link{R6Class}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getNamespaceDefinition"></a>}}
+\if{latex}{\out{\hypertarget{method-getNamespaceDefinition}{}}}
+\subsection{Method \code{getNamespaceDefinition()}}{
+Get namespace definition
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$getNamespaceDefinition(recursive = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{recursive}}{recursive}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+a named \code{list} of the XML namespaces
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-getXmlElement"></a>}}
+\if{latex}{\out{\hypertarget{method-getXmlElement}{}}}
+\subsection{Method \code{getXmlElement()}}{
+Get XML element name
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$getXmlElement()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+object of class \code{character}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{AtomAbstractObject$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
+}
+}

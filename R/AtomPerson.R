@@ -11,26 +11,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Atom Person
 #' @format \code{\link{R6Class}} object.
 #'
-#' @field name Person name
-#' @field uri Person uri
-#' @field email Person email
-#'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml, name, uri, email)}}{
-#'    This method is used to create an Atom
-#'  }
-#'  \item{\code{setName(name)}}{
-#'    Set person name
-#'  }
-#'  \item{\code{setUri(uri)}}{
-#'    Set person uri
-#'  }
-#'  \item{\code{setEmail(email)}}{
-#'    Set person email
-#'  }
-#' }
-#'
 #' @note Abstract class used internally for person-like classes
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
@@ -43,11 +23,18 @@ AtomPerson <- R6Class("AtomPerson",
      document = FALSE
    ),
    public = list(
+    #'@field name name
     name = NA,
+    #'@field uri uri
     uri = NA,
+    #'@field email email
     email = NA,
 
-    #initialize
+    #'@description Initializes an \link{AtomPerson}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param name name
+    #'@param uri uri
+    #'@param email email
     initialize = function(xml = NULL, name = NULL, uri = NULL, email = NULL){
       super$initialize(xml = xml, wrap = FALSE)
       if(!is.null(name)) self$setName(name)
@@ -55,17 +42,20 @@ AtomPerson <- R6Class("AtomPerson",
       if(!is.null(email)) self$setEmail(email)
     },
 
-    #setName
+    #'@description Set name
+    #'@param name name
     setName = function(name){
       self$name <- name
     },
 
-    #setUri
+    #'@description Set URI
+    #'@param uri uri
     setUri = function(uri){
       self$uri <- uri
     },
 
-    #setEmail
+    #'@description Set email
+    #'@param email email
     setEmail = function(email){
       self$email <- email
     }
@@ -84,30 +74,10 @@ AtomPerson <- R6Class("AtomPerson",
 #' @keywords Atom Author
 #' @return Object of \code{\link{R6Class}} for modelling an Atom Author
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name Person name
-#' @field uri Person uri
-#' @field email Person email
-#'
+
 #' @examples
 #' \dontrun{
 #'   author <- AtomAuthor$new(name = "John Doe", email = "john.doe@@atom4R.com")
-#' }
-#'
-#' @section Methods inherited from \code{AtomPerson}:
-#' \describe{
-#'  \item{\code{new(xml, name, uri, email)}}{
-#'    This method is used to create an Atom
-#'  }
-#'  \item{\code{setName(name)}}{
-#'    Set person name
-#'  }
-#'  \item{\code{setUri(uri)}}{
-#'    Set person uri
-#'  }
-#'  \item{\code{setEmail(email)}}{
-#'    Set person email
-#'  }
 #' }
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
@@ -120,6 +90,12 @@ AtomAuthor <- R6Class("AtomAuthor",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an \link{AtomAuthor}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param name name
+    #'@param uri uri
+    #'@param email email
     initialize = function(xml = NULL, name = NULL, uri = NULL, email = NULL){
       super$initialize(xml = xml, name = name, uri = uri, email = email)
     }
@@ -138,30 +114,10 @@ AtomAuthor <- R6Class("AtomAuthor",
 #' @keywords Atom Author
 #' @return Object of \code{\link{R6Class}} for modelling an Atom Contributor
 #' @format \code{\link{R6Class}} object.
-#'
-#' @field name Person name
-#' @field uri Person uri
-#' @field email Person email
-#'
+
 #' @examples
 #' \dontrun{
 #'   contrib <- AtomContributor$new(name = "John Doe", email = "john.doe@@atom4R.com")
-#' }
-#'
-#' @section Methods inherited from \code{AtomPerson}:
-#' \describe{
-#'  \item{\code{new(xml, name, uri, email)}}{
-#'    This method is used to create an Atom
-#'  }
-#'  \item{\code{setName(name)}}{
-#'    Set person name
-#'  }
-#'  \item{\code{setUri(uri)}}{
-#'    Set person uri
-#'  }
-#'  \item{\code{setEmail(email)}}{
-#'    Set person email
-#'  }
 #' }
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
@@ -174,6 +130,12 @@ AtomContributor <- R6Class("AtomContributor",
     document = FALSE
   ),
   public = list(
+
+    #'@description Initializes an \link{AtomContributor}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param name name
+    #'@param uri uri
+    #'@param email email
     initialize = function(xml = NULL, name = NULL, uri = NULL, email = NULL){
       super$initialize(xml = xml, name = name, uri = uri, email = email)
     }

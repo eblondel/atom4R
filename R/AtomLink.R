@@ -11,31 +11,6 @@
 #' @return Object of \code{\link{R6Class}} for modelling an Atom Link
 #' @format \code{\link{R6Class}} object.
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to create an Atom Link
-#'  }
-#'  \item{\code{setHref(href)}}{
-#'    Sets the href
-#'  }
-#'  \item{\code{setHreflang(hreflang)}}{
-#'    Sets the href lang
-#'  }
-#'  \item{\code{setRel(rel)}}{
-#'    Sets the rel
-#'  }
-#'  \item{\code{setType(type)}}{
-#'    Sets the type
-#'  }
-#'  \item{\code{setTitle(title)}}{
-#'    Sets the title
-#'  }
-#'  \item{\code{setLength(length)}}{
-#'    Sets the length
-#'  }
-#' }
-#'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 AtomLink <- R6Class("AtomLink",
@@ -45,7 +20,17 @@ AtomLink <- R6Class("AtomLink",
      xmlNamespacePrefix = "ATOM"
    ),
    public = list(
+     #'@field attrs attrs
      attrs = list(),
+
+     #'@description Initializes an \link{AtomLink}
+     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param rel rel
+     #'@param type type
+     #'@param href href
+     #'@param hreflang hreflang
+     #'@param title title
+     #'@param length length
      initialize = function(xml = NULL,
                            rel = NULL, type = NULL,
                            href = NULL, hreflang = NULL,
@@ -62,26 +47,38 @@ AtomLink <- R6Class("AtomLink",
 
      },
 
+     #'@description Set relation
+     #'@param rel rel
      setRel = function(rel){
        self$attrs[["rel"]] <- rel
      },
 
+     #'@description Set type
+     #'@param type type
      setType = function(type){
        self$attrs[["type"]] <- type
      },
 
+     #'@description Set href
+     #'@param href href
      setHref = function(href){
        self$attrs[["href"]] <- href
      },
 
+     #'@description Set href lang
+     #'@param hreflang hreflang
      setHreflang = function(hreflang){
        self$attrs[["hreflang"]] <- hreflang
      },
 
+     #'@description Set title
+     #'@param title title
      setTitle = function(title){
        self$attrs[["title"]] <- title
      },
 
+     #'@description Set length
+     #'@param length length
      setLength = function(length){
        self$attrs[["length"]] <- length
      }

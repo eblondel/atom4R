@@ -11,31 +11,6 @@
 #' @return Object of \code{R6Class} for modelling an Atom Category
 #' @format \code{R6Class} object.
 #'
-#' @section Methods:
-#' \describe{
-#'  \item{\code{new(xml)}}{
-#'    This method is used to create an Atom Category
-#'  }
-#'  \item{\code{setHref(href)}}{
-#'    Sets the href
-#'  }
-#'  \item{\code{setHreflang(hreflang)}}{
-#'    Sets the href lang
-#'  }
-#'  \item{\code{setRel(rel)}}{
-#'    Sets the rel
-#'  }
-#'  \item{\code{setType(type)}}{
-#'    Sets the type
-#'  }
-#'  \item{\code{setTitle(title)}}{
-#'    Sets the title
-#'  }
-#'  \item{\code{setLength(length)}}{
-#'    Sets the length
-#'  }
-#' }
-#'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
 AtomCategory <- R6Class("AtomCategory",
@@ -45,8 +20,17 @@ AtomCategory <- R6Class("AtomCategory",
     xmlNamespacePrefix = "ATOM"
   ),
   public = list(
+    #'@field attrs attrs
     attrs = list(),
+    #'@field value value
     value = NULL,
+
+    #'@description Initializes an \link{AtomCategory}
+    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param value value
+    #'@param term term
+    #'@param scheme scheme
+    #'@param label label
     initialize = function(xml = NULL, value = NULL,
                           term = NULL, scheme = NULL, label = NULL) {
       super$initialize(xml = xml, wrap = FALSE)
@@ -58,14 +42,20 @@ AtomCategory <- R6Class("AtomCategory",
       }
     },
 
+    #'@description Set term
+    #'@param term term
     setTerm = function(term){
       self$attrs[["term"]] <- term
     },
 
+    #'@description Set scheme
+    #'@param scheme scheme
     setScheme = function(scheme){
       self$attrs[["scheme"]] <- scheme
     },
 
+    #'@description Set label
+    #'@param label label
     setLabel = function(label){
       self$attrs[["label"]] <- label
     }

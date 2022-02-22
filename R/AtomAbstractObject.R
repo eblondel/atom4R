@@ -315,6 +315,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
           }else{
             cat(paste0("\n",paste(rep(shift, depth), collapse=""),"|-- ", field, ": ", fieldObj))
           }
+        cat("\n")
         }
       }
       invisible(self)

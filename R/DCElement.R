@@ -60,9 +60,24 @@ DCElement <- R6Class("DCElement",
 )
 
 DCElement$getDCClasses = function(extended = FALSE, pretty = FALSE){
-  list_of_classes <- unlist(sapply(search(), ls))
-  list_of_classes <- list_of_classes[sapply(list_of_classes, function(x){
-    clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
+  list_of_classes <- lapply(search(), function(i) cbind (i, ls(i)))
+  index <- which(vapply(list_of_classes, ncol, integer(1)) == 2L)
+  list_of_classes <- do.call(rbind, list_of_classes[index])
+  if (!"package:atom4R" %in% search()) {
+    a4r_classes <- ls(envir = asNamespace("atom4R"))
+    list_of_classes <- rbind(list_of_classes,
+                             cbind(rep("package:atom4R", length(a4r_classes)),
+                                   a4r_classes))
+  }
+  index <- grep("^(package|\\.Global)", list_of_classes[, 1])
+  list_of_classes <- list_of_classes[index, ]
+  index <- apply(list_of_classes, 1, function(x){
+    if(grepl("^package", x[1])){
+      e <- asNamespace(gsub("^package\\:", "", x[1]))
+    }else{
+      e <- get (x[1])
+    }
+    clazz <- get(x[2], envir = e)
     r6Predicate <- class(clazz)[1]=="R6ClassGenerator"
     envPredicate <- extended
     if(r6Predicate & !extended){
@@ -80,8 +95,8 @@ DCElement$getDCClasses = function(extended = FALSE, pretty = FALSE){
       }
     }
     return(r6Predicate & envPredicate & includePredicate)
-  })]
-  list_of_classes <- as.vector(list_of_classes)
+  })
+  list_of_classes <- as.vector(list_of_classes[which(index),2])
   if(pretty){
     std_info <- do.call("rbind",lapply(list_of_classes, function(x){
       clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))

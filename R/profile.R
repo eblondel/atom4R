@@ -11,5 +11,4 @@
   #set DCMI Vocabularies
   setDCMIVocabularies()
 
-}
-# nocov end
+} # nocov end

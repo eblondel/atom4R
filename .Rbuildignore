@@ -2,5 +2,6 @@
 ^\.Rproj\.user$
 dataverse-docker
 .github
+^CODE_OF_CONDUCT\.md$
 debug.R
 ^.*\.xml$

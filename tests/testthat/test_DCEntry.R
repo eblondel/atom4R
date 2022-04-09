@@ -53,7 +53,7 @@ test_that("encoding/decoding DCEntry",{
 
 test_that("decoding Zenodo Dublin core",{
   dcfile <- system.file("extdata/examples", "zenodo_dc_export.xml", package = "atom4R")
-  dcxml <- XML::xmlParse(dcfile)
+  dcxml <- xmlParse(dcfile)
   dcentry <- DCEntry$new(xml = dcxml)
   dcentry_xml <- dcentry$encode()
 

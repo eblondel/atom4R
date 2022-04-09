@@ -15,23 +15,23 @@ jobs:
     strategy:
       matrix:
         config:
-          - {os: ubuntu-20.04,   r: '4.0.5', rspm: "https://packagemanager.rstudio.com/cran/__linux__/focal/latest"}
+          - {os: ubuntu-20.04,   r: 'latest'}
     steps:
       - uses: actions/checkout@v2
       #Integration tests
       #-------------------------
       #Dataverse set-up
-      - name: Set up DataVerse
-        run: |
-          cd ..
-          git clone https://github.com/IQSS/dataverse-docker
-          cd dataverse-docker
-          bash ./initial.bash
-          docker network create traefik
-          docker-compose build
-          docker-compose -f docker-compose-local.yml up -d
-          docker ps
-          cd ${GITHUB_WORKSPACE}
+      #- name: Set up DataVerse
+      #  run: |
+      #    cd ..
+      #    git clone https://github.com/IQSS/dataverse-docker
+      #    cd dataverse-docker
+      #    bash ./initial.bash
+      #    docker network create traefik
+      #    docker-compose build
+      #    docker-compose -f docker-compose-local.yml up -d
+      #    docker ps
+      #    cd ${GITHUB_WORKSPACE}
       #R Tests
       #--------------------------
       #R Set-up

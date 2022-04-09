@@ -56,8 +56,12 @@ test_that("decoding Zenodo Dublin core",{
   dcxml <- XML::xmlParse(dcfile)
   dcentry <- DCEntry$new(xml = dcxml)
   dcentry_xml <- dcentry$encode()
+
+  dcxml_children <- XML::xmlChildren(XML::xmlChildren(dcxml)[[1]])
+  dcentry_xml_children <- XML::xmlChildren(dcentry_xml)
+  dcentry_xml_children <- dcentry_xml_children[!names(dcentry_xml_children) %in% c("updated", "comment")]
   expect_equal(
-    length(XML::xmlChildren(XML::xmlChildren(dcxml)[[1]])),
-    length(XML::xmlChildren(XML::xmlChildren(dcentry_xml)[[1]]))
+    length(dcxml_children),
+    length(dcentry_xml_children)
   )
 })

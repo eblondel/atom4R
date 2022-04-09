@@ -16,64 +16,6 @@ This class models an Sword service Dataverse-specific  API client
 \details{
 SwordDataverseClient
 }
-\section{Methods}{
-
-\describe{
- \item{\code{new(url, token, logger, keyring_backend)}}{
-   This method is to instantiate an Sword API Dataverse-specific Client.
-
-   The \code{keyring_backend} can be set to use a different backend for storing
-   the SWORD DataVerse API user token with \pkg{keyring} (Default value is 'env').
-
-   The \code{logger} allows to specify the level of log (default is NULL), either "INFO"
-   for \pkg{atom4R} logs or "DEBUG" for verbose HTTP client (curl) logs.
- }
- \item{\code{getCollectionMembers(collectionId)}}{
-   List the collection members, ie list of entries for a dataverse.
- }
- \item{\code{getDataverse(pretty)}}{
-   List the dataverses, equivalent to \code{listCollections()}. The \code{pretty} argument
-   can be set to \code{TRUE} to retrieve a \code{data.frame}, otherwise a \code{list} is
-   returned.
- }
- \item{\code{getDataverse(dataverse)}}{
-   Get a dataverse by ID
- }
- \item{\code{editDataverseEntry(identifier)}}{
-   Edits a dataverse entry by identifier
- }
- \item{\code{getDataverseRecord(identifier)}}{
-   Gets a dataverse record by identifier
- }
- \item{\code{createDataverseRecord(dataverse, entry)}}{
-   Creates a dataverse record in the target \code{dataverse}. The entry should be an object
-   of class \code{AtomEntry} or \code{DCEntry} (Dublin core entry).
- }
- \item{\code{updateDataverseRecord(dataverse, entry, doi)}}{
-   Update a dataverse entry in the target \code{dataverse}. The entry should be an object
-   of class \code{AtomEntry} or \code{DCEntry} (Dublin core entry). To update the entry it
-   is necessary to specify the \code{doi} of the entry
- }
- \item{\code{deleteDataverseRecord(identifier)}}{
-   Deletes a dataverse record by identifier
- }
- \item{\code{publishDataverseRecord(identifier)}}{
-   Publishes a dataverse record by identifier
- }
- \item{\code{addFilesToDataverseRecord(identifier, files)}}{
-   Adds one or more files to a Dataverse record. The \code{files} should be a vector of class
-   "character" listing the files to be added/uploaded. Return \code{TRUE} if files are
-   successfully added to the record.
- }
- \item{\code{deleteFilesFromDataverseRecord(identifier, files)}}{
-   Deletes one or more files from a Dataverse record. The \code{files} should be a vector of class
-   "character" listing the files to be added/uploaded. By default this argument is \code{NULL} and all
-   files will be deleted. Returns a \code{data.frame} specifying for each file \code{TRUE} if it has
-   been deleted, \code{FALSE} otherwise.
- }
-}
-}
-
 \examples{
 \dontrun{
    #connect to SWORD Dataverse API

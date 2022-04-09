@@ -822,46 +822,7 @@ AtomAbstractObject$compare = function(metadataElement1, metadataElement2){
 }
 
 AtomAbstractObject$getClasses = function(extended = FALSE, pretty = FALSE){
-  list_of_classes <- unlist(sapply(search(), ls))
-  list_of_classes <- list_of_classes[sapply(list_of_classes, function(x){
-    clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
-    r6Predicate <- class(clazz)[1]=="R6ClassGenerator"
-    envPredicate <- extended
-    if(r6Predicate & !extended){
-      if(is.environment(clazz$parent_env)){
-        envPredicate <- environmentName(clazz$parent_env)=="atom4R"
-      }
-    }
-    includePredicate <- TRUE
-    if(r6Predicate){
-      if(!is.null(clazz$classname)){
-        includePredicate <- clazz$classname != "atom4RLogger"
-      }
-    }
-    return(r6Predicate & envPredicate & includePredicate)
-  })]
-  list_of_classes <- as.vector(list_of_classes)
-  if(pretty){
-    std_info <- do.call("rbind",lapply(list_of_classes, function(x){
-      clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
-      std <- "Atom"
-      std_info <- cbind(
-        std,
-        ns_prefix = clazz$private_fields$xmlNamespacePrefix,
-        ns_uri = ISOMetadataNamespace[[clazz$private_fields$xmlNamespacePrefix]]$uri,
-        element = clazz$private_fields$xmlElement,
-        stringsAsFactors = FALSE
-      )
-      return(std_info)
-    }))
-
-    list_of_classes <- data.frame(
-      atom4R_class = list_of_classes,
-      std_info,
-      stringsAsFactors = FALSE
-    )
-  }
-  return(list_of_classes)
+  getClassesInheriting(classname = "AtomAbstractObject", extended = extended, pretty = pretty)
 }
 
 AtomAbstractObject$getClassByNode = function(node){
@@ -876,13 +837,17 @@ AtomAbstractObject$getClassByNode = function(node){
   nodeElementNs <- xmlNamespaces(node)
 
   list_of_classes <- getAtomClasses()
-  if(is.null(list_of_classes))
-    list_of_classes <- AtomAbstractObject$getClasses(extended = TRUE, pretty = FALSE)
 
   for(classname in list_of_classes){
     clazz <- try(eval(parse(text=classname)))
+    if(is(clazz, "try-error")) clazz <- try(eval(parse(text=paste0("atom4R::",classname))))
+    targetXmlNamespacePrefix <- clazz$private_fields$xmlNamespacePrefix
+    if(nodeElementNs[[1]]$id == "dc"){
+      targetXmlNamespacePrefix <- "DC"
+      if(startsWith(classname, "Atom")) next; #use DC class in priority over Atom class
+    }
     if(nodeElementName %in% clazz$private_fields$xmlElement &&
-       nodeElementNs[[1]]$uri == getAtomNamespace(clazz$private_fields$xmlNamespacePrefix)$uri){
+       nodeElementNs[[1]]$uri == getAtomNamespace(targetXmlNamespacePrefix)$uri){
       atom4R_inherits <- FALSE
       superclazz <- clazz
       while(!atom4R_inherits){
@@ -910,32 +875,85 @@ AtomAbstractObject$getClassByNode = function(node){
   return(outClass)
 }
 
-
-#' @name cacheAtomClasses
-#' @aliases cacheAtomClasses
-#' @title cacheAtomClasses
-#' @export
-#' @description \code{\link{cacheAtomClasses}} allows to cache the list of
-#' \pkg{atom4R} classes or extended. This is especially required to fasten
-#' the decoding of metadata elements from an XML file. It is called internally
-#' by \pkg{atom4R} the first function \code{\link{getAtomClasses}}.
+#' @name getClassesInheriting
+#' @aliases getClassesInheriting
+#' @title getClassesInheriting
 #'
-#' @usage cacheAtomClasses()
+#' @param classname the name of the superclass for which inheriting sub-classes have to be listed
+#' @param extended whether we want to look at user namespace for third-party sub-classes
+#' @param pretty prettify the output as \code{data.frame}
+
+#' @export
+#' @description get the list of classes inheriting a given super class provided by its name
+#'
+#' @usage getClassesInheriting(classname, extended, pretty)
 #'
 #' @examples
-#'   cacheAtomClasses()
-#'
-#' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
-#
-cacheAtomClasses <- function(){
-  .atom4R$classes <- AtomAbstractObject$getClasses(extended = TRUE, pretty = FALSE)
+#'   getClassesInheriting("DCElement")
+getClassesInheriting <- function(classname, extended = FALSE, pretty = FALSE){
+  list_of_classes <- ls(getNamespaceInfo("atom4R", "exports"))
+  if(extended) {
+    search_envs <- search()
+    search_envs <- search_envs[search_envs!="package:atom4R"]
+    list_of_other_classes <- unlist(sapply(search_envs, ls))
+    list_of_classes <- c(list_of_classes, list_of_other_classes)
+  }
+
+  list_of_classes <- list_of_classes[sapply(list_of_classes, function(x){
+    clazz <- try(eval(parse(text=x)),silent=TRUE)
+    if(is(clazz, "try-error")) clazz <- try(eval(parse(text=paste0("atomR::",x))),silent=TRUE)
+    r6Predicate <- class(clazz)[1]=="R6ClassGenerator"
+    if(!r6Predicate) return(FALSE)
+
+    atomObjPredicate <- FALSE
+    superclazz <- clazz
+    while(!atomObjPredicate && !is.null(superclazz)){
+      clazz_fields <- names(superclazz)
+      if(!is.null(clazz_fields)) if(length(clazz_fields)>0){
+        if("get_inherit" %in% clazz_fields){
+          superclazz <- superclazz$get_inherit()
+          atom4RPredicate <- FALSE
+          if("parent_env" %in% clazz_fields) atom4RPredicate <- environmentName(superclazz$parent_env)=="atom4R"
+          atomObjPredicate <- superclazz$classname == classname && atom4RPredicate
+        }else{
+          break
+        }
+      }
+    }
+    return(atomObjPredicate)
+  })]
+
+  list_of_classes <- as.vector(list_of_classes)
+  if(pretty){
+    std_info <- do.call("rbind",lapply(list_of_classes, function(x){
+      clazz <- try(eval(parse(text=x)),silent=TRUE)
+      if(is(clazz,"try-error")) clazz <- try(eval(parse(text=paste0("atom4R::",x))),silent=TRUE)
+      std_info <- data.frame(
+        environment = environmentName(clazz$parent_env),
+        ns_prefix = clazz$private_fields$xmlNamespacePrefix,
+        ns_uri = AtomNamespace[[clazz$private_fields$xmlNamespacePrefix]]$uri,
+        element = clazz$private_fields$xmlElement,
+        stringsAsFactors = FALSE
+      )
+      return(std_info)
+    }))
+
+    list_of_classes <- cbind(
+      class = list_of_classes,
+      std_info,
+      stringsAsFactors = FALSE
+    )
+  }
+  return(list_of_classes)
 }
 
 #' @name getAtomClasses
 #' @aliases getAtomClasses
 #' @title getAtomClasses
 #' @export
-#' @description get the list of cached Atom classes
+#' @description get the list of Atom classes, ie classes extending \link{AtomAbstractObject} super class,
+#' including classes eventually defined outside \pkg{atom4R}. In case the latter is on the search path,
+#' the list of Atom classes will be cached for optimized used by \pkg{atom4R} encoder/decoder.
 #'
 #' @usage getAtomClasses()
 #'
@@ -945,7 +963,12 @@ cacheAtomClasses <- function(){
 #' @author Emmanuel Blondel, \email{emmanuel.blondel1@@gmail.com}
 #
 getAtomClasses <- function(){
-  if(length(.atom4R$classes)==0) cacheAtomClasses()
-  return(.atom4R$classes)
+  if("package:atom4R" %in% search()){
+    if(is.null(.atom4R$classes)){
+      .atom4R$classes <- getClassesInheriting(classname = "AtomAbstractObject", extended = TRUE, pretty = FALSE)
+    }
+    return(.atom4R$classes)
+  }else{
+    getClassesInheriting(classname = "AtomAbstractObject", extended = TRUE, pretty = FALSE)
+  }
 }
-

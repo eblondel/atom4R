@@ -59,54 +59,15 @@ DCElement <- R6Class("DCElement",
    )
 )
 
-DCElement$getDCClasses = function(extended = FALSE, pretty = FALSE){
-  list_of_classes <- unlist(sapply(search(), ls))
-  list_of_classes <- list_of_classes[sapply(list_of_classes, function(x){
-    clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
-    r6Predicate <- class(clazz)[1]=="R6ClassGenerator"
-    envPredicate <- extended
-    if(r6Predicate & !extended){
-      if(is.environment(clazz$parent_env)){
-        envPredicate <- environmentName(clazz$parent_env)=="atom4R"
-      }
-    }
-    includePredicate <- TRUE
-    if(r6Predicate){
-      if(!is.null(clazz$classname)){
-        includePredicate <- clazz$classname != "atom4RLogger" &&
-          !startsWith(clazz$classname, "Atom") &&
-          !startsWith(clazz$classname, "Sword") &&
-          !startsWith(clazz$classname, "DCMI")
-      }
-    }
-    return(r6Predicate & envPredicate & includePredicate)
-  })]
-  list_of_classes <- as.vector(list_of_classes)
-  if(pretty){
-    std_info <- do.call("rbind",lapply(list_of_classes, function(x){
-      clazz <- invisible(try(eval(parse(text=x)),silent=TRUE))
-      std_info <- data.frame(
-        ns_prefix = clazz$private_fields$xmlNamespacePrefix,
-        ns_uri = AtomNamespace[[clazz$private_fields$xmlNamespacePrefix]]$uri,
-        element = clazz$private_fields$xmlElement,
-        stringsAsFactors = FALSE
-      )
-      return(std_info)
-    }))
-
-    list_of_classes <- data.frame(
-      dc_class = list_of_classes,
-      std_info,
-      stringsAsFactors = FALSE
-    )
-  }
-  return(list_of_classes)
+DCElement$getClasses = function(extended = FALSE, pretty = FALSE){
+  getClassesInheriting(classname = "DCElement", extended = extended, pretty = pretty)
 }
 
-DCElement$getDCClassByElement = function(element){
-  dc_classes <- DCElement$getDCClasses(pretty = T)
+DCElement$getClassByElement = function(element){
+  dc_classes <- DCElement$getClasses(extended = TRUE, pretty = TRUE)
   dc_class <- dc_classes[dc_classes$element == element,]
-  clazz <- try(eval(parse(text=dc_class$dc_class)))
+  clazz <- try(eval(parse(text=dc_class$class)))
+  if(is(clazz, "try-error")) clazz <- try(eval(parse(text=paste0("atom4R::", dc_class$class))))
   return(clazz)
 }
 

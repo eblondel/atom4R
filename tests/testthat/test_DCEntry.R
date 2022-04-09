@@ -21,7 +21,6 @@ test_that("encoding/decoding DCEntry",{
   dcentry$addDCTitle("atom4R - Tools to read/write and publish metadata as Atom XML format")
   dcentry$addDCType("Software")
   creator <- DCCreator$new(value = "Blondel, Emmanuel")
-  creator$attrs[["affiliation"]] <- "Independent"
   dcentry$addDCCreator(creator)
   dcentry$addDCSubject("R")
   dcentry$addDCSubject("FAIR")
@@ -31,7 +30,6 @@ test_that("encoding/decoding DCEntry",{
   dcentry$addDCPublisher("GitHub")
 
   funder <- DCContributor$new(value = "CNRS")
-  funder$attrs[["type"]] <- "Funder"
   dcentry$addDCContributor(funder)
   dcentry$addDCRelation("Github repository: https://github.com/eblondel/atom4R")
   dcentry$addDCSource("Atom Syndication format - https://www.ietf.org/rfc/rfc4287")
@@ -51,4 +49,15 @@ test_that("encoding/decoding DCEntry",{
 
   expect_true(AtomAbstractObject$compare(dcentry, dcentry2))
 
+})
+
+test_that("decoding Zenodo Dublin core",{
+  dcfile <- system.file("extdata/examples/zenodo_dc_export.xml", package = "atom4R")
+  dcxml <- XML::xmlParse(dcfile)
+  dcentry <- DCEntry$new(xml = dcxml)
+  dcentry_xml <- dcentry$encode()
+  expect_equal(
+    length(XML::xmlChildren(XML::xmlChildren(dcxml)[[1]])),
+    length(XML::xmlChildren(XML::xmlChildren(dcentry_xml)[[1]]))
+  )
 })

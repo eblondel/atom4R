@@ -64,7 +64,6 @@ DCMIVocabulary <- R6Class("DCMIVocabulary",
 #' setDCMIVocabularies
 #' @export
 setDCMIVocabularies <- function(){
-  packageStartupMessage("Loading DCMI vocabularies...")
   vocabs <- list(
     DCMIVocabulary$new(
       id = "http://purl.org/dc/terms/",

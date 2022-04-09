@@ -78,7 +78,7 @@ DCEntry <- R6Class("DCEntry",
        if(is(value,"DCElement")){
          elem <- value
        }else{
-         clazz <- DCElement$getDCClassByElement(term)
+         clazz <- DCElement$getClassByElement(term)
          elem <- clazz$new(value = value)
        }
        if(is.null(self[[term]])) self[[term]] <- list()

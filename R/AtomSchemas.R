@@ -29,7 +29,6 @@ registerAtomSchema <- function(xsdFile){
 #'setAtomSchemas
 #'@export
 setAtomSchemas <- function(){
-  packageStartupMessage("Loading Atom XML schemas...")
   schemaPath <- "extdata/schemas"
   namespace <- "atom"
   defaultXsdFile <- system.file(paste(schemaPath, namespace, sep="/"), paste0(namespace,".xsd"),

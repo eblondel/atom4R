@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+  <dc:contributor>Eglen, Stephen</dc:contributor>
+  <dc:contributor>Van Calster, Hans</dc:contributor>
+  <dc:contributor>Vanderhaeghe, Floris</dc:contributor>
+  <dc:creator>Blondel, Emmanuel</dc:creator>
+  <dc:creator>Barde, Julien</dc:creator>
+  <dc:date>2022-02-16</dc:date>
+  <dc:description>zen4R: R Interface to Zenodo REST API
+
+https://github.com/eblondel/zen4R/releases/tag/v0.5-3</dc:description>
+  <dc:description>Sponsors: IRD</dc:description>
+  <dc:identifier>https://zenodo.org/record/6109137</dc:identifier>
+  <dc:identifier>10.5281/zenodo.6109137</dc:identifier>
+  <dc:identifier>oai:zenodo.org:6109137</dc:identifier>
+  <dc:language>eng</dc:language>
+  <dc:relation>doi:10.5281/zenodo.2547036</dc:relation>
+  <dc:relation>url:https://zenodo.org/communities/openfair</dc:relation>
+  <dc:rights>info:eu-repo/semantics/openAccess</dc:rights>
+  <dc:rights>https://opensource.org/licenses/MIT</dc:rights>
+  <dc:subject>R</dc:subject>
+  <dc:subject>API</dc:subject>
+  <dc:subject>Zenodo</dc:subject>
+  <dc:subject>DOI</dc:subject>
+  <dc:subject>REST</dc:subject>
+  <dc:subject>FAIR</dc:subject>
+  <dc:title>zen4R: R Interface to Zenodo REST API</dc:title>
+  <dc:type>info:eu-repo/semantics/other</dc:type>
+  <dc:type>software</dc:type>
+</oai_dc:dc>

@@ -7,7 +7,7 @@ require(atom4R, quietly = TRUE)
 require(testthat)
 require(XML)
 
-context("DCElement")
+context("DCEntry")
 
 test_that("encoding/decoding DCEntry",{
   testthat::skip_on_cran()
@@ -51,9 +51,9 @@ test_that("encoding/decoding DCEntry",{
 
 })
 
+dcfile <- system.file("extdata/examples", "zenodo_dc_export.xml", package = "atom4R")
 test_that("decoding Zenodo Dublin core",{
-  dcfile <- system.file("extdata/examples", "zenodo_dc_export.xml", package = "atom4R")
-  print(dcfile)
+
   dcxml <- xmlParse(dcfile)
   dcentry <- DCEntry$new(xml = dcxml)
   dcentry_xml <- dcentry$encode()

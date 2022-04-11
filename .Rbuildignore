@@ -5,3 +5,6 @@ dataverse-docker
 ^CODE_OF_CONDUCT\.md$
 debug.R
 ^.*\.xml$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$

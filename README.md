@@ -1,12 +1,9 @@
-# atom4R
-
-
 [![Build Status](https://github.com/eblondel/atom4R/actions/workflows/r-cmd-check.yml/badge.svg?branch=master)](https://github.com/eblondel/atom4R/actions/workflows/r-cmd-check.yml)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/atom4R)](https://cran.r-project.org/package=atom4R)
 [![Github_Status_Badge](https://img.shields.io/badge/Github-0.2-blue.svg)](https://github.com/eblondel/atom4R)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3970169.svg)](https://doi.org/10.5281/zenodo.3970169)
 
-**Tools to read/write/publish metadata as Atom XML format**
+**atom4R – Tools to read/write/publish metadata as Atom XML format**
 
 ``atom4R`` provides tools to read/write/publish metadata based on the Atom XML syndication format. This includes support of Dublin Core XML implementation, and a client to APIs implementing the AtomPub SWORD API specification.
 
@@ -18,7 +15,9 @@ Many thanks to the following organizations that have provided fundings for stren
 
 <div style="float:left;"><a href="https://www.inrae.fr"><img height=200 width=200 src="https://www.inrae.fr/themes/custom/inrae_socle/logo.svg"></a> <a href="http://www.cnrs.fr"><img src="http://www.cnrs.fr/themes/custom/cnrs/logo.svg" height=200 width=200/></a><a href="https://inee.cnrs.fr/fr/zones-ateliers"><img src="https://inee.cnrs.fr/sites/institut_inee/files/inline-images/logo-za_0_0.jpg" height=150 width=300/></a></div>
 
-For atom4R sponsoring/funding new developments, enhancements, support requests, please contact me by [e-mail](mailto:emmanuel.blondel1@gmail.com)
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+For atom4R sponsoring/funding new developments, enhancements, support requests, please contact me by [e-mail](mailto:eblondel.pro@gmail.com)
 
 ## Citation
 

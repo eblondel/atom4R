@@ -1,4 +1,4 @@
-## [atom4R 0.2](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-unavailable-red.svg)](https://github.com/eblondel/atom4R)
+## [atom4R 0.2](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
 
 **New features**
 
@@ -13,7 +13,7 @@
 * [#9](https://github.com/eblondel/atom4R/issues/9) DCElement classes not listed when namespace not loaded
 
 
-## [atom4R 0.1-2](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
+## [atom4R 0.1-2](https://cran.r-project.org/src/contrib/Archive/atom4R/atom4R_0.1-2.tar.gz) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/src/contrib/Archive/atom4R/atom4R_0.1-2.tar.gz)
 
 **Enhancements**
 

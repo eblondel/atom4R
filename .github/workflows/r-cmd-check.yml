@@ -15,7 +15,8 @@ jobs:
     strategy:
       matrix:
         config:
-          - {os: ubuntu-20.04,   r: 'latest'}
+          - {os: ubuntu-latest,  r: 'release'}
+          - {os: ubuntu-latest,  r: 'devel'}
     steps:
       - uses: actions/checkout@v2
       #Integration tests

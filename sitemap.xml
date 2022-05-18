@@ -121,10 +121,31 @@
     <loc>/reference/DCFormat.html</loc>
   </url>
   <url>
+    <loc>/reference/DCHasPart.html</loc>
+  </url>
+  <url>
+    <loc>/reference/DCHasVersion.html</loc>
+  </url>
+  <url>
     <loc>/reference/DCIdentifier.html</loc>
   </url>
   <url>
     <loc>/reference/DCInstructionalMethod.html</loc>
+  </url>
+  <url>
+    <loc>/reference/DCIsPartOf.html</loc>
+  </url>
+  <url>
+    <loc>/reference/DCIsReferencedBy.html</loc>
+  </url>
+  <url>
+    <loc>/reference/DCIsReplacedBy.html</loc>
+  </url>
+  <url>
+    <loc>/reference/DCIsRequiredBy.html</loc>
+  </url>
+  <url>
+    <loc>/reference/DCIsVersionOf.html</loc>
   </url>
   <url>
     <loc>/reference/DCIssued.html</loc>

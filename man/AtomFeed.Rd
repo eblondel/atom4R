@@ -196,61 +196,61 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{AtomFeed$new()}}
-\item \href{#method-setId}{\code{AtomFeed$setId()}}
-\item \href{#method-setUpdated}{\code{AtomFeed$setUpdated()}}
-\item \href{#method-setPublished}{\code{AtomFeed$setPublished()}}
-\item \href{#method-addLink}{\code{AtomFeed$addLink()}}
-\item \href{#method-delLink}{\code{AtomFeed$delLink()}}
-\item \href{#method-setSelfLink}{\code{AtomFeed$setSelfLink()}}
-\item \href{#method-setAlternateLink}{\code{AtomFeed$setAlternateLink()}}
-\item \href{#method-setTitle}{\code{AtomFeed$setTitle()}}
-\item \href{#method-setSubtitle}{\code{AtomFeed$setSubtitle()}}
-\item \href{#method-setRights}{\code{AtomFeed$setRights()}}
-\item \href{#method-addAuthor}{\code{AtomFeed$addAuthor()}}
-\item \href{#method-delAuthor}{\code{AtomFeed$delAuthor()}}
-\item \href{#method-addContributor}{\code{AtomFeed$addContributor()}}
-\item \href{#method-delContributor}{\code{AtomFeed$delContributor()}}
-\item \href{#method-setGenerator}{\code{AtomFeed$setGenerator()}}
-\item \href{#method-setIcon}{\code{AtomFeed$setIcon()}}
-\item \href{#method-addCategory}{\code{AtomFeed$addCategory()}}
-\item \href{#method-delCategory}{\code{AtomFeed$delCategory()}}
-\item \href{#method-addEntry}{\code{AtomFeed$addEntry()}}
-\item \href{#method-delEntry}{\code{AtomFeed$delEntry()}}
-\item \href{#method-clone}{\code{AtomFeed$clone()}}
+\item \href{#method-AtomFeed-new}{\code{AtomFeed$new()}}
+\item \href{#method-AtomFeed-setId}{\code{AtomFeed$setId()}}
+\item \href{#method-AtomFeed-setUpdated}{\code{AtomFeed$setUpdated()}}
+\item \href{#method-AtomFeed-setPublished}{\code{AtomFeed$setPublished()}}
+\item \href{#method-AtomFeed-addLink}{\code{AtomFeed$addLink()}}
+\item \href{#method-AtomFeed-delLink}{\code{AtomFeed$delLink()}}
+\item \href{#method-AtomFeed-setSelfLink}{\code{AtomFeed$setSelfLink()}}
+\item \href{#method-AtomFeed-setAlternateLink}{\code{AtomFeed$setAlternateLink()}}
+\item \href{#method-AtomFeed-setTitle}{\code{AtomFeed$setTitle()}}
+\item \href{#method-AtomFeed-setSubtitle}{\code{AtomFeed$setSubtitle()}}
+\item \href{#method-AtomFeed-setRights}{\code{AtomFeed$setRights()}}
+\item \href{#method-AtomFeed-addAuthor}{\code{AtomFeed$addAuthor()}}
+\item \href{#method-AtomFeed-delAuthor}{\code{AtomFeed$delAuthor()}}
+\item \href{#method-AtomFeed-addContributor}{\code{AtomFeed$addContributor()}}
+\item \href{#method-AtomFeed-delContributor}{\code{AtomFeed$delContributor()}}
+\item \href{#method-AtomFeed-setGenerator}{\code{AtomFeed$setGenerator()}}
+\item \href{#method-AtomFeed-setIcon}{\code{AtomFeed$setIcon()}}
+\item \href{#method-AtomFeed-addCategory}{\code{AtomFeed$addCategory()}}
+\item \href{#method-AtomFeed-delCategory}{\code{AtomFeed$delCategory()}}
+\item \href{#method-AtomFeed-addEntry}{\code{AtomFeed$addEntry()}}
+\item \href{#method-AtomFeed-delEntry}{\code{AtomFeed$delEntry()}}
+\item \href{#method-AtomFeed-clone}{\code{AtomFeed$clone()}}
 }
 }
-\if{html}{
-\out{<details ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="addListElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-addListElement}{\code{atom4R::AtomAbstractObject$addListElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="contains">}\href{../../atom4R/html/AtomAbstractObject.html#method-contains}{\code{atom4R::AtomAbstractObject$contains()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="createElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-createElement}{\code{atom4R::AtomAbstractObject$createElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="decode">}\href{../../atom4R/html/AtomAbstractObject.html#method-decode}{\code{atom4R::AtomAbstractObject$decode()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="delListElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-delListElement}{\code{atom4R::AtomAbstractObject$delListElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="encode">}\href{../../atom4R/html/AtomAbstractObject.html#method-encode}{\code{atom4R::AtomAbstractObject$encode()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClass">}\href{../../atom4R/html/AtomAbstractObject.html#method-getClass}{\code{atom4R::AtomAbstractObject$getClass()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClassName">}\href{../../atom4R/html/AtomAbstractObject.html#method-getClassName}{\code{atom4R::AtomAbstractObject$getClassName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespace">}\href{../../atom4R/html/AtomAbstractObject.html#method-getNamespace}{\code{atom4R::AtomAbstractObject$getNamespace()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespaceDefinition">}\href{../../atom4R/html/AtomAbstractObject.html#method-getNamespaceDefinition}{\code{atom4R::AtomAbstractObject$getNamespaceDefinition()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getRootElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-getRootElement}{\code{atom4R::AtomAbstractObject$getRootElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getXmlElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-getXmlElement}{\code{atom4R::AtomAbstractObject$getXmlElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isDocument">}\href{../../atom4R/html/AtomAbstractObject.html#method-isDocument}{\code{atom4R::AtomAbstractObject$isDocument()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isFieldInheritedFrom">}\href{../../atom4R/html/AtomAbstractObject.html#method-isFieldInheritedFrom}{\code{atom4R::AtomAbstractObject$isFieldInheritedFrom()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="print">}\href{../../atom4R/html/AtomAbstractObject.html#method-print}{\code{atom4R::AtomAbstractObject$print()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="save">}\href{../../atom4R/html/AtomAbstractObject.html#method-save}{\code{atom4R::AtomAbstractObject$save()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="setIsDocument">}\href{../../atom4R/html/AtomAbstractObject.html#method-setIsDocument}{\code{atom4R::AtomAbstractObject$setIsDocument()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="validate">}\href{../../atom4R/html/AtomAbstractObject.html#method-validate}{\code{atom4R::AtomAbstractObject$validate()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-ERROR'><code>atom4R::atom4RLogger$ERROR()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-INFO'><code>atom4R::atom4RLogger$INFO()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-WARN'><code>atom4R::atom4RLogger$WARN()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-logger'><code>atom4R::atom4RLogger$logger()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="addListElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-addListElement'><code>atom4R::AtomAbstractObject$addListElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="contains"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-contains'><code>atom4R::AtomAbstractObject$contains()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="createElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-createElement'><code>atom4R::AtomAbstractObject$createElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="decode"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-decode'><code>atom4R::AtomAbstractObject$decode()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="delListElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-delListElement'><code>atom4R::AtomAbstractObject$delListElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="encode"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-encode'><code>atom4R::AtomAbstractObject$encode()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClass"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getClass'><code>atom4R::AtomAbstractObject$getClass()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClassName"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getClassName'><code>atom4R::AtomAbstractObject$getClassName()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespace"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getNamespace'><code>atom4R::AtomAbstractObject$getNamespace()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespaceDefinition"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getNamespaceDefinition'><code>atom4R::AtomAbstractObject$getNamespaceDefinition()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getRootElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getRootElement'><code>atom4R::AtomAbstractObject$getRootElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getXmlElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getXmlElement'><code>atom4R::AtomAbstractObject$getXmlElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isDocument"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-isDocument'><code>atom4R::AtomAbstractObject$isDocument()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isFieldInheritedFrom"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-isFieldInheritedFrom'><code>atom4R::AtomAbstractObject$isFieldInheritedFrom()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="print"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-print'><code>atom4R::AtomAbstractObject$print()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="save"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-save'><code>atom4R::AtomAbstractObject$save()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="setIsDocument"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-setIsDocument'><code>atom4R::AtomAbstractObject$setIsDocument()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="validate"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-validate'><code>atom4R::AtomAbstractObject$validate()</code></a></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-AtomFeed-new"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-new}{}}}
 \subsection{Method \code{new()}}{
 Initializes a \link{AtomFeed}
 \subsection{Usage}{
@@ -266,8 +266,8 @@ Initializes a \link{AtomFeed}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setId"></a>}}
-\if{latex}{\out{\hypertarget{method-setId}{}}}
+\if{html}{\out{<a id="method-AtomFeed-setId"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-setId}{}}}
 \subsection{Method \code{setId()}}{
 Set ID
 \subsection{Usage}{
@@ -283,8 +283,8 @@ Set ID
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setUpdated"></a>}}
-\if{latex}{\out{\hypertarget{method-setUpdated}{}}}
+\if{html}{\out{<a id="method-AtomFeed-setUpdated"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-setUpdated}{}}}
 \subsection{Method \code{setUpdated()}}{
 Set updated date
 \subsection{Usage}{
@@ -300,8 +300,8 @@ Set updated date
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setPublished"></a>}}
-\if{latex}{\out{\hypertarget{method-setPublished}{}}}
+\if{html}{\out{<a id="method-AtomFeed-setPublished"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-setPublished}{}}}
 \subsection{Method \code{setPublished()}}{
 Set published date
 \subsection{Usage}{
@@ -317,8 +317,8 @@ Set published date
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addLink"></a>}}
-\if{latex}{\out{\hypertarget{method-addLink}{}}}
+\if{html}{\out{<a id="method-AtomFeed-addLink"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-addLink}{}}}
 \subsection{Method \code{addLink()}}{
 Adds link
 \subsection{Usage}{
@@ -341,8 +341,8 @@ Adds link
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delLink"></a>}}
-\if{latex}{\out{\hypertarget{method-delLink}{}}}
+\if{html}{\out{<a id="method-AtomFeed-delLink"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-delLink}{}}}
 \subsection{Method \code{delLink()}}{
 Deletes link
 \subsection{Usage}{
@@ -365,8 +365,8 @@ Deletes link
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setSelfLink"></a>}}
-\if{latex}{\out{\hypertarget{method-setSelfLink}{}}}
+\if{html}{\out{<a id="method-AtomFeed-setSelfLink"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-setSelfLink}{}}}
 \subsection{Method \code{setSelfLink()}}{
 Set self link
 \subsection{Usage}{
@@ -385,8 +385,8 @@ Set self link
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setAlternateLink"></a>}}
-\if{latex}{\out{\hypertarget{method-setAlternateLink}{}}}
+\if{html}{\out{<a id="method-AtomFeed-setAlternateLink"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-setAlternateLink}{}}}
 \subsection{Method \code{setAlternateLink()}}{
 Set alternate link
 \subsection{Usage}{
@@ -407,8 +407,8 @@ Set alternate link
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setTitle"></a>}}
-\if{latex}{\out{\hypertarget{method-setTitle}{}}}
+\if{html}{\out{<a id="method-AtomFeed-setTitle"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-setTitle}{}}}
 \subsection{Method \code{setTitle()}}{
 Set title
 \subsection{Usage}{
@@ -426,8 +426,8 @@ Set title
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setSubtitle"></a>}}
-\if{latex}{\out{\hypertarget{method-setSubtitle}{}}}
+\if{html}{\out{<a id="method-AtomFeed-setSubtitle"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-setSubtitle}{}}}
 \subsection{Method \code{setSubtitle()}}{
 Set subtitle
 \subsection{Usage}{
@@ -445,8 +445,8 @@ Set subtitle
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setRights"></a>}}
-\if{latex}{\out{\hypertarget{method-setRights}{}}}
+\if{html}{\out{<a id="method-AtomFeed-setRights"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-setRights}{}}}
 \subsection{Method \code{setRights()}}{
 Set rights
 \subsection{Usage}{
@@ -464,8 +464,8 @@ Set rights
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addAuthor"></a>}}
-\if{latex}{\out{\hypertarget{method-addAuthor}{}}}
+\if{html}{\out{<a id="method-AtomFeed-addAuthor"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-addAuthor}{}}}
 \subsection{Method \code{addAuthor()}}{
 Adds author
 \subsection{Usage}{
@@ -484,8 +484,8 @@ Adds author
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delAuthor"></a>}}
-\if{latex}{\out{\hypertarget{method-delAuthor}{}}}
+\if{html}{\out{<a id="method-AtomFeed-delAuthor"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-delAuthor}{}}}
 \subsection{Method \code{delAuthor()}}{
 Deletes author
 \subsection{Usage}{
@@ -504,8 +504,8 @@ Deletes author
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addContributor"></a>}}
-\if{latex}{\out{\hypertarget{method-addContributor}{}}}
+\if{html}{\out{<a id="method-AtomFeed-addContributor"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-addContributor}{}}}
 \subsection{Method \code{addContributor()}}{
 Adds contributor
 \subsection{Usage}{
@@ -524,8 +524,8 @@ Adds contributor
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delContributor"></a>}}
-\if{latex}{\out{\hypertarget{method-delContributor}{}}}
+\if{html}{\out{<a id="method-AtomFeed-delContributor"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-delContributor}{}}}
 \subsection{Method \code{delContributor()}}{
 Deletes contributor
 \subsection{Usage}{
@@ -544,8 +544,8 @@ Deletes contributor
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setGenerator"></a>}}
-\if{latex}{\out{\hypertarget{method-setGenerator}{}}}
+\if{html}{\out{<a id="method-AtomFeed-setGenerator"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-setGenerator}{}}}
 \subsection{Method \code{setGenerator()}}{
 Set generator
 \subsection{Usage}{
@@ -563,8 +563,8 @@ Set generator
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setIcon"></a>}}
-\if{latex}{\out{\hypertarget{method-setIcon}{}}}
+\if{html}{\out{<a id="method-AtomFeed-setIcon"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-setIcon}{}}}
 \subsection{Method \code{setIcon()}}{
 Set icon
 \subsection{Usage}{
@@ -580,8 +580,8 @@ Set icon
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addCategory"></a>}}
-\if{latex}{\out{\hypertarget{method-addCategory}{}}}
+\if{html}{\out{<a id="method-AtomFeed-addCategory"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-addCategory}{}}}
 \subsection{Method \code{addCategory()}}{
 Adds category
 \subsection{Usage}{
@@ -606,8 +606,8 @@ Adds category
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delCategory"></a>}}
-\if{latex}{\out{\hypertarget{method-delCategory}{}}}
+\if{html}{\out{<a id="method-AtomFeed-delCategory"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-delCategory}{}}}
 \subsection{Method \code{delCategory()}}{
 Deletes category
 \subsection{Usage}{
@@ -632,8 +632,8 @@ Deletes category
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addEntry"></a>}}
-\if{latex}{\out{\hypertarget{method-addEntry}{}}}
+\if{html}{\out{<a id="method-AtomFeed-addEntry"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-addEntry}{}}}
 \subsection{Method \code{addEntry()}}{
 Adds an entry
 \subsection{Usage}{
@@ -652,8 +652,8 @@ Adds an entry
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delEntry"></a>}}
-\if{latex}{\out{\hypertarget{method-delEntry}{}}}
+\if{html}{\out{<a id="method-AtomFeed-delEntry"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-delEntry}{}}}
 \subsection{Method \code{delEntry()}}{
 Deletes an entry
 \subsection{Usage}{
@@ -672,8 +672,8 @@ Deletes an entry
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-AtomFeed-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomFeed-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

@@ -1,3 +1,9 @@
+## [atom4R 0.2.9999](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-unavailable-red.svg)](https://github.com/eblondel/atom4R)
+
+**Enhancements**
+
+* [#16](https://github.com/eblondel/atom4R/issues/16) Add missing DCMI elements
+
 ## [atom4R 0.2](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
 
 **New features**

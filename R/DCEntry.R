@@ -42,6 +42,15 @@
 #'   dcentry$addDCSource("Guidelines for implementing Dublin Core in XML")
 #'   dcentry$addDCLicense("NONE")
 #'   dcentry$addDCRights("MIT License")
+#'   dcentry$addDCHasPart("part1")
+#'   dcentry$addDCHasPart("part2")
+#'   dcentry$addDCHasVersion("0.2")
+#'   dcentry$addDCIsPartOf("CRAN")
+#'   dcentry$addDCIsPartOf("GitHub")
+#'   dcentry$addDCIsReferencedBy("CRAN")
+#'   dcentry$addDCIsReferencedBy("GitHub")
+#'   dcentry$addDCIsRequiredBy("zen4R")
+#'   dcentry$addDCIsRequiredBy("cloud4R")
 #'
 #'   xml <- dcentry$encode()
 #'
@@ -103,614 +112,712 @@ DCEntry <- R6Class("DCEntry",
      },
 
      #'@description Adds DC abstract
-     #'@param abstract object of class \link{DCAbstract}
+     #'@param abstract object of class \link{DCAbstract} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCAbstract = function(abstract){
        self$addDCElement("abstract", abstract)
      },
 
      #'@description Deletes DC abstract
-     #'@param abstract object of class \link{DCAbstract}
+     #'@param abstract object of class \link{DCAbstract} or vector of class \link{character} and length 1
      delDCAbstract = function(abstract){
        self$delDCElement("abstract", abstract)
      },
 
      #'@description Adds DC access rights
-     #'@param accessRights object of class \link{DCAccessRights}
+     #'@param accessRights object of class \link{DCAccessRights} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCAccessRights = function(accessRights){
        self$addDCElement("accessRights", accessRights)
      },
 
      #'@description Deletes DC access rights
-     #'@param accessRights object of class \link{DCAccessRights}
+     #'@param accessRights object of class \link{DCAccessRights} or vector of class \link{character} and length 1
      delDCAccessRights = function(accessRights){
        self$delDCElement("accessRights", accessRights)
      },
 
      #'@description Adds DC accrual method
-     #'@param accrualMethod object of class \link{DCAccrualMethod}
+     #'@param accrualMethod object of class \link{DCAccrualMethod} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCAccrualMethod = function(accrualMethod){
        self$addDCElement("accrualMethod", accrualMethod)
      },
 
      #'@description Deletes DC accrual method
-     #'@param accrualMethod object of class \link{DCAccrualMethod}
+     #'@param accrualMethod object of class \link{DCAccrualMethod} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCAccrualMethod = function(accrualMethod){
        self$delDCElement("accrualMethod", accrualMethod)
      },
 
      #'@description Adds DC accrual periodicity
-     #'@param accrualPeriodicity object of class \link{DCAccrualPeriodicity}
+     #'@param accrualPeriodicity object of class \link{DCAccrualPeriodicity} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCAccrualPeriodicity = function(accrualPeriodicity){
        self$addDCElement("accrualPeriodicity", accrualPeriodicity)
      },
 
      #'@description Deletes DC accrual periodicity
-     #'@param accrualPeriodicity object of class \link{DCAccrualPeriodicity}
+     #'@param accrualPeriodicity object of class \link{DCAccrualPeriodicity} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCAccrualPeriodicity = function(accrualPeriodicity){
        self$delDCElement("accrualPeriodicity", accrualPeriodicity)
      },
 
      #'@description Adds DC accrual policy
-     #'@param accrualPolicy object of class \link{DCAccrualPolicy}
+     #'@param accrualPolicy object of class \link{DCAccrualPolicy} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCAccrualPolicy = function(accrualPolicy){
        self$addDCElement("accrualPolicy", accrualPolicy)
      },
 
      #'@description Deletes DC accrual policy
-     #'@param accrualPolicy object of class \link{DCAccrualPolicy}
+     #'@param accrualPolicy object of class \link{DCAccrualPolicy} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCAccrualPolicy = function(accrualPolicy){
        self$delDCElement("accrualPolicy", accrualPolicy)
      },
 
      #'@description Adds DC alternative
-     #'@param alternative object of class \link{DCAlternative}
+     #'@param alternative object of class \link{DCAlternative} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCAlternative = function(alternative){
        self$addDCElement("alternative", alternative)
      },
 
      #'@description Deletes DC alternative
-     #'@param alternative object of class \link{DCAlternative}
+     #'@param alternative object of class \link{DCAlternative} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCAlternative = function(alternative){
        self$delDCElement("alternative", alternative)
      },
 
      #'@description Adds DC audience
-     #'@param audience object of class \link{DCAudience}
+     #'@param audience object of class \link{DCAudience} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCAudience = function(audience){
        self$addDCElement("audience", audience)
      },
 
      #'@description Deletes DC audience
-     #'@param audience object of class \link{DCAudience}
+     #'@param audience object of class \link{DCAudience} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCAudience = function(audience){
        self$delDCElement("audience", audience)
      },
 
      #'@description Adds DC available
-     #'@param available object of class \link{DCAvailable}
+     #'@param available object of class \link{DCAvailable} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCAvailable = function(available){
        self$addDCElement("available", available)
      },
 
      #'@description Deletes DC available
-     #'@param available object of class \link{DCAvailable}
+     #'@param available object of class \link{DCAvailable} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCAvailable = function(available){
        self$delDCElement("available", available)
      },
 
      #'@description Adds DC bibliographic citation
-     #'@param bibliographicCitation object of class \link{DCBibliographicCitation}
+     #'@param bibliographicCitation object of class \link{DCBibliographicCitation} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCBibliographicCitation = function(bibliographicCitation){
        self$addDCElement("bibliographicCitation", bibliographicCitation)
      },
 
      #'@description Deletes DC bibliographic citation
-     #'@param bibliographicCitation object of class \link{DCBibliographicCitation}
+     #'@param bibliographicCitation object of class \link{DCBibliographicCitation} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCBibliographicCitation = function(bibliographicCitation){
        self$delDCElement("bibliographicCitation", bibliographicCitation)
      },
 
      #'@description Adds DC conforms to
-     #'@param conformsTo object of class \link{DCConformsTo}
+     #'@param conformsTo object of class \link{DCConformsTo} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCConformsTo = function(conformsTo){
        self$addDCElement("conformsTo", conformsTo)
      },
 
      #'@description Deletes DC conforms to
-     #'@param conformsTo object of class \link{DCConformsTo}
+     #'@param conformsTo object of class \link{DCConformsTo} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCConformsTo = function(conformsTo){
        self$delDCElement("conformsTo", conformsTo)
      },
 
      #'@description Adds DC contributor
-     #'@param contributor object of class \link{DCContributor}
+     #'@param contributor object of class \link{DCContributor} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCContributor = function(contributor){
        self$addDCElement("contributor", contributor)
      },
 
      #'@description Deletes DC contributor
-     #'@param contributor object of class \link{DCContributor}
+     #'@param contributor object of class \link{DCContributor} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCContributor = function(contributor){
        self$delDCElement("contributor", contributor)
      },
 
      #'@description Adds DC coverage
-     #'@param coverage object of class \link{DCCoverage}
+     #'@param coverage object of class \link{DCCoverage} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCCoverage = function(coverage){
        self$addDCElement("coverage", coverage)
      },
 
      #'@description Deletes DC coverage
-     #'@param coverage object of class \link{DCCoverage}
+     #'@param coverage object of class \link{DCCoverage} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCCoverage = function(coverage){
        self$delDCElement("coverage", coverage)
      },
 
      #'@description Adds DC created
-     #'@param created object of class \link{DCCreated}
+     #'@param created object of class \link{DCCreated} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCCreated = function(created){
        self$addDCElement("created", created)
      },
 
      #'@description Deletes DC created
-     #'@param created object of class \link{DCCreated}
+     #'@param created object of class \link{DCCreated} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCCreated = function(created){
        self$delDCElement("created", created)
      },
 
      #'@description Adds DC creator
-     #'@param creator object of class \link{DCCreator}
+     #'@param creator object of class \link{DCCreator} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCCreator = function(creator){
        self$addDCElement("creator", creator)
      },
 
      #'@description Deletes DC creator
-     #'@param creator object of class \link{DCCreator}
+     #'@param creator object of class \link{DCCreator} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCCreator = function(creator){
        self$delDCElement("creator", creator)
      },
 
      #'@description Adds DC date
-     #'@param date object of class \link{DCDate}
+     #'@param date object of class \link{DCDate} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCDate = function(date){
        self$addDCElement("date", date)
      },
 
      #'@description Deletes DC date
-     #'@param date object of class \link{DCDate}
+     #'@param date object of class \link{DCDate} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCDate = function(date){
        self$delDCElement("date", date)
      },
 
      #'@description Adds DC date accepted
-     #'@param dateAccepted object of class \link{DCDateAccepted}
+     #'@param dateAccepted object of class \link{DCDateAccepted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCDateAccepted = function(dateAccepted){
        self$addDCElement("dateAccepted",  dateAccepted)
      },
 
      #'@description Deletes DC date accepted
-     #'@param dateAccepted object of class \link{DCDateAccepted}
+     #'@param dateAccepted object of class \link{DCDateAccepted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCDateAccepted = function(dateAccepted){
        self$delDCElement("dateAccepted", dateAccepted)
      },
 
      #'@description Adds DC date copyrighted
-     #'@param dateCopyrighted object of class \link{DCDateCopyrighted}
+     #'@param dateCopyrighted object of class \link{DCDateCopyrighted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCDateCopyrighted = function(dateCopyrighted){
        self$addDCElement("dateCopyrighted", dateCopyrighted)
      },
 
      #'@description Deletes DC date copyrighted
-     #'@param dateCopyrighted object of class \link{DCDateCopyrighted}
+     #'@param dateCopyrighted object of class \link{DCDateCopyrighted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCDateCopyrighted = function(dateCopyrighted){
        self$delDCElement("dateCopyrighted", dateCopyrighted)
      },
 
      #'@description Adds DC date submitted
-     #'@param dateSubmitted object of class \link{DCDateSubmitted}
+     #'@param dateSubmitted object of class \link{DCDateSubmitted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCDateSubmitted = function(dateSubmitted){
        self$addDCElement("dateSubmitted", dateSubmitted)
      },
 
      #'@description Deletes DC date submitted
-     #'@param dateSubmitted object of class \link{DCDateSubmitted}
+     #'@param dateSubmitted object of class \link{DCDateSubmitted} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCDateSubmitted = function(dateSubmitted){
        self$delDCElement("dateSubmitted", dateSubmitted)
      },
 
      #'@description Adds DC description
-     #'@param description object of class \link{DCDescription}
+     #'@param description object of class \link{DCDescription} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCDescription = function(description){
        self$addDCElement("description", description)
      },
 
      #'@description Deletes DC description
-     #'@param description object of class \link{DCDescription}
+     #'@param description object of class \link{DCDescription} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCDescription = function(description){
        self$delDCElement("description", description)
      },
 
      #'@description Adds DC educational level
-     #'@param educationalLevel object of class \link{DCEducationalLevel}
+     #'@param educationalLevel object of class \link{DCEducationalLevel} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCEducationalLevel = function(educationalLevel){
        self$addDCElement("educationalLevel", educationalLevel)
      },
 
      #'@description Deletes DC educational level
-     #'@param educationalLevel object of class \link{DCEducationalLevel}
+     #'@param educationalLevel object of class \link{DCEducationalLevel} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCEducationalLevel = function(educationalLevel){
        self$delDCElement("educationalLevel", educationalLevel)
      },
 
      #'@description Adds DC extent
-     #'@param extent object of class \link{DCExtent}
+     #'@param extent object of class \link{DCExtent} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCExtent = function(extent){
        self$addDCElement("extent", extent)
      },
 
      #'@description Deletes DC extent
-     #'@param extent object of class \link{DCExtent}
+     #'@param extent object of class \link{DCExtent} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCExtent = function(extent){
        self$delDCElement("extent", extent)
      },
 
      #'@description Adds DC format
-     #'@param format object of class \link{DCFormat}
+     #'@param format object of class \link{DCFormat} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCFormat = function(format){
        self$addDCElement("format", format)
      },
 
      #'@description Deletes DC format
-     #'@param format object of class \link{DCFormat}
+     #'@param format object of class \link{DCFormat} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCFormat = function(format){
        self$delDCElement("format", format)
      },
 
+     #'@description Adds DC hasPart
+     #'@param hasPart object of class \link{DCHasPart} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addDCHasPart = function(hasPart){
+        self$addDCElement("hasPart", hasPart)
+     },
+
+     #'@description Deletes DC hasPart
+     #'@param hasPart object of class \link{DCHasPart} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delDCHasPart = function(hasPart){
+        self$delDCElement("hasPart", hasPart)
+     },
+
+     #'@description Adds DC hasVersion
+     #'@param hasVersion object of class \link{DCHasVersion} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addDCHasVersion = function(hasVersion){
+        self$addDCElement("hasVersion", hasVersion)
+     },
+
+     #'@description Deletes DC hasVersion
+     #'@param hasVersion object of class \link{DCHasVersion} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delDCHasVersion = function(hasVersion){
+        self$delDCElement("hasVersion", hasVersion)
+     },
+
      #'@description Adds DC identifier
-     #'@param identifier object of class \link{DCIdentifier}
+     #'@param identifier object of class \link{DCIdentifier} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCIdentifier = function(identifier){
        self$addDCElement("identifier", identifier)
      },
 
      #'@description Deletes DC identifier
-     #'@param identifier object of class \link{DCIdentifier}
+     #'@param identifier object of class \link{DCIdentifier} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCIdentifier = function(identifier){
        self$delDCElement("identifier", identifier)
      },
 
      #'@description Adds DC instructionalMethod
-     #'@param instructionalMethod object of class \link{DCInstructionalMethod}
+     #'@param instructionalMethod object of class \link{DCInstructionalMethod} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCInstructionalMethod = function(instructionalMethod){
        self$addDCElement("instructionalMethod", instructionalMethod)
      },
 
      #'@description Deletes DC instructionalMethod
-     #'@param instructionalMethod object of class \link{DCInstructionalMethod}
+     #'@param instructionalMethod object of class \link{DCInstructionalMethod} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCInstructionalMethod = function(instructionalMethod){
        self$delDCElement("instructionalMethod", instructionalMethod)
      },
 
+     #'@description Adds DC isPartOf
+     #'@param isPartOf object of class \link{DCIsPartOf} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addDCIsPartOf = function(isPartOf){
+        self$addDCElement("isPartOf", isPartOf)
+     },
+
+     #'@description Deletes DC isPartOf
+     #'@param isPartOf object of class \link{DCIsPartOf} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delDCIsPartOf = function(isPartOf){
+        self$delDCElement("isPartOf", isPartOf)
+     },
+
+     #'@description Adds DC isReferencedBy
+     #'@param isReferencedBy object of class \link{DCIsReferencedBy} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addDCIsReferencedBy = function(isReferencedBy){
+        self$addDCElement("isReferencedBy", isReferencedBy)
+     },
+
+     #'@description Deletes DC isReferencedBy
+     #'@param isReferencedBy object of class \link{DCIsReferencedBy} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delDCIsReferencedBy = function(isReferencedBy){
+        self$delDCElement("isReferencedBy", isReferencedBy)
+     },
+
+     #'@description Adds DC isReplacedBy
+     #'@param isReplacedBy object of class \link{DCIsReplacedBy} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addDCIsReplacedBy = function(isReplacedBy){
+        self$addDCElement("isReplacedBy", isReplacedBy)
+     },
+
+     #'@description Deletes DC isReferencedBy
+     #'@param isReplacedBy object of class \link{DCIsReplacedBy} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delDCIsReplacedBy = function(isReplacedBy){
+        self$delDCElement("isReplacedBy", isReplacedBy)
+     },
+
+     #'@description Adds DC isRequiredBy
+     #'@param isRequiredBy object of class \link{DCIsRequiredBy} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addDCIsRequiredBy = function(isRequiredBy){
+        self$addDCElement("isRequiredBy", isRequiredBy)
+     },
+
+     #'@description Deletes DC isRequiredBy
+     #'@param isRequiredBy object of class \link{DCIsRequiredBy} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delDCIsRequiredBy = function(isRequiredBy){
+        self$delDCElement("isRequiredBy", isRequiredBy)
+     },
+
+     #'@description Adds DC isVersionOf
+     #'@param isVersionOf object of class \link{DCIsVersionOf} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if added, \code{FALSE} otherwise
+     addDCIsVersionOf = function(isVersionOf){
+        self$addDCElement("isVersionOf", isVersionOf)
+     },
+
+     #'@description Deletes DC isVersionOf
+     #'@param isVersionOf object of class \link{DCIsVersionOf} or vector of class \link{character} and length 1
+     #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
+     delDCIsVersionOf = function(isVersionOf){
+        self$delDCElement("isVersionOf", isVersionOf)
+     },
+
      #'@description Adds DC issued
-     #'@param issued object of class \link{DCIssued}
+     #'@param issued object of class \link{DCIssued} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCIssued = function(issued){
        self$addDCElement("issued", issued)
      },
 
      #'@description Deletes DC issued
-     #'@param issued object of class \link{DCIssued}
+     #'@param issued object of class \link{DCIssued} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCIssued = function(issued){
        self$delDCElement("issued", issued)
      },
 
      #'@description Adds DC language
-     #'@param language object of class \link{DCLanguage}
+     #'@param language object of class \link{DCLanguage} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCLanguage = function(language){
        self$addDCElement("language", language)
      },
 
      #'@description Deletes DC language
-     #'@param language object of class \link{DCLanguage}
+     #'@param language object of class \link{DCLanguage} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCLanguage = function(language){
        self$delDCElement("language", language)
      },
 
      #'@description Adds DC license
-     #'@param license object of class \link{DCLicense}
+     #'@param license object of class \link{DCLicense} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCLicense = function(license){
        self$addDCElement("license", license)
      },
 
      #'@description Deletes DC license
-     #'@param license object of class \link{DCLicense}
+     #'@param license object of class \link{DCLicense} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCLicense = function(license){
        self$delDCElement("license", license)
      },
 
      #'@description Adds DC mediator
-     #'@param mediator object of class \link{DCMediator}
+     #'@param mediator object of class \link{DCMediator} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCMediator = function(mediator){
        self$addDCElement("mediator", mediator)
      },
 
      #'@description Deletes DC mediator
-     #'@param mediator object of class \link{DCMediator}
+     #'@param mediator object of class \link{DCMediator} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCMediator = function(mediator){
        self$delDCElement("mediator", mediator)
      },
 
      #'@description Adds DC medium
-     #'@param medium object of class \link{DCMedium}
+     #'@param medium object of class \link{DCMedium} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCMedium = function(medium){
        self$addDCElement("medium", medium)
      },
 
      #'@description Deletes DC medium
-     #'@param medium object of class \link{DCMedium}
+     #'@param medium object of class \link{DCMedium} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCMedium = function(medium){
        self$delDCElement("medium", medium)
      },
 
      #'@description Adds DC modified
-     #'@param modified object of class \link{DCModified}
+     #'@param modified object of class \link{DCModified} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCModified = function(modified){
        self$addDCElement("modified", modified)
      },
 
      #'@description Deletes DC modified
-     #'@param modified object of class \link{DCModified}
+     #'@param modified object of class \link{DCModified} or vector of class \link{Date},\link{POSIXt} or \link{character} and length 1
      #'@return \code{TRUE} if deletes, \code{FALSE} otherwise
      delDCModified = function(modified){
        self$delDCElement("modified", modified)
      },
 
      #'@description Adds DC provenance
-     #'@param provenance object of class \link{DCProvenance}
+     #'@param provenance object of class \link{DCProvenance} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCProvenance = function(provenance){
        self$addDCElement("provenance", provenance)
      },
 
      #'@description Deletes DC provenance
-     #'@param provenance object of class \link{DCProvenance}
+     #'@param provenance object of class \link{DCProvenance} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCProvenance = function(provenance){
        self$delDCElement("provenance", provenance)
      },
 
      #'@description Adds DC publisher
-     #'@param publisher object of class \link{DCPublisher}
+     #'@param publisher object of class \link{DCPublisher} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCPublisher = function(publisher){
        self$addDCElement("publisher", publisher)
      },
 
      #'@description Deletes DC publisher
-     #'@param publisher object of class \link{DCPublisher}
+     #'@param publisher object of class \link{DCPublisher} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCPublisher = function(publisher){
        self$delDCElement("publisher", publisher)
      },
 
      #'@description Adds DC references
-     #'@param references object of class \link{DCReferences}
+     #'@param references object of class \link{DCReferences} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCReferences = function(references){
        self$addDCElement("references", references)
      },
 
      #'@description Deletes DC references
-     #'@param references object of class \link{DCReferences}
+     #'@param references object of class \link{DCReferences} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCReferences = function(references){
        self$delDCElement("references", references)
      },
 
      #'@description Adds DC relation
-     #'@param relation object of class \link{DCRelation}
+     #'@param relation object of class \link{DCRelation} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCRelation = function(relation){
        self$addDCElement("relation", relation)
      },
 
      #'@description Deletes DC relation
-     #'@param relation object of class \link{DCRelation}
+     #'@param relation object of class \link{DCRelation} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCRelation = function(relation){
        self$delDCElement("relation", relation)
      },
 
      #'@description Adds DC replaces
-     #'@param replaces object of class \link{DCReplaces}
+     #'@param replaces object of class \link{DCReplaces} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCReplaces = function(replaces){
        self$addDCElement("replaces", replaces)
      },
 
      #'@description Deletes DC replaces
-     #'@param replaces object of class \link{DCReplaces}
+     #'@param replaces object of class \link{DCReplaces} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCReplaces = function(replaces){
        self$delDCElement("replaces", replaces)
      },
 
      #'@description Adds DC requires
-     #'@param requires object of class \link{DCRequires}
+     #'@param requires object of class \link{DCRequires} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCRequires = function(requires){
        self$addDCElement("requires", requires)
      },
 
      #'@description Deletes DC requires
-     #'@param requires object of class \link{DCRequires}
+     #'@param requires object of class \link{DCRequires} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCRequires = function(requires){
        self$delDCElement("requires", requires)
      },
 
      #'@description Adds DC rights
-     #'@param rights object of class \link{DCRights}
+     #'@param rights object of class \link{DCRights} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCRights = function(rights){
        self$addDCElement("rights", rights)
      },
 
      #'@description Deletes DC rights
-     #'@param rights object of class \link{DCRights}
+     #'@param rights object of class \link{DCRights} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCRights = function(rights){
        self$delDCElement("rights", rights)
      },
 
      #'@description Adds DC rightsHolder
-     #'@param rightsHolder object of class \link{DCRightsHolder}
+     #'@param rightsHolder object of class \link{DCRightsHolder} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCRightsHolder = function(rightsHolder){
        self$addDCElement("rightsHolder", rightsHolder)
      },
 
      #'@description Deletes DC rightsHolder
-     #'@param rightsHolder object of class \link{DCRightsHolder}
+     #'@param rightsHolder object of class \link{DCRightsHolder} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCRightsHolder = function(rightsHolder){
        self$delDCElement("rightsHolder", rightsHolder)
      },
 
      #'@description Adds DC source
-     #'@param source object of class \link{DCSource}
+     #'@param source object of class \link{DCSource} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCSource = function(source){
        self$addDCElement("source", source)
      },
 
      #'@description Deletes DC source
-     #'@param source object of class \link{DCSource}
+     #'@param source object of class \link{DCSource} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCSource = function(source){
        self$delDCElement("source", source)
      },
 
      #'@description Adds DC subject
-     #'@param subject object of class \link{DCSubject}
+     #'@param subject object of class \link{DCSubject} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCSubject = function(subject){
        self$addDCElement("subject", subject)
      },
 
      #'@description Deletes DC subject
-     #'@param subject object of class \link{DCSubject}
+     #'@param subject object of class \link{DCSubject} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCSubject = function(subject){
        self$delDCElement("subject", subject)
      },
 
      #'@description Adds DC tableOfContents
-     #'@param tableOfContents object of class \link{DCTableOfContents}
+     #'@param tableOfContents object of class \link{DCTableOfContents} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCTableOfContents = function(tableOfContents){
        self$addDCElement("tableOfContents", tableOfContents)
      },
 
      #'@description Deletes DC tableOfContents
-     #'@param tableOfContents object of class \link{DCTableOfContents}
+     #'@param tableOfContents object of class \link{DCTableOfContents} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCTableOfContents = function(tableOfContents){
        self$delDCElement("tableOfContents", tableOfContents)
      },
 
      #'@description Adds DC temporal
-     #'@param temporal object of class \link{DCTemporal}
+     #'@param temporal object of class \link{DCTemporal} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCTemporal = function(temporal){
        self$addDCElement("temporal", temporal)
      },
 
      #'@description Deletes DC temporal
-     #'@param temporal object of class \link{DCTemporal}
+     #'@param temporal object of class \link{DCTemporal} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCTemporal = function(temporal){
        self$delDCElement("temporal", temporal)
      },
 
      #'@description Adds DC title
-     #'@param title object of class \link{DCTitle}
+     #'@param title object of class \link{DCTitle} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCTitle = function(title){
        self$addDCElement("title", title)
      },
 
      #'@description Deletes DC title
-     #'@param title object of class \link{DCTitle}
+     #'@param title object of class \link{DCTitle} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCTitle = function(title){
        self$delDCElement("title", title)
      },
 
      #'@description Adds DC type
-     #'@param type object of class \link{DCType}
+     #'@param type object of class \link{DCType} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if added, \code{FALSE} otherwise
      addDCType = function(type){
        self$addDCElement("type", type)
      },
 
      #'@description Deletes DC type
-     #'@param type object of class \link{DCType}
+     #'@param type object of class \link{DCType} or vector of class \link{character} and length 1
      #'@return \code{TRUE} if deleted, \code{FALSE} otherwise
      delDCType = function(type){
        self$delDCElement("type", type)

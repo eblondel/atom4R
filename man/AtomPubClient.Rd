@@ -71,31 +71,31 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{AtomPubClient$new()}}
-\item \href{#method-getUser}{\code{AtomPubClient$getUser()}}
-\item \href{#method-getPwd}{\code{AtomPubClient$getPwd()}}
-\item \href{#method-getToken}{\code{AtomPubClient$getToken()}}
-\item \href{#method-getServiceDocument}{\code{AtomPubClient$getServiceDocument()}}
-\item \href{#method-listCollections}{\code{AtomPubClient$listCollections()}}
-\item \href{#method-getCollectionMembers}{\code{AtomPubClient$getCollectionMembers()}}
-\item \href{#method-clone}{\code{AtomPubClient$clone()}}
+\item \href{#method-AtomPubClient-new}{\code{AtomPubClient$new()}}
+\item \href{#method-AtomPubClient-getUser}{\code{AtomPubClient$getUser()}}
+\item \href{#method-AtomPubClient-getPwd}{\code{AtomPubClient$getPwd()}}
+\item \href{#method-AtomPubClient-getToken}{\code{AtomPubClient$getToken()}}
+\item \href{#method-AtomPubClient-getServiceDocument}{\code{AtomPubClient$getServiceDocument()}}
+\item \href{#method-AtomPubClient-listCollections}{\code{AtomPubClient$listCollections()}}
+\item \href{#method-AtomPubClient-getCollectionMembers}{\code{AtomPubClient$getCollectionMembers()}}
+\item \href{#method-AtomPubClient-clone}{\code{AtomPubClient$clone()}}
 }
 }
-\if{html}{
-\out{<details ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClass">}\href{../../atom4R/html/atom4RLogger.html#method-getClass}{\code{atom4R::atom4RLogger$getClass()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClassName">}\href{../../atom4R/html/atom4RLogger.html#method-getClassName}{\code{atom4R::atom4RLogger$getClassName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-ERROR'><code>atom4R::atom4RLogger$ERROR()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-INFO'><code>atom4R::atom4RLogger$INFO()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-WARN'><code>atom4R::atom4RLogger$WARN()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClass"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-getClass'><code>atom4R::atom4RLogger$getClass()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClassName"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-getClassName'><code>atom4R::atom4RLogger$getClassName()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-logger'><code>atom4R::atom4RLogger$logger()</code></a></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-AtomPubClient-new"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomPubClient-new}{}}}
 \subsection{Method \code{new()}}{
 This method is to instantiate an Sword Client. By default the version is set to "2".
 
@@ -134,8 +134,8 @@ This method is to instantiate an Sword Client. By default the version is set to 
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getUser"></a>}}
-\if{latex}{\out{\hypertarget{method-getUser}{}}}
+\if{html}{\out{<a id="method-AtomPubClient-getUser"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomPubClient-getUser}{}}}
 \subsection{Method \code{getUser()}}{
 Get user
 \subsection{Usage}{
@@ -147,8 +147,8 @@ object of class \code{character}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getPwd"></a>}}
-\if{latex}{\out{\hypertarget{method-getPwd}{}}}
+\if{html}{\out{<a id="method-AtomPubClient-getPwd"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomPubClient-getPwd}{}}}
 \subsection{Method \code{getPwd()}}{
 Get password
 \subsection{Usage}{
@@ -160,8 +160,8 @@ object of class \code{character}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getToken"></a>}}
-\if{latex}{\out{\hypertarget{method-getToken}{}}}
+\if{html}{\out{<a id="method-AtomPubClient-getToken"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomPubClient-getToken}{}}}
 \subsection{Method \code{getToken()}}{
 Get token
 \subsection{Usage}{
@@ -173,8 +173,8 @@ object of class \code{character}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getServiceDocument"></a>}}
-\if{latex}{\out{\hypertarget{method-getServiceDocument}{}}}
+\if{html}{\out{<a id="method-AtomPubClient-getServiceDocument"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomPubClient-getServiceDocument}{}}}
 \subsection{Method \code{getServiceDocument()}}{
 Get service document
 \subsection{Usage}{
@@ -193,8 +193,8 @@ object of class \link{SwordServiceDocument}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-listCollections"></a>}}
-\if{latex}{\out{\hypertarget{method-listCollections}{}}}
+\if{html}{\out{<a id="method-AtomPubClient-listCollections"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomPubClient-listCollections}{}}}
 \subsection{Method \code{listCollections()}}{
 List collections
 \subsection{Usage}{
@@ -213,8 +213,8 @@ a list of collections, or \code{data.frame}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getCollectionMembers"></a>}}
-\if{latex}{\out{\hypertarget{method-getCollectionMembers}{}}}
+\if{html}{\out{<a id="method-AtomPubClient-getCollectionMembers"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomPubClient-getCollectionMembers}{}}}
 \subsection{Method \code{getCollectionMembers()}}{
 Get collection members. Unimplemented abstract method at \link{AtomPubClient} level
 \subsection{Usage}{
@@ -223,8 +223,8 @@ Get collection members. Unimplemented abstract method at \link{AtomPubClient} le
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-AtomPubClient-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomPubClient-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

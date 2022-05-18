@@ -36,14 +36,14 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{DCMIVocabulary$new()}}
-\item \href{#method-get}{\code{DCMIVocabulary$get()}}
-\item \href{#method-clone}{\code{DCMIVocabulary$clone()}}
+\item \href{#method-DCMIVocabulary-new}{\code{DCMIVocabulary$new()}}
+\item \href{#method-DCMIVocabulary-get}{\code{DCMIVocabulary$get()}}
+\item \href{#method-DCMIVocabulary-clone}{\code{DCMIVocabulary$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-DCMIVocabulary-new"></a>}}
+\if{latex}{\out{\hypertarget{method-DCMIVocabulary-new}{}}}
 \subsection{Method \code{new()}}{
 This method is used to read a DCMI vocabulary RDF doc. The format corresponds to
    the RDF format as used by \pkg{rdflib} \code{rdf_parse} function.
@@ -64,8 +64,8 @@ This method is used to read a DCMI vocabulary RDF doc. The format corresponds to
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-get"></a>}}
-\if{latex}{\out{\hypertarget{method-get}{}}}
+\if{html}{\out{<a id="method-DCMIVocabulary-get"></a>}}
+\if{latex}{\out{\hypertarget{method-DCMIVocabulary-get}{}}}
 \subsection{Method \code{get()}}{
 Runs a Sparql query over the RDF vocabulary to return the vocabulary content.
    Returns an object of class \code{data.frame}
@@ -78,8 +78,8 @@ an object of class \code{data.frame}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-DCMIVocabulary-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-DCMIVocabulary-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

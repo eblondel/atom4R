@@ -1,6 +1,6 @@
 Package: atom4R
 Version: 0.2.9999
-Date: 2022-04-26
+Date: 2022-05-18
 Title: Tools to Handle and Publish Metadata as 'Atom' XML Format
 Authors@R: c(
   person("Emmanuel", "Blondel", role = c("aut", "cre"), email = "emmanuel.blondel1@gmail.com", comment = c(ORCID = "0000-0002-5870-5762")))
@@ -15,4 +15,4 @@ License: MIT + file LICENSE
 URL: https://github.com/eblondel/atom4R
 BugReports: https://github.com/eblondel/atom4R
 LazyLoad: yes
-RoxygenNote: 7.1.0
+RoxygenNote: 7.2.0

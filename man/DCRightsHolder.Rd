@@ -25,41 +25,41 @@ Dublin Core Metadata Initiative. https://www.dublincore.org/specifications/dubli
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{DCRightsHolder$new()}}
-\item \href{#method-clone}{\code{DCRightsHolder$clone()}}
+\item \href{#method-DCRightsHolder-new}{\code{DCRightsHolder$new()}}
+\item \href{#method-DCRightsHolder-clone}{\code{DCRightsHolder$clone()}}
 }
 }
-\if{html}{
-\out{<details ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="addListElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-addListElement}{\code{atom4R::AtomAbstractObject$addListElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="contains">}\href{../../atom4R/html/AtomAbstractObject.html#method-contains}{\code{atom4R::AtomAbstractObject$contains()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="createElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-createElement}{\code{atom4R::AtomAbstractObject$createElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="decode">}\href{../../atom4R/html/AtomAbstractObject.html#method-decode}{\code{atom4R::AtomAbstractObject$decode()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="delListElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-delListElement}{\code{atom4R::AtomAbstractObject$delListElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="encode">}\href{../../atom4R/html/AtomAbstractObject.html#method-encode}{\code{atom4R::AtomAbstractObject$encode()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClass">}\href{../../atom4R/html/AtomAbstractObject.html#method-getClass}{\code{atom4R::AtomAbstractObject$getClass()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClassName">}\href{../../atom4R/html/AtomAbstractObject.html#method-getClassName}{\code{atom4R::AtomAbstractObject$getClassName()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespace">}\href{../../atom4R/html/AtomAbstractObject.html#method-getNamespace}{\code{atom4R::AtomAbstractObject$getNamespace()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespaceDefinition">}\href{../../atom4R/html/AtomAbstractObject.html#method-getNamespaceDefinition}{\code{atom4R::AtomAbstractObject$getNamespaceDefinition()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getRootElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-getRootElement}{\code{atom4R::AtomAbstractObject$getRootElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getXmlElement">}\href{../../atom4R/html/AtomAbstractObject.html#method-getXmlElement}{\code{atom4R::AtomAbstractObject$getXmlElement()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isDocument">}\href{../../atom4R/html/AtomAbstractObject.html#method-isDocument}{\code{atom4R::AtomAbstractObject$isDocument()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isFieldInheritedFrom">}\href{../../atom4R/html/AtomAbstractObject.html#method-isFieldInheritedFrom}{\code{atom4R::AtomAbstractObject$isFieldInheritedFrom()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="print">}\href{../../atom4R/html/AtomAbstractObject.html#method-print}{\code{atom4R::AtomAbstractObject$print()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="save">}\href{../../atom4R/html/AtomAbstractObject.html#method-save}{\code{atom4R::AtomAbstractObject$save()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="setIsDocument">}\href{../../atom4R/html/AtomAbstractObject.html#method-setIsDocument}{\code{atom4R::AtomAbstractObject$setIsDocument()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="validate">}\href{../../atom4R/html/AtomAbstractObject.html#method-validate}{\code{atom4R::AtomAbstractObject$validate()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-ERROR'><code>atom4R::atom4RLogger$ERROR()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-INFO'><code>atom4R::atom4RLogger$INFO()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-WARN'><code>atom4R::atom4RLogger$WARN()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-logger'><code>atom4R::atom4RLogger$logger()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="addListElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-addListElement'><code>atom4R::AtomAbstractObject$addListElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="contains"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-contains'><code>atom4R::AtomAbstractObject$contains()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="createElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-createElement'><code>atom4R::AtomAbstractObject$createElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="decode"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-decode'><code>atom4R::AtomAbstractObject$decode()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="delListElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-delListElement'><code>atom4R::AtomAbstractObject$delListElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="encode"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-encode'><code>atom4R::AtomAbstractObject$encode()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClass"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getClass'><code>atom4R::AtomAbstractObject$getClass()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getClassName"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getClassName'><code>atom4R::AtomAbstractObject$getClassName()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespace"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getNamespace'><code>atom4R::AtomAbstractObject$getNamespace()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getNamespaceDefinition"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getNamespaceDefinition'><code>atom4R::AtomAbstractObject$getNamespaceDefinition()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getRootElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getRootElement'><code>atom4R::AtomAbstractObject$getRootElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="getXmlElement"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-getXmlElement'><code>atom4R::AtomAbstractObject$getXmlElement()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isDocument"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-isDocument'><code>atom4R::AtomAbstractObject$isDocument()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="isFieldInheritedFrom"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-isFieldInheritedFrom'><code>atom4R::AtomAbstractObject$isFieldInheritedFrom()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="print"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-print'><code>atom4R::AtomAbstractObject$print()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="save"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-save'><code>atom4R::AtomAbstractObject$save()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="setIsDocument"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-setIsDocument'><code>atom4R::AtomAbstractObject$setIsDocument()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomAbstractObject" data-id="validate"><a href='../../atom4R/html/AtomAbstractObject.html#method-AtomAbstractObject-validate'><code>atom4R::AtomAbstractObject$validate()</code></a></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-DCRightsHolder-new"></a>}}
+\if{latex}{\out{\hypertarget{method-DCRightsHolder-new}{}}}
 \subsection{Method \code{new()}}{
 Initializes an object of class \link{DCRightsHolder}
 \subsection{Usage}{
@@ -77,8 +77,8 @@ Initializes an object of class \link{DCRightsHolder}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-DCRightsHolder-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-DCRightsHolder-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

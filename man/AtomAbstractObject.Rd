@@ -48,41 +48,41 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{AtomAbstractObject$new()}}
-\item \href{#method-setIsDocument}{\code{AtomAbstractObject$setIsDocument()}}
-\item \href{#method-isDocument}{\code{AtomAbstractObject$isDocument()}}
-\item \href{#method-getRootElement}{\code{AtomAbstractObject$getRootElement()}}
-\item \href{#method-getNamespace}{\code{AtomAbstractObject$getNamespace()}}
-\item \href{#method-createElement}{\code{AtomAbstractObject$createElement()}}
-\item \href{#method-addListElement}{\code{AtomAbstractObject$addListElement()}}
-\item \href{#method-delListElement}{\code{AtomAbstractObject$delListElement()}}
-\item \href{#method-contains}{\code{AtomAbstractObject$contains()}}
-\item \href{#method-print}{\code{AtomAbstractObject$print()}}
-\item \href{#method-decode}{\code{AtomAbstractObject$decode()}}
-\item \href{#method-encode}{\code{AtomAbstractObject$encode()}}
-\item \href{#method-validate}{\code{AtomAbstractObject$validate()}}
-\item \href{#method-save}{\code{AtomAbstractObject$save()}}
-\item \href{#method-isFieldInheritedFrom}{\code{AtomAbstractObject$isFieldInheritedFrom()}}
-\item \href{#method-getClassName}{\code{AtomAbstractObject$getClassName()}}
-\item \href{#method-getClass}{\code{AtomAbstractObject$getClass()}}
-\item \href{#method-getNamespaceDefinition}{\code{AtomAbstractObject$getNamespaceDefinition()}}
-\item \href{#method-getXmlElement}{\code{AtomAbstractObject$getXmlElement()}}
-\item \href{#method-clone}{\code{AtomAbstractObject$clone()}}
+\item \href{#method-AtomAbstractObject-new}{\code{AtomAbstractObject$new()}}
+\item \href{#method-AtomAbstractObject-setIsDocument}{\code{AtomAbstractObject$setIsDocument()}}
+\item \href{#method-AtomAbstractObject-isDocument}{\code{AtomAbstractObject$isDocument()}}
+\item \href{#method-AtomAbstractObject-getRootElement}{\code{AtomAbstractObject$getRootElement()}}
+\item \href{#method-AtomAbstractObject-getNamespace}{\code{AtomAbstractObject$getNamespace()}}
+\item \href{#method-AtomAbstractObject-createElement}{\code{AtomAbstractObject$createElement()}}
+\item \href{#method-AtomAbstractObject-addListElement}{\code{AtomAbstractObject$addListElement()}}
+\item \href{#method-AtomAbstractObject-delListElement}{\code{AtomAbstractObject$delListElement()}}
+\item \href{#method-AtomAbstractObject-contains}{\code{AtomAbstractObject$contains()}}
+\item \href{#method-AtomAbstractObject-print}{\code{AtomAbstractObject$print()}}
+\item \href{#method-AtomAbstractObject-decode}{\code{AtomAbstractObject$decode()}}
+\item \href{#method-AtomAbstractObject-encode}{\code{AtomAbstractObject$encode()}}
+\item \href{#method-AtomAbstractObject-validate}{\code{AtomAbstractObject$validate()}}
+\item \href{#method-AtomAbstractObject-save}{\code{AtomAbstractObject$save()}}
+\item \href{#method-AtomAbstractObject-isFieldInheritedFrom}{\code{AtomAbstractObject$isFieldInheritedFrom()}}
+\item \href{#method-AtomAbstractObject-getClassName}{\code{AtomAbstractObject$getClassName()}}
+\item \href{#method-AtomAbstractObject-getClass}{\code{AtomAbstractObject$getClass()}}
+\item \href{#method-AtomAbstractObject-getNamespaceDefinition}{\code{AtomAbstractObject$getNamespaceDefinition()}}
+\item \href{#method-AtomAbstractObject-getXmlElement}{\code{AtomAbstractObject$getXmlElement()}}
+\item \href{#method-AtomAbstractObject-clone}{\code{AtomAbstractObject$clone()}}
 }
 }
-\if{html}{
-\out{<details open ><summary>Inherited methods</summary>}
-\itemize{
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR">}\href{../../atom4R/html/atom4RLogger.html#method-ERROR}{\code{atom4R::atom4RLogger$ERROR()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO">}\href{../../atom4R/html/atom4RLogger.html#method-INFO}{\code{atom4R::atom4RLogger$INFO()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger">}\href{../../atom4R/html/atom4RLogger.html#method-logger}{\code{atom4R::atom4RLogger$logger()}}\out{</span>}
-\item \out{<span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN">}\href{../../atom4R/html/atom4RLogger.html#method-WARN}{\code{atom4R::atom4RLogger$WARN()}}\out{</span>}
-}
-\out{</details>}
-}
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-ERROR'><code>atom4R::atom4RLogger$ERROR()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-INFO'><code>atom4R::atom4RLogger$INFO()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-WARN'><code>atom4R::atom4RLogger$WARN()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-logger'><code>atom4R::atom4RLogger$logger()</code></a></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-new"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-new}{}}}
 \subsection{Method \code{new()}}{
 Initializes an object of class \link{AtomAbstractObject}
 \subsection{Usage}{
@@ -118,8 +118,8 @@ Initializes an object of class \link{AtomAbstractObject}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-setIsDocument"></a>}}
-\if{latex}{\out{\hypertarget{method-setIsDocument}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-setIsDocument"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-setIsDocument}{}}}
 \subsection{Method \code{setIsDocument()}}{
 Set if object is a document or not
 \subsection{Usage}{
@@ -135,8 +135,8 @@ Set if object is a document or not
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isDocument"></a>}}
-\if{latex}{\out{\hypertarget{method-isDocument}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-isDocument"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-isDocument}{}}}
 \subsection{Method \code{isDocument()}}{
 Informs if the object is a document
 \subsection{Usage}{
@@ -148,8 +148,8 @@ object of class \code{logical}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getRootElement"></a>}}
-\if{latex}{\out{\hypertarget{method-getRootElement}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-getRootElement"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-getRootElement}{}}}
 \subsection{Method \code{getRootElement()}}{
 Get root XML element
 \subsection{Usage}{
@@ -161,8 +161,8 @@ object of class \code{character}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getNamespace"></a>}}
-\if{latex}{\out{\hypertarget{method-getNamespace}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-getNamespace"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-getNamespace}{}}}
 \subsection{Method \code{getNamespace()}}{
 Get XML namespace
 \subsection{Usage}{
@@ -174,8 +174,8 @@ object of class \code{character}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-createElement"></a>}}
-\if{latex}{\out{\hypertarget{method-createElement}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-createElement"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-createElement}{}}}
 \subsection{Method \code{createElement()}}{
 Creates an element
 \subsection{Usage}{
@@ -196,8 +196,8 @@ the typed element
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-addListElement"></a>}}
-\if{latex}{\out{\hypertarget{method-addListElement}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-addListElement"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-addListElement}{}}}
 \subsection{Method \code{addListElement()}}{
 Add a metadata element to an element list
 \subsection{Usage}{
@@ -218,8 +218,8 @@ Add a metadata element to an element list
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-delListElement"></a>}}
-\if{latex}{\out{\hypertarget{method-delListElement}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-delListElement"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-delListElement}{}}}
 \subsection{Method \code{delListElement()}}{
 Deletes a metadata element from an element list
 \subsection{Usage}{
@@ -240,8 +240,8 @@ Deletes a metadata element from an element list
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-contains"></a>}}
-\if{latex}{\out{\hypertarget{method-contains}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-contains"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-contains}{}}}
 \subsection{Method \code{contains()}}{
 Indicates if an element list contains or not an element
 \subsection{Usage}{
@@ -262,8 +262,8 @@ Indicates if an element list contains or not an element
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-print"></a>}}
-\if{latex}{\out{\hypertarget{method-print}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-print"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-print}{}}}
 \subsection{Method \code{print()}}{
 Prints the element
 \subsection{Usage}{
@@ -281,8 +281,8 @@ Prints the element
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-decode"></a>}}
-\if{latex}{\out{\hypertarget{method-decode}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-decode"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-decode}{}}}
 \subsection{Method \code{decode()}}{
 Decodes the object from an \pkg{XML} representation
 \subsection{Usage}{
@@ -298,8 +298,8 @@ Decodes the object from an \pkg{XML} representation
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-encode"></a>}}
-\if{latex}{\out{\hypertarget{method-encode}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-encode"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-encode}{}}}
 \subsection{Method \code{encode()}}{
 Encodes the object as XML
 \subsection{Usage}{
@@ -326,8 +326,8 @@ Encodes the object as XML
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-validate"></a>}}
-\if{latex}{\out{\hypertarget{method-validate}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-validate"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-validate}{}}}
 \subsection{Method \code{validate()}}{
 Validates the object / XML vs. XML schemas
 \subsection{Usage}{
@@ -348,8 +348,8 @@ Validates the object / XML vs. XML schemas
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-save"></a>}}
-\if{latex}{\out{\hypertarget{method-save}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-save"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-save}{}}}
 \subsection{Method \code{save()}}{
 Saves the object as XML file
 \subsection{Usage}{
@@ -367,8 +367,8 @@ Saves the object as XML file
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-isFieldInheritedFrom"></a>}}
-\if{latex}{\out{\hypertarget{method-isFieldInheritedFrom}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-isFieldInheritedFrom"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-isFieldInheritedFrom}{}}}
 \subsection{Method \code{isFieldInheritedFrom()}}{
 Indicates the class from which field is inherited
 \subsection{Usage}{
@@ -387,8 +387,8 @@ an object of class \link{R6Class}, or \code{NULL}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getClassName"></a>}}
-\if{latex}{\out{\hypertarget{method-getClassName}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-getClassName"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-getClassName}{}}}
 \subsection{Method \code{getClassName()}}{
 Get class name
 \subsection{Usage}{
@@ -400,8 +400,8 @@ object of class \code{character}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getClass"></a>}}
-\if{latex}{\out{\hypertarget{method-getClass}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-getClass"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-getClass}{}}}
 \subsection{Method \code{getClass()}}{
 Get class
 \subsection{Usage}{
@@ -413,8 +413,8 @@ object of class \link{R6Class}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getNamespaceDefinition"></a>}}
-\if{latex}{\out{\hypertarget{method-getNamespaceDefinition}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-getNamespaceDefinition"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-getNamespaceDefinition}{}}}
 \subsection{Method \code{getNamespaceDefinition()}}{
 Get namespace definition
 \subsection{Usage}{
@@ -433,8 +433,8 @@ a named \code{list} of the XML namespaces
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getXmlElement"></a>}}
-\if{latex}{\out{\hypertarget{method-getXmlElement}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-getXmlElement"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-getXmlElement}{}}}
 \subsection{Method \code{getXmlElement()}}{
 Get XML element name
 \subsection{Usage}{
@@ -446,8 +446,8 @@ object of class \code{character}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-AtomAbstractObject-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomAbstractObject-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

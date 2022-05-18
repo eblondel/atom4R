@@ -7,7 +7,9 @@
 getAtomClasses()
 }
 \description{
-get the list of cached Atom classes
+get the list of Atom classes, ie classes extending \link{AtomAbstractObject} super class,
+including classes eventually defined outside \pkg{atom4R}. In case the latter is on the search path,
+the list of Atom classes will be cached for optimized used by \pkg{atom4R} encoder/decoder.
 }
 \examples{
   getAtomClasses()

@@ -33,19 +33,19 @@ Logger class used internally by atom4R
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-logger}{\code{atom4RLogger$logger()}}
-\item \href{#method-INFO}{\code{atom4RLogger$INFO()}}
-\item \href{#method-WARN}{\code{atom4RLogger$WARN()}}
-\item \href{#method-ERROR}{\code{atom4RLogger$ERROR()}}
-\item \href{#method-new}{\code{atom4RLogger$new()}}
-\item \href{#method-getClassName}{\code{atom4RLogger$getClassName()}}
-\item \href{#method-getClass}{\code{atom4RLogger$getClass()}}
-\item \href{#method-clone}{\code{atom4RLogger$clone()}}
+\item \href{#method-atom4RLogger-logger}{\code{atom4RLogger$logger()}}
+\item \href{#method-atom4RLogger-INFO}{\code{atom4RLogger$INFO()}}
+\item \href{#method-atom4RLogger-WARN}{\code{atom4RLogger$WARN()}}
+\item \href{#method-atom4RLogger-ERROR}{\code{atom4RLogger$ERROR()}}
+\item \href{#method-atom4RLogger-new}{\code{atom4RLogger$new()}}
+\item \href{#method-atom4RLogger-getClassName}{\code{atom4RLogger$getClassName()}}
+\item \href{#method-atom4RLogger-getClass}{\code{atom4RLogger$getClass()}}
+\item \href{#method-atom4RLogger-clone}{\code{atom4RLogger$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-logger"></a>}}
-\if{latex}{\out{\hypertarget{method-logger}{}}}
+\if{html}{\out{<a id="method-atom4RLogger-logger"></a>}}
+\if{latex}{\out{\hypertarget{method-atom4RLogger-logger}{}}}
 \subsection{Method \code{logger()}}{
 Provides log messages
 \subsection{Usage}{
@@ -63,8 +63,8 @@ Provides log messages
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-INFO"></a>}}
-\if{latex}{\out{\hypertarget{method-INFO}{}}}
+\if{html}{\out{<a id="method-atom4RLogger-INFO"></a>}}
+\if{latex}{\out{\hypertarget{method-atom4RLogger-INFO}{}}}
 \subsection{Method \code{INFO()}}{
 Provides INFO log messages
 \subsection{Usage}{
@@ -80,8 +80,8 @@ Provides INFO log messages
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-WARN"></a>}}
-\if{latex}{\out{\hypertarget{method-WARN}{}}}
+\if{html}{\out{<a id="method-atom4RLogger-WARN"></a>}}
+\if{latex}{\out{\hypertarget{method-atom4RLogger-WARN}{}}}
 \subsection{Method \code{WARN()}}{
 Provides WARN log messages
 \subsection{Usage}{
@@ -97,8 +97,8 @@ Provides WARN log messages
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-ERROR"></a>}}
-\if{latex}{\out{\hypertarget{method-ERROR}{}}}
+\if{html}{\out{<a id="method-atom4RLogger-ERROR"></a>}}
+\if{latex}{\out{\hypertarget{method-atom4RLogger-ERROR}{}}}
 \subsection{Method \code{ERROR()}}{
 Provides ERROR log messages
 \subsection{Usage}{
@@ -114,8 +114,8 @@ Provides ERROR log messages
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-atom4RLogger-new"></a>}}
+\if{latex}{\out{\hypertarget{method-atom4RLogger-new}{}}}
 \subsection{Method \code{new()}}{
 Initalizes the logger
 \subsection{Usage}{
@@ -131,8 +131,8 @@ Initalizes the logger
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getClassName"></a>}}
-\if{latex}{\out{\hypertarget{method-getClassName}{}}}
+\if{html}{\out{<a id="method-atom4RLogger-getClassName"></a>}}
+\if{latex}{\out{\hypertarget{method-atom4RLogger-getClassName}{}}}
 \subsection{Method \code{getClassName()}}{
 Get class name
 \subsection{Usage}{
@@ -144,8 +144,8 @@ object of class \code{data.frame}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getClass"></a>}}
-\if{latex}{\out{\hypertarget{method-getClass}{}}}
+\if{html}{\out{<a id="method-atom4RLogger-getClass"></a>}}
+\if{latex}{\out{\hypertarget{method-atom4RLogger-getClass}{}}}
 \subsection{Method \code{getClass()}}{
 Get class
 \subsection{Usage}{
@@ -157,8 +157,8 @@ object of class \link{R6Class}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-atom4RLogger-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-atom4RLogger-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

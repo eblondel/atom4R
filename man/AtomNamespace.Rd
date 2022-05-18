@@ -36,14 +36,14 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-new}{\code{AtomNamespace$new()}}
-\item \href{#method-getDefinition}{\code{AtomNamespace$getDefinition()}}
-\item \href{#method-clone}{\code{AtomNamespace$clone()}}
+\item \href{#method-AtomNamespace-new}{\code{AtomNamespace$new()}}
+\item \href{#method-AtomNamespace-getDefinition}{\code{AtomNamespace$getDefinition()}}
+\item \href{#method-AtomNamespace-clone}{\code{AtomNamespace$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-new"></a>}}
-\if{latex}{\out{\hypertarget{method-new}{}}}
+\if{html}{\out{<a id="method-AtomNamespace-new"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomNamespace-new}{}}}
 \subsection{Method \code{new()}}{
 Initializes an \link{AtomNamespace}
 \subsection{Usage}{
@@ -61,8 +61,8 @@ Initializes an \link{AtomNamespace}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-getDefinition"></a>}}
-\if{latex}{\out{\hypertarget{method-getDefinition}{}}}
+\if{html}{\out{<a id="method-AtomNamespace-getDefinition"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomNamespace-getDefinition}{}}}
 \subsection{Method \code{getDefinition()}}{
 Get definition
 \subsection{Usage}{
@@ -74,8 +74,8 @@ a named list defining the namespace
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-clone}{}}}
+\if{html}{\out{<a id="method-AtomNamespace-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-AtomNamespace-clone}{}}}
 \subsection{Method \code{clone()}}{
 The objects of this class are cloneable with this method.
 \subsection{Usage}{

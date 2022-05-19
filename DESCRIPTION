@@ -13,5 +13,4 @@ Description: Provides tools to read/write/publish metadata based on the 'Atom' X
 License: MIT + file LICENSE
 URL: https://github.com/eblondel/atom4R
 BugReports: https://github.com/eblondel/atom4R
-LazyLoad: yes
 RoxygenNote: 7.2.0

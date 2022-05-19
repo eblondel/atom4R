@@ -64,7 +64,7 @@ AtomEntry <- R6Class("AtomEntry",
     #' @field id identifier
     id = NULL,
     #' @field updated Update date/time
-    updated = Sys.time(),
+    updated = NULL,
     #' @field published Publication date/time
     published = NULL,
     #' @field title Title
@@ -87,6 +87,7 @@ AtomEntry <- R6Class("AtomEntry",
     #'@description Initializes an \link{AtomEntry}
     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
     initialize = function(xml = NULL){
+      self$setUpdated(Sys.time())
       super$initialize(xml = xml, wrap = FALSE)
     },
 

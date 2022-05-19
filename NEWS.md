@@ -4,6 +4,10 @@
 
 * [#16](https://github.com/eblondel/atom4R/issues/16) Add missing DCMI elements
 
+**Bug fixes**
+
+* [#17](https://github.com/eblondel/atom4R/issues/17) Bug in AtomEntry 'updated' field
+
 ## [atom4R 0.2](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
 
 **New features**

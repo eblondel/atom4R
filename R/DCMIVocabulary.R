@@ -21,42 +21,46 @@ DCMIVocabulary <- R6Class("DCMIVocabulary",
     doc = NULL,
     #'@field representation representation
     representation = NULL,
+    #'@field data data
+    data = NULL,
 
     #'@description This method is used to read a DCMI vocabulary RDF doc. The format corresponds to
     #'    the RDF format as used by \pkg{rdflib} \code{rdf_parse} function.
     #'@param id id
     #'@param doc doc
     #'@param format format
-    initialize = function(id, doc, format){
+    #'@param fetch fetch
+    initialize = function(id, doc, format, fetch = TRUE){
       self$id <- id
       self$doc <- doc
       self$representation <- rdflib::rdf_parse(doc, format = format)
+      if(fetch) self$fetch()
     },
 
-    #'@description Runs a Sparql query over the RDF vocabulary to return the vocabulary content.
-    #'    Returns an object of class \code{data.frame}
-    #'@return an object of class \code{data.frame}
-    get = function(){
-      sparql <-
-        'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-         PREFIX owl: <http://www.w3.org/2002/07/owl#>
-         PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-         PREFIX dcam: <http://purl.org/dc/dcam/>
-         PREFIX dcterms: <http://purl.org/dc/terms/>
-         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-         SELECT *
-         WHERE {
-          ?s dcterms:issued ?issued.
-          ?s rdfs:comment ?comment.
-          ?s rdfs:isDefinedBy ?isDefinedBy.
-          ?s rdfs:label ?label.
-          OPTIONAL{ ?s dcam:memberOf ?memberOf. }
-          OPTIONAL{ ?s dcterms:description ?description }
-         }
-      '
-      out <- rdflib::rdf_query(self$representation, query = sparql)
-      out <- as.data.frame(out)
-      return(out)
+    #'@description Runs a Sparql query over the RDF vocabulary to fetch the vocabulary content.
+    fetch = function(){
+      if(is.null(self$data)){
+        sparql <-
+          'PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+           PREFIX owl: <http://www.w3.org/2002/07/owl#>
+           PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+           PREFIX dcam: <http://purl.org/dc/dcam/>
+           PREFIX dcterms: <http://purl.org/dc/terms/>
+           PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+           SELECT *
+           WHERE {
+            ?s dcterms:issued ?issued.
+            ?s rdfs:comment ?comment.
+            ?s rdfs:isDefinedBy ?isDefinedBy.
+            ?s rdfs:label ?label.
+            OPTIONAL{ ?s dcam:memberOf ?memberOf. }
+            OPTIONAL{ ?s dcterms:description ?description }
+           }
+        '
+        out <- rdflib::rdf_query(self$representation, query = sparql)
+        out <- as.data.frame(out)
+        self$data <- out
+      }
     }
   )
 )
@@ -68,12 +72,12 @@ setDCMIVocabularies <- function(){
     DCMIVocabulary$new(
       id = "http://purl.org/dc/terms/",
       doc = system.file("extdata/vocabularies/dc/dublin_core_terms.rdf", package = "atom4R"),
-      format = "rdfxml"
+      format = "rdfxml", fetch = TRUE
     ),
     DCMIVocabulary$new(
       id = "http://purl.org/dc/dcmitype/",
       doc = system.file("extdata/vocabularies/dc/dublin_core_type.rdf", package = "atom4R"),
-      format = "rdfxml"
+      format = "rdfxml", fetch = TRUE
     )
   )
   names(vocabs) <- sapply(vocabs, function(x){x$id})

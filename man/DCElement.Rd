@@ -76,7 +76,13 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \subsection{Method \code{new()}}{
 Initializes an abstract \link{DCElement}
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DCElement$new(xml = NULL, term = NULL, value = NULL, vocabulary = NULL)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{DCElement$new(
+  xml = NULL,
+  term = NULL,
+  value = NULL,
+  vocabulary = NULL,
+  extended = FALSE
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -89,6 +95,8 @@ Initializes an abstract \link{DCElement}
 \item{\code{value}}{value}
 
 \item{\code{vocabulary}}{vocabulary}
+
+\item{\code{extended}}{extended}
 }
 \if{html}{\out{</div>}}
 }

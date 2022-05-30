@@ -45,12 +45,15 @@ DCElement <- R6Class("DCElement",
          }
          if(!is.null(vocabulary)){
            vocab <- getDCMIVocabulary(id = vocabulary)
+           if(is.null(vocab$data)){
+             vocab$fetch()
+           }
            if(is.null(vocab)){
              stop(sprintf("No controlled vocabulary for id '%s'", vocabulary))
            }
-           if(!value %in% vocab$get()$label){
+           if(!value %in% vocab$data$label){
              errMsg <- sprintf("Value '%s' not authorized by DCMI controlled vocabulary for term '%s'.\n", value, term)
-             errMsg <- paste0(errMsg, sprintf("Controlled vocabulary can be browsed in R with the following code:\ngetDCMIVocabulary(id = \"%s\")$get()", vocabulary))
+             errMsg <- paste0(errMsg, sprintf("Controlled vocabulary can be browsed in R with the following code:\nvocab = getDCMIVocabulary(id = \"%s\");\nvocab$fetch();\nvocab$data", vocabulary))
              stop(errMsg)
            }
          }

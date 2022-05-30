@@ -2,7 +2,11 @@
 
 **Enhancements**
 
+* [#14](https://github.com/eblondel/atom4R/issues/14) Support setters for list of elements
 * [#16](https://github.com/eblondel/atom4R/issues/16) Add missing DCMI elements
+* [#18](https://github.com/eblondel/atom4R/issues/18) Improve performance for `addDCElement` (for native DC elements)
+* [#19](https://github.com/eblondel/atom4R/issues/18) Fetch vocabulary data by default
+
 
 **Bug fixes**
 

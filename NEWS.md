@@ -7,6 +7,9 @@
 * [#18](https://github.com/eblondel/atom4R/issues/18) Improve performance for `addDCElement` (for native DC elements)
 * [#19](https://github.com/eblondel/atom4R/issues/18) Fetch vocabulary data by default
 
+**New features**
+
+* [#20](https://github.com/eblondel/atom4R/issues/20) Add readDCEntry util function
 
 **Bug fixes**
 

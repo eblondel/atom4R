@@ -17,7 +17,7 @@
 #'
 #' @examples
 #' \donttest{
-#'   dcfile <- base::system.file("extdata/examples", "zenodo_dc_export.xml", package = "atom4R")
+#'   dcfile <- "https://raw.githubusercontent.com/eblondel/atom4R/master/inst/extdata/examples/zenodo_dc_export.xml"
 #'   dc <- readDCEntry(dcfile)
 #' }
 #'

@@ -1,4 +1,4 @@
-## [atom4R 0.2.9999](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-unavailable-red.svg)](https://github.com/eblondel/atom4R)
+## [atom4R 0.3](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://github.com/eblondel/atom4R)
 
 **Enhancements**
 
@@ -9,6 +9,7 @@
 
 **New features**
 
+* [#15](https://github.com/eblondel/atom4R/issues/15) Accessors/getters for DCElement objects
 * [#20](https://github.com/eblondel/atom4R/issues/20) Add readDCEntry util function
 
 **Bug fixes**

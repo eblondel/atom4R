@@ -638,13 +638,13 @@ Set DC accrual method
 \if{html}{\out{<a id="method-DCEntry-getDCAccrualMethods"></a>}}
 \if{latex}{\out{\hypertarget{method-DCEntry-getDCAccrualMethods}{}}}
 \subsection{Method \code{getDCAccrualMethods()}}{
-Get DC access rights
+Get DC accrual method
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DCEntry$getDCAccrualMethods()}\if{html}{\out{</div>}}
 }
 
 \subsection{Returns}{
-a list of objects of class \link{DCAccrualMethods}
+a list of objects of class \link{DCAccrualMethod}
 }
 }
 \if{html}{\out{<hr>}}
@@ -714,7 +714,7 @@ Get DC accrual periodicities
 }
 
 \subsection{Returns}{
-a list of objects of class \link{DCAccrualPeriodicities}
+a list of objects of class \link{DCAccrualPeriodicity}
 }
 }
 \if{html}{\out{<hr>}}
@@ -784,7 +784,7 @@ Get DC accrual policies
 }
 
 \subsection{Returns}{
-a list of objects of class \link{DCAccrualPolicies}
+a list of objects of class \link{DCAccrualPolicy}
 }
 }
 \if{html}{\out{<hr>}}
@@ -854,7 +854,7 @@ Get DC alternatives
 }
 
 \subsection{Returns}{
-a list of objects of class \link{DCAlternatives}
+a list of objects of class \link{DCAlternative}
 }
 }
 \if{html}{\out{<hr>}}
@@ -924,7 +924,7 @@ Get DC audiences
 }
 
 \subsection{Returns}{
-a list of objects of class \link{DCAudiences}
+a list of objects of class \link{DCAudience}
 }
 }
 \if{html}{\out{<hr>}}
@@ -994,7 +994,7 @@ Get DC availables
 }
 
 \subsection{Returns}{
-a list of objects of class \link{DCAvailables}
+a list of objects of class \link{DCAvailable}
 }
 }
 \if{html}{\out{<hr>}}

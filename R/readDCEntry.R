@@ -17,7 +17,10 @@
 #'
 #' @examples
 #' \donttest{
-#'   dcfile <- "https://raw.githubusercontent.com/eblondel/atom4R/master/inst/extdata/examples/zenodo_dc_export.xml"
+#'   dcfile <- paste0(
+#'     "https://raw.githubusercontent.com/eblondel/atom4R/master/",
+#'     "inst/extdata/examples/zenodo_dc_export.xml"
+#'   )
 #'   dc <- readDCEntry(dcfile)
 #' }
 #'

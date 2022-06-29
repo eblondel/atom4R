@@ -223,8 +223,8 @@ DCEntry <- R6Class("DCEntry",
        self$setDCElements("accrualMethod", accrualMethods)
      },
 
-     #'@description Get DC access rights
-     #'@return a list of objects of class \link{DCAccrualMethods}
+     #'@description Get DC accrual method
+     #'@return a list of objects of class \link{DCAccrualMethod}
      getDCAccrualMethods = function(){
         self$getDCElements("accrualMethod")
      },
@@ -250,7 +250,7 @@ DCEntry <- R6Class("DCEntry",
      },
 
      #'@description Get DC accrual periodicities
-     #'@return a list of objects of class \link{DCAccrualPeriodicities}
+     #'@return a list of objects of class \link{DCAccrualPeriodicity}
      getDCAccrualPeriodicities = function(){
         self$getDCElements("accrualPeriodicity")
      },
@@ -276,7 +276,7 @@ DCEntry <- R6Class("DCEntry",
      },
 
      #'@description Get DC accrual policies
-     #'@return a list of objects of class \link{DCAccrualPolicies}
+     #'@return a list of objects of class \link{DCAccrualPolicy}
      getDCAccrualPolicies = function(){
        self$getDCElements("accrualPolicy")
      },
@@ -302,7 +302,7 @@ DCEntry <- R6Class("DCEntry",
      },
 
      #'@description Get DC alternatives
-     #'@return a list of objects of class \link{DCAlternatives}
+     #'@return a list of objects of class \link{DCAlternative}
      getDCAlternatives = function(){
        self$getDCElements("alternative")
      },
@@ -328,7 +328,7 @@ DCEntry <- R6Class("DCEntry",
      },
 
      #'@description Get DC audiences
-     #'@return a list of objects of class \link{DCAudiences}
+     #'@return a list of objects of class \link{DCAudience}
      getDCAudiences = function(){
         self$getDCElements("audience")
      },
@@ -354,7 +354,7 @@ DCEntry <- R6Class("DCEntry",
      },
 
      #'@description Get DC availables
-     #'@return a list of objects of class \link{DCAvailables}
+     #'@return a list of objects of class \link{DCAvailable}
      getDCAvailables = function(){
        self$getDCElements("available")
      },

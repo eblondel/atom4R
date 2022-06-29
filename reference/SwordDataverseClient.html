@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">atom4R</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.9999</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.3</span>
       </span>
     </div>
 
@@ -113,12 +113,12 @@
 <p>The <code>logger</code> allows to specify the level of log (default is NULL), either "INFO"
    for <span class="pkg">atom4R</span> logs or "DEBUG" for verbose HTTP client (curl) logs.</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va"><a href="../reference/SwordDataverseClient.html">SwordDataverseClient</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span>
-  <span class="va">hostname</span>,
-  token <span class="op">=</span> <span class="cn">NULL</span>,
-  logger <span class="op">=</span> <span class="cn">NULL</span>,
-  keyring_backend <span class="op">=</span> <span class="st">"env"</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/SwordDataverseClient.html">SwordDataverseClient</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
+<span>  <span class="va">hostname</span>,</span>
+<span>  token <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  logger <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  keyring_backend <span class="op">=</span> <span class="st">"env"</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -146,7 +146,7 @@
 <h3 id="method-getservicedocument-">Method <code>getServiceDocument()</code><a class="anchor" aria-label="anchor" href="#method-getservicedocument-"></a></h3>
 <p>Get service document</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">getServiceDocument</span><span class="op">(</span>force <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">getServiceDocument</span><span class="op">(</span>force <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -166,7 +166,7 @@
 <h3 id="method-getcollectionmembers-">Method <code>getCollectionMembers()</code><a class="anchor" aria-label="anchor" href="#method-getcollectionmembers-"></a></h3>
 <p>Get collection members</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">getCollectionMembers</span><span class="op">(</span><span class="va">collectionId</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">getCollectionMembers</span><span class="op">(</span><span class="va">collectionId</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -186,7 +186,7 @@
 <h3 id="method-getdataverses-">Method <code>getDataverses()</code><a class="anchor" aria-label="anchor" href="#method-getdataverses-"></a></h3>
 <p>Get dataverses. Equivalent to <code>listCollections()</code> from <a href="AtomPubClient.html">AtomPubClient</a></p><div class="section">
 <h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">getDataverses</span><span class="op">(</span>pretty <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">getDataverses</span><span class="op">(</span>pretty <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -206,7 +206,7 @@
 <h3 id="method-getdataverse-">Method <code>getDataverse()</code><a class="anchor" aria-label="anchor" href="#method-getdataverse-"></a></h3>
 <p>Get dataverse members by dataverse name. Equivlaent to <code>getCollectionMembers()</code></p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">getDataverse</span><span class="op">(</span><span class="va">dataverse</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">getDataverse</span><span class="op">(</span><span class="va">dataverse</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -226,7 +226,7 @@
 <h3 id="method-editdataverseentry-">Method <code>editDataverseEntry()</code><a class="anchor" aria-label="anchor" href="#method-editdataverseentry-"></a></h3>
 <p>Edits a dataverse entry</p><div class="section">
 <h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">editDataverseEntry</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">editDataverseEntry</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -246,7 +246,7 @@
 <h3 id="method-getdataverserecord-">Method <code>getDataverseRecord()</code><a class="anchor" aria-label="anchor" href="#method-getdataverserecord-"></a></h3>
 <p>Get dataverse record</p><div class="section">
 <h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">getDataverseRecord</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">getDataverseRecord</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -266,7 +266,7 @@
 <h3 id="method-createdataverserecord-">Method <code>createDataverseRecord()</code><a class="anchor" aria-label="anchor" href="#method-createdataverserecord-"></a></h3>
 <p>Creates a dataverse record</p><div class="section">
 <h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">createDataverseRecord</span><span class="op">(</span><span class="va">dataverse</span>, <span class="va">entry</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">createDataverseRecord</span><span class="op">(</span><span class="va">dataverse</span>, <span class="va">entry</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -290,7 +290,7 @@
 <h3 id="method-updatedataverserecord-">Method <code>updateDataverseRecord()</code><a class="anchor" aria-label="anchor" href="#method-updatedataverserecord-"></a></h3>
 <p>Updates a dataverse record</p><div class="section">
 <h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">updateDataverseRecord</span><span class="op">(</span><span class="va">dataverse</span>, <span class="va">entry</span>, <span class="va">identifier</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">updateDataverseRecord</span><span class="op">(</span><span class="va">dataverse</span>, <span class="va">entry</span>, <span class="va">identifier</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -318,7 +318,7 @@
 <h3 id="method-deletedataverserecord-">Method <code>deleteDataverseRecord()</code><a class="anchor" aria-label="anchor" href="#method-deletedataverserecord-"></a></h3>
 <p>Deletes a dataverse record</p><div class="section">
 <h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">deleteDataverseRecord</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">deleteDataverseRecord</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -338,7 +338,7 @@
 <h3 id="method-publishdataverserecord-">Method <code>publishDataverseRecord()</code><a class="anchor" aria-label="anchor" href="#method-publishdataverserecord-"></a></h3>
 <p>Publishes a dataverse record</p><div class="section">
 <h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">publishDataverseRecord</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">publishDataverseRecord</span><span class="op">(</span><span class="va">identifier</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -358,7 +358,7 @@
 <h3 id="method-addfilestodataverserecord-">Method <code>addFilesToDataverseRecord()</code><a class="anchor" aria-label="anchor" href="#method-addfilestodataverserecord-"></a></h3>
 <p>Add files to a dataverse record</p><div class="section">
 <h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">addFilesToDataverseRecord</span><span class="op">(</span><span class="va">identifier</span>, <span class="va">files</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">addFilesToDataverseRecord</span><span class="op">(</span><span class="va">identifier</span>, <span class="va">files</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -378,7 +378,7 @@
 <h3 id="method-deletefilesfromdataverserecord-">Method <code>deleteFilesFromDataverseRecord()</code><a class="anchor" aria-label="anchor" href="#method-deletefilesfromdataverserecord-"></a></h3>
 <p>Deletes files from a Dataverse record</p><div class="section">
 <h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">deleteFilesFromDataverseRecord</span><span class="op">(</span><span class="va">identifier</span>, files <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">deleteFilesFromDataverseRecord</span><span class="op">(</span><span class="va">identifier</span>, files <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -402,7 +402,7 @@
 <h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
 <h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -420,23 +420,23 @@
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># \dontrun{</span></span>
-<span class="r-in">   <span class="co">#connect to SWORD Dataverse API</span></span>
-<span class="r-in">   <span class="va">SWORD</span> <span class="op">&lt;-</span> <span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
-<span class="r-in">     hostname <span class="op">=</span> <span class="st">"localhost:8085"</span>,</span>
-<span class="r-in">     token <span class="op">=</span> <span class="st">"&lt;token&gt;"</span>,</span>
-<span class="r-in">     logger <span class="op">=</span> <span class="st">"DEBUG"</span></span>
-<span class="r-in">   <span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \dontrun{</span></span></span>
+<span class="r-in"><span>   <span class="co">#connect to SWORD Dataverse API</span></span></span>
+<span class="r-in"><span>   <span class="va">SWORD</span> <span class="op">&lt;-</span> <span class="va">SwordDataverseClient</span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span></span>
+<span class="r-in"><span>     hostname <span class="op">=</span> <span class="st">"localhost:8085"</span>,</span></span>
+<span class="r-in"><span>     token <span class="op">=</span> <span class="st">"&lt;token&gt;"</span>,</span></span>
+<span class="r-in"><span>     logger <span class="op">=</span> <span class="st">"DEBUG"</span></span></span>
+<span class="r-in"><span>   <span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [atom4R][INFO] GET - Sword Dataverse service document at 'localhost:8085/dvn/api/data-deposit/v1.1/swordv2/service-document' </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Error in curl::curl_fetch_memory(url, handle = handle) : </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Failed to connect to localhost port 8085: Connection refused</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [atom4R][ERROR] Error while retrieving SWORD service document </span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in super$initialize(url = sword_api_url, user = "atom4R", pwd = "",     version = "2", token = token, logger = logger, keyring_backend = keyring_backend):</span> Error while retrieving SWORD service document</span>
-<span class="r-in"></span>
-<span class="r-in">   <span class="co">#for detailed operations check the wiki at:</span></span>
-<span class="r-in">   <span class="co">#https://github.com/eblondel/atom4R/wiki#atom4R-publish-sword-dataverse</span></span>
-<span class="r-in"><span class="co"># }</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span>   <span class="co">#for detailed operations check the wiki at:</span></span></span>
+<span class="r-in"><span>   <span class="co">#https://github.com/eblondel/atom4R/wiki#atom4R-publish-sword-dataverse</span></span></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -451,7 +451,7 @@
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.5.</p>
 </div>
 
       </footer></div>

@@ -40,16 +40,16 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \if{html}{\out{
 <details><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-ERROR'><code>atom4R::atom4RLogger$ERROR()</code></a></li>
-<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-INFO'><code>atom4R::atom4RLogger$INFO()</code></a></li>
-<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-WARN'><code>atom4R::atom4RLogger$WARN()</code></a></li>
-<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClass"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-getClass'><code>atom4R::atom4RLogger$getClass()</code></a></li>
-<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClassName"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-getClassName'><code>atom4R::atom4RLogger$getClassName()</code></a></li>
-<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-logger'><code>atom4R::atom4RLogger$logger()</code></a></li>
-<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getPwd"><a href='../../atom4R/html/AtomPubClient.html#method-AtomPubClient-getPwd'><code>atom4R::AtomPubClient$getPwd()</code></a></li>
-<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getToken"><a href='../../atom4R/html/AtomPubClient.html#method-AtomPubClient-getToken'><code>atom4R::AtomPubClient$getToken()</code></a></li>
-<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getUser"><a href='../../atom4R/html/AtomPubClient.html#method-AtomPubClient-getUser'><code>atom4R::AtomPubClient$getUser()</code></a></li>
-<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="listCollections"><a href='../../atom4R/html/AtomPubClient.html#method-AtomPubClient-listCollections'><code>atom4R::AtomPubClient$listCollections()</code></a></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="ERROR"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-ERROR'><code>atom4R::atom4RLogger$ERROR()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="INFO"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-INFO'><code>atom4R::atom4RLogger$INFO()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="WARN"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-WARN'><code>atom4R::atom4RLogger$WARN()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClass"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-getClass'><code>atom4R::atom4RLogger$getClass()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="getClassName"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-getClassName'><code>atom4R::atom4RLogger$getClassName()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="atom4RLogger" data-id="logger"><a href='../../atom4R/html/atom4RLogger.html#method-atom4RLogger-logger'><code>atom4R::atom4RLogger$logger()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getPwd"><a href='../../atom4R/html/AtomPubClient.html#method-AtomPubClient-getPwd'><code>atom4R::AtomPubClient$getPwd()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getToken"><a href='../../atom4R/html/AtomPubClient.html#method-AtomPubClient-getToken'><code>atom4R::AtomPubClient$getToken()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="getUser"><a href='../../atom4R/html/AtomPubClient.html#method-AtomPubClient-getUser'><code>atom4R::AtomPubClient$getUser()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="atom4R" data-topic="AtomPubClient" data-id="listCollections"><a href='../../atom4R/html/AtomPubClient.html#method-AtomPubClient-listCollections'><code>atom4R::AtomPubClient$listCollections()</code></a></span></li>
 </ul>
 </details>
 }}

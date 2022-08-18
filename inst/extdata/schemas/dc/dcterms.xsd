@@ -62,12 +62,11 @@
   </xs:annotation>
 
   <!-- 20200601 add DC schemas (Due to libxml2 validation all schemas should be added together) -->
-   <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-              schemaLocation="http://www.w3.org/2001/03/xml.xsd"></xs:import>
+   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../xml/xml.xsd"/>
    <xs:import namespace="http://purl.org/dc/elements/1.1/"
-              schemaLocation="https://www.dublincore.org/schemas/xmls/qdc/dc.xsd"/>
+              schemaLocation="../dc/dc.xsd"/>
    <xs:import namespace="http://purl.org/dc/dcmitype/"
-              schemaLocation="https://www.dublincore.org/schemas/xmls/qdc/dcmitype.xsd"/>
+              schemaLocation="../dc/dcmitype.xsd"/>
 
    <xs:element name="title" substitutionGroup="dc:title"/>
    <xs:element name="creator" substitutionGroup="dc:creator"/>

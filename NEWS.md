@@ -1,3 +1,9 @@
+## [atom4R 0.3-1](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://github.com/eblondel/atom4R)
+
+**Enhancements**
+
+* [#21](https://github.com/eblondel/atom4R/issues/21) Include local xsd schema to avoid internet resource unavailability
+
 ## [atom4R 0.3](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://github.com/eblondel/atom4R)
 
 **Enhancements**

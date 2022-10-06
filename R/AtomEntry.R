@@ -104,6 +104,7 @@ AtomEntry <- R6Class("AtomEntry",
       if(!is(updated, "Date") & !is(updated, "POSIXt")){
         stop("Atom entry 'updated' should be a 'Date' or 'POSIXt' object")
       }
+      attr(updated, "tzone") <- NULL
       self$updated <- updated
     },
 

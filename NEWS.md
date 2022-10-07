@@ -1,10 +1,16 @@
-## [atom4R 0.3-1](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://github.com/eblondel/atom4R)
+## [atom4R 0.3-2](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-unavailable-red.svg)](https://github.com/eblondel/atom4R)
+
+**Bug fixes**
+
+* [#22](https://github.com/eblondel/atom4R/issues/22) validate method fails after 'setUpdated' method called
+
+## [atom4R 0.3-1](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
 
 **Enhancements**
 
 * [#21](https://github.com/eblondel/atom4R/issues/21) Include local xsd schema to avoid internet resource unavailability
 
-## [atom4R 0.3](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://github.com/eblondel/atom4R)
+## [atom4R 0.3](https://cran.r-project.org/src/contrib/Archive/atom4R/atom4R_0.3.tar.gz) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/src/contrib/Archive/atom4R/atom4R_0.3.tar.gz)
 
 **Enhancements**
 
@@ -22,7 +28,7 @@
 
 * [#17](https://github.com/eblondel/atom4R/issues/17) Bug in AtomEntry 'updated' field
 
-## [atom4R 0.2](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
+## [atom4R 0.2](https://cran.r-project.org/src/contrib/Archive/atom4R/atom4R_0.2.tar.gz) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/src/contrib/Archive/atom4R/atom4R_0.2.tar.gz)
 
 **New features**
 

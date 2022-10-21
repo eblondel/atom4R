@@ -1406,7 +1406,7 @@ DCEntry <- R6Class("DCEntry",
      },
 
      #'@description export to a \code{data.frame}
-     #'@return an object of class \Code{data.frame}
+     #'@return an object of class \code{data.frame}
      asDataFrame = function(){
         xml = self$encode(validate = F)
         out <- data.frame(

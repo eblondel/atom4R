@@ -3838,7 +3838,7 @@ export to a \code{data.frame}
 }
 
 \subsection{Returns}{
-an object of class \Code{data.frame}
+an object of class \code{data.frame}
 }
 }
 \if{html}{\out{<hr>}}

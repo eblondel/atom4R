@@ -275,6 +275,7 @@ Emmanuel Blondel <emmanuel.blondel1@gmail.com>
 \item \href{#method-DCEntry-delDCType}{\code{DCEntry$delDCType()}}
 \item \href{#method-DCEntry-setDCTypes}{\code{DCEntry$setDCTypes()}}
 \item \href{#method-DCEntry-getDCTypes}{\code{DCEntry$getDCTypes()}}
+\item \href{#method-DCEntry-asDataFrame}{\code{DCEntry$asDataFrame()}}
 \item \href{#method-DCEntry-clone}{\code{DCEntry$clone()}}
 }
 }
@@ -3825,6 +3826,19 @@ Get DC types
 
 \subsection{Returns}{
 a list of objects of class \link{DCType}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DCEntry-asDataFrame"></a>}}
+\if{latex}{\out{\hypertarget{method-DCEntry-asDataFrame}{}}}
+\subsection{Method \code{asDataFrame()}}{
+export to a \code{data.frame}
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DCEntry$asDataFrame()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+an object of class \Code{data.frame}
 }
 }
 \if{html}{\out{<hr>}}

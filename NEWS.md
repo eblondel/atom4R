@@ -4,6 +4,10 @@
 
 * [#22](https://github.com/eblondel/atom4R/issues/22) validate method fails after 'setUpdated' method called
 
+**New features**
+
+* [#23](https://github.com/eblondel/atom4R/issues/23) Provide simple method to export a DCEntry as data.frame 
+
 ## [atom4R 0.3-1](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
 
 **Enhancements**

@@ -1403,7 +1403,18 @@ DCEntry <- R6Class("DCEntry",
      #'@return a list of objects of class \link{DCType}
      getDCTypes = function(){
         self$getDCElements("type")
-     }
+     },
 
+     #'@description export to a \code{data.frame}
+     #'@return an object of class \Code{data.frame}
+     asDataFrame = function(){
+        xml = self$encode(validate = F)
+        out <- data.frame(
+          "term" = names(XML::xmlChildren(xml)),
+          "value" = sapply(xmlChildren(xml), xmlValue)
+        )
+        out <- out[out$term != "comment",]
+        return(out)
+     }
    )
 )

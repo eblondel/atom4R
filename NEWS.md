@@ -1,4 +1,10 @@
-## [atom4R 0.3-2](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-unavailable-red.svg)](https://github.com/eblondel/atom4R)
+## [atom4R 0.3-3](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
+
+**Miscs**
+
+* [#24](https://github.com/eblondel/atom4R/issues/24) Issue with registerAtomSchema example
+
+## [atom4R 0.3-2](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
 
 **Bug fixes**
 
@@ -8,7 +14,7 @@
 
 * [#23](https://github.com/eblondel/atom4R/issues/23) Provide simple method to export a DCEntry as data.frame 
 
-## [atom4R 0.3-1](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
+## [atom4R 0.3-1](https://cran.r-project.org/package=atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/src/contrib/Archive/atom4R/atom4R_0.3-1.tar.gz)
 
 **Enhancements**
 

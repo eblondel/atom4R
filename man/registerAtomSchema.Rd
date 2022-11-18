@@ -14,7 +14,8 @@ registerAtomSchema(xsdFile)
 in \pkg{atom4R}
 }
 \examples{
-  registerAtomSchema(xsdFile = "https://jvndb.jvn.jp/schema/atom.xsd")
+  atom_xsd_file <- system.file("extdata/schemas/atom/atom.xsd", package = "atom4R")
+  registerAtomSchema(xsdFile = atom_xsd_file)
 
 }
 \author{

@@ -99,7 +99,6 @@ if(is(API, "SwordDataverseClient")){
     dcentry$addDCSource("Sword API - http://swordapp.org/")
     dcentry$addDCSource("Dublin Core Metadata Initiative - https://www.dublincore.org/")
     dcentry$addDCSource("Guidelines for implementing Dublin Core in XML - https://www.dublincore.org/specifications/dublin-core/dc-xml-guidelines/")
-    dcentry$addDCLicense("NONE")
     dcentry$addDCRights("MIT License")
 
     out <- API$createDataverseRecord("dynids", dcentry)

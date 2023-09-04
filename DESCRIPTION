@@ -9,7 +9,7 @@ Depends: R (>= 3.3), methods
 Imports: R6, jsonlite, readr, XML, httr, zip, rdflib, keyring
 Suggests: testthat
 Description: Provides tools to read/write/publish metadata based on the 'Atom' XML syndication format. This includes
- support of 'Dublin Core' XML implementation, and a client to API(s) implementing the 'AtomPub' 'SWORD' API specification.
+ support of 'Dublin Core' XML implementation, and a client to API(s) implementing the 'AtomPub' - 'SWORD' API specification.
 License: MIT + file LICENSE
 URL: https://github.com/eblondel/atom4R
 BugReports: https://github.com/eblondel/atom4R

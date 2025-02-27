@@ -1,10 +1,12 @@
+# atom4R <a href="https://github.com/eblondel/atom4R"><img src='https://github.com/eblondel/atom4R/blob/master/inst/extdata/resources/atom4R.png?raw=true' align="right" height="139" /></a>
+
 [![Build Status](https://github.com/eblondel/atom4R/actions/workflows/r-cmd-check.yml/badge.svg?branch=master)](https://github.com/eblondel/atom4R/actions/workflows/r-cmd-check.yml)
-[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/atom4R)](https://cran.r-project.org/package=atom4R)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/atom4R)](https://cran.r-project.org/package=atom4R)
 [![Github_Status_Badge](https://img.shields.io/badge/Github-0.3--3-blue.svg)](https://github.com/eblondel/atom4R)
 [![R-Universe](https://eblondel.r-universe.dev/badges/atom4R)](http://eblondel.r-universe.dev/ui/#package:atom4R)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3970169.svg)](https://doi.org/10.5281/zenodo.3970169)
 
-**atom4R – Tools to read/write/publish metadata as Atom XML format**
+**Tools to read/write/publish metadata as Atom XML format**
 
 ``atom4R`` provides tools to read/write/publish metadata based on the Atom XML syndication format. This includes support of Dublin Core XML implementation, and a client to APIs implementing the AtomPub SWORD API specification.
 

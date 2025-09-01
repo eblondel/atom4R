@@ -12,5 +12,5 @@ Description: Provides tools to read/write/publish metadata based on the 'Atom' X
  support of 'Dublin Core' XML implementation, and a client to API(s) implementing the 'AtomPub' - 'SWORD' API specification.
 License: MIT + file LICENSE
 URL: https://github.com/eblondel/atom4R
-BugReports: https://github.com/eblondel/atom4R
+BugReports: https://github.com/eblondel/atom4R/issues
 RoxygenNote: 7.3.2

@@ -8,8 +8,8 @@
 #' @title DublinCore element class
 #' @description This class models an DublinCore element
 #' @keywords Dublin Core element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core element
+#' @format \code{ \link[R6]{R6Class}} object.
 #'
 #' @note Class used internally by \pkg{atom4R}
 #'
@@ -32,7 +32,7 @@ DCElement <- R6Class("DCElement",
      value = NULL,
 
      #'@description Initializes an abstract \link{DCElement}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param term term
      #'@param value value
      #'@param vocabulary vocabulary
@@ -79,8 +79,8 @@ DCElement$getClassByElement = function(element){
 #' @title DCAbstract
 #' @description This class models an DublinCore 'abstract' element
 #' @keywords Dublin Core 'abstract' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'abstract' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'abstract' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -96,7 +96,7 @@ DCAbstract <- R6Class("DCAbstract",
   public = list(
 
     #'@description Initializes an object of class \link{DCAbstract}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -108,8 +108,8 @@ DCAbstract <- R6Class("DCAbstract",
 #' @title DCAccessRights
 #' @description This class models an DublinCore 'accessRights' element
 #' @keywords Dublin Core 'accessRights' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'accessRights' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'accessRights' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -125,7 +125,7 @@ DCAccessRights <- R6Class("DCAccessRights",
   public = list(
 
     #'@description Initializes an object of class \link{DCAccessRights}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -137,8 +137,8 @@ DCAccessRights <- R6Class("DCAccessRights",
 #' @title DCAccrualMethod
 #' @description This class models an DublinCore 'accrualMethod' element
 #' @keywords Dublin Core 'accrualMethod' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'accrualMethod' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'accrualMethod' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -154,7 +154,7 @@ DCAccrualMethod <- R6Class("DCAccrualMethod",
   public = list(
 
     #'@description Initializes an object of class \link{DCAccrualMethod}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -166,8 +166,8 @@ DCAccrualMethod <- R6Class("DCAccrualMethod",
 #' @title DCAccrualPeriodicity
 #' @description This class models an DublinCore 'accrualPeriodicity' element
 #' @keywords Dublin Core 'accrualPeriodicity' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'accrualPeriodicity' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'accrualPeriodicity' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -183,7 +183,7 @@ DCAccrualPeriodicity <- R6Class("DCAccrualPeriodicity",
    public = list(
 
      #'@description Initializes an object of class \link{DCAccrualPeriodicity}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -195,8 +195,8 @@ DCAccrualPeriodicity <- R6Class("DCAccrualPeriodicity",
 #' @title DCAccrualPolicy
 #' @description This class models an DublinCore 'accrualPolicy' element
 #' @keywords Dublin Core 'accrualPolicy' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'accrualPolicy' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'accrualPolicy' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -212,7 +212,7 @@ DCAccrualPolicy <- R6Class("DCAccrualPolicy",
   public = list(
 
     #'@description Initializes an object of class \link{DCAccrualPolicy}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -224,8 +224,8 @@ DCAccrualPolicy <- R6Class("DCAccrualPolicy",
 #' @title DCAlternative
 #' @description This class models an DublinCore 'alternative' element
 #' @keywords Dublin Core 'alternative' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'alternative' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'alternative' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -241,7 +241,7 @@ DCAlternative <- R6Class("DCAlternative",
    public = list(
 
      #'@description Initializes an object of class \link{DCAlternative}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -253,8 +253,8 @@ DCAlternative <- R6Class("DCAlternative",
 #' @title DCAudience
 #' @description This class models an DublinCore 'audience' element
 #' @keywords Dublin Core 'audience' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'audience' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'audience' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -270,7 +270,7 @@ DCAudience <- R6Class("DCAudience",
    public = list(
 
      #'@description Initializes an object of class \link{DCAudience}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param term term
      #'@param value value
      initialize = function(xml = NULL, term = NULL, value = NULL){
@@ -284,8 +284,8 @@ DCAudience <- R6Class("DCAudience",
 #' @title DCAvailable
 #' @description This class models an DublinCore 'available' element
 #' @keywords Dublin Core 'available' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'available' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'available' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -301,7 +301,7 @@ DCAvailable <- R6Class("DCAvailable",
   public = list(
 
     #'@description Initializes an object of class \link{DCAvailable}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -313,8 +313,8 @@ DCAvailable <- R6Class("DCAvailable",
 #' @title DCBibliographicCitation
 #' @description This class models an DublinCore 'bibliographicCitation' element
 #' @keywords Dublin Core 'bibliographicCitation' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'bibliographicCitation' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'bibliographicCitation' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -330,7 +330,7 @@ DCBibliographicCitation <- R6Class("DCBibliographicCitation",
  public = list(
 
    #'@description Initializes an object of class \link{DCBibliographicCitation}
-   #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+   #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
    #'@param value value
    initialize = function(xml = NULL, value = NULL){
      super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -342,8 +342,8 @@ DCBibliographicCitation <- R6Class("DCBibliographicCitation",
 #' @title DCConformsTo
 #' @description This class models an DublinCore 'conformsTo' element
 #' @keywords Dublin Core 'conformsTo' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'conformsTo' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'conformsTo' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -359,7 +359,7 @@ DCConformsTo <- R6Class("DCConformsTo",
   public = list(
 
     #'@description Initializes an object of class \link{DCConformsTo}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -371,8 +371,8 @@ DCConformsTo <- R6Class("DCConformsTo",
 #' @title DCContributor
 #' @description This class models an DublinCore 'contributor' element
 #' @keywords Dublin Core 'contributor' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'contributor' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'contributor' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -389,7 +389,7 @@ DCContributor <- R6Class("DCContributor",
 
      #'@description This method is used to create an Dublin core 'contributor' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -403,8 +403,8 @@ DCContributor <- R6Class("DCContributor",
 #' @title DCCoverage
 #' @description This class models an DublinCore Terms 'coverage' element
 #' @keywords Dublin Core 'coverage' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'coverage' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'coverage' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -421,7 +421,7 @@ DCCoverage <- R6Class("DCCoverage",
 
      #'@description This method is used to create an Dublin core 'coverage' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param term term
      #'@param value value
      #'@param dc use DC namespace?
@@ -437,8 +437,8 @@ DCCoverage <- R6Class("DCCoverage",
 #' @title DCCreated
 #' @description This class models an DublinCore Terms 'date' element
 #' @keywords Dublin Core 'date' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'date' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'date' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -454,7 +454,7 @@ DCCreated <- R6Class("DCCreated",
   public = list(
 
     #'@description Initializes an object of class \link{DCCreated}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -466,8 +466,8 @@ DCCreated <- R6Class("DCCreated",
 #' @title DCCreator
 #' @description This class models an DublinCore 'creator' element
 #' @keywords Dublin Core 'creator' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'creator' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'creator' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -484,7 +484,7 @@ DCCreator <- R6Class("DCCreator",
 
      #'@description This method is used to create an Dublin core 'creator' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -498,8 +498,8 @@ DCCreator <- R6Class("DCCreator",
 #' @title DCDate
 #' @description This class models an DublinCore 'date' element
 #' @keywords Dublin Core 'date' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'date' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'date' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -516,7 +516,7 @@ DCDate <- R6Class("DCDate",
 
      #'@description This method is used to create an Dublin core 'date' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param term term
      #'@param value value
      #'@param dc use DC namespace?
@@ -532,8 +532,8 @@ DCDate <- R6Class("DCDate",
 #' @title DCDateAccepted
 #' @description This class models an DublinCore 'dateAccepted' element
 #' @keywords Dublin Core 'dateAccepted' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'dateAccepted' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'dateAccepted' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -549,7 +549,7 @@ DCDateAccepted <- R6Class("DCDateAccepted",
   public = list(
 
     #'@description Initializes an object of class \link{DCDateAccepted}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -561,8 +561,8 @@ DCDateAccepted <- R6Class("DCDateAccepted",
 #' @title DCDateCopyrighted
 #' @description This class models an DublinCore 'dateCopyrighted' element
 #' @keywords Dublin Core 'dateCopyrighted' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'dateCopyrighted' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'dateCopyrighted' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -578,7 +578,7 @@ DCDateCopyrighted <- R6Class("DCDateCopyrighted",
   public = list(
 
     #'@description Initializes an object of class \link{DCDateCopyrighted}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -590,8 +590,8 @@ DCDateCopyrighted <- R6Class("DCDateCopyrighted",
 #' @title DCDateSubmitted
 #' @description This class models an DublinCore 'dateSubmitted' element
 #' @keywords Dublin Core 'dateSubmitted' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'dateSubmitted' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'dateSubmitted' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -607,7 +607,7 @@ DCDateSubmitted <- R6Class("DCDateSubmitted",
   public = list(
 
     #'@description Initializes an object of class \link{DCDateSubmitted}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -619,8 +619,8 @@ DCDateSubmitted <- R6Class("DCDateSubmitted",
 #' @title DCDescription
 #' @description This class models an DublinCore 'description' element
 #' @keywords Dublin Core 'description' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'description' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'description' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -637,7 +637,7 @@ DCDescription <- R6Class("DCDescription",
 
     #'@description This method is used to create an Dublin core 'description' element.
     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param term term
     #'@param value value
     #'@param dc use DC namespace?
@@ -653,8 +653,8 @@ DCDescription <- R6Class("DCDescription",
 #' @title DCEducationalLevel
 #' @description This class models an DublinCore 'educationalLevel' element
 #' @keywords Dublin Core 'educationalLevel' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'educationalLevel' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'educationalLevel' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -670,7 +670,7 @@ DCEducationalLevel <- R6Class("DCEducationalLevel",
  public = list(
 
    #'@description Initializes an object of class \link{DCEducationalLevel}
-   #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+   #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
    #'@param value value
    initialize = function(xml = NULL, value = NULL){
      super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -682,8 +682,8 @@ DCEducationalLevel <- R6Class("DCEducationalLevel",
 #' @title DCExtent
 #' @description This class models an DublinCore 'extent' element
 #' @keywords Dublin Core 'extent' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'extent' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'extent' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -699,7 +699,7 @@ DCExtent <- R6Class("DCExtent",
   public = list(
 
     #'@description Initializes an object of class \link{DCExtent}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -711,8 +711,8 @@ DCExtent <- R6Class("DCExtent",
 #' @title DCFormat
 #' @description This class models an DublinCore 'format' element
 #' @keywords Dublin Core 'format' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'format' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'format' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -728,7 +728,7 @@ DCFormat <- R6Class("DCFormat",
   public = list(
 
     #'@description Initializes an object of class \link{DCFormat}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param term term
     #'@param value value
     initialize = function(xml = NULL, term = NULL, value = NULL){
@@ -742,8 +742,8 @@ DCFormat <- R6Class("DCFormat",
 #' @title DCHasPart
 #' @description This class models an DublinCore 'hasPart' element
 #' @keywords Dublin Core 'hasPart' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'hasPart' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'hasPart' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -760,7 +760,7 @@ DCHasPart <- R6Class("DCHasPart",
 
     #'@description This method is used to create an Dublin core 'hasPart' element.
     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     #'@param dc use DC namespace?
     initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -774,8 +774,8 @@ DCHasPart <- R6Class("DCHasPart",
 #' @title DCHasVersion
 #' @description This class models an DublinCore 'hasVersion' element
 #' @keywords Dublin Core 'hasVersion' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'hasPart' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'hasPart' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -792,7 +792,7 @@ DCHasVersion <- R6Class("DCHasVersion",
 
      #'@description This method is used to create an Dublin core 'hasVersion' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -806,8 +806,8 @@ DCHasVersion <- R6Class("DCHasVersion",
 #' @title DCIdentifier
 #' @description This class models an DublinCore 'identifier' element
 #' @keywords Dublin Core 'identifier' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'identifier' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'identifier' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 
 #'
@@ -825,7 +825,7 @@ DCIdentifier <- R6Class("DCIdentifier",
 
     #'@description This method is used to create an Dublin core 'identifier' element.
     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param term term
     #'@param value value
     #'@param dc use DC namespace?
@@ -841,8 +841,8 @@ DCIdentifier <- R6Class("DCIdentifier",
 #' @title DCInstructionalMethod
 #' @description This class models an DublinCore 'instructionalMethod' element
 #' @keywords Dublin Core 'instructionalMethod' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core 'instructionalMethod' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core 'instructionalMethod' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -858,7 +858,7 @@ DCInstructionalMethod <- R6Class("DCInstructionalMethod",
   public = list(
 
     #'@description Initializes an object of class \link{DCInstructionalMethod}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -870,8 +870,8 @@ DCInstructionalMethod <- R6Class("DCInstructionalMethod",
 #' @title DCIssued
 #' @description This class models an DublinCore 'issued' element
 #' @keywords Dublin Core 'issued' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'issued' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'issued' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -887,7 +887,7 @@ DCIssued <- R6Class("DCIssued",
   public = list(
 
     #'@description Initializes an object of class \link{DCIssued}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -899,8 +899,8 @@ DCIssued <- R6Class("DCIssued",
 #' @title DCIsPartOf
 #' @description This class models an DublinCore 'isPartOf' element
 #' @keywords Dublin Core 'isPartOf' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'isPartOf' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'isPartOf' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -917,7 +917,7 @@ DCIsPartOf <- R6Class("DCIsPartOf",
 
     #'@description This method is used to create an Dublin core 'isPartOf' element.
     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     #'@param dc use DC namespace?
     initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -931,8 +931,8 @@ DCIsPartOf <- R6Class("DCIsPartOf",
 #' @title DCIsReferencedBy
 #' @description This class models an DublinCore 'isReferencedBy' element
 #' @keywords Dublin Core 'isReferencedBy' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'isReferencedBy' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'isReferencedBy' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -949,7 +949,7 @@ DCIsReferencedBy <- R6Class("DCIsReferencedBy",
 
     #'@description This method is used to create an Dublin core 'isReferencedBy' element.
     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     #'@param dc use DC namespace?
     initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -963,8 +963,8 @@ DCIsReferencedBy <- R6Class("DCIsReferencedBy",
 #' @title DCIsReplacedBy
 #' @description This class models an DublinCore 'isReplacedBy' element
 #' @keywords Dublin Core 'isReplacedBy' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'isReplacedBy' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'isReplacedBy' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -981,7 +981,7 @@ DCIsReplacedBy <- R6Class("DCIsReplacedBy",
 
     #'@description This method is used to create an Dublin core 'isReplacedBy' element.
     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     #'@param dc use DC namespace?
     initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -995,8 +995,8 @@ DCIsReplacedBy <- R6Class("DCIsReplacedBy",
 #' @title DCIsRequiredBy
 #' @description This class models an DublinCore 'isRequiredBy' element
 #' @keywords Dublin Core 'isRequiredBy' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'isRequiredBy' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'isRequiredBy' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1013,7 +1013,7 @@ DCIsRequiredBy <- R6Class("DCIsRequiredBy",
 
     #'@description This method is used to create an Dublin core 'isRequiredBy' element.
     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     #'@param dc use DC namespace?
     initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -1027,8 +1027,8 @@ DCIsRequiredBy <- R6Class("DCIsRequiredBy",
 #' @title DCIsVersionOf
 #' @description This class models an DublinCore 'isVersionOf' element
 #' @keywords Dublin Core 'isVersionOf' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'isVersionOf' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'isVersionOf' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1045,7 +1045,7 @@ DCIsVersionOf <- R6Class("DCIsVersionOf",
 
     #'@description This method is used to create an Dublin core 'isVersionOf' element.
     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     #'@param dc use DC namespace?
     initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -1059,8 +1059,8 @@ DCIsVersionOf <- R6Class("DCIsVersionOf",
 #' @title DCLanguage
 #' @description This class models an DublinCore 'language' element
 #' @keywords Dublin Core 'language' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'language' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'language' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1077,7 +1077,7 @@ DCLanguage <- R6Class("DCLanguage",
 
      #'@description This method is used to create an Dublin core 'language' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -1091,8 +1091,8 @@ DCLanguage <- R6Class("DCLanguage",
 #' @title DCLicense
 #' @description This class models an DublinCore 'license' element
 #' @keywords Dublin Core 'license' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'license' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'license' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1108,7 +1108,7 @@ DCLicense <- R6Class("DCLicense",
    public = list(
 
      #'@description Initializes an object of class \link{DCLicense}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1120,8 +1120,8 @@ DCLicense <- R6Class("DCLicense",
 #' @title DCMediator
 #' @description This class models an DublinCore 'mediator' element
 #' @keywords Dublin Core 'mediator' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'mediator' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'mediator' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1137,7 +1137,7 @@ DCMediator <- R6Class("DCMediator",
   public = list(
 
     #'@description Initializes an object of class \link{DCMediator}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1149,8 +1149,8 @@ DCMediator <- R6Class("DCMediator",
 #' @title DCMedium
 #' @description This class models an DublinCore 'medium' element
 #' @keywords Dublin Core 'medium' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'medium' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'medium' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1166,7 +1166,7 @@ DCMedium <- R6Class("DCMedium",
   public = list(
 
     #'@description Initializes an object of class \link{DCMedium}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1178,8 +1178,8 @@ DCMedium <- R6Class("DCMedium",
 #' @title DCModified
 #' @description This class models an DublinCore 'modified' element
 #' @keywords Dublin Core 'modified' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'modified' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'modified' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1195,7 +1195,7 @@ DCModified <- R6Class("DCModified",
    public = list(
 
      #'@description Initializes an object of class \link{DCModified}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1207,8 +1207,8 @@ DCModified <- R6Class("DCModified",
 #' @title DCProvenance
 #' @description This class models an DublinCore 'provenance' element
 #' @keywords Dublin Core 'provenance' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'provenance' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'provenance' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1224,7 +1224,7 @@ DCProvenance <- R6Class("DCProvenance",
   public = list(
 
     #'@description Initializes an object of class \link{DCProvenance}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1236,8 +1236,8 @@ DCProvenance <- R6Class("DCProvenance",
 #' @title DCPublisher
 #' @description This class models an DublinCore 'publisher' element
 #' @keywords Dublin Core 'publisher' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'publisher' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'publisher' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1254,7 +1254,7 @@ DCPublisher <- R6Class("DCPublisher",
 
      #'@description This method is used to create an Dublin core 'publisher' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -1268,8 +1268,8 @@ DCPublisher <- R6Class("DCPublisher",
 #' @title DCReferences
 #' @description This class models an DublinCore 'references' element
 #' @keywords Dublin Core 'references' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'references' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'references' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1285,7 +1285,7 @@ DCReferences <- R6Class("DCReferences",
   public = list(
 
     #'@description Initializes an object of class \link{DCReferences}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1297,8 +1297,8 @@ DCReferences <- R6Class("DCReferences",
 #' @title DCRelation
 #' @description This class models an DublinCore 'relation' element
 #' @keywords Dublin Core 'relation' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'relation' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'relation' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1315,7 +1315,7 @@ DCRelation <- R6Class("DCRelation",
 
     #'@description This method is used to create an Dublin core 'relation' element.
     #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param term term
     #'@param value value
     #'@param dc use DC namespace?
@@ -1331,8 +1331,8 @@ DCRelation <- R6Class("DCRelation",
 #' @title DCReplaces
 #' @description This class models an DublinCore 'replaces' element
 #' @keywords Dublin Core 'replaces' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'replaces' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'replaces' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1348,7 +1348,7 @@ DCReplaces <- R6Class("DCReplaces",
   public = list(
 
     #'@description Initializes an object of class \link{DCReplaces}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1360,8 +1360,8 @@ DCReplaces <- R6Class("DCReplaces",
 #' @title DCRequires
 #' @description This class models an DublinCore 'requires' element
 #' @keywords Dublin Core 'requires' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'requires' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'requires' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1377,7 +1377,7 @@ DCRequires <- R6Class("DCRequires",
   public = list(
 
     #'@description Initializes an object of class \link{DCRequires}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1389,8 +1389,8 @@ DCRequires <- R6Class("DCRequires",
 #' @title DCRights
 #' @description This class models an DublinCore 'rights' element
 #' @keywords Dublin Core 'rights' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'rights' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'rights' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1407,7 +1407,7 @@ DCRights <- R6Class("DCRights",
 
      #'@description This method is used to create an Dublin core 'rights' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param term term
      #'@param value value
      #'@param dc use DC namespace?
@@ -1423,8 +1423,8 @@ DCRights <- R6Class("DCRights",
 #' @title DCRightsHolder
 #' @description This class models an DublinCore 'rightsHolder' element
 #' @keywords Dublin Core 'rightsHolder' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'rightsHolder' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'rightsHolder' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1440,7 +1440,7 @@ DCRightsHolder <- R6Class("DCRightsHolder",
   public = list(
 
     #'@description Initializes an object of class \link{DCRightsHolder}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1452,8 +1452,8 @@ DCRightsHolder <- R6Class("DCRightsHolder",
 #' @title DCSubject
 #' @description This class models an DublinCore 'subject' element
 #' @keywords Dublin Core 'subject' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'subject' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'subject' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1470,7 +1470,7 @@ DCSubject <- R6Class("DCSubject",
 
      #'@description This method is used to create an Dublin core 'subject' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -1484,8 +1484,8 @@ DCSubject <- R6Class("DCSubject",
 #' @title DCSpatial
 #' @description This class models an DublinCore 'spatial' element
 #' @keywords Dublin Core 'spatial' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'spatial' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'spatial' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1501,7 +1501,7 @@ DCSpatial <- R6Class("DCSpatial",
    public = list(
 
      #'@description Initializes an object of class \link{DCSpatial}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1513,8 +1513,8 @@ DCSpatial <- R6Class("DCSpatial",
 #' @title DCSource
 #' @description This class models an DublinCore 'source' element
 #' @keywords Dublin Core 'source' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'source' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'source' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1531,7 +1531,7 @@ DCSource <- R6Class("DCSource",
 
      #'@description This method is used to create an Dublin core 'source' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -1545,8 +1545,8 @@ DCSource <- R6Class("DCSource",
 #' @title DCTableOfContents
 #' @description This class models an DublinCore 'tableOfContents' element
 #' @keywords Dublin Core 'tableOfContents' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'tableOfContents' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'tableOfContents' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1562,7 +1562,7 @@ DCTableOfContents <- R6Class("DCTableOfContents",
    public = list(
 
      #'@description Initializes an object of class \link{DCTableOfContents}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1574,8 +1574,8 @@ DCTableOfContents <- R6Class("DCTableOfContents",
 #' @title DCTemporal
 #' @description This class models an DublinCore 'temporal' element
 #' @keywords Dublin Core 'temporal' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'temporal' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'temporal' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1591,7 +1591,7 @@ DCTemporal <- R6Class("DCTemporal",
    public = list(
 
      #'@description Initializes an object of class \link{DCTemporal}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      initialize = function(xml = NULL, value = NULL){
        super$initialize(xml = xml, term = private$xmlElement, value = value)
@@ -1604,8 +1604,8 @@ DCTemporal <- R6Class("DCTemporal",
 #' @title DCTitle
 #' @description This class models an DublinCore 'title' element
 #' @keywords Dublin Core 'title' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'title' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'title' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1622,7 +1622,7 @@ DCTitle <- R6Class("DCTitle",
 
      #'@description This method is used to create an Dublin core 'title' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param term term
      #'@param value value
      #'@param dc use DC namespace?
@@ -1638,8 +1638,8 @@ DCTitle <- R6Class("DCTitle",
 #' @title DCType
 #' @description This class models an DublinCore 'type' element
 #' @keywords Dublin Core 'type' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'type' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'type' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1657,7 +1657,7 @@ DCType <- R6Class("DCType",
 
      #'@description This method is used to create an Dublin core 'type' element.
      #'    Use \code{dc} to \code{TRUE} to use Dublin core namespace instead of DC terms.
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param value value
      #'@param dc use DC namespace?
      initialize = function(xml = NULL, value = NULL, dc = FALSE){
@@ -1672,8 +1672,8 @@ DCType <- R6Class("DCType",
 #' @title DCValid
 #' @description This class models an DublinCore 'valid' element
 #' @keywords Dublin Core 'valid' element
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Terms 'valid' element
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Terms 'valid' element
+#' @format \code{ \link[R6]{R6Class}} object.
 #' @export
 #'
 #' @references
@@ -1689,7 +1689,7 @@ DCValid <- R6Class("DCValid",
   public = list(
 
     #'@description Initializes an object of class \link{DCValid}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     initialize = function(xml = NULL, value = NULL){
       super$initialize(xml = xml, term = private$xmlElement, value = value)

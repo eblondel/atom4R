@@ -8,8 +8,8 @@
 #' @title Atom Entry class
 #' @description This class models an atom Entry
 #' @keywords atom Entry
-#' @return Object of \code{\link{R6Class}} for modelling an Atom Entry
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Atom Entry
+#' @format \code{ \link[R6]{R6Class}} object.
 #'
 #' @examples
 #'  \dontrun{
@@ -85,7 +85,7 @@ AtomEntry <- R6Class("AtomEntry",
     content = NULL,
 
     #'@description Initializes an \link{AtomEntry}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     initialize = function(xml = NULL){
       self$setUpdated(Sys.time())
       super$initialize(xml = xml, wrap = FALSE)

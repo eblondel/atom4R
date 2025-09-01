@@ -3,8 +3,8 @@
 #' @docType class
 #' @export
 #' @keywords logger
-#' @return Object of \code{\link{R6Class}} for modelling a simple logger
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling a simple logger
+#' @format \code{ \link[R6]{R6Class}} object.
 #'
 #' @note Logger class used internally by atom4R
 #'
@@ -61,7 +61,7 @@ atom4RLogger <- R6Class("atom4RLogger",
     },
 
     #'@description Get class
-    #'@return object of class \link{R6Class}
+    #'@return object of class  \link[R6]{R6Class}
     getClass = function(){
       class <- eval(parse(text=self$getClassName()))
       return(class)

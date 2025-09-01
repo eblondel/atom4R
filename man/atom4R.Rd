@@ -10,6 +10,14 @@ Provides tools to read/write/publish metadata based on the Atom XML syndication 
 This includes support of Dublin Core XML implementation, and a client to APIs implementing the AtomPub
 SWORD API specification.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/eblondel/atom4R}
+  \item Report bugs at \url{https://github.com/eblondel/atom4R}
+}
+
+}
 \author{
 Emmanuel Blondel \email{emmanuel.blondel1@gmail.com}
 }

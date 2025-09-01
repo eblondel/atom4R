@@ -5,10 +5,10 @@
 \alias{DCEntry}
 \title{Dublin Core Entry class}
 \format{
-\code{\link{R6Class}} object.
+\code{ \link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an Dublin Core Entry
+Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Entry
 }
 \description{
 This class models an Dublin Core Entry
@@ -335,7 +335,7 @@ Initializes an object of class \link{DCEntry}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}}
 }
 \if{html}{\out{</div>}}
 }

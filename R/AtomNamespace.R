@@ -4,8 +4,8 @@
 #' @importFrom R6 R6Class
 #' @export
 #' @keywords ISO metadata namespace
-#' @return Object of \code{\link{R6Class}} for modelling an Atom Namespace
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Atom Namespace
+#' @format \code{ \link[R6]{R6Class}} object.
 #'
 #' @note ISO class used internally by atom4R for specifying XML namespaces
 #'

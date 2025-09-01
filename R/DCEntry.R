@@ -8,8 +8,8 @@
 #' @title Dublin Core Entry class
 #' @description This class models an Dublin Core Entry
 #' @keywords Dublin Core dc Entry
-#' @return Object of \code{\link{R6Class}} for modelling an Dublin Core Entry
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Dublin Core Entry
+#' @format \code{ \link[R6]{R6Class}} object.
 #'
 #' @examples
 #'  \donttest{
@@ -73,7 +73,7 @@ DCEntry <- R6Class("DCEntry",
    public = list(
 
      #'@description Initializes an object of class \link{DCEntry}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      initialize = function(xml = NULL){
        super$initialize(xml = xml)
      },

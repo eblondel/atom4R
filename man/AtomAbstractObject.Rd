@@ -5,10 +5,10 @@
 \alias{AtomAbstractObject}
 \title{Atom feed class}
 \format{
-\code{\link{R6Class}} object.
+\code{ \link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an Atom abstract Object
+Object of \code{ \link[R6]{R6Class}} for modelling an Atom abstract Object
 }
 \description{
 This class models an atom abstract object
@@ -100,7 +100,7 @@ Initializes an object of class \link{AtomAbstractObject}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class}}
 
 \item{\code{element}}{element}
 
@@ -292,7 +292,7 @@ Decodes the object from an \pkg{XML} representation
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}}
 }
 \if{html}{\out{</div>}}
 }
@@ -337,7 +337,7 @@ Validates the object / XML vs. XML schemas
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}}
 
 \item{\code{strict}}{strict validation or not}
 }
@@ -383,7 +383,7 @@ Indicates the class from which field is inherited
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-an object of class \link{R6Class}, or \code{NULL}
+an object of class  \link[R6]{R6Class}, or \code{NULL}
 }
 }
 \if{html}{\out{<hr>}}
@@ -409,7 +409,7 @@ Get class
 }
 
 \subsection{Returns}{
-object of class \link{R6Class}
+object of class  \link[R6]{R6Class}
 }
 }
 \if{html}{\out{<hr>}}

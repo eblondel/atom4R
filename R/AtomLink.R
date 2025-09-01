@@ -8,8 +8,8 @@
 #' @title Atom Link class
 #' @description This class models an atom Link
 #' @keywords atom Link
-#' @return Object of \code{\link{R6Class}} for modelling an Atom Link
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Atom Link
+#' @format \code{ \link[R6]{R6Class}} object.
 #'
 #' @author Emmanuel Blondel <emmanuel.blondel1@@gmail.com>
 #'
@@ -24,7 +24,7 @@ AtomLink <- R6Class("AtomLink",
      attrs = list(),
 
      #'@description Initializes an \link{AtomLink}
-     #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+     #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
      #'@param rel rel
      #'@param type type
      #'@param href href

@@ -8,8 +8,8 @@
 #' @title AtomPubClient class
 #' @description This class models an AtomPub service client
 #' @keywords Atom Person
-#' @return Object of \code{\link{R6Class}} for modelling an AtomPub client
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an AtomPub client
+#' @format \code{ \link[R6]{R6Class}} object.
 #'
 #' @section Methods:
 #' \describe{

@@ -1,7 +1,6 @@
 #' @name atom4R
 #' @aliases atom4R-package
 #' @aliases atom4R
-#' @docType package
 #'
 #' @import R6
 #' @import methods
@@ -19,4 +18,4 @@
 #'
 #'@author Emmanuel Blondel \email{emmanuel.blondel1@@gmail.com}
 #'
-NULL
+"_PACKAGE"

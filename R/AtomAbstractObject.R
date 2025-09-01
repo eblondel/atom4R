@@ -8,8 +8,8 @@
 #' @title Atom feed class
 #' @description This class models an atom abstract object
 #' @keywords atom
-#' @return Object of \code{\link{R6Class}} for modelling an Atom abstract Object
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Atom abstract Object
+#' @format \code{ \link[R6]{R6Class}} object.
 #'
 #' @note abstract class used internally by \pkg{atom4R}
 #'
@@ -169,7 +169,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
     parentAttrs = NULL,
 
     #'@description Initializes an object of class \link{AtomAbstractObject}
-    #'@param xml object of class \link{XMLInternalNode-class}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class}
     #'@param element element
     #'@param namespace namespace
     #'@param attrs attrs
@@ -321,7 +321,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
     },
 
     #'@description Decodes the object from an \pkg{XML} representation
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     decode = function(xml){
       #remove comments if any (in case of document)
       if(is(xml, "XMLInternalDocument")){
@@ -601,7 +601,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
     },
 
     #'@description Validates the object / XML vs. XML schemas
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param strict strict validation or not
     #'@return \code{TRUE} if valid, \code{FALSE} otherwise
     validate = function(xml = NULL, strict = FALSE){
@@ -663,7 +663,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
 
     #'@description Indicates the class from which field is inherited
     #'@param field field
-    #'@return an object of class \link{R6Class}, or \code{NULL}
+    #'@return an object of class  \link[R6]{R6Class}, or \code{NULL}
     isFieldInheritedFrom = function(field){
       parentClass <- NULL
       inherited <- !(field %in% names(self$getClass()$public_fields))
@@ -688,7 +688,7 @@ AtomAbstractObject <- R6Class("AtomAbstractObject",
     },
 
     #'@description Get class
-    #'@return object of class \link{R6Class}
+    #'@return object of class  \link[R6]{R6Class}
     getClass = function(){
       class <- eval(parse(text=self$getClassName()))
       return(class)

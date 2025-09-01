@@ -5,10 +5,10 @@
 \alias{AtomFeed}
 \title{Atom feed class}
 \format{
-\code{\link{R6Class}} object.
+\code{ \link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an Atom feed
+Object of \code{ \link[R6]{R6Class}} for modelling an Atom feed
 }
 \description{
 This class models an atom feed
@@ -260,7 +260,7 @@ Initializes a \link{AtomFeed}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}}
 }
 \if{html}{\out{</div>}}
 }

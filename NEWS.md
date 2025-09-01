@@ -1,3 +1,7 @@
+## [atom4R 0.3-4](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
+
+Fix Rdoc following CRAN request
+
 ## [atom4R 0.3-3](https://github.com/eblondel/atom4R) | [![CRAN_Status_Badge](https://img.shields.io/badge/CRAN-published-blue.svg)](https://cran.r-project.org/package=atom4R)
 
 **Miscs**

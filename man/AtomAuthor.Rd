@@ -5,10 +5,10 @@
 \alias{AtomAuthor}
 \title{Atom Author class}
 \format{
-\code{\link{R6Class}} object.
+\code{ \link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an Atom Author
+Object of \code{ \link[R6]{R6Class}} for modelling an Atom Author
 }
 \description{
 This class models an Atom Author
@@ -80,7 +80,7 @@ Initializes an \link{AtomAuthor}
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{xml}}{object of class \link{XMLInternalNode-class} from \pkg{XML}}
+\item{\code{xml}}{object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}}
 
 \item{\code{name}}{name}
 

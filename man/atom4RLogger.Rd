@@ -5,10 +5,10 @@
 \alias{atom4RLogger}
 \title{atom4RLogger}
 \format{
-\code{\link{R6Class}} object.
+\code{ \link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling a simple logger
+Object of \code{ \link[R6]{R6Class}} for modelling a simple logger
 }
 \description{
 atom4RLogger
@@ -153,7 +153,7 @@ Get class
 }
 
 \subsection{Returns}{
-object of class \link{R6Class}
+object of class  \link[R6]{R6Class}
 }
 }
 \if{html}{\out{<hr>}}

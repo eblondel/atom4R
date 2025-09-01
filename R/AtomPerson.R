@@ -8,8 +8,8 @@
 #' @title Atom Person class
 #' @description This class models an Atom Person
 #' @keywords Atom Person
-#' @return Object of \code{\link{R6Class}} for modelling an Atom Person
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Atom Person
+#' @format \code{ \link[R6]{R6Class}} object.
 #'
 #' @note Abstract class used internally for person-like classes
 #'
@@ -31,7 +31,7 @@ AtomPerson <- R6Class("AtomPerson",
     email = NA,
 
     #'@description Initializes an \link{AtomPerson}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param name name
     #'@param uri uri
     #'@param email email
@@ -72,8 +72,8 @@ AtomPerson <- R6Class("AtomPerson",
 #' @title Atom Author class
 #' @description This class models an Atom Author
 #' @keywords Atom Author
-#' @return Object of \code{\link{R6Class}} for modelling an Atom Author
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Atom Author
+#' @format \code{ \link[R6]{R6Class}} object.
 
 #' @examples
 #' \dontrun{
@@ -92,7 +92,7 @@ AtomAuthor <- R6Class("AtomAuthor",
   public = list(
 
     #'@description Initializes an \link{AtomAuthor}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param name name
     #'@param uri uri
     #'@param email email
@@ -112,8 +112,8 @@ AtomAuthor <- R6Class("AtomAuthor",
 #' @title Atom Contributorr class
 #' @description This class models an Atom Contributor
 #' @keywords Atom Author
-#' @return Object of \code{\link{R6Class}} for modelling an Atom Contributor
-#' @format \code{\link{R6Class}} object.
+#' @return Object of \code{ \link[R6]{R6Class}} for modelling an Atom Contributor
+#' @format \code{ \link[R6]{R6Class}} object.
 
 #' @examples
 #' \dontrun{
@@ -132,7 +132,7 @@ AtomContributor <- R6Class("AtomContributor",
   public = list(
 
     #'@description Initializes an \link{AtomContributor}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param name name
     #'@param uri uri
     #'@param email email

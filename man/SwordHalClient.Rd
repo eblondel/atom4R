@@ -5,10 +5,10 @@
 \alias{SwordHalClient}
 \title{SwordHalClient class}
 \format{
-\code{\link{R6Class}} object.
+\code{ \link[R6]{R6Class}} object.
 }
 \value{
-Object of \code{\link{R6Class}} for modelling an Sword client
+Object of \code{ \link[R6]{R6Class}} for modelling an Sword client
 }
 \description{
 This class models an Sword service client for HAL (Archives Houvertes)

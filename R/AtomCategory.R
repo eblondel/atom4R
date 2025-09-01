@@ -26,7 +26,7 @@ AtomCategory <- R6Class("AtomCategory",
     value = NULL,
 
     #'@description Initializes an \link{AtomCategory}
-    #'@param xml object of class \link{XMLInternalNode-class} from \pkg{XML}
+    #'@param xml object of class \link[XML]{XMLInternalNode-class} from \pkg{XML}
     #'@param value value
     #'@param term term
     #'@param scheme scheme

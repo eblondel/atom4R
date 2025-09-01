@@ -22,7 +22,7 @@ SwordHalClient <- R6Class("SwordHalClient",
    ),
    public = list(
 
-     #'@description This method is to instantiate an Sword HAL (Archive Ouvertes - \url{https://hal.archives-ouvertes.fr/}) Client.
+     #'@description This method is to instantiate an Sword HAL (Archive Ouvertes - \url{https://hal.science/}) Client.
       #'    By default the version is set to "2".
       #'
       #'    The \code{keyring_backend} can be set to use a different backend for storing
